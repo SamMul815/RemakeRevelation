@@ -230,8 +230,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1618891151180814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4849977272273776}
   m_Father: {fileID: 0}
@@ -421,8 +421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyParticle: {fileID: 1899818161322040, guid: 339508f6086eeea488d7f239b75cb068,
     type: 2}
-  damage: 0
-  damagePlusMinusValue: 0
+  damage: 10
+  damagePlusMinusValue: 3
   moveSpeed: 30
   hitLayer:
     serializedVersion: 2

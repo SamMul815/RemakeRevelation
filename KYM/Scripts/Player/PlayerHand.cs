@@ -539,6 +539,11 @@ public class PlayerHand : MonoBehaviour
         return 0.0f;
     }
 
+    public void Vibration(float length, float strength)
+    {
+        StartCoroutine(LongVibration(length, strength));
+    }
+
 
     private void CleanUpAttachedObjectStack()
     {
@@ -565,5 +570,12 @@ public class PlayerHand : MonoBehaviour
 
 
 
-
+    IEnumerator LongVibration(float length, float strength)
+    {
+        for (float i = 0; i < length; i += Time.deltaTime)
+        {
+            controller.TriggerHapticPulse((ushort)Mathf.Lerp(0, strength, length - i));
+            yield return null;
+        }
+    }
 }

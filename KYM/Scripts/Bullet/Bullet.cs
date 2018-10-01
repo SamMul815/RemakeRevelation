@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour {
     [SerializeField]
     protected int damage;                 //데미지
 
+    public int Damage { get { return damage; } }
+
     [SerializeField]
     protected int damagePlusMinusValue;
 
