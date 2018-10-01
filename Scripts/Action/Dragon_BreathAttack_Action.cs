@@ -10,17 +10,6 @@ public class Dragon_BreathAttack_Action : ActionTask
     {
         base.OnStart();
         Clock.Instance.CurBreathCoolingTime = 0.0f;
-
-        Transform DragonMouth = BlackBoard.Instance.DragonMouth;
-
-        Vector3 dir =
-            (DragonManager.Player.position -
-            DragonManager.Instance.transform.position).normalized;
-
-        BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
-
-        DragonAniManager.SwicthAnimation("Dragon_Breath");
-
     }
 
     public override bool Run()
@@ -58,6 +47,7 @@ public class Dragon_BreathAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
+        BlackBoard.Instance.IsIdle = true;
     }
 
 

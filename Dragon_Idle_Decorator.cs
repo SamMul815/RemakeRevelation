@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_DashAttack_Decorator : DecoratorTask
+public class Dragon_Idle_Decorator : DecoratorTask
 {
 
     public override void OnStart()
@@ -13,22 +13,14 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CurCoolingTime = Clock.Instance.CurDashCoolingTime;
-        float CoolingTime = Clock.Instance.DashCoolingTime;
+        float curCoolingTime = Clock.Instance.CurIdleCoolingTime;
+        bool IsIdle = BlackBoard.Instance.IsIdle;
 
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
-
-        float Distance = BlackBoard.Instance.DashDistance;
-
-        bool IsDash_Attack = UtilityManager.DistanceCalc(Dragon, Player, Distance);
-        bool IsAction = DragonManager.IsAction;
-
-        if (((CurCoolingTime >= CoolingTime && IsDash_Attack)&& !IsAction) || IsAction)
+        if ((curCoolingTime > 0.0f && IsIdle))
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 
-            if(childAction)
+            if (childAction)
             {
                 if(!childAction.IsRunning)
                 {
@@ -39,14 +31,14 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
                     else if (!childAction.IsRunning)
                         OnStart();
                 }
-                if(childAction.IsRunning|| childAction.IsEnd)
+                if(childAction.IsRunning && !childAction.IsEnd)
                 {
                     if (!DragonManager.IsAction)
                         OnStart();
-                    else if (!childAction.IsRunning)
+                    else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
-                    return ChildNode.Run();
 
+                    return ChildNode.Run();
                 }
             }
             else
@@ -54,11 +46,10 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
                 if (NodeState != TASKSTATE.RUNNING)
                     OnStart();
             }
-
             return ChildNode.Run();
         }
-        else if (NodeState == TASKSTATE.RUNNING ||
-           ChildNode.NodeState == TASKSTATE.RUNNING)
+        else if(NodeState == TASKSTATE.RUNNING ||
+            ChildNode.NodeState == TASKSTATE.RUNNING)
         {
             OnEnd();
         }
@@ -69,6 +60,5 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
     {
         base.OnEnd();
     }
-
 
 }

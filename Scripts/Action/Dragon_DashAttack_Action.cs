@@ -12,6 +12,7 @@ public class Dragon_DashAttack_Action : ActionTask
         BlackBoard.Instance.IsDashAttackOn = false;
         DragonManager.Instance.Stat.DahsMovePosition = DragonManager.Player.transform.position;
         Clock.Instance.CurDashCoolingTime = 0.0f;
+        DragonManager.IsAction = true;
 
 
     }
@@ -71,7 +72,7 @@ public class Dragon_DashAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        Debug.Log(this.gameObject.name + " : OnEnd");
+        BlackBoard.Instance.IsIdle = true;
         BlackBoard.Instance.IsDashAttackOn = false;
     }
 
