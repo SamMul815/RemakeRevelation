@@ -72,7 +72,6 @@ public class Dragon_DashAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsIdle = true;
         BlackBoard.Instance.IsDashAttackOn = false;
     }
 

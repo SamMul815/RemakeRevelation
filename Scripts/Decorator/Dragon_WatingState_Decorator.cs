@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_Idle_Decorator : DecoratorTask
+public class Dragon_WatingState_Decorator : DecoratorTask
 {
 
     public override void OnStart()
@@ -13,10 +13,10 @@ public class Dragon_Idle_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float curCoolingTime = Clock.Instance.CurIdleCoolingTime;
-        bool IsIdle = BlackBoard.Instance.IsIdle;
-
-        if ((curCoolingTime > 0.0f && IsIdle))
+        float curCoolingTime = Clock.Instance.CurWaitingCoolingTime;
+        bool IsAction = DragonManager.IsAction;
+        
+        if ((Clock.Instance.CurWaitingCoolingTime > 0.0f && BlackBoard.Instance.IsWatingState && !IsAction) || IsAction)
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 

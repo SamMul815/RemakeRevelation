@@ -30,7 +30,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(TakeOffOn, "TakeOff");
 
-        AddAnimTimeEventFunc(ActionEnd, "Idle");
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "LeftPaw");
@@ -153,10 +152,10 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         Vector3 dir =
             (DragonManager.Player.position -
             DragonManager.Instance.transform.position).normalized;
+        dir.y = 0.0f;
 
         BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
 
     }
-
 
 }

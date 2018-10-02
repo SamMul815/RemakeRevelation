@@ -78,7 +78,7 @@ public class NodeManager : MonoBehaviour
 
     private void Update()
     {
-        if(!_isFindNode)
+        if (!_isFindNode)
         {
             _isFindNode = FindNode();
 
@@ -105,7 +105,9 @@ public class NodeManager : MonoBehaviour
         if (IsStick)
         {
             transform.position = _manager.transform.position;
-            transform.rotation = _manager.transform.rotation;
+            transform.rotation = Quaternion.LookRotation(
+                Vector3.Normalize(DragonManager.Player.position - transform.position));
+
             return true;
         }
         else
@@ -114,7 +116,7 @@ public class NodeManager : MonoBehaviour
 
             _manager.CurSpeed = BlackBoard.Instance.Acceleration(_manager.CurSpeed, Nodes[0].NodeSpeed, 50.0f);
 
-            _manager.transform.position = 
+            _manager.transform.position =
                 Vector3.MoveTowards(
                     _manager.transform.position,
                     transform.position,
@@ -231,7 +233,7 @@ public class NodeManager : MonoBehaviour
                 float tt = (1.0f - t);
 
                 float speed = Mathf.Lerp(Nodes[index].NodeSpeed, Nodes[index + 1].NodeSpeed, t);
-                
+
                 Vector3 rot = Vector3.Slerp(Nodes[index].GetRotate.eulerAngles, Nodes[index + 1].GetRotate.eulerAngles, t);
 
                 nextDis = CalcNodePos(index, index + 1, tt, t);  //현재 좌표
@@ -252,7 +254,7 @@ public class NodeManager : MonoBehaviour
         }
 
     }
-    
+
     private Vector3 CalcNodePos(int Current, int Next, float LostT, float NextT)   //하나 하나의 노드 거리 계산
     {
         if (Current >= Nodes.Count || Next >= Nodes.Count)
@@ -262,12 +264,12 @@ public class NodeManager : MonoBehaviour
         Transform Node = Nodes[Current].transform;                  //A
         Transform CurveNode = Nodes[Current].CurveNode;             //B
         Transform NextNode = Nodes[Next].transform;                 //C
-        
+
         _curveNodeCenter = (LostT * Node.position) + (NextT * CurveNode.position);       //E
         _nextNodeCenter = (LostT * CurveNode.position) + (NextT * NextNode.position);    //F
 
         _arriveNodePos = (LostT * _curveNodeCenter) + (NextT * _nextNodeCenter);          //도착
-            
+
         return _arriveNodePos;
 
     }
@@ -296,7 +298,7 @@ public class NodeManager : MonoBehaviour
             {
                 float t = (1.0f / Nodes[index].NodeSegment) * segment;
                 float tt = (1.0f - t);
-                
+
                 from = to;  //전 좌표
                 to = CalcNodePos(index, index + 1, tt, t);  //현재 좌표
 
