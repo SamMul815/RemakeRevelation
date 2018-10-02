@@ -25,9 +25,8 @@ public class Sequence : CompositeTask
                     DragonManager.SetActionTask(childAction);
                 }
                 if (!childAction.Run())
-                {
                     return false;
-                }
+
                 return true;
             }
             if (!child.Run())
