@@ -58,9 +58,6 @@ public class BlackBoard : Singleton<BlackBoard>
     public bool IsDashAttackOn { set { _isDashAttackOn = value; } get { return _isDashAttackOn; } }
 
     //Dragon State
-    private bool _isIdle;
-    public bool IsIdle { set { _isIdle = value; } get { return _isIdle; } }
-
     private bool _isGround;
     public bool IsGround { set { _isGround = value; } get { return _isGround; } }
 
@@ -78,9 +75,6 @@ public class BlackBoard : Singleton<BlackBoard>
 
     private bool _isDestroyPart;
     public bool IsDestroyPart { set { _isDestroyPart = value; } get { return _isDestroyPart; } }
-
-    private bool _isPlayerDahsAttack;
-    public bool IsPlayerDashAttack { set { _isPlayerDahsAttack = value; } get { return _isPlayerDahsAttack; } }
 
     public float Acceleration(float fCurSpeed, float fMaxSpeed, float fAccSpeed)
     {

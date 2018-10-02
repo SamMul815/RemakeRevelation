@@ -54,7 +54,6 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
                 if (NodeState != TASKSTATE.RUNNING)
                     OnStart();
             }
-
             return ChildNode.Run();
         }
         else if (NodeState == TASKSTATE.RUNNING ||
