@@ -87,10 +87,9 @@ public class BulletManager : Singleton<BulletManager>
 
     IEnumerator CorTestDragonBaseBullet(Vector3 _position, float _time, int _amount)
     {
-        float range = (_position - Player.instance.transform.position).magnitude / 10;
         for(int i = 0; i< _amount; i++)
         {
-            Vector3 dir = (Player.instance.transform.position + Random.insideUnitSphere * range) - _position;
+            Vector3 dir = (Player.instance.transform.position + Random.insideUnitSphere * 20.0f) - _position;
             GameObject bullet;
             PoolManager.Instance.PopObject(dragonBaseBulletTest, out bullet);
             bullet.transform.position = _position;
@@ -99,4 +98,6 @@ public class BulletManager : Singleton<BulletManager>
             yield return new WaitForSeconds(_time - Random.Range(0, _time * 0.5f));
         }
     }
+
+
 }

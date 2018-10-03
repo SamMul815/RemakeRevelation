@@ -6,14 +6,14 @@ using UnityEngine.UI;
 //[RequireComponent(typeof(GunAnimation))]
 public class Gun : MonoBehaviour
 {
+
     public enum GunType
     {
         Left,
         Right
     }
     public GunType gunType;
-    [SerializeField]private int maxBullet;
-    public int MaxBullet { get { return maxBullet; } }
+    public int maxBullet;
     public float fireDelay;
     public Transform firePos;
 
@@ -23,15 +23,12 @@ public class Gun : MonoBehaviour
     public GameObject magazine;
     public GameObject cartridgePrefab;
     public GameObject muzzlePrefab;
-
     //[SerializeField] private string fireSound;
+    //[SerializeField] Slider gunBulletCountSlider;
     //[SerializeField] Text gunBulletCountText;
     //[SerializeField] Color noBulletUIColor;
-    //[SerializeField] Slider gunBulletCountSlider;
-
     //Color yesBulletUIColor;
     private int currentBullet;
-    public int CurrentBullet { get { return currentBullet; } }
     private float fireCoolTime;
     private Animator handAnimator;
     private PlayerHand playerHand;
