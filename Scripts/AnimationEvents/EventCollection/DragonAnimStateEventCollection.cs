@@ -9,8 +9,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         base.Awake();
 
-        AddAnimTimeEventFunc(BreathAttackOn, "Breath");
-
         AddAnimTimeEventFunc(LandingOn, "Landing");
 
         AddAnimTimeEventFunc(RightPawAttackOn, "RightPaw");
@@ -30,7 +28,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(TakeOffOn, "TakeOff");
 
-        AddAnimTimeEventFunc(ActionEnd, "Idle");
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "LeftPaw");
@@ -144,19 +141,5 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         int Amount = BlackBoard.Instance.FanShapeAmount;
         BulletManager.Instance.CreateDragonBaseBullet(pos, Amount);
     }
-
-    private void BreathAttackOn(EvnData evnData)
-    {
-
-        Transform DragonMouth = BlackBoard.Instance.DragonMouth;
-
-        Vector3 dir =
-            (DragonManager.Player.position -
-            DragonManager.Instance.transform.position).normalized;
-
-        BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
-
-    }
-
 
 }

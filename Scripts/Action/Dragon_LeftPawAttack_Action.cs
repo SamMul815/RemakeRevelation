@@ -46,7 +46,6 @@ public class Dragon_LeftPawAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsIdle = true;
     }
 
 }

@@ -6,14 +6,6 @@ public class Clock : Singleton<Clock>
 {
     [Space]
     [Header("Cooling Time")]
-
-    [SerializeField]
-    private float _idleCoolingTime;
-    public float IdleCoolingTime { get { return _idleCoolingTime; } }
-
-    private float _curIdleCoolingTime;
-    public float CurIdleCoolingTime { set { _curDashCoolingTime = value; } get { return _curIdleCoolingTime; } }
-
     [SerializeField]
     private float _bulletBreathCoolingTime;
     public float BulletBreathCoolingTime { get { return _bulletBreathCoolingTime; } }
@@ -49,11 +41,6 @@ public class Clock : Singleton<Clock>
     private float _curPawCoolingTime;
     public float CurPawCoolingTime { set { _curPawCoolingTime = value; } get { return _curPawCoolingTime; } }
 
-    private void Start()
-    {
-        _curIdleCoolingTime = _idleCoolingTime;
-    }
-
 
     private void FixedUpdate()
     {
@@ -71,9 +58,6 @@ public class Clock : Singleton<Clock>
 
         if (_curBreathCoolingTime < _breathCoolingTime)
             _curBreathCoolingTime += Time.deltaTime;
-
-        if (_curIdleCoolingTime > 0.0f)
-            _curIdleCoolingTime -= Time.deltaTime;
 
     }
 

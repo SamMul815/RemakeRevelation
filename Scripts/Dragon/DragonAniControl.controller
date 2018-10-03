@@ -379,8 +379,6 @@ MonoBehaviour:
     RunTime: 0
     IsLoop: 0
   StateTimeEvent:
-  - RunTime: 0
-    IsLoop: 0
   - RunTime: 0.999
     IsLoop: 0
 --- !u!114 &114562797182230952
@@ -514,27 +512,6 @@ MonoBehaviour:
     IsLoop: 0
   - RunTime: 0.614
     IsLoop: 0
-  - RunTime: 0.999
-    IsLoop: 0
---- !u!114 &114776118392091968
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ef255f32198a6f4f886bd821c15c405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SMBKeyName: Idle
-  StateEnterEvnData:
-    RunTime: 0
-    IsLoop: 0
-  StateExitEvnData:
-    RunTime: 0
-    IsLoop: 0
-  StateTimeEvent:
   - RunTime: 0.999
     IsLoop: 0
 --- !u!114 &114817593376783974
@@ -6861,8 +6838,7 @@ AnimatorState:
   - {fileID: 1101582274545201108}
   - {fileID: 1101581292767536490}
   - {fileID: 1101748326744996754}
-  m_StateMachineBehaviours:
-  - {fileID: 114776118392091968}
+  m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 1
   m_WriteDefaultValues: 1
