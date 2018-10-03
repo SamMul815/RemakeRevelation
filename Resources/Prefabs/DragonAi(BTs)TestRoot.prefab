@@ -283,6 +283,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1437281914947676
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4794238633151170}
+  - component: {fileID: 114504397330370588}
+  m_Layer: 0
+  m_Name: Dragon_WatingState_Action
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1444962944731998
 GameObject:
   m_ObjectHideFlags: 1
@@ -491,6 +507,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1913959137031954
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4757690254642622}
+  - component: {fileID: 114157821765559546}
+  m_Layer: 0
+  m_Name: Dragon_WatingState_Decorator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1940753483688160
 GameObject:
   m_ObjectHideFlags: 1
@@ -667,6 +699,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4757690254642622}
   - {fileID: 4554345451983462}
   - {fileID: 4450032068434108}
   - {fileID: 4668279941650638}
@@ -769,7 +802,7 @@ Transform:
   m_Children:
   - {fileID: 4151860379719362}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4467814678026316
 Transform:
@@ -840,7 +873,7 @@ Transform:
   m_Children:
   - {fileID: 4666143695054148}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4613841675601472
 Transform:
@@ -868,7 +901,7 @@ Transform:
   m_Children:
   - {fileID: 4366450413830478}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4666143695054148
 Transform:
@@ -895,7 +928,7 @@ Transform:
   m_Children:
   - {fileID: 4943095217521836}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4739272307813706
 Transform:
@@ -908,6 +941,33 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4020042580471754}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4757690254642622
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913959137031954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4794238633151170}
+  m_Father: {fileID: 4202983091640752}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4794238633151170
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437281914947676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4757690254642622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4822987618637564
@@ -987,7 +1047,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4962438725101172
 Transform:
@@ -1028,7 +1088,7 @@ Transform:
   m_Children:
   - {fileID: 4286697013644748}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114007410872379196
 MonoBehaviour:
@@ -1063,6 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9844ac500fedc4f8d78b0f2323bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 0
 --- !u!114 &114139972705601620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1083,6 +1144,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82e53e8f768836a49b71ea7c9011e54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAttackAction: 0
+--- !u!114 &114157821765559546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913959137031954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a401d2ad25ca9b43872cf5b88cf95ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114168792800723532
@@ -1118,6 +1191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8f4acfde554a046955889d20b966e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 0
 --- !u!114 &114323381054563900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1129,6 +1203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e8a8687812d74baffdead4e481b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 1
 --- !u!114 &114332293690647514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1162,6 +1237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0251167ec5f43c3498346fd0feb33597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 1
 --- !u!114 &114457290973457118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1195,6 +1271,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e8a8687812d74baffdead4e481b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 1
+--- !u!114 &114504397330370588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437281914947676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1caf4918f368ba4d9f8db00259508f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAttackAction: 0
 --- !u!114 &114515445696917208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1217,6 +1306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70556a72edc0d3f4882552be7447269d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 0
 --- !u!114 &114627706653229152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1250,6 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2ec155a0cbc3546bae34f7b76de870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 1
 --- !u!114 &114720218925823680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1261,6 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c62735024deda4ca5fb7eb0bdf2c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 1
 --- !u!114 &114730117124034870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1272,6 +1364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe5790a57c55e44890f2141d6bd5043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 0
 --- !u!114 &114747606415679688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1316,6 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a153529366adf940a5204796a6ff730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 1
 --- !u!114 &114885005585024724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1338,6 +1432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4697b2d9e8cffcf479aa99071c25b2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 1
 --- !u!114 &114901450813934944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1371,6 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6579d4b44d6ae0644b62ae758ab3e99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 0
 --- !u!114 &114978975752499480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1404,3 +1500,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d304718eaa7ca49a2fbdc2bb63d739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAttackAction: 1

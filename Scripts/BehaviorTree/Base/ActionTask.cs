@@ -5,6 +5,10 @@ using DragonController;
 
 public abstract class ActionTask : TreeNode
 {
+    [SerializeField]
+    protected bool _isAttackAction;
+    public bool IsAttackAction { get { return _isAttackAction; } }
+
     protected bool _isRunning = false;
     public bool IsRunning { set { _isRunning = value; } get { return _isRunning; } }
 
@@ -18,18 +22,23 @@ public abstract class ActionTask : TreeNode
     {
         base.OnStart();
         _isRunning = true;
+
+        BlackBoard.Instance.IsWatingState = _isAttackAction ? true : false;
+
         if (_actionCor != null)
         {
             CoroutineManager.DoCoroutine(_actionCor);
         }
         _isEnd = false;
     }
+
     public override void OnEnd()
     {
         base.OnEnd();
         _isRunning = false;
+
         if (ActionCor != null)
-        {
+        { 
             CoroutineManager.DontCoroutine(_actionCor);
         }
         DragonManager.IsTurn = false;

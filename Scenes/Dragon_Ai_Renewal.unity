@@ -199,12 +199,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d5402b0111b4c8a0649bcc4329da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idleCoolingTime: 2
+  _waitingCoolingTime: 2
   _bulletBreathCoolingTime: 15
   _howlingCoolingTime: 10
   _dashCoolingTime: 10
   _breathCoolingTime: 20
   _pawCoolingTime: 0
+  _breathWaitingTime: 0.7
 --- !u!1001 &259046249
 Prefab:
   m_ObjectHideFlags: 0
@@ -2482,6 +2483,10 @@ Prefab:
     - target: {fileID: 4154702300741318, guid: f2e09cb25cf36674a804037e7ad80d22, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946775040483136, guid: f2e09cb25cf36674a804037e7ad80d22, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2e09cb25cf36674a804037e7ad80d22, type: 2}
