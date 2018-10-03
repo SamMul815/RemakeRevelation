@@ -8,6 +8,7 @@ public class PlayerHitTrigger : MonoBehaviour {
     public PlayerStat player;
     public float coolTime = 2.0f;
     public float delay = 0.0f;
+    public UI_PlayerHP playerHpUI;
 
 	// Use this for initialization
 	void Start ()
@@ -27,10 +28,11 @@ public class PlayerHitTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "DragonBullet")
+        if(other.gameObject.tag == "DragonBullet" && delay <= 0.0f)
         {
             float damage = other.GetComponent<Bullet>().Damage;
             player.Hit(damage);
+            playerHpUI.Hit();
             hitEffect.SetActive(true);
             delay = coolTime;
         }

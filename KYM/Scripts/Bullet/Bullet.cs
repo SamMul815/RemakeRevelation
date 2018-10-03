@@ -36,7 +36,12 @@ public class Bullet : MonoBehaviour {
     protected virtual void Awake()
     {
         //Init();
-        GetComponent<PoolObject>().Init = Init;
+        PoolObject pool = GetComponent<PoolObject>();
+        if(pool != null)
+        {
+          pool.Init = Init;
+        }
+
         //Debug.Log(gameObject.name + "Awake호출");
         //GetComponent<PoolObject>().Reset = Reset;
         capsuleCol = GetComponent<CapsuleCollider>();
@@ -55,6 +60,8 @@ public class Bullet : MonoBehaviour {
     }
 
     protected virtual void Reset() { }
+
+    
 
 
     /// <summary>

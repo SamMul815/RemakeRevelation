@@ -41,7 +41,7 @@ public class TestMachinGun : MonoBehaviour {
         while(true)
         {
 
-            Vector2 circle = Random.insideUnitCircle * 0.5f;
+            Vector2 circle = Random.insideUnitCircle * 0.1f;
             Vector3 dir = firepos.forward + firepos.right * circle.x + firepos.up * circle.y;
             //Debug.Log(circle);
             BulletManager.Instance.CreatePlayerBaseBullet(firepos.position, dir.normalized);
