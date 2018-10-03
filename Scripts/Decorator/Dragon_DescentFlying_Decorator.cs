@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_Landing_Decorator : DecoratorTask
+public class Dragon_DescentFlying_Decorator : DecoratorTask
 {
+
     public override void OnStart()
     {
         base.OnStart();
@@ -12,20 +13,19 @@ public class Dragon_Landing_Decorator : DecoratorTask
 
     public override bool Run()
     {
+        float MaxHP = DragonManager.Instance.Stat.MaxHP;
+        float HP = DragonManager.Instance.Stat.HP;
+        float SaveHP = DragonManager.Instance.Stat.DescentSaveHP;
 
-        float LandingDistance = BlackBoard.Instance.LandingDistance;
+        float DescentHP = DragonManager.Instance.Stat.DescentHP;
 
-        bool IsLanding = UtilityManager.DistanceCalc(DragonManager.Instance.transform.position, 
-            BlackBoard.Instance.FiexdPosition, LandingDistance) && BlackBoard.Instance.IsFiexdPosition;
-
-        Debug.Log(BlackBoard.Instance.IsFiexdPosition);
+        bool IsDescent = DescentHP - (SaveHP - HP) <= 0.0f;
+        bool IsAction = DragonManager.IsAction;
 
         bool IsFlying = BlackBoard.Instance.IsFlying;
         bool IsGround = BlackBoard.Instance.IsGround;
 
-        bool IsAction = DragonManager.IsAction;
-
-        if ((IsLanding && !IsGround && IsFlying && !IsAction) || IsAction)
+        if ((MaxHP > HP && IsDescent && IsGround && !IsFlying && !IsAction) || IsAction)
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 
@@ -33,11 +33,9 @@ public class Dragon_Landing_Decorator : DecoratorTask
             {
                 if (!childAction.IsRunning)
                 {
-                    Debug.Log(!IsLanding);
-
                     if (!DragonManager.IsAction)
                         OnStart();
-                    else if ((DragonManager.IsAction && !IsLanding))
+                    else if (DragonManager.IsAction)
                         return true;
                     else if (!childAction.IsRunning)
                         OnStart();
@@ -49,14 +47,11 @@ public class Dragon_Landing_Decorator : DecoratorTask
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
 
-                    return childAction.Run();
+                    return ChildNode.Run();
                 }
             }
-            else
-            {
-                if (NodeState != TASKSTATE.RUNNING)
+            else if (NodeState != TASKSTATE.RUNNING)
                     OnStart();
-            }
             return ChildNode.Run();
         }
         else if(NodeState == TASKSTATE.RUNNING ||
@@ -64,7 +59,6 @@ public class Dragon_Landing_Decorator : DecoratorTask
         {
             OnEnd();
         }
-
         return true;
     }
 

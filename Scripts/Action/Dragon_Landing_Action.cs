@@ -10,7 +10,6 @@ public class Dragon_Landing_Action : ActionTask
         base.OnStart();
         BlackBoard.Instance.IsLanding = true;
         BlackBoard.Instance.IsFlying = false;
-        DragonManager.Instance.DragonRigidBody.useGravity = true;
         DragonManager.Instance.AttackOff();
         DragonAniManager.SwicthAnimation("Dragon_Landing");
 
@@ -18,6 +17,9 @@ public class Dragon_Landing_Action : ActionTask
 
     public override bool Run()
     {
+
+        Debug.Log("Landing");
+
         DragonManager.Instance.transform.position = Vector3.MoveTowards(
                 DragonManager.Instance.transform.position,
                 BlackBoard.Instance.FiexdPosition,
@@ -42,9 +44,9 @@ public class Dragon_Landing_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsGround = true;
-        BlackBoard.Instance.IsLanding = false;
         BlackBoard.Instance.IsFiexdPosition = false;
+        BlackBoard.Instance.IsLanding = false;
+        BlackBoard.Instance.IsGround = true;
     }
 
 }

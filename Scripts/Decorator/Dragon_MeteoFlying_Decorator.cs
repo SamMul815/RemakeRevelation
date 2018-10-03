@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_Descent_Decorator : DecoratorTask
+public class Dragon_MeteoFlying_Decorator : DecoratorTask
 {
 
     public override void OnStart()
@@ -13,16 +13,26 @@ public class Dragon_Descent_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsDescent = MovementManager.Instance.GetNodeManager().IsMoveEnd;
+
+        float MaxHP = DragonManager.Instance.Stat.MaxHP;
+        float HP = DragonManager.Instance.Stat.HP;
+        float SaveHP = DragonManager.Instance.Stat.MeteoSaveHP;
+
+        float MeteoHP = DragonManager.Instance.Stat.MeteoHP;
+
+        bool IsMeteo = MeteoHP - (SaveHP - HP) <= 0.0f;
         bool IsAction = DragonManager.IsAction;
 
-        if ((IsDescent && !IsAction) || IsAction)
+        bool IsFlying = BlackBoard.Instance.IsFlying;
+        bool IsGround = BlackBoard.Instance.IsGround;
+
+        if ((MaxHP > HP && IsMeteo && IsGround && !IsFlying && !IsAction) || (IsAction))
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 
             if (childAction)
             {
-                if (!childAction.IsRunning)
+                if(!childAction.IsRunning)
                 {
                     if (!DragonManager.IsAction)
                         OnStart();
@@ -31,14 +41,13 @@ public class Dragon_Descent_Decorator : DecoratorTask
                     else if (!childAction.IsRunning)
                         OnStart();
                 }
-                if (childAction.IsRunning && !childAction.IsEnd)
+                else if(childAction.IsRunning && !childAction.IsEnd)
                 {
                     if (!DragonManager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
-
-                    return ChildNode.Run();
+                    return childAction.Run();
                 }
             }
             else
@@ -46,9 +55,10 @@ public class Dragon_Descent_Decorator : DecoratorTask
                 if (NodeState != TASKSTATE.RUNNING)
                     OnStart();
             }
+
             return ChildNode.Run();
         }
-        else if(NodeState == TASKSTATE.RUNNING ||
+        else if(NodeState == TASKSTATE.RUNNING || 
             ChildNode.NodeState == TASKSTATE.RUNNING)
         {
             OnEnd();

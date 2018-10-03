@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_Descent_Action : ActionTask
+public class Dragon_DescentAttack_Action : ActionTask
 {
 
     public override void OnStart()
     {
         base.OnStart();
         MovementManager.Instance.CurSpeed = 0.0f;
-        DragonAniManager.SwicthAnimation("Dragon_Gliding");
+        DragonAniManager.SwicthAnimation("Dragon_DescentAttack");
+        DragonManager.Instance.AttackOn(DragonAttackTriggers.AirSpear);
     }
 
     public override bool Run()

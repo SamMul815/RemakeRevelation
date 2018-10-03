@@ -58,14 +58,17 @@ public class BlackBoard : Singleton<BlackBoard>
     public bool IsDashAttackOn { set { _isDashAttackOn = value; } get { return _isDashAttackOn; } }
 
     //Dragon State
-    private bool _isWatingState;   //
+    private bool _isWatingState;
     public bool IsWatingState { set { _isWatingState = value; } get { return _isWatingState; } }
 
     private bool _isGround;
     public bool IsGround { set { _isGround = value; } get { return _isGround; } }
 
-    private bool _isTakeOff;
-    public bool IsTakeOff { set { _isTakeOff = value; } get { return _isTakeOff; } }
+    private bool _isDescentAttack;
+    public bool IsDescentAttack { set { _isDescentAttack = value; } get { return _isDescentAttack; } }
+
+    private bool _isMeteoAttack;
+    public bool IsMeteoAttack { set { _isMeteoAttack = value; } get { return _isMeteoAttack; } }
 
     private bool _isFlying;
     public bool IsFlying { set { _isFlying = value; } get { return _isFlying; } }

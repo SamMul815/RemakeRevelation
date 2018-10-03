@@ -95,7 +95,7 @@ public class NodeManager : MonoBehaviour
     {
         Clear();
         NodesIndex = 0;
-        IsMoveEnd = false;
+        _isMoveEnd = false;
         _isFindNode = false;
         _nodesCount = _nodesSpeed.Count;
     }
@@ -105,8 +105,13 @@ public class NodeManager : MonoBehaviour
         if (IsStick)
         {
             transform.position = _manager.transform.position;
-            transform.rotation = Quaternion.LookRotation(
-                Vector3.Normalize(DragonManager.Player.position - transform.position));
+            Vector3 PlayerPos = DragonManager.Player.position;
+            Vector3 thisPos = transform.position;
+
+            PlayerPos.y = 0.0f;
+            thisPos.y = 0.0f;
+
+            transform.rotation = Quaternion.LookRotation((PlayerPos- thisPos).normalized);
 
             return true;
         }
@@ -205,6 +210,7 @@ public class NodeManager : MonoBehaviour
 
             dir = (Stat.NodeDir[_nodesIndex] - Dragon.position).normalized;
         }
+
         else
         {
             if (!IsLoop)
