@@ -11,14 +11,6 @@ public class DragonAttackTrigger : MonoBehaviour
     public  DragonAttackTriggers TriggerTag { get { return _triggerTag; } }
 
     [SerializeField]
-    protected Vector3 _offsetDir;
-    public Vector3 OffsetDir { get { return _offsetDir; } }
-
-    [SerializeField]
-    protected float _pushPower;
-    public float PushPower { get { return _pushPower; } }
-
-    [SerializeField]
     protected float _damage;
     public float Damage { get { return _damage; } }
 
