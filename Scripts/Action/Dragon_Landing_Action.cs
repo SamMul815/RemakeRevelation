@@ -14,6 +14,7 @@ public class Dragon_Landing_Action : ActionTask
         DragonManager.Instance.AttackOff();
 
         DragonAniManager.SwicthAnimation("Dragon_Gliding");
+        DragonManager.Instance.AttackOn(DragonAttackTriggers.AirSpear);
     }
 
     public override bool Run()
