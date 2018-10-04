@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
     public GameObject UILeft;
     public GameObject UIRight;
 
+    public float skillCoolTime;
 
     public GameObject magazine;
     public GameObject cartridgePrefab;
@@ -40,12 +41,15 @@ public class Gun : MonoBehaviour
     private Animator handAnimator;
     private PlayerHand playerHand;
 
+    private float currentSkillCoolTime;
+    public bool GetCanSkill { get { return currentSkillCoolTime <= 0.0f; } }
 
 
     private void Awake()
     {
         currentBullet = maxBullet;
         fireCoolTime = 0.0f;
+        currentSkillCoolTime = skillCoolTime;
         //handAnimator = GetComponentInChildren<Animator>();
     }
 
@@ -63,6 +67,10 @@ public class Gun : MonoBehaviour
     {       
 	    if(fireCoolTime > 0.0f)
             fireCoolTime -= Time.unscaledDeltaTime;
+
+        if (currentSkillCoolTime > 0.0f)
+            currentSkillCoolTime -= Time.unscaledDeltaTime;
+
     }
 
     public void Fire()
