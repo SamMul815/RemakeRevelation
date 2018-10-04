@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_DescentAttack_Decorator : DecoratorTask
+public class Dragon_ThirdPhase_Decorator : DecoratorTask
 {
 
     public override void OnStart()
@@ -13,14 +13,15 @@ public class Dragon_DescentAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsDescentAttack = BlackBoard.Instance.IsDescentAttack;
+        float ThirdPhaseHP = DragonManager.Instance.Stat.ThirdPhaseHP;
+        float HP = DragonManager.Instance.Stat.HP;
+
+        bool IsThirdPhaseHP = (HP <= ThirdPhaseHP);
         bool IsAction = DragonManager.IsAction;
 
-        if ((IsDescentAttack && !IsAction) || IsAction)
+        if ((IsThirdPhaseHP && !IsAction) || IsAction)
         {
-
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
 
             if (childAction)
             {
@@ -44,13 +45,19 @@ public class Dragon_DescentAttack_Decorator : DecoratorTask
                 }
             }
             else if (NodeState != TASKSTATE.RUNNING)
-                OnStart();
-            return ChildNode.Run();
+            {
+                if (!DragonManager.IsAction)
+                    OnStart();
+                else if (DragonManager.IsAction)
+                    return true;
+            }
 
+            Debug.Log("ThirdPhase");
+            return ChildNode.Run();
         }
-        else if (NodeState == TASKSTATE.RUNNING || 
+        else if (NodeState == TASKSTATE.RUNNING ||
             ChildNode.NodeState == TASKSTATE.RUNNING)
-        { 
+        {
             OnEnd();
         }
         return true;

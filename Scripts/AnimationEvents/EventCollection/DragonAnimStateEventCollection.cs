@@ -93,8 +93,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         DragonManager.Instance.AttackOff();
     }
-
-
+    
     private void RightPawAttackOn(EvnData evnData)
     {
         DragonManager.Instance.AttackOn(DragonAttackTriggers.RightPaw);
@@ -104,7 +103,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         DragonManager.Instance.AttackOff();
     }
-
 
     private void LeftPawAttackOn(EvnData evnData)
     {

@@ -53,6 +53,18 @@ namespace DragonController {
         private float _descentSaveHP;
         public float DescentSaveHP { set { _descentSaveHP = value; } get { return _descentSaveHP; } }
 
+        [SerializeField]
+        private float _firstPhaseHP;
+        public float FirstPhaseHP { get { return _firstPhaseHP; } }
+
+        [SerializeField]
+        private float _secondPhaseHP;
+        public float SecondPhaseHP { get { return _secondPhaseHP; } }
+
+        [SerializeField]
+        private float _thirdPhaseHP;
+        public float ThirdPhaseHP { get { return _thirdPhaseHP; } }
+
 
         [Space]
         [Header("Dragon TakeDamage")]
@@ -118,7 +130,11 @@ namespace DragonController {
             _descentSaveHP = _maxHP;
             _meteoSaveHP = _maxHP;
 
-            _hp = _maxHP;
+            //_hp = _maxHP;
+
+            _firstPhaseHP = _maxHP * _firstPhaseHpPercent;
+            _secondPhaseHP = _maxHP * _secondPhaseHpPercent;
+            _thirdPhaseHP = _maxHP * _thirdPhaseHpPercent;
 
         }
 
