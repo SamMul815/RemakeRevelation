@@ -32,6 +32,8 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(MeteoTakeOffOn, "MeteoTakeOff");
 
+        AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
+
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "LeftPaw");
@@ -117,7 +119,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void LandingOn(EvnData evnData)
     {
-        DragonManager.Landing = true;
+        DragonManager.LandingOn = true;
         DragonManager.Instance.DragonGroundCollider.enabled = true;
         DragonManager.Instance.DragonRigidBody.useGravity = true;
 
@@ -162,14 +164,24 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void DescentFlyingOn(EvnData evnData)
     {
+        BlackBoard.Instance.IsGround = false;
+        BlackBoard.Instance.IsFlying = true;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
         DragonManager.Instance.DragonGroundCollider.enabled = false;
     }
 
     private void MeteoTakeOffOn(EvnData evnData)
     {
+        MovementManager.Instance.SetMovement(MovementType.Meteo);
         DragonManager.Instance.DragonGroundCollider.enabled = false;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
+
+    }
+
+    private void MeteoAttackEnd(EvnData evnData)
+    {
+        DragonManager.IsAction = false;
+        BlackBoard.Instance.IsLanding = true;
 
     }
 

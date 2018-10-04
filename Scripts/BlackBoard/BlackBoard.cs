@@ -70,6 +70,9 @@ public class BlackBoard : Singleton<BlackBoard>
     private bool _isMeteoAttack;
     public bool IsMeteoAttack { set { _isMeteoAttack = value; } get { return _isMeteoAttack; } }
 
+    private bool _isMeteoAttackEnd;
+    public bool IsMeteoAttackEnd { set { _isMeteoAttackEnd = value; } get { return _isMeteoAttackEnd; } }
+
     private bool _isFlying;
     public bool IsFlying { set { _isFlying = value; } get { return _isFlying; } }
 

@@ -47,8 +47,8 @@ namespace DragonController
         private static bool _isTurn;
         public static bool IsTurn { set { _isTurn = value; } get { return _isTurn; } }
 
-        private static bool _landing;
-        public static bool Landing { set { _landing = value; } get { return _landing; } }
+        private static bool _landingOn;
+        public static bool LandingOn { set { _landingOn = value; } get { return _landingOn; } }
 
         private static  Transform _player;
         public static Transform Player { get { return _player; } }
@@ -92,6 +92,7 @@ namespace DragonController
                 _isInit = true;
             } 
 	    }
+
 
         public void OnDestroyPart(float _damage)
         {

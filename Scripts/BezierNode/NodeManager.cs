@@ -34,7 +34,7 @@ public class NodeManager : MonoBehaviour
     public List<BezierNode> Nodes = new List<BezierNode>();    //노드들
 
     private List<Vector3> _nodesDir = new List<Vector3>();
-    private List<Vector3> _nodesRot = new List<Vector3>();
+    private List<Quaternion> _nodesRot = new List<Quaternion>();
     private List<bool> _nodesUp = new List<bool>();         //노드 Up vecter
 
     private List<float> _nodesSpeed = new List<float>();    //노드 Speed
@@ -56,7 +56,7 @@ public class NodeManager : MonoBehaviour
     public MovementManager Manager { get { return _manager; } }
 
     public List<Vector3> NodesDir { get { return _nodesDir; } }
-    public List<Vector3> NodesRot { get { return _nodesRot; } }
+    public List<Quaternion> NodesRot { get { return _nodesRot; } }
     public List<float> NodesSpeed { get { return _nodesSpeed; } }
     public List<bool> NodesDragonUp { get { return _nodesUp; } }
 
@@ -152,7 +152,9 @@ public class NodeManager : MonoBehaviour
             //방향 구하기
             Vector3 dir = (_stat.NodeDir[_nodesIndex] - Dragon.position).normalized;
 
-            Vector3 eulerAngle = _nodesRot[_nodesIndex] + new Vector3(0.0f, 0.0f, Dragon.rotation.eulerAngles.z);//로테이션 앵글값 구하기
+            //Vector3 eulerAngle = _nodesRot[_nodesIndex] + new Vector3(0.0f, 0.0f, Dragon.rotation.eulerAngles.z);//로테이션 앵글값 구하기
+            Quaternion Angle = _nodesRot[_nodesIndex];//로테이션 앵글값 구하기
+
             bool dragonUp = _nodesUp[_nodesIndex]; //Up백터
 
             for (; moveDistance > nextDistance;) // 현재거리가 남은거리보다 작으면
@@ -166,7 +168,8 @@ public class NodeManager : MonoBehaviour
 
                 dir = (_stat.NodeDir[_nodesIndex] - Dragon.position).normalized;
 
-                eulerAngle = _nodesRot[_nodesIndex] + new Vector3(0.0f, 0.0f, Dragon.rotation.eulerAngles.z);//로테이션 앵글값 구하기
+                //eulerAngle = _nodesRot[_nodesIndex] + new Vector3(0.0f, 0.0f, Dragon.rotation.eulerAngles.z);//로테이션 앵글값 구하기
+                Angle = _nodesRot[_nodesIndex];//로테이션 앵글값 구하기
 
                 nextDistance = Vector3.Distance(_stat.NodeDir[_nodesIndex], Dragon.position);
             }
@@ -189,14 +192,14 @@ public class NodeManager : MonoBehaviour
                 {
                     rot = Quaternion.Slerp(
                         Dragon.rotation,
-                        Quaternion.LookRotation(dir, _manager.transform.up) * Quaternion.Euler(eulerAngle),
+                        Quaternion.LookRotation(dir, _manager.transform.up) * Angle,
                         0.1f);
                 }
                 else
                 {
                     rot = Quaternion.Slerp(
                         Dragon.rotation,
-                        Quaternion.LookRotation(dir, Vector3.up) * Quaternion.Euler(eulerAngle),
+                        Quaternion.LookRotation(dir, Vector3.up) * Angle,
                         0.1f);
                 }
 
@@ -240,7 +243,7 @@ public class NodeManager : MonoBehaviour
 
                 float speed = Mathf.Lerp(Nodes[index].NodeSpeed, Nodes[index + 1].NodeSpeed, t);
 
-                Vector3 rot = Vector3.Slerp(Nodes[index].GetRotate.eulerAngles, Nodes[index + 1].GetRotate.eulerAngles, t);
+                Quaternion rot = Quaternion.Slerp(Nodes[index].GetRotate, Nodes[index + 1].GetRotate, t);
 
                 nextDis = CalcNodePos(index, index + 1, tt, t);  //현재 좌표
 

@@ -29,6 +29,9 @@ namespace DragonController {
         [SerializeField] private float _dashSpeed;
         public float DashSpeed { get { return _dashSpeed; } }
 
+        [SerializeField] private float _landingSpeed;
+        public float LandingSpeed { get { return _landingSpeed; } }
+
         [Space]
         [Header("Dragon HP")]
 

@@ -16,6 +16,7 @@ public class Dragon_DescentAttack_Action : ActionTask
 
     public override bool Run()
     {
+        Debug.Log("test");
 
         float Distance = BlackBoard.Instance.DescentAttackFiexdDistance;
         Transform Player = DragonManager.Player;

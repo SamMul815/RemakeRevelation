@@ -9,7 +9,6 @@ public class Dragon_DescentFlying_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        BlackBoard.Instance.IsGround = false;
         DragonManager.Instance.AttackOff();
         DragonManager.Instance.Stat.DescentSaveHP = DragonManager.Instance.Stat.HP;
         MovementManager.Instance.SetMovement(MovementType.Descent);
@@ -21,9 +20,10 @@ public class Dragon_DescentFlying_Action : ActionTask
     {
         if (MovementManager.Instance.GetNodeManager().IsMoveEnd)
         {
-            BlackBoard.Instance.IsFlying = true;
-            BlackBoard.Instance.IsDescentAttack = true;
             DragonManager.IsAction = false;
+            BlackBoard.Instance.IsLanding = true;
+            //BlackBoard.Instance.IsFlying = true;
+            //BlackBoard.Instance.IsDescentAttack = true;
         }
 
         return false;

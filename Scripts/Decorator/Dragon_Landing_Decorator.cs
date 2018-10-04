@@ -12,13 +12,12 @@ public class Dragon_Landing_Decorator : DecoratorTask
 
     public override bool Run()
     {
-
         float LandingDistance = BlackBoard.Instance.LandingDistance;
 
-        bool IsLanding = UtilityManager.DistanceCalc(DragonManager.Instance.transform.position, 
-            BlackBoard.Instance.FiexdPosition, LandingDistance) && BlackBoard.Instance.IsFiexdPosition;
+        bool IsLanding = BlackBoard.Instance.IsLanding;
 
-        Debug.Log(BlackBoard.Instance.IsFiexdPosition);
+        //bool IsLanding = UtilityManager.DistanceCalc(DragonManager.Instance.transform.position, 
+        //    BlackBoard.Instance.FiexdPosition, LandingDistance) && BlackBoard.Instance.IsFiexdPosition;
 
         bool IsFlying = BlackBoard.Instance.IsFlying;
         bool IsGround = BlackBoard.Instance.IsGround;
@@ -33,11 +32,9 @@ public class Dragon_Landing_Decorator : DecoratorTask
             {
                 if (!childAction.IsRunning)
                 {
-                    Debug.Log(!IsLanding);
-
                     if (!DragonManager.IsAction)
                         OnStart();
-                    else if ((DragonManager.IsAction && !IsLanding))
+                    else if ((DragonManager.IsAction)) /*&& !IsLanding ))*/
                         return true;
                     else if (!childAction.IsRunning)
                         OnStart();

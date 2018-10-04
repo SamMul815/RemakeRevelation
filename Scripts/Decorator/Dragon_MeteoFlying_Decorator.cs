@@ -50,11 +50,8 @@ public class Dragon_MeteoFlying_Decorator : DecoratorTask
                     return childAction.Run();
                 }
             }
-            else
-            {
-                if (NodeState != TASKSTATE.RUNNING)
+            else if (NodeState != TASKSTATE.RUNNING)
                     OnStart();
-            }
 
             return ChildNode.Run();
         }

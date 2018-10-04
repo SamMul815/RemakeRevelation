@@ -636,7 +636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4902506170508730}
   - component: {fileID: 65689736525479334}
-  - component: {fileID: 114211734432940692}
+  - component: {fileID: 114097085994233796}
   m_Layer: 11
   m_Name: Dragon_AirSpear
   m_TagString: Untagged
@@ -3205,6 +3205,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114097085994233796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404370885923024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671c256e36df31f47918bb026d8fc9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerTag: 5
+  _damage: 100
+  _pushPower: 30
 --- !u!114 &114162957689440062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3216,22 +3230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968b3f1dcab3dcd4f835a8cd15c1a966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentMoveType: 0
---- !u!114 &114211734432940692
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404370885923024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5ee7e52024ca4543929ce49d692c13f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerTag: 5
-  _offsetDir: {x: 0, y: 0.5, z: 0}
-  _pushPower: 100
-  _damage: 50
+  _currentMoveType: 1
 --- !u!114 &114275864543147902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3273,8 +3272,9 @@ MonoBehaviour:
   _maxSpeed: 300
   _accSpeed: 300
   _dashSpeed: 80
+  _landingSpeed: 0
   _maxHP: 100000
-  _hp: 100000
+  _hp: 99500
   _meteoHP: 0
   _descentHP: 0
   _saveTakeDamage: 0
@@ -3284,7 +3284,7 @@ MonoBehaviour:
   _secondPhaseHpPercent: 0
   _thirdPhaseHpPercent: 0
   _descentHpPercent: 0.005
-  _meteofHpPercent: 0.008
+  _meteofHpPercent: 0.009
   _groggyHpPercent: 0.005
   _damageReceiveHpPercent: 1
 --- !u!114 &114634898691293138
@@ -3299,8 +3299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerTag: 2
-  _offsetDir: {x: 0, y: 0, z: 0}
-  _pushPower: 0
   _damage: 15
 --- !u!114 &114867612813019694
 MonoBehaviour:
@@ -3314,8 +3312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerTag: 1
-  _offsetDir: {x: 0, y: 0, z: 0}
-  _pushPower: 0
   _damage: 15
 --- !u!114 &114914848053441950
 MonoBehaviour:
@@ -3351,9 +3347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerTag: 0
-  _offsetDir: {x: 0, y: 0.2, z: 0}
-  _pushPower: 50
   _damage: 15
+  _pushPower: 50
 --- !u!135 &135009164864824706
 SphereCollider:
   m_ObjectHideFlags: 1
