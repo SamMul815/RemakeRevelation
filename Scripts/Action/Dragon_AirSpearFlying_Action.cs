@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_DescentFlying_Action : ActionTask
+public class Dragon_AirSpearFlying_Action : ActionTask
 {
 
     public override void OnStart()
     {
         base.OnStart();
         DragonManager.Instance.AttackOff();
-        DragonManager.Instance.Stat.DescentSaveHP = DragonManager.Instance.Stat.HP;
-        MovementManager.Instance.SetMovement(MovementType.Descent);
+        DragonManager.Instance.Stat.AirSpearSaveHP = DragonManager.Instance.Stat.HP;
+        MovementManager.Instance.SetMovement(MovementType.AirSpear);
         DragonAniManager.SwicthAnimation("Dragon_DescentFlying");
 
     }

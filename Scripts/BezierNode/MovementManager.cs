@@ -6,10 +6,11 @@ using UnityEngine;
 public enum MovementType
 {
     Meteo,
-    Descent
+    AirSpear
 }
 
-public class MovementManager : Singleton<MovementManager> {
+public class MovementManager : Singleton<MovementManager>
+{
 
     [SerializeField]
     private MovementType _currentMoveType;

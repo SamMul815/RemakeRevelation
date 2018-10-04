@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_DescentFlying_Decorator : DecoratorTask
+public class Dragon_AirSpearFlying_Decorator : DecoratorTask
 {
 
     public override void OnStart()
@@ -15,17 +15,17 @@ public class Dragon_DescentFlying_Decorator : DecoratorTask
     {
         float MaxHP = DragonManager.Instance.Stat.MaxHP;
         float HP = DragonManager.Instance.Stat.HP;
-        float SaveHP = DragonManager.Instance.Stat.DescentSaveHP;
+        float SaveHP = DragonManager.Instance.Stat.AirSpearSaveHP;
 
-        float DescentHP = DragonManager.Instance.Stat.DescentHP;
+        float AirSpearHP = DragonManager.Instance.Stat.AirSpearHP;
 
-        bool IsDescent = DescentHP - (SaveHP - HP) <= 0.0f;
+        bool IsAirSpear = AirSpearHP - (SaveHP - HP) <= 0.0f;
         bool IsAction = DragonManager.IsAction;
 
         bool IsFlying = BlackBoard.Instance.IsFlying;
         bool IsGround = BlackBoard.Instance.IsGround;
 
-        if ((MaxHP > HP && IsDescent && IsGround && !IsFlying && !IsAction) || IsAction)
+        if ((MaxHP > HP && IsAirSpear && IsGround && !IsFlying && !IsAction) || IsAction)
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 

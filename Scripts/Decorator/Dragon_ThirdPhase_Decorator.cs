@@ -9,6 +9,9 @@ public class Dragon_ThirdPhase_Decorator : DecoratorTask
     public override void OnStart()
     {
         base.OnStart();
+        float MaxHP = DragonManager.Instance.Stat.MaxHP;
+        float AirSpearHPPercent = DragonManager.Instance.Stat.ThirdPhaseAirSpearHPPrecent;
+        DragonManager.Instance.Stat.AirSpearHP = MaxHP * AirSpearHPPercent;
     }
 
     public override bool Run()
@@ -51,8 +54,6 @@ public class Dragon_ThirdPhase_Decorator : DecoratorTask
                 else if (DragonManager.IsAction)
                     return true;
             }
-
-            Debug.Log("ThirdPhase");
             return ChildNode.Run();
         }
         else if (NodeState == TASKSTATE.RUNNING ||

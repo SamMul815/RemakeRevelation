@@ -50,8 +50,6 @@ public class Dragon_SecondPhase_Decorator : DecoratorTask
                 else if (DragonManager.IsAction)
                     return true;
             }
-
-            Debug.Log("SecondPhase");
             return ChildNode.Run();
         }
         else if (NodeState == TASKSTATE.RUNNING ||

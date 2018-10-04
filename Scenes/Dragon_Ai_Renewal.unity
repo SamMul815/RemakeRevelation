@@ -600,6 +600,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1937915422469126, guid: 35422541af9624041893ce4d21eb6407, type: 2}
+      propertyPath: m_Name
+      value: AirSpear
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35422541af9624041893ce4d21eb6407, type: 2}
   m_IsPrefabParent: 0
@@ -1108,11 +1112,6 @@ Prefab:
     - target: {fileID: 4840178536252340, guid: 4255f42a6e0284c4b95912040d4f5da0, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114626211509328896, guid: 4255f42a6e0284c4b95912040d4f5da0,
-        type: 2}
-      propertyPath: _hp
-      value: 100000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4255f42a6e0284c4b95912040d4f5da0, type: 2}
