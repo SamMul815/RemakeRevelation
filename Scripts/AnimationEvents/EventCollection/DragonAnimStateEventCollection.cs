@@ -28,7 +28,9 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(DashAttackJumpEnd, "Dash");
         AddAnimTimeEventFunc(DashAttackOff, "Dash");
 
-        AddAnimTimeEventFunc(TakeOffOn, "TakeOff");
+        AddAnimTimeEventFunc(DescentFlyingOn, "DescentFlying");
+
+        AddAnimTimeEventFunc(MeteoTakeOffOn, "MeteoTakeOff");
 
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
@@ -90,6 +92,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         DragonManager.Instance.AttackOff();
     }
 
+
     private void RightPawAttackOn(EvnData evnData)
     {
         DragonManager.Instance.AttackOn(DragonAttackTriggers.RightPaw);
@@ -99,6 +102,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         DragonManager.Instance.AttackOff();
     }
+
 
     private void LeftPawAttackOn(EvnData evnData)
     {
@@ -110,12 +114,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         DragonManager.Instance.AttackOff();
     }
 
-    private void TakeOffOn(EvnData evnData)
-    {
-        MovementManager.Instance.SetMovement(MovementType.TakeOff);
-        DragonManager.Instance.DragonGroundCollider.enabled = false;
-        DragonManager.Instance.DragonRigidBody.useGravity = false;
-    }
 
     private void LandingOn(EvnData evnData)
     {
@@ -128,11 +126,13 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     }
 
+
     private void ShotBreathAttackOn(EvnData evnData)
     {
         Transform DragonMouth = BlackBoard.Instance.DragonMouth;
         BulletManager.Instance.CreateDragonBaseBulletTest(DragonMouth.position, 0.15f, 15);
     }
+
 
     private void HowlingAttackOn(EvnData evnData)
     {
@@ -143,6 +143,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         int Amount = BlackBoard.Instance.FanShapeAmount;
         BulletManager.Instance.CreateDragonBaseBullet(pos, Amount);
     }
+
 
     private void BreathAttackOn(EvnData evnData)
     {
@@ -155,6 +156,20 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         dir.y = 0.0f;
 
         BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
+
+    }
+
+
+    private void DescentFlyingOn(EvnData evnData)
+    {
+        DragonManager.Instance.DragonRigidBody.useGravity = false;
+        DragonManager.Instance.DragonGroundCollider.enabled = false;
+    }
+
+    private void MeteoTakeOffOn(EvnData evnData)
+    {
+        DragonManager.Instance.DragonGroundCollider.enabled = false;
+        DragonManager.Instance.DragonRigidBody.useGravity = false;
 
     }
 

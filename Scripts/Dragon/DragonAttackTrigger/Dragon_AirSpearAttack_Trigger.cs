@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_DashAttack_Trigger : DragonAttackTrigger
+public class Dragon_AirSpearAttack_Trigger : DragonAttackTrigger
 {
     [SerializeField]
     protected float _pushPower;
@@ -16,7 +16,7 @@ public class Dragon_DashAttack_Trigger : DragonAttackTrigger
             Vector3 dir = 
                 Vector3.Normalize(DragonManager.Player.position - DragonManager.Instance.transform.position);
 
-            dir += new Vector3(0.0f, 0.2f, 0.0f);
+            dir += new Vector3(0.0f, 0.4f, 0.0f);
 
             Player.instance.playerRigid.PlayerPush(dir, _pushPower);
             BlackBoard.Instance.IsPlayerDashAttack = true;

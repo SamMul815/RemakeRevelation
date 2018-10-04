@@ -8,7 +8,8 @@ public enum DragonAttackTriggers
     LeftPaw,
     RightPaw,
     NearHowling,
-    NearBreath
+    NearBreath,
+    AirSpear
 }
 
 

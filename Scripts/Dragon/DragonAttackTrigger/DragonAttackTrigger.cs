@@ -7,11 +7,11 @@ public class DragonAttackTrigger : MonoBehaviour
 {
 
     [SerializeField]
-    private DragonAttackTriggers _triggerTag;
+    protected DragonAttackTriggers _triggerTag;
     public  DragonAttackTriggers TriggerTag { get { return _triggerTag; } }
 
     [SerializeField]
-    private float _damage;
+    protected float _damage;
     public float Damage { get { return _damage; } }
 
     protected virtual void OnTriggerEnter(Collider other)

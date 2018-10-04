@@ -38,11 +38,18 @@ namespace DragonController {
         [SerializeField] private float _hp;
         public float HP { set { _hp = value; } get { return _hp; } }
 
-        [SerializeField] private float _takeOffHP;
-        public float TakeOffHP { get { return _takeOffHP; } }
+        [SerializeField] private float _meteoHP;
+        public float MeteoHP { get { return _meteoHP; } }
 
-        private float _takeOffSaveHP;
-        public float TakeOffSaveHP { set { _takeOffSaveHP = value; } get { return _takeOffSaveHP; } }
+        private float _meteoSaveHP;
+        public float MeteoSaveHP { set { _meteoSaveHP = value; } get { return _meteoSaveHP; } }
+
+        [SerializeField] private float _descentHP;
+        public float DescentHP { get { return _descentHP; } }
+
+        private float _descentSaveHP;
+        public float DescentSaveHP { set { _descentSaveHP = value; } get { return _descentSaveHP; } }
+
 
         [Space]
         [Header("Dragon TakeDamage")]
@@ -85,8 +92,12 @@ namespace DragonController {
         [Header("Dragon State HPBar Precent")]
 
         [Range(0.0f, 1.0f)]
-        [SerializeField] private float _takeOffHpPercent;
-        public float TakeOffHpPercent { get { return _takeOffHpPercent; } }
+        [SerializeField] private float _descentHpPercent;
+        public float DescentHpPercent { get { return _descentHpPercent; } }
+
+        [Range(0.0f, 1.0f)]
+        [SerializeField] private float _meteofHpPercent;
+        public float MeteofHpPercent { get { return _meteofHpPercent; } }
 
         [Range(0.0f, 1.0f)]
         [SerializeField] private float _groggyHpPercent;
@@ -98,8 +109,14 @@ namespace DragonController {
         
         public void Awake()
         {
-            _takeOffHP = _maxHP * _takeOffHpPercent;
-            _takeOffSaveHP = _maxHP;
+            _meteoHP = _maxHP * _meteofHpPercent;
+            _descentHP = _maxHP * _descentHpPercent;
+
+            _descentSaveHP = _maxHP;
+            _meteoSaveHP = _maxHP;
+
+            _hp = _maxHP;
+
         }
 
     }

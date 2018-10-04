@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_TakeOff_Decorator : DecoratorTask
+public class Dragon_MeteoAttack_Decorator : DecoratorTask
 {
 
     public override void OnStart()
@@ -13,26 +13,16 @@ public class Dragon_TakeOff_Decorator : DecoratorTask
 
     public override bool Run()
     {
-
-        float MaxHP = DragonManager.Instance.Stat.MaxHP;
-        float HP = DragonManager.Instance.Stat.HP;
-        float SaveHP = DragonManager.Instance.Stat.TakeOffSaveHP;
-
-        float TakeOffHP = DragonManager.Instance.Stat.TakeOffHP;
-
-        bool IsTakeOff = TakeOffHP - (SaveHP - HP) <= 0.0f;
+        bool IsMeteoAttack = BlackBoard.Instance.IsMeteoAttack;
         bool IsAction = DragonManager.IsAction;
 
-        bool IsFlying = BlackBoard.Instance.IsFlying;
-        bool IsGround = BlackBoard.Instance.IsGround;
-
-        if ((MaxHP > HP && IsTakeOff && IsGround && !IsFlying && !IsAction) || (IsAction))
+        if((IsMeteoAttack && !IsAction) || IsAction)
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 
             if (childAction)
             {
-                if(!childAction.IsRunning)
+                if (!childAction.IsRunning)
                 {
                     if (!DragonManager.IsAction)
                         OnStart();
@@ -41,24 +31,22 @@ public class Dragon_TakeOff_Decorator : DecoratorTask
                     else if (!childAction.IsRunning)
                         OnStart();
                 }
-                else if(childAction.IsRunning && !childAction.IsEnd)
+                if (childAction.IsRunning && !childAction.IsEnd)
                 {
                     if (!DragonManager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
-                    return childAction.Run();
+
+                    return ChildNode.Run();
                 }
             }
-            else
-            {
-                if (NodeState != TASKSTATE.RUNNING)
-                    OnStart();
-            }
+            else if (NodeState != TASKSTATE.RUNNING)
+                OnStart();
 
             return ChildNode.Run();
         }
-        else if(NodeState == TASKSTATE.RUNNING || 
+        else if(NodeState == TASKSTATE.RUNNING ||
             ChildNode.NodeState == TASKSTATE.RUNNING)
         {
             OnEnd();

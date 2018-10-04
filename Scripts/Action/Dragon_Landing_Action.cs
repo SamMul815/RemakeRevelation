@@ -5,23 +5,34 @@ using DragonController;
 
 public class Dragon_Landing_Action : ActionTask
 {
+    Vector3 FiexdPos = new Vector3();
+
     public override void OnStart()
     {
         base.OnStart();
         BlackBoard.Instance.IsLanding = true;
         BlackBoard.Instance.IsFlying = false;
-        DragonManager.Instance.DragonRigidBody.useGravity = true;
         DragonManager.Instance.AttackOff();
         DragonAniManager.SwicthAnimation("Dragon_Landing");
 
+        FiexdPos = BlackBoard.Instance.FiexdPosition;
     }
 
     public override bool Run()
     {
+
         DragonManager.Instance.transform.position = Vector3.MoveTowards(
                 DragonManager.Instance.transform.position,
                 BlackBoard.Instance.FiexdPosition,
                 MovementManager.Instance.CurSpeed * Time.deltaTime);
+
+        Vector3 DragonPos = DragonManager.Instance.transform.position;
+
+        if (UtilityManager.DistanceCalc(DragonPos, FiexdPos, 0.0f))
+        {
+            BlackBoard.Instance.FiexdPosition = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
+            DragonManager.Instance.transform.position = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
+        }
 
         if (DragonManager.Landing)
         {
@@ -42,9 +53,9 @@ public class Dragon_Landing_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsGround = true;
-        BlackBoard.Instance.IsLanding = false;
         BlackBoard.Instance.IsFiexdPosition = false;
+        BlackBoard.Instance.IsLanding = false;
+        BlackBoard.Instance.IsGround = true;
     }
 
 }
