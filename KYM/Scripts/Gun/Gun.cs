@@ -20,6 +20,10 @@ public class Gun : MonoBehaviour
     public GameObject handLeft;
     public GameObject handRight;
 
+    public GameObject UILeft;
+    public GameObject UIRight;
+
+
     public GameObject magazine;
     public GameObject cartridgePrefab;
     public GameObject muzzlePrefab;
@@ -130,6 +134,8 @@ public class Gun : MonoBehaviour
             gunType = GunType.Right;
             handRight.SetActive(true);
             handLeft.SetActive(false);
+            UILeft.SetActive(false);
+            UIRight.SetActive(true);
             handAnimator = handRight.GetComponent<Animator>();
         }
         else if(hand.GetHandType() == PlayerHand.HandType.Left)
@@ -137,6 +143,8 @@ public class Gun : MonoBehaviour
             gunType = GunType.Left;
             handLeft.SetActive(true);
             handRight.SetActive(false);
+            UILeft.SetActive(true);
+            UIRight.SetActive(false);
             handAnimator = handLeft.GetComponent<Animator>();
         }
         StartCoroutine(CorTriggerAxisAnim());
@@ -161,5 +169,4 @@ public class Gun : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
-
 }
