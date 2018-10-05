@@ -312,6 +312,8 @@ MonoBehaviour:
   StateTimeEvent:
   - RunTime: 0.125
     IsLoop: 0
+  - RunTime: 0.866
+    IsLoop: 0
   - RunTime: 0.999
     IsLoop: 0
 --- !u!114 &114137166627798206

@@ -12,6 +12,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(BreathAttackOn, "Breath");
 
         AddAnimTimeEventFunc(LandingOn, "Landing");
+        AddAnimTimeEventFunc(LadingEnd, "Landing");
 
         AddAnimTimeEventFunc(RightPawAttackOn, "RightPaw");
         AddAnimTimeEventFunc(RightPawAttckOff, "RightPaw");
@@ -120,12 +121,16 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         DragonManager.FlyingOn = false;
         DragonManager.LandingOn = true;
-        DragonManager.Instance.DragonGroundCollider.enabled = true;
         DragonManager.Instance.DragonRigidBody.useGravity = true;
 
         Vector3 MoveDir = Vector3.down;
         DragonManager.Instance.DragonRigidBody.AddForce(MoveDir * 500.0f, ForceMode.Impulse);
 
+    }
+
+    private void LadingEnd(EvnData evnData)
+    {
+        DragonManager.Instance.DragonGroundCollider.enabled = true;
     }
 
 
