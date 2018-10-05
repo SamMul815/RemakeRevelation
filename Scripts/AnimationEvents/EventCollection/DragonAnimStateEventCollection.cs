@@ -117,6 +117,8 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void LandingOn(EvnData evnData)
     {
+
+        DragonManager.FlyingOn = false;
         DragonManager.LandingOn = true;
         DragonManager.Instance.DragonGroundCollider.enabled = true;
         DragonManager.Instance.DragonRigidBody.useGravity = true;
@@ -162,6 +164,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void DescentFlyingOn(EvnData evnData)
     {
+        DragonManager.FlyingOn = true;
         BlackBoard.Instance.IsGround = false;
         BlackBoard.Instance.IsFlying = true;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
@@ -170,6 +173,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void MeteoTakeOffOn(EvnData evnData)
     {
+        DragonManager.FlyingOn = true;
         MovementManager.Instance.SetMovement(MovementType.Meteo);
         DragonManager.Instance.DragonGroundCollider.enabled = false;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
@@ -180,7 +184,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         DragonManager.IsAction = false;
         BlackBoard.Instance.IsLanding = true;
-
     }
 
 }

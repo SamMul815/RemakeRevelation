@@ -18,12 +18,14 @@ public class Dragon_AirSpearFlying_Action : ActionTask
 
     public override bool Run()
     {
-        if (MovementManager.Instance.GetNodeManager().IsMoveEnd)
+
+        if (DragonManager.FlyingOn)
         {
-            DragonManager.IsAction = false;
-            BlackBoard.Instance.IsLanding = true;
-            //BlackBoard.Instance.IsFlying = true;
-            //BlackBoard.Instance.IsDescentAttack = true;
+            if (MovementManager.Instance.CurrentNodeManager().IsMoveEnd)
+            {
+                DragonManager.IsAction = false;
+                BlackBoard.Instance.IsLanding = true;
+            }
         }
 
         return false;

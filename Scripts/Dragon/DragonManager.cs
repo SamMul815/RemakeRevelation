@@ -47,6 +47,9 @@ namespace DragonController
         private static bool _isTurn;
         public static bool IsTurn { set { _isTurn = value; } get { return _isTurn; } }
 
+        private static bool _flyingOn;
+        public static bool FlyingOn { set { _flyingOn = value; } get { return _flyingOn; } }
+
         private static bool _landingOn;
         public static bool LandingOn { set { _landingOn = value; } get { return _landingOn; } }
 

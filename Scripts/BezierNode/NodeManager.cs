@@ -43,6 +43,7 @@ public class NodeManager : MonoBehaviour
     private Vector3 _nextNodeCenter;    //F
     private Vector3 _arriveNodePos;     //최종노드위치값
 
+    private bool _isMoving;
     private bool _isMoveEnd;
     private int _nodesIndex;
     private int _nodesCount;
@@ -52,7 +53,8 @@ public class NodeManager : MonoBehaviour
     public float TimeInterval = 0.02f; //dir / speed;
 
 
-    public MovementType MovementTag { set { _movementTag = value; } get { return _movementTag; } }
+    public MovementType MovementTag { get { return _movementTag; } }
+
     public MovementManager Manager { get { return _manager; } }
 
     public List<Vector3> NodesDir { get { return _nodesDir; } }
@@ -60,15 +62,15 @@ public class NodeManager : MonoBehaviour
     public List<float> NodesSpeed { get { return _nodesSpeed; } }
     public List<bool> NodesDragonUp { get { return _nodesUp; } }
 
+    public bool IsMoving { set { _isMoving = value; } get { return _isMoving; } }
     public bool IsMoveEnd { set { _isMoveEnd = value; } get { return _isMoveEnd; } }
     public int NodesIndex { set { _nodesIndex = value; } get { return _nodesIndex; } }
     public int NodesCount { set { _nodesCount = value; } get { return _nodesCount; } }
 
     public bool IsStick;
     public bool IsLoop;
-    public bool IsPlayer;
 
-    public Transform CenterAxisRot;
+    public Transform CenterAxis; //Node 중심축
 
     private void Awake()
     {
@@ -95,6 +97,7 @@ public class NodeManager : MonoBehaviour
     {
         Clear();
         NodesIndex = 0;
+        _isMoving = true;
         _isMoveEnd = false;
         _isFindNode = false;
         _nodesCount = _nodesSpeed.Count;
@@ -140,17 +143,15 @@ public class NodeManager : MonoBehaviour
     private void Movement()
     {
 
-        Transform Dragon = _manager.transform;
+        Transform moveObj = _manager.transform;
 
         if (_nodesIndex < _nodesCount)
         {
-            _isMoveEnd = false;
-
             float moveDistance = _stat.NodeSpeed[_nodesIndex] * Time.deltaTime; //움직인 거리
-            float nextDistance = Vector3.Distance(_stat.NodeDir[_nodesIndex], Dragon.position); //남은 거리
+            float nextDistance = Vector3.Distance(_stat.NodeDir[_nodesIndex], moveObj.position); //남은 거리
 
             //방향 구하기
-            Vector3 dir = (_stat.NodeDir[_nodesIndex] - Dragon.position).normalized;
+            Vector3 dir = (_stat.NodeDir[_nodesIndex] - moveObj.position).normalized;
 
             //Vector3 eulerAngle = _nodesRot[_nodesIndex] + new Vector3(0.0f, 0.0f, Dragon.rotation.eulerAngles.z);//로테이션 앵글값 구하기
             Quaternion Angle = _nodesRot[_nodesIndex];//로테이션 앵글값 구하기
@@ -159,27 +160,27 @@ public class NodeManager : MonoBehaviour
 
             for (; moveDistance > nextDistance;) // 현재거리가 남은거리보다 작으면
             {
-                Dragon.position += dir * nextDistance;//이동
+                moveObj.position += dir * nextDistance;//이동
                 moveDistance -= nextDistance;//움직인 거리에서 이동한 거리 빼기
 
                 _nodesIndex++;
 
                 if (_nodesIndex >= _nodesCount) return; // 현재 이동이 끝났을 경우
 
-                dir = (_stat.NodeDir[_nodesIndex] - Dragon.position).normalized;
+                dir = (_stat.NodeDir[_nodesIndex] - moveObj.position).normalized;
 
                 //eulerAngle = _nodesRot[_nodesIndex] + new Vector3(0.0f, 0.0f, Dragon.rotation.eulerAngles.z);//로테이션 앵글값 구하기
                 Angle = _nodesRot[_nodesIndex];//로테이션 앵글값 구하기
 
-                nextDistance = Vector3.Distance(_stat.NodeDir[_nodesIndex], Dragon.position);
+                nextDistance = Vector3.Distance(_stat.NodeDir[_nodesIndex], moveObj.position);
             }
 
-            if (CenterAxisRot != null)// 노드의 중심축이 있는지
+            if (CenterAxis != null)// 노드의 중심축이 있는지
             {
-                Vector3 CentralAxis = (CenterAxisRot.position - transform.position).normalized; //중심축 방향벡터
+                Vector3 CentralAxis = (CenterAxis.position - transform.position).normalized; //중심축 방향벡터
 
-                Dragon.rotation = Quaternion.Slerp(
-                    Dragon.rotation,
+                moveObj.rotation = Quaternion.Slerp(
+                    moveObj.rotation,
                     Quaternion.LookRotation(dir, CentralAxis),
                     45.0f * Time.deltaTime);
             }
@@ -191,27 +192,27 @@ public class NodeManager : MonoBehaviour
                 if (dragonUp)// 드래곤의 up백터를 이용해서 회전을 할건인지...
                 {
                     rot = Quaternion.Slerp(
-                        Dragon.rotation,
+                        moveObj.rotation,
                         Quaternion.LookRotation(dir, _manager.transform.up) * Angle,
                         0.1f);
                 }
                 else
                 {
                     rot = Quaternion.Slerp(
-                        Dragon.rotation,
+                        moveObj.rotation,
                         Quaternion.LookRotation(dir, Vector3.up) * Angle,
                         0.1f);
                 }
 
-                Dragon.rotation = rot;
+                moveObj.rotation = rot;
             }
 
-            Dragon.position += dir * moveDistance;
+            moveObj.position += dir * moveDistance;
 
             if (_nodesIndex + 1 >= _nodesCount)
                 return;
 
-            dir = (Stat.NodeDir[_nodesIndex] - Dragon.position).normalized;
+            dir = (Stat.NodeDir[_nodesIndex] - moveObj.position).normalized;
         }
 
         else
@@ -219,6 +220,7 @@ public class NodeManager : MonoBehaviour
             if (!IsLoop)
             {
                 _isMoveEnd = true;
+                _isMoving = false;
                 enabled = false;
             }
             else

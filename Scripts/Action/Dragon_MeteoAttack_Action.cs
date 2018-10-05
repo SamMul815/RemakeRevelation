@@ -41,12 +41,15 @@ public class Dragon_MeteoAttack_Action : ActionTask
             DragonManager.IsTurn = true;
         }
 
+        Debug.Log("MeteoAttack");
+
         return false;
     }
 
     public override void OnEnd()
     {
         base.OnEnd();
+        BlackBoard.Instance.IsMeteoAttack = false;
     }
 
 
