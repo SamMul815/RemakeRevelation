@@ -14,12 +14,6 @@ public class BulletBase : Bullet
 
     }
 
-    //protected override void Reset()
-    //{
-    //    base.Reset();
-    //    trail.Clear();
-    //}
-
     protected override void OnCollisionEvent()
     {
         Collider _col = hitInfo[0].collider;

@@ -440,7 +440,6 @@ public class PlayerHand : MonoBehaviour
         }
     }
 
-
     public void HoverLock(Interactable interactable)
     {
         hoverLocked = true;
@@ -454,7 +453,6 @@ public class PlayerHand : MonoBehaviour
             hoverLocked = false;
         }
     }
-
 
     //ControllerValue
     //컨트롤러값 관련된 함수들
@@ -476,7 +474,6 @@ public class PlayerHand : MonoBehaviour
         return Vector3.zero;
     }
 
-
     public bool GetTouchPadDown()
     {
         if(controller != null)
@@ -494,6 +491,7 @@ public class PlayerHand : MonoBehaviour
         }
         return false;
     }
+
     public bool GetTouchPad()
     {
         if (controller != null)
@@ -502,7 +500,6 @@ public class PlayerHand : MonoBehaviour
         }
         return false;
     }
-
 
     public bool GetTriggerButtonDown()
     {
@@ -530,6 +527,7 @@ public class PlayerHand : MonoBehaviour
         }
         return false;
     }
+
     public float GetTriggerAxis()
     {
         if(controller != null)
@@ -538,6 +536,34 @@ public class PlayerHand : MonoBehaviour
         }
         return 0.0f;
     }
+
+    public bool GetGripButtonDown()
+    {
+        if(controller != null)
+        {
+            return controller.GetPressDown(SteamVR_Controller.ButtonMask.Grip);
+        }
+        return false;
+    }
+
+    public bool GetGripButtonUp()
+    {
+        if(controller != null)
+        {
+            return controller.GetPressUp(SteamVR_Controller.ButtonMask.Grip);
+        }
+        return false;
+    }
+
+    public bool GetGripButton()
+    {
+        if(controller != null)
+        {
+            return controller.GetPress(SteamVR_Controller.ButtonMask.Grip);
+        }
+        return false;
+    }
+
 
     public void Vibration(float length, float strength)
     {

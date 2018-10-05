@@ -4,7 +4,7 @@
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 	}
 	SubShader {
-		Tags { "RenderType"="Transparent" } 
+		Tags { "RenderType"="Transparent" "Queue" = "Transparent" } 
 		LOD 200
 		
 		blend SrcAlpha One

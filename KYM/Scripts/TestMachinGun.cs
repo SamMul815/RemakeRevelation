@@ -4,54 +4,70 @@ using UnityEngine;
 
 public class TestMachinGun : MonoBehaviour {
 
+    public PlayerHand.AttachmentFlags attachmentFlags = PlayerHand.AttachmentFlags.ParentToHand;
     public Transform firepos;
-    PlayerHand rightHand;
-    PlayerHand leftHand;
-
+    public int bulletCount;
+    public GameObject parentObject;
+    private int currentBulletCount;
     IEnumerator shot;
 
 	// Use this for initialization
 	void Start ()
     {
-		rightHand = Player.instance.rightHand;
-        leftHand = Player.instance.leftHand;
+		//rightHand = Player.instance.rightHand;
+        //leftHand = Player.instance.leftHand;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        this.transform.position = rightHand.transform.position;
-        this.transform.rotation = 
-            Quaternion.LookRotation(leftHand.transform.position - rightHand.transform.position, Vector3.up);
 
-        if(rightHand.GetTriggerButtonDown())
+    private void OnAttachedToHand(PlayerHand hand)
+    {
+        currentBulletCount = bulletCount;
+    }
+
+    private void HandAttachedUpdate(PlayerHand hand)
+    {
+        this.transform.position = hand.transform.position;
+        Vector3 upDir = Quaternion.Euler(-15.0f, 0.0f, 0.0f) * hand.transform.up;
+        this.transform.rotation =
+            Quaternion.LookRotation(hand.otherHand.transform.position - hand.transform.position, Vector3.up);
+
+        if (hand.GetTriggerButtonDown())
         {
-            shot = corShot();
+            shot = corShot(hand);
             StartCoroutine(shot);
         }
-        else if(rightHand.GetTriggerButtonUp())
+        else if (hand.GetTriggerButtonUp())
         {
             StopCoroutine(shot);
         }
-      
-	}
+    }
 
-    IEnumerator corShot()
+    // Update is called once per frame
+    void Update ()
+    {
+        if(Player.instance.rightHand.GetGripButtonDown())
+        {
+            parentObject = Player.instance.rightHand.currentAttachedObject;
+            Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
+
+        }
+        if (Player.instance.leftHand.GetGripButtonDown())
+        {
+            Player.instance.rightHand.DetachObject(gameObject,false);
+        }
+    }
+
+    IEnumerator corShot(PlayerHand hand)
     {
         while(true)
         {
-
             Vector2 circle = Random.insideUnitCircle * 0.05f;
             Vector3 dir = firepos.forward + firepos.right * circle.x + firepos.up * circle.y;
-            //Debug.Log(circle);
             BulletManager.Instance.CreatePlayerBaseBullet(firepos.position, dir.normalized);
-
-            rightHand.Vibration(0.1f,4000.0f);
-            leftHand.Vibration(0.1f,4000.0f);
+            currentBulletCount -= 1;
+            hand.Vibration(0.1f,4000.0f);
+            hand.otherHand.Vibration(0.1f,4000.0f);
             Player.instance.playerHead.PlayerShake(0.1f, 0.05f);
             yield return new WaitForSecondsRealtime(0.1f);
         }
     }
-
-
 }
