@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_Landing_Decorator : DecoratorTask
+public class Dragon_SecondPhase_Decorator : DecoratorTask
 {
     public override void OnStart()
     {
@@ -12,19 +12,13 @@ public class Dragon_Landing_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float LandingDistance = BlackBoard.Instance.LandingDistance;
+        float SecondPhaseHP = DragonManager.Instance.Stat.SecondPhaseHP;
+        float HP = DragonManager.Instance.Stat.HP;
 
-        bool IsLanding = BlackBoard.Instance.IsLanding;
-
-        //bool IsLanding = UtilityManager.DistanceCalc(DragonManager.Instance.transform.position, 
-        //    BlackBoard.Instance.FiexdPosition, LandingDistance) && BlackBoard.Instance.IsFiexdPosition;
-
-        bool IsFlying = BlackBoard.Instance.IsFlying;
-        bool IsGround = BlackBoard.Instance.IsGround;
-
+        bool IsSecondPhase = (HP <= SecondPhaseHP);
         bool IsAction = DragonManager.IsAction;
 
-        if ((IsLanding && !IsGround && IsFlying && !IsAction) || IsAction)
+        if ((IsSecondPhase && !IsAction) || IsAction)
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 
@@ -34,7 +28,7 @@ public class Dragon_Landing_Decorator : DecoratorTask
                 {
                     if (!DragonManager.IsAction)
                         OnStart();
-                    else if ((DragonManager.IsAction)) /*&& !IsLanding ))*/
+                    else if (DragonManager.IsAction)
                         return true;
                     else if (!childAction.IsRunning)
                         OnStart();
@@ -45,24 +39,26 @@ public class Dragon_Landing_Decorator : DecoratorTask
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
-
-                    return childAction.Run();
+                    return ChildNode.Run();
                 }
             }
-            else
+
+            else if (NodeState != TASKSTATE.RUNNING)
             {
-                if (NodeState != TASKSTATE.RUNNING)
+                if (!DragonManager.IsAction)
                     OnStart();
+                else if (DragonManager.IsAction)
+                    return true;
             }
             return ChildNode.Run();
         }
-        else if(NodeState == TASKSTATE.RUNNING ||
+        else if (NodeState == TASKSTATE.RUNNING ||
             ChildNode.NodeState == TASKSTATE.RUNNING)
         {
             OnEnd();
         }
-
         return true;
+
     }
 
     public override void OnEnd()

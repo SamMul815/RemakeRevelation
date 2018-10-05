@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_DescentAttack_Decorator : DecoratorTask
+public class Dragon_AirSpearFlying_Decorator : DecoratorTask
 {
 
     public override void OnStart()
@@ -13,14 +13,21 @@ public class Dragon_DescentAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsDescentAttack = BlackBoard.Instance.IsDescentAttack;
+        float MaxHP = DragonManager.Instance.Stat.MaxHP;
+        float HP = DragonManager.Instance.Stat.HP;
+        float SaveHP = DragonManager.Instance.Stat.AirSpearSaveHP;
+
+        float AirSpearHP = DragonManager.Instance.Stat.AirSpearHP;
+
+        bool IsAirSpear = AirSpearHP - (SaveHP - HP) <= 0.0f;
         bool IsAction = DragonManager.IsAction;
 
-        if ((IsDescentAttack && !IsAction) || IsAction)
+        bool IsFlying = BlackBoard.Instance.IsFlying;
+        bool IsGround = BlackBoard.Instance.IsGround;
+
+        if ((MaxHP > HP && IsAirSpear && IsGround && !IsFlying && !IsAction) || IsAction)
         {
-
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
 
             if (childAction)
             {
@@ -44,13 +51,12 @@ public class Dragon_DescentAttack_Decorator : DecoratorTask
                 }
             }
             else if (NodeState != TASKSTATE.RUNNING)
-                OnStart();
+                    OnStart();
             return ChildNode.Run();
-
         }
-        else if (NodeState == TASKSTATE.RUNNING || 
+        else if(NodeState == TASKSTATE.RUNNING ||
             ChildNode.NodeState == TASKSTATE.RUNNING)
-        { 
+        {
             OnEnd();
         }
         return true;

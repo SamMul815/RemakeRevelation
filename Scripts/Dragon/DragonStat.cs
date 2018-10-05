@@ -29,6 +29,9 @@ namespace DragonController {
         [SerializeField] private float _dashSpeed;
         public float DashSpeed { get { return _dashSpeed; } }
 
+        [SerializeField] private float _landingSpeed;
+        public float LandingSpeed { get { return _landingSpeed; } }
+
         [Space]
         [Header("Dragon HP")]
 
@@ -38,17 +41,25 @@ namespace DragonController {
         [SerializeField] private float _hp;
         public float HP { set { _hp = value; } get { return _hp; } }
 
-        [SerializeField] private float _meteoHP;
+        private float _meteoHP;
         public float MeteoHP { get { return _meteoHP; } }
 
         private float _meteoSaveHP;
         public float MeteoSaveHP { set { _meteoSaveHP = value; } get { return _meteoSaveHP; } }
 
-        [SerializeField] private float _descentHP;
-        public float DescentHP { get { return _descentHP; } }
+        private float _airSpearHP;
+        public float AirSpearHP { set { _airSpearHP = value; } get { return _airSpearHP; } }
 
-        private float _descentSaveHP;
-        public float DescentSaveHP { set { _descentSaveHP = value; } get { return _descentSaveHP; } }
+        private float _airSpearSaveHP;
+        public float AirSpearSaveHP { set { _airSpearSaveHP = value; } get { return _airSpearSaveHP; } }
+
+        private float _firstPhaseHP;
+        public float FirstPhaseHP { get { return _firstPhaseHP; } }
+
+        private float _secondPhaseHP;
+        public float SecondPhaseHP { get { return _secondPhaseHP; } }
+        private float _thirdPhaseHP;
+        public float ThirdPhaseHP { get { return _thirdPhaseHP; } }
 
 
         [Space]
@@ -92,30 +103,42 @@ namespace DragonController {
         [Header("Dragon State HPBar Precent")]
 
         [Range(0.0f, 1.0f)]
-        [SerializeField] private float _descentHpPercent;
-        public float DescentHpPercent { get { return _descentHpPercent; } }
+        [SerializeField] private float _secondPhaseAirSpearHPPrecent;
+        public float SecondPhaseAirSpearHPPrecent { get { return _secondPhaseAirSpearHPPrecent; } }
+
+        [Range(0.0f, 1.0f)]
+        [SerializeField] private float _thirdPhaseAirSpearHPPrecent;
+        public float ThirdPhaseAirSpearHPPrecent { get { return _thirdPhaseAirSpearHPPrecent; } }
+
+        private float _airSpearHPPercent;
+        public float AirSpearHPPercent { get { return _airSpearHPPercent; } }
+
 
         [Range(0.0f, 1.0f)]
         [SerializeField] private float _meteofHpPercent;
         public float MeteofHpPercent { get { return _meteofHpPercent; } }
 
-        [Range(0.0f, 1.0f)]
-        [SerializeField] private float _groggyHpPercent;
-        public float GroggyHpPercent { set { _groggyHpPercent = value; } get { return _groggyHpPercent; } }
+        //[Range(0.0f, 1.0f)]
+        //[SerializeField] private float _groggyHpPercent;
+        //public float GroggyHpPercent { set { _groggyHpPercent = value; } get { return _groggyHpPercent; } }
 
-        [Range(0.0f, 1.0f)]
-        [SerializeField] private float _damageReceiveHpPercent;
-        public float DamageReceiveHpPejrcent { get { return _damageReceiveHpPercent; } }
+        //[Range(0.0f, 1.0f)]
+        //[SerializeField] private float _damageReceiveHpPercent;
+        //public float DamageReceiveHpPejrcent { get { return _damageReceiveHpPercent; } }
         
         public void Awake()
         {
-            _meteoHP = _maxHP * _meteofHpPercent;
-            _descentHP = _maxHP * _descentHpPercent;
+            _airSpearHPPercent = _secondPhaseAirSpearHPPrecent;
 
-            _descentSaveHP = _maxHP;
+            _meteoHP = _maxHP * _meteofHpPercent;
+            _airSpearHP = _maxHP * _airSpearHPPercent;
+
+            _airSpearSaveHP = _maxHP;
             _meteoSaveHP = _maxHP;
 
-            _hp = _maxHP;
+            _firstPhaseHP = _maxHP * _firstPhaseHpPercent;
+            _secondPhaseHP = _maxHP * _secondPhaseHpPercent;
+            _thirdPhaseHP = _maxHP * _thirdPhaseHpPercent;
 
         }
 

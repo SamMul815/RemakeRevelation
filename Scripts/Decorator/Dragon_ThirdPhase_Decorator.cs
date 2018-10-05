@@ -3,28 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_Landing_Decorator : DecoratorTask
+public class Dragon_ThirdPhase_Decorator : DecoratorTask
 {
+
     public override void OnStart()
     {
         base.OnStart();
+        float MaxHP = DragonManager.Instance.Stat.MaxHP;
+        float AirSpearHPPercent = DragonManager.Instance.Stat.ThirdPhaseAirSpearHPPrecent;
+        DragonManager.Instance.Stat.AirSpearHP = MaxHP * AirSpearHPPercent;
     }
 
     public override bool Run()
     {
-        float LandingDistance = BlackBoard.Instance.LandingDistance;
+        float ThirdPhaseHP = DragonManager.Instance.Stat.ThirdPhaseHP;
+        float HP = DragonManager.Instance.Stat.HP;
 
-        bool IsLanding = BlackBoard.Instance.IsLanding;
-
-        //bool IsLanding = UtilityManager.DistanceCalc(DragonManager.Instance.transform.position, 
-        //    BlackBoard.Instance.FiexdPosition, LandingDistance) && BlackBoard.Instance.IsFiexdPosition;
-
-        bool IsFlying = BlackBoard.Instance.IsFlying;
-        bool IsGround = BlackBoard.Instance.IsGround;
-
+        bool IsThirdPhaseHP = (HP <= ThirdPhaseHP);
         bool IsAction = DragonManager.IsAction;
 
-        if ((IsLanding && !IsGround && IsFlying && !IsAction) || IsAction)
+        if ((IsThirdPhaseHP && !IsAction) || IsAction)
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 
@@ -34,7 +32,7 @@ public class Dragon_Landing_Decorator : DecoratorTask
                 {
                     if (!DragonManager.IsAction)
                         OnStart();
-                    else if ((DragonManager.IsAction)) /*&& !IsLanding ))*/
+                    else if (DragonManager.IsAction)
                         return true;
                     else if (!childAction.IsRunning)
                         OnStart();
@@ -46,22 +44,23 @@ public class Dragon_Landing_Decorator : DecoratorTask
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
 
-                    return childAction.Run();
+                    return ChildNode.Run();
                 }
             }
-            else
+            else if (NodeState != TASKSTATE.RUNNING)
             {
-                if (NodeState != TASKSTATE.RUNNING)
+                if (!DragonManager.IsAction)
                     OnStart();
+                else if (DragonManager.IsAction)
+                    return true;
             }
             return ChildNode.Run();
         }
-        else if(NodeState == TASKSTATE.RUNNING ||
+        else if (NodeState == TASKSTATE.RUNNING ||
             ChildNode.NodeState == TASKSTATE.RUNNING)
         {
             OnEnd();
         }
-
         return true;
     }
 

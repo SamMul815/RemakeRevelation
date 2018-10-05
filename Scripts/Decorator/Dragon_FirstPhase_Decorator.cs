@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_DescentFlying_Decorator : DecoratorTask
+public class Dragon_FirstPhase_Decorator : DecoratorTask
 {
-
     public override void OnStart()
     {
         base.OnStart();
@@ -13,19 +12,13 @@ public class Dragon_DescentFlying_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float MaxHP = DragonManager.Instance.Stat.MaxHP;
+        float FirstPhaseHP = DragonManager.Instance.Stat.FirstPhaseHP;
         float HP = DragonManager.Instance.Stat.HP;
-        float SaveHP = DragonManager.Instance.Stat.DescentSaveHP;
 
-        float DescentHP = DragonManager.Instance.Stat.DescentHP;
-
-        bool IsDescent = DescentHP - (SaveHP - HP) <= 0.0f;
+        bool IsFirstPhase = (HP <= FirstPhaseHP);
         bool IsAction = DragonManager.IsAction;
 
-        bool IsFlying = BlackBoard.Instance.IsFlying;
-        bool IsGround = BlackBoard.Instance.IsGround;
-
-        if ((MaxHP > HP && IsDescent && IsGround && !IsFlying && !IsAction) || IsAction)
+        if ((IsFirstPhase && !IsAction) || IsAction)
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
 
@@ -51,7 +44,12 @@ public class Dragon_DescentFlying_Decorator : DecoratorTask
                 }
             }
             else if (NodeState != TASKSTATE.RUNNING)
+            {
+                if (!DragonManager.IsAction)
                     OnStart();
+                else if (DragonManager.IsAction)
+                    return true;
+            }
             return ChildNode.Run();
         }
         else if(NodeState == TASKSTATE.RUNNING ||
@@ -66,5 +64,6 @@ public class Dragon_DescentFlying_Decorator : DecoratorTask
     {
         base.OnEnd();
     }
+
 
 }
