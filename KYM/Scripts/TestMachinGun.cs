@@ -50,9 +50,8 @@ public class TestMachinGun : MonoBehaviour {
             Player.instance.rightHand.currentAttachedObject.SetActive(false);
             Player.instance.leftHand.currentAttachedObject.SetActive(false);
             Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
-
-
         }
+
         if (Player.instance.leftHand.GetGripButtonDown())
         {
             Player.instance.rightHand.DetachObject(gameObject,false);

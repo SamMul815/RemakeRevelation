@@ -123,6 +123,100 @@ public class PoolManager : Singleton<PoolManager>
             Debug.LogError(_original.name + "PoolObject Component is null");
         }
     }
+    /// <summary>
+    /// PoolManager로 관리하고 있는 오브젝트를 불러옵니다.
+    /// PoolManager에 스택이 없을시 _original에 PoolObject 컴퍼넌트가 있으면
+    /// 스택을 생성하고 _original 오브젝트를 복사하여 반환해줍니다.
+    /// </summary>
+    /// <param name="_original">원본 프리펩</param>
+    /// <param name="_position">생성 위치</param>
+    /// <param name="_gameObject">반환</param>
+    public void PopObject(GameObject _original, Vector3 _position, out GameObject _gameObject)
+    {
+        PoolObject _poolObj = _original.GetComponent<PoolObject>();
+        if (_poolObj != null)
+        {
+            if (poolStacks.ContainsKey(_poolObj.pooltag))
+            {
+                //_gameObject =  poolStacks[_poolObj.tag].Pop();
+                if (poolStacks[_poolObj.pooltag].Count > 0)
+                {
+                    _gameObject = poolStacks[_poolObj.pooltag].Pop();
+                    _gameObject.transform.position = _position;
+                    _gameObject.SetActive(true);
+                }
+                else
+                {
+                    _gameObject = Instantiate(_original, _position, Quaternion.identity);
+                }
+            }
+            else
+            {
+                Stack<GameObject> stack = new Stack<GameObject>();
+                poolStacks.Add(_poolObj.pooltag, stack);
+                _gameObject = Instantiate(_original,_position,Quaternion.identity);
+            }
+            if (_gameObject.GetComponent<PoolObject>().Init != null)
+                _gameObject.GetComponent<PoolObject>().Init();
+            else
+                Debug.LogWarning("PooloObject Init() NULL");
+        }
+        //객체에 PoolObject가 없음
+        //이경우도 만들려면 만들수 있는데 너무 소모 비용이 커서 딱히 만들 필요가 없어보임...
+        else
+        {
+            _gameObject = null;
+            Debug.LogError(_original.name + "PoolObject Component is null");
+        }
+    }
+
+    /// <summary>
+    /// PoolManager로 관리하고 있는 오브젝트를 불러옵니다.
+    /// PoolManager에 스택이 없을시 _original에 PoolObject 컴퍼넌트가 있으면
+    /// 스택을 생성하고 _original 오브젝트를 복사하여 반환해줍니다.
+    /// </summary>
+    /// <param name="_original">원본 프리펩</param>
+    /// <param name="_position">생성 위치</param>
+    /// <param name="_rot">회전값</param>
+    /// <param name="_gameObject">반환</param>
+    public void PopObject(GameObject _original, Vector3 _position, Quaternion _rot,  out GameObject _gameObject)
+    {
+        PoolObject _poolObj = _original.GetComponent<PoolObject>();
+        if (_poolObj != null)
+        {
+            if (poolStacks.ContainsKey(_poolObj.pooltag))
+            {
+                if (poolStacks[_poolObj.pooltag].Count > 0)
+                {
+                    _gameObject = poolStacks[_poolObj.pooltag].Pop();
+                    _gameObject.transform.position = _position;
+                    _gameObject.transform.rotation = _rot;
+                    _gameObject.SetActive(true);
+                }
+                else
+                {
+                    _gameObject = Instantiate(_original, _position, _rot);
+                }
+            }
+            else
+            {
+                Stack<GameObject> stack = new Stack<GameObject>();
+                poolStacks.Add(_poolObj.pooltag, stack);
+                _gameObject = Instantiate(_original, _position, _rot);
+            }
+            if (_gameObject.GetComponent<PoolObject>().Init != null)
+                _gameObject.GetComponent<PoolObject>().Init();
+            else
+                Debug.LogWarning("PooloObject Init() NULL");
+        }
+        //객체에 PoolObject가 없음
+        //이경우도 만들려면 만들수 있는데 너무 소모 비용이 커서 딱히 만들 필요가 없어보임...
+        else
+        {
+            _gameObject = null;
+            Debug.LogError(_original.name + "PoolObject Component is null");
+        }
+    }
 
     /// <summary>
     /// 빠른 계산을 이용하기 위해서 만든 PopObject 미리 등록을 해둬야 사용가능

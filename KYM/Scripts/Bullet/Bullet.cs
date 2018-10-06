@@ -141,4 +141,9 @@ public class Bullet : MonoBehaviour {
         PoolManager.Instance.PushObject(this.gameObject);
     }
 
+    public virtual void FireEvent()
+    {
+        
+    }
+
 }

@@ -15,19 +15,21 @@ public class BulletManager : Singleton<BulletManager>
     {
         Quaternion rot = Quaternion.LookRotation(_dir, Vector3.up);
         GameObject bullet;
-        PoolManager.Instance.PopObject(playerBaseBullet, out bullet);
-        bullet.transform.position = _position;
-        bullet.transform.rotation = rot;
-        bullet.GetComponent<BulletBase>().Init();
+        PoolManager.Instance.PopObject(playerBaseBullet,_position, rot, out bullet);
+        //bullet.transform.position = _position;
+        //bullet.transform.localRotation = rot;
+        bullet.GetComponent<Bullet>().FireEvent();
+        //bullet.GetComponent<BulletBase>().Init();
     } 
 
     public void CreatePlayerBaseBullet(Transform _firePos)
     {
         GameObject bullet;
-        PoolManager.Instance.PopObject(playerBaseBullet, out bullet);
-        bullet.transform.position = _firePos.position;
-        bullet.transform.rotation = _firePos.rotation;
-        bullet.GetComponent<BulletBase>().Init();
+        PoolManager.Instance.PopObject(playerBaseBullet, _firePos.position, _firePos.rotation, out bullet);
+        //bullet.transform.position = _firePos.position;
+        //bullet.transform.localRotation = _firePos.rotation;
+        //bullet.GetComponent<BulletBase>().Init();
+        bullet.GetComponent<Bullet>().FireEvent();
     }
 
     public void CreateDragonBaseBullet(Vector3 _position,int amount)

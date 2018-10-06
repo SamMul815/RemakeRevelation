@@ -11,7 +11,16 @@ public class BulletBase : Bullet
         base.Init();
         moveDir = this.transform.forward;
         trail.Clear();
+        trail.time = 0.0f;
 
+    }
+
+    public override void FireEvent()
+    {
+        base.FireEvent();
+        moveDir = this.transform.forward;
+        trail.time = 0.1f;
+        Debug.Log("fireEvet");
     }
 
     protected override void OnCollisionEvent()

@@ -67,7 +67,7 @@ public class Slow : MonoBehaviour {
         for (float fTime = 0.0f; fTime <= slowCircleTime; fTime += Time.unscaledDeltaTime )
         {
             Time.timeScale = 1.0f - (1.0f - slowValue) * fTime / slowCircleTime;
-            Debug.Log(Time.timeScale);
+            //Debug.Log(Time.timeScale);
             yield return new WaitForEndOfFrame();
         }
         Time.timeScale = slowValue;
@@ -77,7 +77,7 @@ public class Slow : MonoBehaviour {
         {
             Debug.Log(1.0f - fTime / slowTime);
             noiseMaterial.SetFloat(noiseString,1.0f - fTime / slowTime);
-            Debug.Log(noiseMaterial.GetFloat(noiseString));
+            //Debug.Log(noiseMaterial.GetFloat(noiseString));
             yield return new WaitForEndOfFrame();
         }
         
