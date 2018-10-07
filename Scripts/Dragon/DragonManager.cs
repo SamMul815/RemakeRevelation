@@ -56,7 +56,6 @@ namespace DragonController
         private static  Transform _player;
         public static Transform Player { get { return _player; } }
 
-
         IEnumerator _dragonAiCor;
 
         static bool _isInit;
