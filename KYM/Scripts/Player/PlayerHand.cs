@@ -564,12 +564,10 @@ public class PlayerHand : MonoBehaviour
         return false;
     }
 
-
     public void Vibration(float length, float strength)
     {
         StartCoroutine(LongVibration(length, strength));
     }
-
 
     private void CleanUpAttachedObjectStack()
     {
@@ -593,8 +591,6 @@ public class PlayerHand : MonoBehaviour
             controllerObject.transform.localScale = controllerPrefab.transform.localScale;
         }
     }
-
-
 
     IEnumerator LongVibration(float length, float strength)
     {

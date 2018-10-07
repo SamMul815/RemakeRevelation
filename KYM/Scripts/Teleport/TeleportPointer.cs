@@ -121,7 +121,7 @@ public class TeleportPointer : MonoBehaviour
             }
             else
             {
-                Debug.Log("parabol");
+                //Debug.Log("parabol");
                 Teleport();
             }
         }

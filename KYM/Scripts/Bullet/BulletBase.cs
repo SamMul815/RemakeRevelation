@@ -20,7 +20,7 @@ public class BulletBase : Bullet
         base.FireEvent();
         moveDir = this.transform.forward;
         trail.time = 0.1f;
-        Debug.Log("fireEvet");
+        //Debug.Log("fireEvet");
     }
 
     protected override void OnCollisionEvent()

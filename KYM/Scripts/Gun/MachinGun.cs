@@ -21,13 +21,17 @@ public class MachinGun : MonoBehaviour {
     public GameObject gunBarrelBack;
     public GameObject shootGunBarrelPos;
     public GameObject baseGunBarrelPos;
+
     public Transform shootPos;
+    public Transform Aim;
 
     [SerializeField]
     private float startDelay;
     public float StartDelay { get { return startDelay; } }
-
-    public float shootDealy;
+ 
+    [SerializeField]
+    private float shootDelay;
+    public float ShootDelay { get { return shootDelay; } }
 
     IEnumerator startShoot;
     IEnumerator stopShoot;
@@ -70,15 +74,26 @@ public class MachinGun : MonoBehaviour {
 
         secondTime += Time.unscaledDeltaTime;
 
-        if (hand.GetTriggerButtonDown())
+        if (hand.GetTriggerButton())
         {
-            startShoot = CorShoot(hand);
-            StartCoroutine(startShoot);
+            if(stopShoot == null && startShoot == null)
+            {
+                startShoot = CorShoot(hand);
+                StartCoroutine(startShoot);
+            }
+
         }
         else if (hand.GetTriggerButtonUp())
         {
-            StopCoroutine(startShoot);
-            StartCoroutine(CorStopShoot());
+            if(startShoot != null)
+            {
+                StopCoroutine(startShoot);
+                startShoot = null;
+
+                stopShoot = CorStopShoot();
+                StartCoroutine(stopShoot);
+            }
+
         }
 
         if(secondTime > 1.0f)
@@ -98,11 +113,23 @@ public class MachinGun : MonoBehaviour {
             gunBarrelFront.transform.position = Vector3.Slerp(baseGunBarrelPos.transform.position, shootGunBarrelPos.transform.position, fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
-        float currentShootDelay = shootDealy * 3.0f; 
+        float currentShootDelay = shootDelay * 3.0f; 
         while (true)
         {
             Vector2 circle = Random.insideUnitCircle * 0.05f;
-            Vector3 dir = shootPos.forward + shootPos.right * circle.x + shootPos.up * circle.y;
+            Vector3 dir = Aim.position - Player.instance.playerHead.transform.position;//shootPos.forward + shootPos.right * circle.x + shootPos.up * circle.y;
+            Ray ray = new Ray(Aim.position, dir);
+            RaycastHit rayHit;
+            if (Physics.Raycast(ray,out rayHit, 1000.0f))
+            {
+                dir =  rayHit.point - shootPos.position;
+                Debug.Log(rayHit.collider.name +  "rayray");
+            }
+            else
+            {
+                dir = Aim.position - shootPos.position;
+            }
+
             BulletManager.Instance.CreatePlayerBaseBullet(shootPos.position, dir.normalized);
             currentGauge -= shootGauge;
             hand.Vibration(0.1f, 4000.0f);
@@ -118,13 +145,13 @@ public class MachinGun : MonoBehaviour {
                 yield return new WaitForEndOfFrame();
             }
 
-            if(currentShootDelay > shootDealy)
+            if(currentShootDelay > shootDelay)
             {
-                currentShootDelay -= shootDealy * 0.5f;
+                currentShootDelay -= shootDelay * 0.5f;
             }
             else
             {
-                currentShootDelay = shootDealy;
+                currentShootDelay = shootDelay;
             }
             
             //yield return new WaitForSecondsRealtime(0.1f);
@@ -136,9 +163,9 @@ public class MachinGun : MonoBehaviour {
     {
         Quaternion rot = gunBarrelBack.transform.localRotation;
         Quaternion nextRot = Quaternion.Euler(0, 0, 0);
-        for (float fTime = 0.0f; fTime <= shootDealy; fTime += Time.fixedUnscaledDeltaTime)
+        for (float fTime = 0.0f; fTime <= shootDelay; fTime += Time.fixedUnscaledDeltaTime)
         {
-            gunBarrelBack.transform.localRotation = Quaternion.Lerp(rot, nextRot, fTime / shootDealy);
+            gunBarrelBack.transform.localRotation = Quaternion.Lerp(rot, nextRot, fTime / shootDelay);
             yield return new WaitForEndOfFrame();
         }
 
@@ -148,5 +175,11 @@ public class MachinGun : MonoBehaviour {
             gunBarrelFront.transform.position = Vector3.Slerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
+
+        if(stopShoot != null)
+        {
+            stopShoot = null;
+        }
+
     }
 }

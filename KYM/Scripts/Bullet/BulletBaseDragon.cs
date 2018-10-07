@@ -7,8 +7,7 @@ public class BulletBaseDragon : Bullet
     [SerializeField]
     private float bulletHP;
     private float currentHP;
-
-    
+ 
     protected override void Awake()
     {
         base.Awake();
