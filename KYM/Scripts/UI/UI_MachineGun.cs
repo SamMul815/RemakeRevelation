@@ -66,17 +66,20 @@ public class UI_MachineGun : MonoBehaviour {
     {
         float delay = startDelay * 0.5f;
 
-        Vector3 pos = aim1.transform.localPosition;
+        Vector3 pos1 = aim1.transform.localPosition;
+        Vector3 pos2 = aim2.transform.localPosition;
+        Vector3 pos3 = aim3.transform.localPosition;
 
         for (float fTime = 0.0f; fTime < startDelay; fTime += Time.unscaledDeltaTime)
         {
             //aim1.transform.localPosition = Vector3.Slerp(pos, pos + new Vector3(0, 0, zSpace), fTime / startDelay);
-            aim2.transform.localPosition = Vector3.Slerp(pos, pos + new Vector3(0, 0, zSpace), fTime / startDelay);
-            aim3.transform.localPosition = Vector3.Slerp(pos, pos + new Vector3(0, 0, zSpace * 2), fTime / startDelay);
+            aim2.transform.localPosition = Vector3.Lerp(pos2, pos2 + new Vector3(0, 0, zSpace), fTime / startDelay);
+            aim3.transform.localPosition = Vector3.Lerp(pos3, pos3 + new Vector3(0, 0, zSpace * 2), fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
-
-        while(true)
+        aim2.transform.localPosition = Vector3.Lerp(pos2, pos2 + new Vector3(0, 0, zSpace), 1.0f);
+        aim3.transform.localPosition = Vector3.Lerp(pos3, pos3 + new Vector3(0, 0, zSpace * 2), 1.0f);
+        while (true)
         {
             float currentShootDelay = shootDelay * 3.0f;
 
@@ -125,19 +128,27 @@ public class UI_MachineGun : MonoBehaviour {
         Vector3 aim2Pos = aim2.transform.localPosition;
         Vector3 aim1Pos = aim1.transform.localPosition;
 
+        Vector3 pos2 = aim2.transform.localPosition;
+        Vector3 pos3 = aim3.transform.localPosition;
+
+        pos2.z = 0;
+        pos3.z = 0;
+
 
         for (float fTime = 0.0f; fTime < startDelay; fTime += Time.unscaledDeltaTime)
         {
             //aim1.transform.localPosition = Vector3.Slerp(pos, pos + new Vector3(0, 0, zSpace), fTime / startDelay);
-            aim2.transform.localPosition = Vector3.Slerp(aim2Pos, aim1Pos, fTime / startDelay);
-            aim3.transform.localPosition = Vector3.Slerp(aim3Pos, aim1Pos, fTime / startDelay);
+            aim2.transform.localPosition = Vector3.Lerp(aim2Pos, pos2, fTime / startDelay);
+            aim3.transform.localPosition = Vector3.Lerp(aim3Pos, pos3, fTime / startDelay);
 
             aim2.transform.localRotation = Quaternion.Euler(0,0,0);
             aim3.transform.localRotation = Quaternion.Euler(0,0,0);
             yield return new WaitForEndOfFrame();
         }
+        aim2.transform.localPosition = Vector3.Slerp(aim2Pos, pos2, 1.0f);
+        aim3.transform.localPosition = Vector3.Slerp(aim3Pos, pos3, 1.0f);
 
-        if(stopShoot != null)
+        if (stopShoot != null)
         {
             stopShoot = null;
         }

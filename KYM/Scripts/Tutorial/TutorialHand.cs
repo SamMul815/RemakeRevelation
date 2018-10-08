@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class TutorialHand : MonoBehaviour {
 
@@ -16,7 +17,9 @@ public class TutorialHand : MonoBehaviour {
     public Material baseMaterial;
     public Material highlightMaterial;
 
-    private void Start()
+    
+
+private void Start()
     {
         modelRenderer = new Dictionary<string, MeshRenderer>();
         materialNameList = new List<string>();
@@ -36,14 +39,25 @@ public class TutorialHand : MonoBehaviour {
 
     private void OnAttachedToHand(PlayerHand hand)
     {
+        var system = OpenVR.System;
+        uint leftIndex = 0;
+        uint rightIndex = 0;
+
+        if (system != null)
+        {
+            leftIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.LeftHand);
+            rightIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.RightHand);
+        }
 
         if (hand.GetHandType() == PlayerHand.HandType.Right)
         {
-            renderModel.SetDeviceIndex(3);
+
+            //int rightIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.RightHand);
+            renderModel.SetDeviceIndex((int)rightIndex);
         }
         else if (hand.GetHandType() == PlayerHand.HandType.Left)
         {
-            renderModel.SetDeviceIndex(4);
+            renderModel.SetDeviceIndex((int)leftIndex);
         }
     }
 
@@ -56,6 +70,26 @@ public class TutorialHand : MonoBehaviour {
         if(Input.GetKeyUp(KeyCode.Space))
         {
             HighlightOffButton("body");
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            HighlightOnButton("lgrip");
+            HighlightOnButton("rgrip");
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            HighlightOffButton("lgrip");
+            HighlightOffButton("rgrip");
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            HighlightOnButton("trackpad");
+        }
+        if (Input.GetKeyUp(KeyCode.LeftAlt))
+        {
+            HighlightOffButton("trackpad");
         }
     }
 

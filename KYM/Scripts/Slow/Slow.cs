@@ -36,7 +36,7 @@ public class Slow : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if(playerHand.GetTouchPadDown())
+		if(playerHand.GetGripButtonDown())
         {
             if(isSlow == false)
             {
@@ -44,15 +44,6 @@ public class Slow : MonoBehaviour {
                 corSlow = CorSlow();
                 StartCoroutine(corSlow);
             }
-            //else
-            //{
-            //    if(corSlow != null)
-            //    {
-            //        //StopCoroutine(corSlow);
-            //        //corSlow = null;
-            //        //StartCoroutine(CorRetrunSlow());
-            //    }
-            //}
         }
 	}
 
@@ -75,7 +66,7 @@ public class Slow : MonoBehaviour {
 
         for(float fTime = 0.0f; fTime <= slowTime; fTime += Time.unscaledDeltaTime)
         {
-            Debug.Log(1.0f - fTime / slowTime);
+            //Debug.Log(1.0f - fTime / slowTime);
             noiseMaterial.SetFloat(noiseString,1.0f - fTime / slowTime);
             //Debug.Log(noiseMaterial.GetFloat(noiseString));
             yield return new WaitForEndOfFrame();

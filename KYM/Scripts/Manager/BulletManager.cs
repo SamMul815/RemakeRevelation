@@ -6,57 +6,38 @@ public class BulletManager : Singleton<BulletManager>
 {
     [SerializeField] private GameObject playerBaseBullet;
     [SerializeField] private GameObject dragonBaseBullet;
-    [SerializeField] private GameObject dragonSlashSkill;
     [SerializeField] private GameObject dragonRotateBullet;
-    [SerializeField] private GameObject dragonBaseBulletTest;
     [SerializeField] private GameObject dragonBreathPrefab;
 
+    public float DragonBaseBulletSpeed = 50.0f;
+    
     public void CreatePlayerBaseBullet(Vector3 _position, Vector3 _dir)
     {
         Quaternion rot = Quaternion.LookRotation(_dir, Vector3.up);
         GameObject bullet;
         PoolManager.Instance.PopObject(playerBaseBullet,_position, rot, out bullet);
-        //bullet.transform.position = _position;
-        //bullet.transform.localRotation = rot;
         bullet.GetComponent<Bullet>().FireEvent();
-        //bullet.GetComponent<BulletBase>().Init();
     } 
 
     public void CreatePlayerBaseBullet(Transform _firePos)
     {
         GameObject bullet;
         PoolManager.Instance.PopObject(playerBaseBullet, _firePos.position, _firePos.rotation, out bullet);
-        //bullet.transform.position = _firePos.position;
-        //bullet.transform.localRotation = _firePos.rotation;
-        //bullet.GetComponent<BulletBase>().Init();
         bullet.GetComponent<Bullet>().FireEvent();
     }
 
     public void CreateDragonBaseBullet(Vector3 _position,int amount)
     {
         float f_amount = amount;
-        //PoolObject pObj = dragonBaseBullet.GetComponent<PoolObject>();
         for (int i = 0; i< amount; i++)
         {
             GameObject bullet;
             PoolManager.Instance.PopObject(dragonBaseBullet, out bullet);
             if (bullet == null) return;
-            //if(i %2 == 0)
-            //{
-            //}
             bullet.transform.position = _position;
             bullet.transform.rotation = Quaternion.Euler(0f, i * (360.0f / f_amount),0f);
+            bullet.GetComponent<BulletBaseDragon>().ChangeSpeed(DragonBaseBulletSpeed);
 
-            //else if(i%2 == 1)
-            //{
-            //    bullet.transform.position = _position + Vector3.up * 5;
-            //    bullet.transform.rotation = Quaternion.Euler(0f, i * (360.0f / f_amount), 0f);
-            //}
-            //else
-            //{
-            //    bullet.transform.position = _position + Vector3.up * 10;
-            //    bullet.transform.rotation = Quaternion.Euler(0f, i * (360.0f / f_amount), 0f);
-            //}    
         }
     }
 
@@ -70,8 +51,6 @@ public class BulletManager : Singleton<BulletManager>
             bullet.transform.rotation = Quaternion.Euler(new Vector3(0.0f, i * 36, 0.0f));
 
         }
-        //PoolManager.Instance.PopObject(dragonSlashSkill, out bullet);
-        //bullet.transform.position = _position;
     }
 
     public void CreateDragonBaseBulletTest(Vector3 _position, float _time, int _amount)
@@ -94,10 +73,10 @@ public class BulletManager : Singleton<BulletManager>
         {
             Vector3 dir = (Player.instance.transform.position + Random.insideUnitSphere * range) - _position;
             GameObject bullet;
-            PoolManager.Instance.PopObject(dragonBaseBulletTest, out bullet);
+            PoolManager.Instance.PopObject(dragonBaseBullet, out bullet);
             bullet.transform.position = _position;
             bullet.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
-            bullet.GetComponent<BulletBaseDragon>().ChangeSpeed(30 + Random.Range(0, 20.0f));
+            bullet.GetComponent<BulletBaseDragon>().ChangeSpeed(30 + Random.Range(10, 20.0f));
             yield return new WaitForSeconds(_time - Random.Range(0, _time * 0.5f));
         }
     }

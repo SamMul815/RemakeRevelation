@@ -38,6 +38,9 @@ public class TeleportPointer : MonoBehaviour
     private Mesh parabolaMesh;
     private List<Vector3> parabolaPoints;
 
+    public PlayerHand playerHandLeft;
+    public PlayerHand playerHandRigt;
+
     private PlayerHand playerHand;
 
     private bool isTeleport = false;
@@ -69,19 +72,30 @@ public class TeleportPointer : MonoBehaviour
 
         playerInstance = Player.instance;
         playerStat = playerInstance.playerStat;
-        if (playerInstance != null)
-        {
-            if (teleportHandType == PlayerHand.HandType.Left)
-                playerHand = playerInstance.leftHand;
-            else if (teleportHandType == PlayerHand.HandType.Right)
-                playerHand = playerInstance.rightHand;             
-            
-        }
+        //if (playerInstance != null)
+        //{
+        //    if (teleportHandType == PlayerHand.HandType.Left)
+        //        playerHand = playerInstance.leftHand;
+        //    else if (teleportHandType == PlayerHand.HandType.Right)
+        //        playerHand = playerInstance.rightHand;                         
+        //}
     }
 
     void Update ()
     {
-        if(playerStat.playerVRState == PlayerStat.PlayerVRState.Idle && 
+        if (playerStat.playerVRState == PlayerStat.PlayerVRState.Idle)
+        {
+            if (playerHandLeft.GetTouchPadDown())
+            {
+                playerHand = playerHandLeft;
+            }
+            else if (playerHandRigt.GetTouchPadDown())
+            {
+                playerHand = playerHandRigt;
+            }
+        }
+
+        if (playerStat.playerVRState == PlayerStat.PlayerVRState.Idle && 
             playerHand != null)
         {
             if(playerHand.GetTouchPadDown())
@@ -89,7 +103,6 @@ public class TeleportPointer : MonoBehaviour
                 transform.parent = playerHand.transform;
                 transform.localPosition = Vector3.zero;
                 transform.localRotation = Quaternion.identity;
-                //isTeleport = true;
                 playerStat.playerVRState = PlayerStat.PlayerVRState.TeleportSelect;
                 ForceupdateCurrentAngle();
             }

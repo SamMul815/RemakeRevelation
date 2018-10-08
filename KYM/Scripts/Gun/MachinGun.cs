@@ -67,8 +67,12 @@ public class MachinGun : MonoBehaviour {
 
     private void HandAttachedUpdate(PlayerHand hand)
     {
+        //Vector3 posDir = hand.transform.position - hand.otherHand.transform.position;
+        //this.transform.position = hand.transform.position + posDir * 0.5f;
         this.transform.position = hand.transform.position;
-        Vector3 upDir = Quaternion.Euler(-15.0f, 0.0f, 0.0f) * hand.transform.up;
+        //Vector3 upDir = Quaternion.Euler(-15.0f, 0.0f, 0.0f) * hand.transform.up;
+        //this.transform.rotation =
+        //    Quaternion.LookRotation(this.transform.position - Player.instance.headCollider.transform.position, Vector3.up);
         this.transform.rotation =
             Quaternion.LookRotation(hand.otherHand.transform.position - hand.transform.position, Vector3.up);
 
@@ -81,7 +85,6 @@ public class MachinGun : MonoBehaviour {
                 startShoot = CorShoot(hand);
                 StartCoroutine(startShoot);
             }
-
         }
         else if (hand.GetTriggerButtonUp())
         {
@@ -93,16 +96,13 @@ public class MachinGun : MonoBehaviour {
                 stopShoot = CorStopShoot();
                 StartCoroutine(stopShoot);
             }
-
         }
 
         if(secondTime > 1.0f)
         {
             secondTime -= 1.0f;
             currentGauge -= timeGauge;
-        }
-        
-
+        }   
     }
 
     IEnumerator CorShoot(PlayerHand hand)
@@ -113,22 +113,24 @@ public class MachinGun : MonoBehaviour {
             gunBarrelFront.transform.position = Vector3.Slerp(baseGunBarrelPos.transform.position, shootGunBarrelPos.transform.position, fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
-        float currentShootDelay = shootDelay * 3.0f; 
+        float currentShootDelay = shootDelay * 3.0f;
+        Transform headcol = Player.instance.headCollider.transform;
         while (true)
         {
-            Vector2 circle = Random.insideUnitCircle * 0.05f;
-            Vector3 dir = Aim.position - Player.instance.playerHead.transform.position;//shootPos.forward + shootPos.right * circle.x + shootPos.up * circle.y;
-            Ray ray = new Ray(Aim.position, dir);
-            RaycastHit rayHit;
-            if (Physics.Raycast(ray,out rayHit, 1000.0f))
-            {
-                dir =  rayHit.point - shootPos.position;
-                Debug.Log(rayHit.collider.name +  "rayray");
-            }
-            else
-            {
-                dir = Aim.position - shootPos.position;
-            }
+            Vector3 sphere = Random.insideUnitSphere * 0.1f;
+            Vector3 dir =  Aim.position + sphere - headcol.position;
+            
+            //Ray ray = new Ray(Aim.position, dir);
+            //RaycastHit rayHit;
+            //if (Physics.Raycast(ray,out rayHit, 1000.0f))
+            //{
+            //    dir =  rayHit.point - shootPos.position;
+            //    Debug.Log(rayHit.collider.name +  "rayray");
+            //}
+            //else
+            //{
+            //   // dir = Aim.position - shootPos.position;
+            //}
 
             BulletManager.Instance.CreatePlayerBaseBullet(shootPos.position, dir.normalized);
             currentGauge -= shootGauge;
