@@ -230,6 +230,7 @@ public class NodeManager : MonoBehaviour
             if (_segmentIndex + 1 >= _segmentCount)
                 return;
 
+            /* --- 노드 이벤트 부분 --- */
             _curNodeIndex = (int)(_segmentIndex / Nodes[_curNodeIndex].NodeSegment);
 
             for (int i = 0; i < Nodes[_curNodeIndex].NodeEvent.Count; i++)
@@ -256,6 +257,8 @@ public class NodeManager : MonoBehaviour
                     }
                 }
             }
+
+            /* --- 노드 이벤트 부분 끝 --- */
 
             dir = (Stat.NodeDir[_segmentIndex] - moveObj.position).normalized;
         }
