@@ -25,8 +25,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(HowlingAttackOn, "Howling");
 
         AddAnimTimeEventFunc(DashAttackOn, "Dash");
-        AddAnimTimeEventFunc(DashAttackJump, "Dash");
-        AddAnimTimeEventFunc(DashAttackJumpEnd, "Dash");
         AddAnimTimeEventFunc(DashAttackOff, "Dash");
 
         AddAnimTimeEventFunc(DescentFlyingOn, "DescentFlying");
@@ -64,29 +62,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         DragonManager.Instance.AttackOn(DragonAttackTriggers.Dash);
         r.AddForce(Dragon.forward * DashMoveSpeed, ForceMode.Impulse);
-
-    }
-
-    private void DashAttackJump(EvnData evnData)
-    {
-        Rigidbody r = DragonManager.Instance.DragonRigidBody;
-        Transform Dragon = DragonManager.Instance.transform;
-        Vector3 MoveDir = (Vector3.up).normalized;
-
-        float DashJumpSpeed = 150.0f;
-        r.AddForce(MoveDir * DashJumpSpeed, ForceMode.Impulse);
-
-    }
-
-    private void DashAttackJumpEnd(EvnData evnData)
-    {
-        Rigidbody r = DragonManager.Instance.DragonRigidBody;
-        Transform Dragon = DragonManager.Instance.transform;
-        Vector3 MoveDir = (Vector3.down).normalized;
-
-        float DashJumpSpeed = 500.0f;
-        r.AddForce(MoveDir * DashJumpSpeed, ForceMode.Impulse);
-
 
     }
 

@@ -27,6 +27,7 @@ public class NodeManager : MonoBehaviour
     private MovementType _movementTag;
 
     private static MovementManager _manager;
+
     private BezierNodeEventCollection _eventCollection;
 
     private MoveStat _stat;
@@ -61,8 +62,8 @@ public class NodeManager : MonoBehaviour
     public MovementType MovementTag { get { return _movementTag; } }
 
     public MovementManager Manager { get { return _manager; } }
-    public BezierNodeEventCollection EventCollection { get { return _eventCollection; } }
 
+    public BezierNodeEventCollection EventCollection { get { return _eventCollection; } }
 
     public List<Vector3> NodesDir { get { return _nodesDir; } }
     public List<Quaternion> NodesRot { get { return _nodesRot; } }
