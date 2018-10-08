@@ -16,8 +16,9 @@ public class DragonAttackTrigger : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
+            Debug.Log("Hit");
             DragonManager.Instance.AttackOff();
         }
     }
