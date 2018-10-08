@@ -34,14 +34,12 @@ public class Dragon_MeteoAttack_Action : ActionTask
                 Dragon.rotation = Quaternion.Slerp(
                     Dragon.rotation,
                     Quaternion.LookRotation(forward),
-                    0.05f);
+                    0.03f);
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_MeteoAttack");
             DragonManager.IsTurn = true;
         }
-
-        Debug.Log("MeteoAttack");
 
         return false;
     }
