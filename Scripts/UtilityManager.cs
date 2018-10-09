@@ -87,9 +87,9 @@ public class UtilityManager :  Singleton<UtilityManager>
 
     public static bool DistanceCalc(Vector3 This, Vector3 Target, float Range)
     {
-        float Distance = (This - Target).magnitude;
+        float Distance = (This - Target).sqrMagnitude;
 
-        if (Distance <= Range)
+        if (Distance <= Range * Range)
             return true;
 
         return false;

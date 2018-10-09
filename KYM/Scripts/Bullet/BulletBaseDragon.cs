@@ -7,8 +7,7 @@ public class BulletBaseDragon : Bullet
     [SerializeField]
     private float bulletHP;
     private float currentHP;
-
-    
+ 
     protected override void Awake()
     {
         base.Awake();
@@ -18,7 +17,7 @@ public class BulletBaseDragon : Bullet
     public override void Init()
     {
         base.Init();
-        moveDir = this.transform.forward;
+        moveDir = transform.forward;
         currentHP = bulletHP;
     }
 
@@ -33,8 +32,8 @@ public class BulletBaseDragon : Bullet
     }
     protected override void Move()
     {
-        moveDir = this.transform.forward;
-        this.transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
+        moveDir = transform.forward;
+        transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
     }
 
     public void ChangeSpeed(float speed)
