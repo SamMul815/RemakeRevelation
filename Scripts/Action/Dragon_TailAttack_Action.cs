@@ -10,6 +10,7 @@ public class Dragon_TailAttack_Action : ActionTask
     {
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_Tail");
+        Clock.Instance.CurPawCoolingTime = 0.0f;
     }
 
     public override bool Run()

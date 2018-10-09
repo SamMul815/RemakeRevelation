@@ -42,7 +42,6 @@ public class Dragon_TailAttack_Decorator : DecoratorTask
                         OnStart();
                     else if (!childAction.IsRunning)
                         OnStart();
-
                     return ChildNode.Run();
                 }
             }
@@ -50,8 +49,8 @@ public class Dragon_TailAttack_Decorator : DecoratorTask
             {
                 if (NodeState != TASKSTATE.RUNNING)
                     OnStart();
+                return ChildNode.Run();
             }
-            return ChildNode.Run();
         }
         else if(NodeState == TASKSTATE.RUNNING ||
             ChildNode.NodeState == TASKSTATE.RUNNING)

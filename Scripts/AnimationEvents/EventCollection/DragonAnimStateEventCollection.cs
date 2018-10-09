@@ -42,6 +42,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
         AddAnimTimeEventFunc(ActionEnd, "Landing");
+        AddAnimTimeEventFunc(ActionEnd, "Tail");
 
     }
 

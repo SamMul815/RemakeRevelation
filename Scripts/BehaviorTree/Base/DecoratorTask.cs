@@ -10,13 +10,13 @@ public abstract class DecoratorTask : TreeNode
 
     public override void OnStart()
     {
-        base.OnStart();
         if (ChildNode.GetComponent<ActionTask>())
         {
             ActionTask childAction = ChildNode.GetComponent<ActionTask>();
             DragonManager.SetActionTask(childAction);
             DragonManager.IsAction = true;
         }
+        base.OnStart();
     }
 
     public override void OnEnd()
