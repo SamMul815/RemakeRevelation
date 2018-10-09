@@ -41,23 +41,32 @@ public class MachinGun : MonoBehaviour {
         currentGauge = maxGauge;
 	}
 
+    private void OnEnable()
+    {
+        currentGauge = maxGauge;
+        parentObject = Player.instance.rightHand.currentAttachedObject;
+        Player.instance.rightHand.currentAttachedObject.SetActive(false);
+        Player.instance.leftHand.currentAttachedObject.SetActive(false);
+        Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Player.instance.rightHand.GetGripButtonDown())
-        {
-            parentObject = Player.instance.rightHand.currentAttachedObject;
-            Player.instance.rightHand.currentAttachedObject.SetActive(false);
-            Player.instance.leftHand.currentAttachedObject.SetActive(false);
-            Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
-        }
+        //if (Player.instance.rightHand.GetGripButtonDown())
+        //{
+        //    parentObject = Player.instance.rightHand.currentAttachedObject;
+        //    Player.instance.rightHand.currentAttachedObject.SetActive(false);
+        //    Player.instance.leftHand.currentAttachedObject.SetActive(false);
+        //    Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
+        //}
 
-        if (Player.instance.leftHand.GetGripButtonDown())
-        {
-            Player.instance.rightHand.DetachObject(gameObject, false);
-            Player.instance.rightHand.currentAttachedObject.SetActive(true);
-            Player.instance.leftHand.currentAttachedObject.SetActive(true);
-        }
+        //if (Player.instance.leftHand.GetGripButtonDown())
+        //{
+        //    Player.instance.rightHand.DetachObject(gameObject, false);
+        //    Player.instance.rightHand.currentAttachedObject.SetActive(true);
+        //    Player.instance.leftHand.currentAttachedObject.SetActive(true);
+        //}
     }
 
     private void OnAttachedToHand(PlayerHand hand)
@@ -98,11 +107,23 @@ public class MachinGun : MonoBehaviour {
             }
         }
 
-        if(secondTime > 1.0f)
+        if (secondTime > 1.0f)
         {
             secondTime -= 1.0f;
             currentGauge -= timeGauge;
-        }   
+        }
+
+        if (currentGauge <= 0)
+        {
+            StopCoroutine(startShoot);
+            startShoot = null;
+            //stopShoot = CorStopShoot();
+            //StartCoroutine(stopShoot);
+            Player.instance.rightHand.DetachObject(gameObject, false);
+            Player.instance.rightHand.currentAttachedObject.SetActive(true);
+            Player.instance.leftHand.currentAttachedObject.SetActive(true);
+            this.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator CorShoot(PlayerHand hand)
@@ -182,6 +203,6 @@ public class MachinGun : MonoBehaviour {
         {
             stopShoot = null;
         }
-
     }
+
 }

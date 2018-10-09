@@ -17,9 +17,9 @@ public class TutorialHand : MonoBehaviour {
     public Material baseMaterial;
     public Material highlightMaterial;
 
-    
+    public SteamVR_Controller.Device controller;
 
-private void Start()
+    private void Start()
     {
         modelRenderer = new Dictionary<string, MeshRenderer>();
         materialNameList = new List<string>();
@@ -51,13 +51,14 @@ private void Start()
 
         if (hand.GetHandType() == PlayerHand.HandType.Right)
         {
-
             //int rightIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.RightHand);
             renderModel.SetDeviceIndex((int)rightIndex);
+            TutorialEvent.Instance.RightHand = this;
         }
         else if (hand.GetHandType() == PlayerHand.HandType.Left)
         {
             renderModel.SetDeviceIndex((int)leftIndex);
+            TutorialEvent.Instance.LeftHand = this;
         }
     }
 
@@ -130,12 +131,12 @@ private void Start()
         }
     }
 
-    void HighlightOnButton(string objectName)
+    public void HighlightOnButton(string objectName)
     {
         modelRenderer[objectName].material = highlightMaterial;
     }
 
-    void HighlightOffButton(string objectName)
+    public void HighlightOffButton(string objectName)
     {
         modelRenderer[objectName].material = baseMaterial;
     }

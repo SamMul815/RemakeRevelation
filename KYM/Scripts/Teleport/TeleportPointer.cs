@@ -7,7 +7,7 @@ public class TeleportPointer : MonoBehaviour
 {
     private Player playerInstance;
     private PlayerStat playerStat;
-    public PlayerHand.HandType teleportHandType;
+    //public PlayerHand.HandType teleportHandType;
 
     public float teleportTime;
     public Vector3 initialVelocity = Vector3.forward * 10.0f;
@@ -81,6 +81,11 @@ public class TeleportPointer : MonoBehaviour
         //}
     }
 
+    //private void OnEnable()
+    //{
+        
+    //}
+
     void Update ()
     {
         if (playerStat.playerVRState == PlayerStat.PlayerVRState.Idle)
@@ -138,8 +143,6 @@ public class TeleportPointer : MonoBehaviour
                 Teleport();
             }
         }
-
-
     }
 
     void Teleport()
