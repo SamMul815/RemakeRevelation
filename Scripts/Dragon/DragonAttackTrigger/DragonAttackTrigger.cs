@@ -18,7 +18,6 @@ public class DragonAttackTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("Hit");
             DragonManager.Instance.AttackOff();
         }
     }

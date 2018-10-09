@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4805583645833736}
   - component: {fileID: 114560148805431394}
   - component: {fileID: 114234990290429048}
+  - component: {fileID: 114849282099661836}
   m_Layer: 0
   m_Name: Descent
   m_TagString: Movement
@@ -491,6 +492,7 @@ MonoBehaviour:
   _nodeSpeed: 150
   _nodeSegment: 100
   _dragonUp: 0
+  _nodeEvent: []
 --- !u!114 &114234990290429048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -537,6 +539,18 @@ MonoBehaviour:
   _nodeSpeed: 50
   _nodeSegment: 100
   _dragonUp: 0
+  _nodeEvent: []
+--- !u!114 &114849282099661836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937915422469126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a331e1ff0924ae44be5c49efc00f66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114864279364872038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -552,3 +566,4 @@ MonoBehaviour:
   _nodeSpeed: 50
   _nodeSegment: 100
   _dragonUp: 0
+  _nodeEvent: []

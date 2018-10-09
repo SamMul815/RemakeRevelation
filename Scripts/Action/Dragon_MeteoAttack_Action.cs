@@ -24,8 +24,8 @@ public class Dragon_MeteoAttack_Action : ActionTask
             Vector3 DragonPos = Dragon.position;
             Vector3 PlayerPos = DragonManager.Player.position;
 
-            DragonPos.y = 0.0f;
-            PlayerPos.y = 0.0f;
+            //DragonPos.y = 0.0f;
+            //PlayerPos.y = 0.0f;
 
             forward = (PlayerPos - DragonPos).normalized;
 

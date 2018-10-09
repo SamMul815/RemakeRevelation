@@ -15,7 +15,7 @@ public class Dragon_TailAttack_Action : ActionTask
 
     public override bool Run()
     {
-        Debug.Log("Tail");
+
         return false;
     }
 

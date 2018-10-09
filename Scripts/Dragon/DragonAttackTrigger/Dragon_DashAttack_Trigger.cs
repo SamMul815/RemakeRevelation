@@ -11,7 +11,7 @@ public class Dragon_DashAttack_Trigger : DragonAttackTrigger
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             Vector3 dir = 
                 Vector3.Normalize(DragonManager.Player.position - DragonManager.Instance.transform.position);
