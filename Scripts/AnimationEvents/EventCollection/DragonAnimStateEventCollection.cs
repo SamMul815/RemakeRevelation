@@ -90,6 +90,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         DragonManager.FlyingOn = false;
         DragonManager.LandingOn = true;
         DragonManager.Instance.DragonRigidBody.useGravity = true;
+        DragonManager.Instance.DragonGroundCollider.enabled = true;
 
         Vector3 MoveDir = Vector3.down;
         DragonManager.Instance.DragonRigidBody.AddForce(MoveDir * 500.0f, ForceMode.Impulse);
@@ -119,7 +120,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         BulletManager.Instance.CreateDragonBaseBullet(pos, Amount);
     }
 
-
     private void BreathAttackOn(EvnData evnData)
     {
 
@@ -140,14 +140,12 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         BlackBoard.Instance.IsGround = false;
         BlackBoard.Instance.IsFlying = true;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
-        DragonManager.Instance.DragonGroundCollider.enabled = false;
     }
 
     private void MeteoTakeOffOn(EvnData evnData)
     {
         DragonManager.FlyingOn = true;
         MovementManager.Instance.SetMovement(MovementType.Meteo);
-        DragonManager.Instance.DragonGroundCollider.enabled = false;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
 
     }
