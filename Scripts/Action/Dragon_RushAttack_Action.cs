@@ -5,6 +5,8 @@ using DragonController;
 
 public class Dragon_RushAttack_Action : ActionTask
 {
+    private float _moveDistance = 0.0f;
+    private float _rushSpeed;
 
     public override void OnStart()
     {
@@ -14,6 +16,12 @@ public class Dragon_RushAttack_Action : ActionTask
         DragonManager.Instance.Stat.DashMovePosition = DragonManager.Player.transform.position;
         Clock.Instance.CurDashCoolingTime = 0.0f;
         DragonManager.IsAction = true;
+
+        Transform Dragon = DragonManager.Instance.transform;
+        Transform Player = DragonManager.Player;
+
+        _moveDistance = (Dragon.position - Player.position).sqrMagnitude;
+        _moveDistance = Mathf.Sqrt(_moveDistance);
 
     }
 
@@ -53,15 +61,14 @@ public class Dragon_RushAttack_Action : ActionTask
             Transform Player = DragonManager.Player;
 
             float Distance = DragonManager.Instance.Stat.RushMoveLimitDistance;
-
-            float RushSpeed = DragonManager.Instance.Stat.RushSpeed;
+            _rushSpeed = _moveDistance * (1.0f - Time.deltaTime);
 
             if (!UtilityManager.DistanceCalc(Dragon.position, DragonManager.Instance.Stat.DashMovePosition, Distance))
             {
                 Dragon.position = Vector3.MoveTowards(
                     Dragon.position,
                     DragonManager.Instance.Stat.DashMovePosition,
-                    RushSpeed * Time.deltaTime);
+                    _rushSpeed * Time.deltaTime);
             }
 
         }

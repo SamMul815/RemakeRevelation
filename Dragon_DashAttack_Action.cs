@@ -47,18 +47,13 @@ public class Dragon_DashAttack_Action : ActionTask
 
         if (BlackBoard.Instance.IsDashAttackOn)
         {
-            float Distance = DragonManager.Instance.Stat.DashMoveLimitDistance;
+            float Distance = DragonManager.Instance.Stat.DashMoveDistance;
 
-            float DashSpeed = DragonManager.Instance.Stat.DashSpeed;
+            float DashSpeed = Distance * (1.0f - Time.deltaTime);
 
-            if (!UtilityManager.DistanceCalc(Dragon.position,
-                DragonManager.Instance.Stat.DashMovePosition, Distance))
-            {
-                Dragon.position = Vector3.MoveTowards(
-                    Dragon.position,
-                    DragonManager.Instance.Stat.DashMovePosition,
-                    DashSpeed * Time.deltaTime);
-            }
+            Vector3 forward = (Dragon.position - DragonManager.Instance.Stat.DashMovePosition).normalized;
+
+            Dragon.Translate(forward * DashSpeed * Time.deltaTime);
         }
         
         return false;

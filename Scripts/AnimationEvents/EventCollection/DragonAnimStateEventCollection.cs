@@ -91,6 +91,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         DragonManager.FlyingOn = false;
         DragonManager.LandingOn = true;
         DragonManager.Instance.DragonRigidBody.useGravity = true;
+        DragonManager.Instance.DragonGroundCollider.enabled = true;
 
         Vector3 MoveDir = Vector3.down;
         DragonManager.Instance.DragonRigidBody.AddForce(MoveDir * 500.0f, ForceMode.Impulse);
@@ -118,7 +119,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         int Amount = BlackBoard.Instance.FanShapeAmount;
         BulletManager.Instance.CreateDragonBaseBullet(pos, Amount);
     }
-
 
     private void BreathAttackOn(EvnData evnData)
     {
