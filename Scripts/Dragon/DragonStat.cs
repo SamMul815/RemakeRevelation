@@ -74,8 +74,8 @@ namespace DragonController {
         [Space]
         [Header("Dragon Pattern Distance")]
 
-        [SerializeField] private float _dashMoveLimitDistance;
-        public float DashMoveLimitDistance { get { return _dashMoveLimitDistance; } }
+        [SerializeField] private float _dashMoveDistance;
+        public float DashMoveDistance { get { return _dashMoveDistance; } }
 
         [SerializeField] private float _rushMoveLimitDistance;
         public float RushMoveLimitDistance { get { return _rushMoveLimitDistance; } }
