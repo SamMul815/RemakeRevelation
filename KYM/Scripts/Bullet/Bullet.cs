@@ -31,8 +31,8 @@ public class Bullet : MonoBehaviour {
     protected CapsuleCollider capsuleCol;  //컬라이더 정보
     protected Vector3 moveDir;             //이동 방향
     protected Vector3 prevPosition;        //이전 위치
-    protected RaycastHit[] hitInfo;        //충돌 정보    
-
+    protected RaycastHit hitInfo;        //충돌 정보    
+    protected Transform transform;
     protected virtual void Awake()
     {
         //Init();
@@ -47,6 +47,7 @@ public class Bullet : MonoBehaviour {
         capsuleCol = GetComponent<CapsuleCollider>();
         moveDistance = maxMoveDistance;
         prevPosition = this.transform.position;
+        transform = this.GetComponent<Transform>();
     }
 
     /// <summary>
@@ -93,13 +94,13 @@ public class Bullet : MonoBehaviour {
         //충돌 확인할 캡슐컬라이더 정점
         _p1 = prevPosition + Matrix4x4.Scale(transform.localScale).MultiplyPoint3x4(_colDir * capsuleCol.height * 0.5f);
         _p2 = prevPosition - Matrix4x4.Scale(transform.localScale).MultiplyPoint3x4(_colDir * capsuleCol.height * 0.5f);
-        hitInfo = Physics.CapsuleCastAll(_p1, _p2, capsuleCol.radius * transform.localScale.y, _dir.normalized, _dir.magnitude, hitLayer);
-        return hitInfo.Length > 0 ? true : false;
+        //hitInfo = Physics.CapsuleCastAll(_p1, _p2, capsuleCol.radius * transform.localScale.y, _dir, _dir.magnitude, hitLayer);
+        return Physics.CapsuleCast(_p1, _p2, capsuleCol.radius * transform.localScale.y, _dir, out hitInfo, moveSpeed * Time.fixedDeltaTime, hitLayer);
     }
 
     private void FixedUpdate()
     {
-        prevPosition = this.transform.position;
+        prevPosition = transform.position;
         Move();
         moveDistance -= moveSpeed * Time.fixedDeltaTime;
         if (CollisionCheck())
@@ -115,8 +116,8 @@ public class Bullet : MonoBehaviour {
         if(destroyParticle != null)
         {
             PoolManager.Instance.PopObject(destroyParticle, out particle);
-            particle.transform.position = hitInfo[0].point;
-            particle.transform.rotation = Quaternion.LookRotation(hitInfo[0].normal, Vector3.up);
+            particle.transform.position = hitInfo.point;
+            particle.transform.rotation = Quaternion.LookRotation(hitInfo.normal, Vector3.up);
         }
         else
         {
@@ -131,7 +132,7 @@ public class Bullet : MonoBehaviour {
         if (destroyParticle != null)
         {
             PoolManager.Instance.PopObject(destroyParticle, out particle);
-            particle.transform.position = this.transform.position;
+            particle.transform.position = transform.position;
             //particle.transform.rotation = Quaternion.LookRotation(hitInfo[0].normal, Vector3.up);
         }
         else
@@ -142,8 +143,7 @@ public class Bullet : MonoBehaviour {
     }
 
     public virtual void FireEvent()
-    {
-        
+    { 
     }
 
 }

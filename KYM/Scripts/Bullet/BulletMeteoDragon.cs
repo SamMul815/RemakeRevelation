@@ -10,8 +10,8 @@ public class BulletMeteoDragon : Bullet {
 
     protected override void Move()
     {
-        moveDir = this.transform.forward;
-        this.transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
+        moveDir = transform.forward;
+        transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
     }
 
     private void Update()

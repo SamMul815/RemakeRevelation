@@ -9,7 +9,7 @@ public class BulletBase : Bullet
     public override void Init()
     {
         base.Init();
-        moveDir = this.transform.forward;
+        moveDir = transform.forward;
         trail.Clear();
         trail.time = 0.0f;
 
@@ -18,29 +18,28 @@ public class BulletBase : Bullet
     public override void FireEvent()
     {
         base.FireEvent();
-        moveDir = this.transform.forward;
+        moveDir = transform.forward;
         trail.time = 0.1f;
-        //Debug.Log("fireEvet");
     }
 
     protected override void OnCollisionEvent()
     {
-        Collider _col = hitInfo[0].collider;
-        if (_col.tag == "DragonBullet")
+        Collider _col = hitInfo.collider;
+        if (_col.CompareTag("DragonBullet"))
         {
             _col.gameObject.GetComponent<BulletBaseDragon>().Hit(damage);
         }
-        else if (_col.tag == "DragonHit")
+        else if (_col.CompareTag("DragonHit"))
         {
             int d = Random.Range(-damagePlusMinusValue, damagePlusMinusValue);
             d += damage;
-            UIManager.Instance.CreatePopupText(d.ToString(), hitInfo[0].point);
+            UIManager.Instance.CreatePopupText(d.ToString(), hitInfo.point);
             //DragonHP관련
             DragonController.DragonManager.Instance.Hit(d);
         }
-        else if (_col.tag == "WeakPoint")
+        else if (_col.CompareTag("WeakPoint"))
         {
-            UIManager.Instance.CreatePopupTextRed(damage.ToString(), hitInfo[0].point);
+            UIManager.Instance.CreatePopupTextRed(damage.ToString(), hitInfo.point);
             _col.gameObject.GetComponent<WeakPoint>().Hit(damage);
         }
         DestroyHitBullet();
@@ -72,7 +71,7 @@ public class BulletBase : Bullet
     protected override void Move()
     {
         //this.transform.position += moveDir * Time.fixedUnscaledDeltaTime * moveSpeed;
-        this.transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
+        transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
     }
 
 }

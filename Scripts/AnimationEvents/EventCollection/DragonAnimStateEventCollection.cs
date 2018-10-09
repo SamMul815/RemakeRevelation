@@ -9,6 +9,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         base.Awake();
 
+        
         AddAnimTimeEventFunc(BreathAttackOn, "Breath");
 
         AddAnimTimeEventFunc(LandingOn, "Landing");
@@ -98,7 +99,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void LadingEnd(EvnData evnData)
     {
-        DragonManager.Instance.DragonGroundCollider.enabled = true;
     }
 
 
@@ -140,15 +140,14 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         BlackBoard.Instance.IsGround = false;
         BlackBoard.Instance.IsFlying = true;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
-        DragonManager.Instance.DragonGroundCollider.enabled = false;
     }
 
     private void MeteoTakeOffOn(EvnData evnData)
     {
         DragonManager.FlyingOn = true;
         MovementManager.Instance.SetMovement(MovementType.Meteo);
-        DragonManager.Instance.DragonGroundCollider.enabled = false;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
+        DragonManager.Instance.DragonGroundCollider.enabled = false;
 
     }
 

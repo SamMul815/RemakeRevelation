@@ -88,19 +88,19 @@ public class Gun : MonoBehaviour
         fireCoolTime = fireDelay;
         currentBullet -= 1;
 
-        GameObject cartridge;
-        PoolManager.Instance.PopObject(cartridgePrefab, out cartridge);
+        //GameObject cartridge;
+        //PoolManager.Instance.PopObject(cartridgePrefab, out cartridge);
 
-        if(gunType == GunType.Left)
-        {
-            cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, -40.0f, 0);
-        }
-        else if(gunType == GunType.Right)
-        {
-            cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, 40.0f, 0);
-        }
+        //if(gunType == GunType.Left)
+        //{
+        //    cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, -40.0f, 0);
+        //}
+        //else if(gunType == GunType.Right)
+        //{
+        //    cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, 40.0f, 0);
+        //}
 
-        cartridge.transform.position = magazine.transform.position;
+        //cartridge.transform.position = magazine.transform.position;
 
         GameObject muzzle;
         PoolManager.Instance.PopObject(muzzlePrefab, out muzzle);
