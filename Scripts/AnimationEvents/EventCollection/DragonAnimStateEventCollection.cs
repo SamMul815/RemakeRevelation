@@ -106,7 +106,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void ShotBreathAttackOn(EvnData evnData)
     {
         Transform DragonMouth = BlackBoard.Instance.DragonMouth;
-        BulletManager.Instance.CreateDragonBaseBulletTest(DragonMouth.position, 0.15f, 15);
+        BulletManager.Instance.CreateDragonBaseBulletTest(DragonMouth.position, 0.15f, 10);
     }
 
 

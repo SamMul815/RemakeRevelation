@@ -44,10 +44,11 @@ public class Bullet : MonoBehaviour {
 
         //Debug.Log(gameObject.name + "Awake호출");
         //GetComponent<PoolObject>().Reset = Reset;
+        transform = this.GetComponent<Transform>();
         capsuleCol = GetComponent<CapsuleCollider>();
         moveDistance = maxMoveDistance;
-        prevPosition = this.transform.position;
-        transform = this.GetComponent<Transform>();
+        prevPosition = transform.position;
+
     }
 
     /// <summary>
@@ -55,7 +56,11 @@ public class Bullet : MonoBehaviour {
     /// </summary>
     public virtual void Init()
     {
-        prevPosition = this.transform.position;
+        //if(transform == null)
+        //{
+        //    transform = this.GetComponent<Transform>();
+        //}
+        prevPosition = transform.position;
         moveDistance = maxMoveDistance;
         //capsuleCol = GetComponent<CapsuleCollider>();
     }

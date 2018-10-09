@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 229317200}
   - component: {fileID: 229317199}
   m_Layer: 10
-  m_Name: Dragon_LeftWing_Collider
+  m_Name: WingColliderL
   m_TagString: DragonHit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,7 +713,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 229317197}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 135.62}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1817,7 +1817,7 @@ GameObject:
   - component: {fileID: 574988586}
   - component: {fileID: 574988585}
   m_Layer: 10
-  m_Name: Dragon_RightWing_Collider
+  m_Name: WingColliderR
   m_TagString: DragonHit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1831,7 +1831,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 574988583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 135.62}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4869,7 +4869,7 @@ MonoBehaviour:
   _maxHP: 10000
   _hp: 10000
   _saveTakeDamage: 0
-  _dashMoveLimitDistance: 10
+  _dashMoveDistance: 30
   _rushMoveLimitDistance: 10
   _destroyPartDamagePercent: 0.05
   _firstPhaseHpPercent: 1
