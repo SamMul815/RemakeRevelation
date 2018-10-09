@@ -87,7 +87,5 @@ public class Slow : MonoBehaviour {
         isSlow = false;
         this.gameObject.SetActive(false);
 
-
-
     }
 }
