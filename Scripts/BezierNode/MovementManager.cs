@@ -42,12 +42,12 @@ public class MovementManager : Singleton<MovementManager>
         }
     }
 
-    public NodeManager GetNodeManager()
+    public NodeManager CurrentNodeManager()
     {
         return _nodesManager[_currentMoveType];
     }
 
-    public void SetMovement(MovementType moveType)
+    public void SetMovement(MovementType MoveType)
     {
         if (_isInit)
         {
@@ -57,7 +57,7 @@ public class MovementManager : Singleton<MovementManager>
             _nodesManager[_currentMoveType].enabled = false;
         }
 
-        _currentMoveType = moveType;
+        _currentMoveType = MoveType;
         _nodesManager[_currentMoveType].Init();
         _nodesManager[_currentMoveType].enabled = true;
 

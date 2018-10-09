@@ -51,7 +51,12 @@ public class Dragon_AirSpearFlying_Decorator : DecoratorTask
                 }
             }
             else if (NodeState != TASKSTATE.RUNNING)
+            {
+                if (!DragonManager.IsAction)
                     OnStart();
+                else if (DragonManager.IsAction)
+                    return true;
+            }
             return ChildNode.Run();
         }
         else if(NodeState == TASKSTATE.RUNNING ||

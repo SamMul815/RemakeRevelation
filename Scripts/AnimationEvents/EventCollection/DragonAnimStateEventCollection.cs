@@ -12,37 +12,41 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(BreathAttackOn, "Breath");
 
         AddAnimTimeEventFunc(LandingOn, "Landing");
+        AddAnimTimeEventFunc(LadingEnd, "Landing");
 
         AddAnimTimeEventFunc(RightPawAttackOn, "RightPaw");
-        AddAnimTimeEventFunc(RightPawAttckOff, "RightPaw");
-
         AddAnimTimeEventFunc(LeftPawAttackOn, "LeftPaw");
-        AddAnimTimeEventFunc(LeftPawAttackOff, "LeftPaw");
-
-        AddAnimTimeEventFunc(ShotBreathAttackOn ,"Shot_Breath");
-
-        AddAnimTimeEventFunc(HowlingAttackOn, "Howling");
 
         AddAnimTimeEventFunc(DashAttackOn, "Dash");
-        AddAnimTimeEventFunc(DashAttackJump, "Dash");
-        AddAnimTimeEventFunc(DashAttackJumpEnd, "Dash");
-        AddAnimTimeEventFunc(DashAttackOff, "Dash");
+        AddAnimTimeEventFunc(RushAttackOn, "Rush");
+
+
+        AddAnimTimeEventFunc(ShotBreathAttackOn ,"Shot_Breath");
+        AddAnimTimeEventFunc(HowlingAttackOn, "Howling");
+
+
 
         AddAnimTimeEventFunc(DescentFlyingOn, "DescentFlying");
-
         AddAnimTimeEventFunc(MeteoTakeOffOn, "MeteoTakeOff");
 
         AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
+
+        AddAnimTimeEventFunc(AttackOff, "Dash");
+        AddAnimTimeEventFunc(AttackOff, "Rush");
+        AddAnimTimeEventFunc(AttackOff, "LeftPaw");
+        AddAnimTimeEventFunc(AttackOff, "RightPaw");
 
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "LeftPaw");
         AddAnimTimeEventFunc(ActionEnd, "Dash");
+        AddAnimTimeEventFunc(ActionEnd, "Rush");
         AddAnimTimeEventFunc(ActionEnd, "Howling");
         AddAnimTimeEventFunc(ActionEnd, "Breath");
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
         AddAnimTimeEventFunc(ActionEnd, "Landing");
+        AddAnimTimeEventFunc(ActionEnd, "Tail");
 
     }
 
@@ -54,44 +58,20 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void DashAttackOn(EvnData evnData)
     {
         BlackBoard.Instance.IsDashAttackOn = true;
-        Rigidbody r = DragonManager.Instance.DragonRigidBody;
-
-        Transform Dragon = DragonManager.Instance.transform;
-        Vector3 MoveDir = (Dragon.forward + (Vector3.up * 5.5f)).normalized;
-
-        float DashMoveSpeed = 10.0f;
-
         DragonManager.Instance.AttackOn(DragonAttackTriggers.Dash);
-        r.AddForce(Dragon.forward * DashMoveSpeed, ForceMode.Impulse);
 
     }
 
-    private void DashAttackJump(EvnData evnData)
+    private void RushAttackOn(EvnData evnData)
     {
-        Rigidbody r = DragonManager.Instance.DragonRigidBody;
-        Transform Dragon = DragonManager.Instance.transform;
-        Vector3 MoveDir = (Vector3.up).normalized;
-
-        float DashJumpSpeed = 150.0f;
-        r.AddForce(MoveDir * DashJumpSpeed, ForceMode.Impulse);
-
+        BlackBoard.Instance.IsRushAttackOn = true;
+        DragonManager.Instance.AttackOn(DragonAttackTriggers.Dash);
     }
 
-    private void DashAttackJumpEnd(EvnData evnData)
-    {
-        Rigidbody r = DragonManager.Instance.DragonRigidBody;
-        Transform Dragon = DragonManager.Instance.transform;
-        Vector3 MoveDir = (Vector3.down).normalized;
-
-        float DashJumpSpeed = 500.0f;
-        r.AddForce(MoveDir * DashJumpSpeed, ForceMode.Impulse);
-
-
-    }
-
-    private void DashAttackOff(EvnData evnData)
+    private void AttackOff(EvnData evnData)
     {
         DragonManager.Instance.AttackOff();
+
     }
     
     private void RightPawAttackOn(EvnData evnData)
@@ -99,31 +79,26 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         DragonManager.Instance.AttackOn(DragonAttackTriggers.RightPaw);
     }
 
-    private void RightPawAttckOff(EvnData evnData)
-    {
-        DragonManager.Instance.AttackOff();
-    }
-
     private void LeftPawAttackOn(EvnData evnData)
     {
         DragonManager.Instance.AttackOn(DragonAttackTriggers.LeftPaw);
     }
-
-    private void LeftPawAttackOff(EvnData evnData)
-    {
-        DragonManager.Instance.AttackOff();
-    }
-
-
+    
     private void LandingOn(EvnData evnData)
     {
+
+        DragonManager.FlyingOn = false;
         DragonManager.LandingOn = true;
-        DragonManager.Instance.DragonGroundCollider.enabled = true;
         DragonManager.Instance.DragonRigidBody.useGravity = true;
 
         Vector3 MoveDir = Vector3.down;
         DragonManager.Instance.DragonRigidBody.AddForce(MoveDir * 500.0f, ForceMode.Impulse);
 
+    }
+
+    private void LadingEnd(EvnData evnData)
+    {
+        DragonManager.Instance.DragonGroundCollider.enabled = true;
     }
 
 
@@ -158,10 +133,10 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
 
     }
-
-
+    
     private void DescentFlyingOn(EvnData evnData)
     {
+        DragonManager.FlyingOn = true;
         BlackBoard.Instance.IsGround = false;
         BlackBoard.Instance.IsFlying = true;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
@@ -170,6 +145,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void MeteoTakeOffOn(EvnData evnData)
     {
+        DragonManager.FlyingOn = true;
         MovementManager.Instance.SetMovement(MovementType.Meteo);
         DragonManager.Instance.DragonGroundCollider.enabled = false;
         DragonManager.Instance.DragonRigidBody.useGravity = false;
@@ -180,7 +156,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         DragonManager.IsAction = false;
         BlackBoard.Instance.IsLanding = true;
-
     }
 
 }

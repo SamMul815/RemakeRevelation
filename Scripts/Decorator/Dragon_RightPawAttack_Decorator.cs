@@ -61,17 +61,10 @@ public class Dragon_RightPawAttack_Decorator : DecoratorTask
                 }
             }
             else if (NodeState == TASKSTATE.RUNNING ||
-                ChildNode.NodeState == TASKSTATE.RUNNING
-                )
+                ChildNode.NodeState == TASKSTATE.RUNNING)
             {
                 OnEnd();
             }
-        }
-        else if(NodeState == TASKSTATE.RUNNING ||
-            ChildNode.NodeState == TASKSTATE.RUNNING
-            )
-        {
-            OnEnd();
         }
         return true;
     }

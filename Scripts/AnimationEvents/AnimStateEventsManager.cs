@@ -64,7 +64,7 @@ public class AnimStateEventsManager : MonoBehaviour
                         stateEventCollection.AddIsAnimTimeEventRun(false, SMBKey);
                     }
                     smb.IsRunning = stateEventCollection.IsAnimTimeEventRun[SMBKey];
-                    smb.SetStateTimeEventLListener(stateEventCollection.AnimTimeEventFunc[SMBKey]);
+                    smb.SetStateTimeEventLListener(TimeEventFunc[SMBKey]);
                 }
 
                 if (ExitEventFunc.ContainsKey(SMBKey))

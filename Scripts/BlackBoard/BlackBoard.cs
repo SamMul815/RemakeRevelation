@@ -35,6 +35,10 @@ public class BlackBoard : Singleton<BlackBoard>
     public float DashDistance { get { return _dashDistance; } }
 
     [SerializeField]
+    private float _rushDistance;
+    public float RushDistance { get { return _rushDistance; } }
+
+    [SerializeField]
     private float _bullletBreathAttackDistance;
     public float BullletBreathAttackDistance { get { return _bullletBreathAttackDistance; } }
 
@@ -56,6 +60,9 @@ public class BlackBoard : Singleton<BlackBoard>
 
     private bool _isDashAttackOn;
     public bool IsDashAttackOn { set { _isDashAttackOn = value; } get { return _isDashAttackOn; } }
+
+    private bool _isRushAttackOn;
+    public bool IsRushAttackOn { set { _isRushAttackOn = value; } get { return _isRushAttackOn; } }
 
     //Dragon State
     private bool _isWatingState;
