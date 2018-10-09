@@ -27,16 +27,25 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(DashAttackOn, "Dash");
         AddAnimTimeEventFunc(DashAttackOff, "Dash");
 
+        AddAnimTimeEventFunc(RushAttackOn, "Rush");
+        AddAnimTimeEventFunc(RushAttackOff, "Rush");
+
         AddAnimTimeEventFunc(DescentFlyingOn, "DescentFlying");
 
         AddAnimTimeEventFunc(MeteoTakeOffOn, "MeteoTakeOff");
 
         AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
 
+
+
+
+
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "LeftPaw");
         AddAnimTimeEventFunc(ActionEnd, "Dash");
+
+        AddAnimTimeEventFunc(ActionEnd, "Rush");
         AddAnimTimeEventFunc(ActionEnd, "Howling");
         AddAnimTimeEventFunc(ActionEnd, "Breath");
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
@@ -54,17 +63,21 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void DashAttackOn(EvnData evnData)
     {
         BlackBoard.Instance.IsDashAttackOn = true;
-        Rigidbody r = DragonManager.Instance.DragonRigidBody;
-
-        Transform Dragon = DragonManager.Instance.transform;
-        Vector3 MoveDir = (Dragon.forward + (Vector3.up * 5.5f)).normalized;
-
-        float DashMoveSpeed = 10.0f;
-
         DragonManager.Instance.AttackOn(DragonAttackTriggers.Dash);
-        r.AddForce(Dragon.forward * DashMoveSpeed, ForceMode.Impulse);
 
     }
+
+    private void RushAttackOn(EvnData evnData)
+    {
+        BlackBoard.Instance.IsRushAttackOn = true;
+        DragonManager.Instance.AttackOn(DragonAttackTriggers.Dash);
+    }
+
+    private void RushAttackOff(EvnData evnData)
+    {
+        DragonManager.Instance.AttackOff();
+    }
+
 
     private void DashAttackOff(EvnData evnData)
     {
@@ -98,6 +111,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         DragonManager.FlyingOn = false;
         DragonManager.LandingOn = true;
         DragonManager.Instance.DragonRigidBody.useGravity = true;
+        //DragonManager.Instance.DragonGroundCollider.enabled = true;
 
         Vector3 MoveDir = Vector3.down;
         DragonManager.Instance.DragonRigidBody.AddForce(MoveDir * 500.0f, ForceMode.Impulse);

@@ -29,6 +29,9 @@ namespace DragonController {
         [SerializeField] private float _dashSpeed;
         public float DashSpeed { get { return _dashSpeed; } }
 
+        [SerializeField] private float _rushSpeed;
+        public float RushSpeed { get { return _rushSpeed; } }
+
         [SerializeField] private float _landingSpeed;
         public float LandingSpeed { get { return _landingSpeed; } }
 
@@ -74,8 +77,12 @@ namespace DragonController {
         [SerializeField] private float _dashMoveLimitDistance;
         public float DashMoveLimitDistance { get { return _dashMoveLimitDistance; } }
 
+        [SerializeField] private float _rushMoveLimitDistance;
+        public float RushMoveLimitDistance { get { return _rushMoveLimitDistance; } }
+
+
         private Vector3 _dashMovePosition;
-        public Vector3 DahsMovePosition { set { _dashMovePosition = value; } get { return _dashMovePosition; } }
+        public Vector3 DashMovePosition { set { _dashMovePosition = value; } get { return _dashMovePosition; } }
 
         [Space]
         [Header("Dragon Part Destroy Damage")]
