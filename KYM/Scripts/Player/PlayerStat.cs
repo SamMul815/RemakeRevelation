@@ -14,7 +14,7 @@ public class PlayerStat : MonoBehaviour
     public PlayerVRState playerVRState = PlayerVRState.Idle;
 
     [SerializeField]
-    private readonly float maxHP;
+    private float maxHP;
     private float currentHP;
 
     bool isPlayerDie;
@@ -28,13 +28,12 @@ public class PlayerStat : MonoBehaviour
     public void Hit(float damage)
     {
         currentHP -= damage;
-
+        Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             currentHP = 0;
             isPlayerDie = true;
         }
-
     }
 
     public float GetCurrentHP()

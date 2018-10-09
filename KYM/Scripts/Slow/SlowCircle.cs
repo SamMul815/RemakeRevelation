@@ -42,7 +42,7 @@ public class SlowCircle : MonoBehaviour
         Vector3 currentScale = this.transform.localScale;
         for (float currentTime = 0.0f; currentTime <= _time; currentTime += Time.unscaledDeltaTime)
         {
-            transform.localScale =  Vector3.Lerp(currentScale, scale, currentTime / _time);
+            transform.localScale =  Vector3.Slerp(currentScale, scale, currentTime / _time);
             yield return new WaitForEndOfFrame();
         }
         transform.localScale = scale;

@@ -15,9 +15,9 @@ public class GunReload : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (currentTime > 0) return;
-        if (other.gameObject.tag == "Gun")
+        if(other.CompareTag("Gun"))
         {
-            Debug.Log("Gun");
+            //Debug.Log("Gun");
             other.gameObject.GetComponentInParent<Gun>().Reload();
             //SoundManager.Instance.PlayAudio("Reload", transform.position, AudioPlayType.SOUND3D);
             //FMODSoundManager.Instance.PlayReloadSound(this.transform.position);

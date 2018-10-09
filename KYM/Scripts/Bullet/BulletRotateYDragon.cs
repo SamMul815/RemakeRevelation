@@ -34,7 +34,7 @@ public class BulletRotateYDragon : BulletBaseDragon
         moveTime += Time.deltaTime;
         currentRadius = radius;
         radius += moveSpeed * Time.deltaTime;
-        this.transform.position = basePosition +
+        transform.position = basePosition +
                         (forwardValue * transform.forward * currentRadius) +
                         //(upValue * transform.up * currentRadius) +
                         (rightValue * transform.right * currentRadius);

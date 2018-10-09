@@ -17,11 +17,11 @@ public class PlayerHead : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PlayerShake();
-            //StartCoroutine(CorShakeCamera(2.5f, 0.75f, 0.02f));
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    PlayerShake();
+        //    //StartCoroutine(CorShakeCamera(2.5f, 0.75f, 0.02f));
+        //}
         //this.transform.localPosition = cameraShakePos;
         this.transform.localRotation = Quaternion.Euler(cameraShakeRot);
 

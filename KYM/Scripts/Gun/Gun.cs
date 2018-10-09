@@ -6,39 +6,51 @@ using UnityEngine.UI;
 //[RequireComponent(typeof(GunAnimation))]
 public class Gun : MonoBehaviour
 {
-
     public enum GunType
     {
         Left,
         Right
     }
     public GunType gunType;
-    public int maxBullet;
+    [SerializeField]private int maxBullet;
+    public int MaxBullet { get { return maxBullet; } }
     public float fireDelay;
     public Transform firePos;
 
     public GameObject handLeft;
     public GameObject handRight;
 
+    public GameObject UILeft;
+    public GameObject UIRight;
+
+    public float rightSkillCoolTime;
+    public float leftSkillCoolTime;
+    private float skillCoolTime;
     public GameObject magazine;
     public GameObject cartridgePrefab;
     public GameObject muzzlePrefab;
+
     //[SerializeField] private string fireSound;
-    //[SerializeField] Slider gunBulletCountSlider;
     //[SerializeField] Text gunBulletCountText;
     //[SerializeField] Color noBulletUIColor;
+    //[SerializeField] Slider gunBulletCountSlider;
+
     //Color yesBulletUIColor;
     private int currentBullet;
+    public int CurrentBullet { get { return currentBullet; } }
     private float fireCoolTime;
     private Animator handAnimator;
     private PlayerHand playerHand;
 
+    private float currentSkillCoolTime;
+    public bool GetCanSkill { get { return currentSkillCoolTime <= 0.0f; } }
 
 
     private void Awake()
     {
         currentBullet = maxBullet;
         fireCoolTime = 0.0f;
+        //currentSkillCoolTime = skillCoolTime;
         //handAnimator = GetComponentInChildren<Animator>();
     }
 
@@ -56,6 +68,10 @@ public class Gun : MonoBehaviour
     {       
 	    if(fireCoolTime > 0.0f)
             fireCoolTime -= Time.unscaledDeltaTime;
+
+        if (currentSkillCoolTime > 0.0f)
+            currentSkillCoolTime -= Time.unscaledDeltaTime;
+
     }
 
     public void Fire()
@@ -72,19 +88,19 @@ public class Gun : MonoBehaviour
         fireCoolTime = fireDelay;
         currentBullet -= 1;
 
-        GameObject cartridge;
-        PoolManager.Instance.PopObject(cartridgePrefab, out cartridge);
+        //GameObject cartridge;
+        //PoolManager.Instance.PopObject(cartridgePrefab, out cartridge);
 
-        if(gunType == GunType.Left)
-        {
-            cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, -40.0f, 0);
-        }
-        else if(gunType == GunType.Right)
-        {
-            cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, 40.0f, 0);
-        }
+        //if(gunType == GunType.Left)
+        //{
+        //    cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, -40.0f, 0);
+        //}
+        //else if(gunType == GunType.Right)
+        //{
+        //    cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, 40.0f, 0);
+        //}
 
-        cartridge.transform.position = magazine.transform.position;
+        //cartridge.transform.position = magazine.transform.position;
 
         GameObject muzzle;
         PoolManager.Instance.PopObject(muzzlePrefab, out muzzle);
@@ -127,23 +143,46 @@ public class Gun : MonoBehaviour
             gunType = GunType.Right;
             handRight.SetActive(true);
             handLeft.SetActive(false);
+            UILeft.SetActive(false);
+            UIRight.SetActive(true);
             handAnimator = handRight.GetComponent<Animator>();
+            currentSkillCoolTime = 0.0f;
         }
         else if(hand.GetHandType() == PlayerHand.HandType.Left)
         {
             gunType = GunType.Left;
             handLeft.SetActive(true);
             handRight.SetActive(false);
+            UILeft.SetActive(true);
+            UIRight.SetActive(false);
             handAnimator = handLeft.GetComponent<Animator>();
+            currentSkillCoolTime = 0.0f;
         }
         StartCoroutine(CorTriggerAxisAnim());
     }
 
     private void HandAttachedUpdate(PlayerHand hand)
     {
+        if(currentSkillCoolTime > 0.0f)
+        {
+            currentSkillCoolTime -= Time.unscaledDeltaTime;
+        }
         if (hand.GetTriggerButton())
         {
             Fire();
+        }
+        if(GetCanSkill && hand.GetGripButtonDown())
+        {
+            if (gunType == GunType.Left)
+            {
+                SkillManager.Instance.UseLeftSkill();
+                currentSkillCoolTime = leftSkillCoolTime;
+            }
+            else if (gunType == GunType.Right)
+            {
+                SkillManager.Instance.UseRightSkill();
+                currentSkillCoolTime = rightSkillCoolTime;
+            }
         }
     }
 
@@ -158,5 +197,4 @@ public class Gun : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
-
 }
