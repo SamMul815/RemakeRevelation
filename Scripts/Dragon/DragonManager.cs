@@ -57,7 +57,7 @@ namespace DragonController
         private static  Transform _player;
         public static Transform Player { get { return _player; } }
 
-        IEnumerator _dragonAiCor;
+        //IEnumerator _dragonAiCor;
 
         static bool _isInit;
 
@@ -83,7 +83,7 @@ namespace DragonController
             IsAction = false;
 
             _dragonBehaviroTree.Initialize(_dragonBehaviroTree.Root);
-            _dragonAiCor = StartDragonAI();
+            //_dragonAiCor = StartDragonAI();
 
         }
 
@@ -91,7 +91,7 @@ namespace DragonController
         {
             if (Application.isPlaying)
             {
-                CoroutineManager.DoCoroutine(_dragonAiCor);
+                //CoroutineManager.DoCoroutine(_dragonAiCor);
                 _isInit = true;
             } 
 	    }
@@ -143,12 +143,10 @@ namespace DragonController
 
         }
 
-        IEnumerator StartDragonAI()
+        private void FixedUpdate()
         {
-            while (!_dragonBehaviroTree.Root.Run())
-            {
-                yield return CoroutineManager.FiexdUpdate;
-            }
+            if (!_dragonBehaviroTree.Root.Run())
+                return;
         }
     }
 }
