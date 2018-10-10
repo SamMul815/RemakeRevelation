@@ -5,7 +5,7 @@ using DragonController;
 
 public class Dragon_Landing_Action : ActionTask
 {
-    Vector3 FiexdPos = new Vector3();   
+    Vector3 FiexdPos = new Vector3();
 
     public override void OnStart()
     {
