@@ -34,8 +34,9 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(AttackOff, "Dash");
         AddAnimTimeEventFunc(AttackOff, "Rush");
-        AddAnimTimeEventFunc(AttackOff, "LeftPaw");
-        AddAnimTimeEventFunc(AttackOff, "RightPaw");
+
+        AddAnimTimeEventFunc(LeftPawAttackOff, "LeftPaw");
+        AddAnimTimeEventFunc(RightPawAttackOff, "RightPaw");
 
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
@@ -78,13 +79,29 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void RightPawAttackOn(EvnData evnData)
     {
         DragonManager.Instance.AttackOn(DragonAttackTriggers.RightPaw);
+        //SkillManager.Instance.UseDragonRightPaw();
     }
 
     private void LeftPawAttackOn(EvnData evnData)
     {
         DragonManager.Instance.AttackOn(DragonAttackTriggers.LeftPaw);
+        //SkillManager.Instance.UseDragonLefttPaw();
     }
-    
+
+    private void RightPawAttackOff(EvnData evnDat)
+    {
+        DragonManager.Instance.AttackOff();
+        //SkillManager.Instance.DragonRighttPawOff();
+    }
+
+    private void LeftPawAttackOff(EvnData evnData)
+    {
+
+        DragonManager.Instance.AttackOff();
+        //SkillManager.Instance.DragonLeftPawOff();
+    }
+
+
     private void LandingOn(EvnData evnData)
     {
 
@@ -100,6 +117,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void LadingEnd(EvnData evnData)
     {
+
     }
 
 
