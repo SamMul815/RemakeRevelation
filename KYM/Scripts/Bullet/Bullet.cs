@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(SphereCollider))]
 
 public class Bullet : MonoBehaviour {
 
@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour {
     private float moveDistance;
     //protected Vector3 startPosition;
 
-    protected CapsuleCollider capsuleCol;  //컬라이더 정보
+    protected SphereCollider col;  //컬라이더 정보
     protected Vector3 moveDir;             //이동 방향
     protected Vector3 prevPosition;        //이전 위치
     protected RaycastHit hitInfo;        //충돌 정보    
@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour {
         //Debug.Log(gameObject.name + "Awake호출");
         //GetComponent<PoolObject>().Reset = Reset;
         transform = this.GetComponent<Transform>();
-        capsuleCol = GetComponent<CapsuleCollider>();
+        col = GetComponent<SphereCollider>();
         moveDistance = maxMoveDistance;
         prevPosition = transform.position;
 
@@ -87,20 +87,25 @@ public class Bullet : MonoBehaviour {
     protected virtual bool CollisionCheck()
     {
         Vector3 _dir = transform.position - prevPosition;
-        Vector3 _colDir;
-        Vector3 _p1;
-        Vector3 _p2;
+        float _radius = col.radius;
+        //Vector3 _colDir;
+        //Vector3 _p1;
+        //Vector3 _p2;
 
         //충돌 확인할 캡슐 컬라이더 (방향)
-        if (capsuleCol.direction == 0) _colDir = transform.right;
-        else if (capsuleCol.direction == 1) _colDir = transform.up;
-        else _colDir = transform.forward;
+        //if (col.direction == 0) _colDir = transform.right;
+        //else if (col.direction == 1) _colDir = transform.up;
+        //else _colDir = transform.forward;
 
         //충돌 확인할 캡슐컬라이더 정점
-        _p1 = prevPosition + Matrix4x4.Scale(transform.localScale).MultiplyPoint3x4(_colDir * capsuleCol.height * 0.5f);
-        _p2 = prevPosition - Matrix4x4.Scale(transform.localScale).MultiplyPoint3x4(_colDir * capsuleCol.height * 0.5f);
+        //_p1 = prevPosition + Matrix4x4.Scale(transform.localScale).MultiplyPoint3x4(_colDir * col.height * 0.5f);
+        //_p2 = prevPosition - Matrix4x4.Scale(transform.localScale).MultiplyPoint3x4(_colDir * col.height * 0.5f);
+        //Physics.SphereCast()
         //hitInfo = Physics.CapsuleCastAll(_p1, _p2, capsuleCol.radius * transform.localScale.y, _dir, _dir.magnitude, hitLayer);
-        return Physics.CapsuleCast(_p1, _p2, capsuleCol.radius * transform.localScale.y, _dir, out hitInfo, moveSpeed * Time.fixedDeltaTime, hitLayer);
+
+        Ray ray = new Ray(transform.position, _dir);
+        return Physics.SphereCast(ray, _radius, out hitInfo,moveSpeed* Time.fixedDeltaTime, hitLayer);
+        //return Physics.CapsuleCast(_p1, _p2, col.radius * transform.localScale.y, _dir, out hitInfo, moveSpeed * Time.fixedDeltaTime, hitLayer);
     }
 
     private void FixedUpdate()
@@ -109,7 +114,7 @@ public class Bullet : MonoBehaviour {
         Move();
         moveDistance -= moveSpeed * Time.fixedDeltaTime;
         if (CollisionCheck())
-         OnCollisionEvent();
+            OnCollisionEvent();
 
         if (IsMaxDistance())
             PoolManager.Instance.PushObject(this.gameObject);

@@ -21,26 +21,22 @@ public class UI_MachineGun : MonoBehaviour {
     //public GameObject aim2Pos;
     //public GameObject aim3Pos;
 	// Use this for initialization
-	void Start ()
-    {
-		
-	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (gun.CurrentGauge < 1000)
-            gunGauage.text = "0" + gun.CurrentGauge.ToString();
-        else if (gun.CurrentGauge < 100)
-            gunGauage.text = "00" + gun.CurrentGauge.ToString();
+        if (gun.CurrentGauge <= 0)
+            gunGauage.text = "0000";
         else if (gun.CurrentGauge < 10)
             gunGauage.text = "000" + gun.CurrentGauge.ToString();
-        else if (gun.CurrentGauge <= 0)
-            gunGauage.text = "0000";
+        else if (gun.CurrentGauge < 100)
+            gunGauage.text = "00" + gun.CurrentGauge.ToString();
+        else if (gun.CurrentGauge < 1000)
+            gunGauage.text = "0" + gun.CurrentGauge.ToString();
         else
             gunGauage.text = gun.CurrentGauge.ToString();
 
-        if(Player.instance.rightHand.GetTriggerButton())
+        if(Player.instance.rightHand.GetTriggerButton() && gun.CurrentGauge > 0)
         {
             if(stopShoot == null && startShoot == null)
             {
@@ -60,6 +56,40 @@ public class UI_MachineGun : MonoBehaviour {
 
         }
 
+    }
+
+    public void StopAim()
+    {
+        if (startShoot != null)
+        {
+            StopCoroutine(startShoot);
+            startShoot = null;
+        }
+        stopShoot = CorStopAim(gun.StartDelay);
+        StartCoroutine(stopShoot);
+    }
+
+    public void Clear()
+    {
+        if(startShoot != null)
+        {
+            StopCoroutine(startShoot);
+        }
+        if(stopShoot != null)
+        {
+            StopCoroutine(stopShoot);
+        }
+
+        Vector3 pos2 = aim2.transform.localPosition;
+        Vector3 pos3 = aim3.transform.localPosition;
+
+        pos2.z = 0;
+        pos3.z = 0;
+
+        aim2.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        aim3.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        aim2.transform.localPosition = pos2;
+        aim3.transform.localPosition = pos3;
     }
 
     IEnumerator CorShootAim(float startDelay, float shootDelay)
@@ -154,5 +184,4 @@ public class UI_MachineGun : MonoBehaviour {
         }
 
     }
-
 }

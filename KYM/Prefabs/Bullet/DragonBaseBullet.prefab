@@ -70,9 +70,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4609184239316342}
-  - component: {fileID: 136289767502726936}
   - component: {fileID: 114829791561054128}
   - component: {fileID: 114722088129338520}
+  - component: {fileID: 135173632238965660}
   m_Layer: 11
   m_Name: DragonBaseBullet
   m_TagString: DragonBullet
@@ -419,8 +419,8 @@ MonoBehaviour:
     m_Bits: 4096
   maxMoveDistance: 500
   bulletHP: 100
---- !u!136 &136289767502726936
-CapsuleCollider:
+--- !u!135 &135173632238965660
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -428,9 +428,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 1
-  m_Height: 1
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198113523987865168
 ParticleSystem:
@@ -492,7 +491,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -1269104786
+  randomSeed: -1442467841
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3853,7 +3852,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1251396439
+  randomSeed: 456517265
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7214,7 +7213,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -947989150
+  randomSeed: 2078281265
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10575,7 +10574,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1677110244
+  randomSeed: -226387668
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13936,7 +13935,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -852306479
+  randomSeed: 1450788477
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17297,7 +17296,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1909848739
+  randomSeed: -2130139736
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -20658,7 +20657,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -625151535
+  randomSeed: 174183682
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -24019,7 +24018,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 613680200
+  randomSeed: -1631369565
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -27380,7 +27379,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1527589220
+  randomSeed: -1671013465
   InitialModule:
     serializedVersion: 3
     enabled: 1

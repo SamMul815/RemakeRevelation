@@ -299,6 +299,12 @@ MonoBehaviour:
     IsLoop: 0
   - RunTime: 0.999
     IsLoop: 0
+  - RunTime: 0.38
+    IsLoop: 0
+  - RunTime: 0.51
+    IsLoop: 0
+  - RunTime: 0.63
+    IsLoop: 0
 --- !u!114 &114116771329347942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,6 +327,8 @@ MonoBehaviour:
   - RunTime: 0.125
     IsLoop: 0
   - RunTime: 0.866
+    IsLoop: 0
+  - RunTime: 0.6
     IsLoop: 0
   - RunTime: 0.999
     IsLoop: 0
@@ -377,6 +385,8 @@ MonoBehaviour:
     IsLoop: 0
   - RunTime: 0.999
     IsLoop: 0
+  - RunTime: 0
+    IsLoop: 0
 --- !u!114 &114327537863289924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -399,6 +409,8 @@ MonoBehaviour:
   - RunTime: 0.383
     IsLoop: 0
   - RunTime: 0.999
+    IsLoop: 0
+  - RunTime: 0.15
     IsLoop: 0
 --- !u!114 &114380589711376336
 MonoBehaviour:
@@ -442,6 +454,8 @@ MonoBehaviour:
     IsLoop: 0
   - RunTime: 0.999
     IsLoop: 0
+  - RunTime: 0
+    IsLoop: 0
 --- !u!114 &114491344153591086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -466,6 +480,8 @@ MonoBehaviour:
   - RunTime: 0.589
     IsLoop: 0
   - RunTime: 0.999
+    IsLoop: 0
+  - RunTime: 0
     IsLoop: 0
 --- !u!114 &114562797182230952
 MonoBehaviour:
@@ -9793,7 +9809,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102756619706553722}
-    m_Position: {x: 396, y: 48, z: 0}
+    m_Position: {x: 396, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
