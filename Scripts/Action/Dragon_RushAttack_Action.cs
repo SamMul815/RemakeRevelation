@@ -11,14 +11,11 @@ public class Dragon_RushAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        BlackBoard.Instance.IsDashAttackOn = false;
-        BlackBoard.Instance.IsRushAttackOn = false;
-        DragonManager.Instance.Stat.DashMovePosition = DragonManager.Player.transform.position;
-        Clock.Instance.CurDashCoolingTime = 0.0f;
-        DragonManager.IsAction = true;
-
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
+        _blackBoard.IsDashAttackOn = false;
+        _blackBoard.IsRushAttackOn = false;
+        _manager.Stat.DashMovePosition = Player.position;
+        _clock.CurDashCoolingTime = 0.0f;
+        _manager.IsAction = true;
 
         _moveDistance = (Dragon.position - Player.position).sqrMagnitude;
         _moveDistance = Mathf.Sqrt(_moveDistance);
@@ -28,11 +25,8 @@ public class Dragon_RushAttack_Action : ActionTask
     public override bool Run()
     {
 
-        if (!DragonManager.IsTurn)
+        if (!_manager.IsTurn)
         {
-            Transform Dragon = DragonManager.Instance.transform;
-            Transform Player = DragonManager.Player;
-
             Vector3 DragonPos = Dragon.position;
             Vector3 PlayerPos = Player.position;
 
@@ -51,23 +45,20 @@ public class Dragon_RushAttack_Action : ActionTask
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_Rush");
-            DragonManager.IsTurn = true;
+            _manager.IsTurn = true;
         }
 
 
-        if (BlackBoard.Instance.IsRushAttackOn)
+        if (_blackBoard.IsRushAttackOn)
         {
-            Transform Dragon = DragonManager.Instance.transform;
-            Transform Player = DragonManager.Player;
+            float Distance = _manager.Stat.RushMoveLimitDistance;
+            _rushSpeed = _moveDistance;
 
-            float Distance = DragonManager.Instance.Stat.RushMoveLimitDistance;
-            _rushSpeed = _moveDistance * (1.0f - Time.deltaTime);
-
-            if (!UtilityManager.DistanceCalc(Dragon.position, DragonManager.Instance.Stat.DashMovePosition, Distance))
+            if (!UtilityManager.DistanceCalc(Dragon.position, _manager.Stat.DashMovePosition, Distance))
             {
                 Dragon.position = Vector3.MoveTowards(
                     Dragon.position,
-                    DragonManager.Instance.Stat.DashMovePosition,
+                    _manager.Stat.DashMovePosition,
                     _rushSpeed * Time.deltaTime);
             }
 
@@ -79,8 +70,8 @@ public class Dragon_RushAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsDashAttackOn = false;
-        BlackBoard.Instance.IsRushAttackOn = false;
+        _blackBoard.IsDashAttackOn = false;
+        _blackBoard.IsRushAttackOn = false;
     }
 
 }

@@ -9,9 +9,9 @@ public class Dragon_BreathAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        if (BlackBoard.Instance.IsPlayerDashAttack)
+        if (_blackBoard.IsPlayerDashAttack)
         {
-            float waitingTime = Clock.Instance.BreathWaitingTime;
+            float waitingTime = _clock.BreathWaitingTime;
             _actionCor = IsPlayerDashAttackTakeDamege(waitingTime);
             CoroutineManager.DoCoroutine(_actionCor);
             return;
@@ -21,11 +21,8 @@ public class Dragon_BreathAttack_Action : ActionTask
 
     public override bool Run()
     {
-        if (!DragonManager.IsTurn && !BlackBoard.Instance.IsPlayerDashAttack)
+        if (!_manager.IsTurn && !_blackBoard.IsPlayerDashAttack)
         {
-            Transform Dragon = DragonManager.Instance.transform;
-            Transform Player = DragonManager.Player;
-
             Vector3 DragonPos = Dragon.position;
             Vector3 PlayerPos = Player.position;
 
@@ -43,7 +40,7 @@ public class Dragon_BreathAttack_Action : ActionTask
                 return false;
             }
 
-            DragonManager.IsTurn = true;
+            _manager.IsTurn = true;
             DragonAniManager.SwicthAnimation("Dragon_Breath");
         }
 
@@ -53,7 +50,7 @@ public class Dragon_BreathAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsPlayerDashAttack = false;
+        _blackBoard.IsPlayerDashAttack = false;
     }
 
     IEnumerator IsPlayerDashAttackTakeDamege(float waitingTime)

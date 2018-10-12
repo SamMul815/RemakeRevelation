@@ -488,9 +488,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37235c875424ee489950f538c123634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurveNode: {fileID: 4089601431760004}
-  _nodeSpeed: 150
-  _nodeSegment: 100
+  CurveNode: {fileID: 0}
+  _nodeSpeed: 5
+  _nodeSegment: 0
   _dragonUp: 0
   _nodeEvent: []
 --- !u!114 &114234990290429048
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ea951e6c948e04488c7c1a3f045932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementTag: 1
+  _movementTag: 0
   Nodes:
   - {fileID: 114701853256657948}
   - {fileID: 114231885315566042}
@@ -535,9 +535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37235c875424ee489950f538c123634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurveNode: {fileID: 4278294117265042}
-  _nodeSpeed: 50
-  _nodeSegment: 100
+  CurveNode: {fileID: 0}
+  _nodeSpeed: 5
+  _nodeSegment: 0
   _dragonUp: 0
   _nodeEvent: []
 --- !u!114 &114849282099661836
@@ -562,8 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37235c875424ee489950f538c123634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurveNode: {fileID: 4927442151980328}
-  _nodeSpeed: 50
-  _nodeSegment: 100
+  CurveNode: {fileID: 0}
+  _nodeSpeed: 5
+  _nodeSegment: 0
   _dragonUp: 0
   _nodeEvent: []

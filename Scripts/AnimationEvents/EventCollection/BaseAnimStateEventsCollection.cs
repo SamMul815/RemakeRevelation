@@ -6,6 +6,12 @@ using DragonController;
 
 public class BaseAnimStateEventsCollection : MonoBehaviour
 {
+    protected DragonManager _manager;
+    public DragonManager Manager { get { return _manager; } }
+
+    protected BlackBoard _blackBoard;
+    public BlackBoard BlackBoard { get { return _blackBoard; } }
+
     protected Dictionary<string, Action<EvnData>> _animEnterEventFunc = new Dictionary<string, Action<EvnData>>();
     public Dictionary<string, Action<EvnData>> AnimEnterEventFunc { get { return _animEnterEventFunc; } }
 
@@ -20,7 +26,8 @@ public class BaseAnimStateEventsCollection : MonoBehaviour
 
     protected virtual void Awake()
     {
-
+        _manager = DragonManager.Instance;
+        _blackBoard = BlackBoard.Instance;
     }
 
     protected List<bool> GetIsAnimTimeEventRun(Dictionary<string, List<bool>> Target, string Key)

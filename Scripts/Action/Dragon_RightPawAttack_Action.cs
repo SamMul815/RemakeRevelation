@@ -10,14 +10,12 @@ public class Dragon_RightPawAttack_Action : ActionTask
     {
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_RightPaw");
-        Clock.Instance.CurPawCoolingTime = 0.0f;
+        EffectManager.Instance.PoolParticleEffectOn("RightPaw", Dragon);
+        _clock.CurPawCoolingTime = 0.0f;
     }
 
     public override bool Run()
     {
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
-
         Vector3 DragonPos = Dragon.position;
         Vector3 PlayerPos = Player.position;
 
@@ -37,7 +35,7 @@ public class Dragon_RightPawAttack_Action : ActionTask
                     0.05f);
                 return false;
             }
-            DragonManager.IsTurn = true;
+            _manager.IsTurn = true;
         //}
 
         return false;

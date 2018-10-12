@@ -16,17 +16,12 @@ public class Dragon_MeteoAttack_Action : ActionTask
 
     public override bool Run()
     {
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
         Vector3 forward;
 
-        if (!DragonManager.IsTurn)
+        if (!_manager.IsTurn)
         {
             Vector3 DragonPos = Dragon.position;
-            Vector3 PlayerPos = DragonManager.Player.position;
-
-            //DragonPos.y = 0.0f;
-            //PlayerPos.y = 0.0f;
+            Vector3 PlayerPos = Player.position;
 
             forward = (PlayerPos - DragonPos).normalized;
 
@@ -39,7 +34,7 @@ public class Dragon_MeteoAttack_Action : ActionTask
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_MeteoAttack");
-            DragonManager.IsTurn = true;
+            _manager.IsTurn = true;
         }
 
         return false;

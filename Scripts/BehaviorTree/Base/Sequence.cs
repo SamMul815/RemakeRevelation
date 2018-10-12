@@ -22,7 +22,7 @@ public class Sequence : CompositeTask
                     !childAction.IsRunning)
                 {
                     OnStart();
-                    DragonManager.SetActionTask(childAction);
+                    _manager.SetActionTask(childAction);
                 }
                 if (!childAction.Run())
                     return false;

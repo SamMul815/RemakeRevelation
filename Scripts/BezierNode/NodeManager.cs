@@ -22,7 +22,6 @@ using System;
 [RequireComponent(typeof(BezierNodeEventCollection))]
 public class NodeManager : MonoBehaviour
 {
-
     [SerializeField]
     private MovementType _movementTag;
 
@@ -88,7 +87,6 @@ public class NodeManager : MonoBehaviour
         _eventCollection = GetComponent<BezierNodeEventCollection>();
         _manager = MovementManager.Instance;
         _stat = GetComponent<MoveStat>();
-
     }
 
     private void Start()
@@ -129,7 +127,7 @@ public class NodeManager : MonoBehaviour
         if (IsStick)
         {
             transform.position = _manager.transform.position;
-            Vector3 PlayerPos = DragonManager.Player.position;
+            Vector3 PlayerPos = DragonManager.Instance.Player.position;
             Vector3 thisPos = transform.position;
 
             PlayerPos.y = 0.0f;

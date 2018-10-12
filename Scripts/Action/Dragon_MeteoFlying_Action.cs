@@ -9,9 +9,9 @@ public class Dragon_MeteoFlying_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        BlackBoard.Instance.IsGround = false;
-        DragonManager.Instance.AttackOff();
-        DragonManager.Instance.Stat.MeteoSaveHP = DragonManager.Instance.Stat.HP;
+        _blackBoard.IsGround = false;
+        _manager.AttackOff();
+        _manager.Stat.MeteoSaveHP = _manager.Stat.HP;
         DragonAniManager.SwicthAnimation("Dragon_MeteoTakeOff");
 
     }
@@ -19,12 +19,12 @@ public class Dragon_MeteoFlying_Action : ActionTask
     public override bool Run()
     {
 
-        if (DragonManager.FlyingOn)
+        if (_manager.FlyingOn)
         {
-            if (MovementManager.Instance.CurrentNodeManager().IsMoveEnd)
+            if (_movement.CurrentNodeManager().IsMoveEnd)
             {
-                DragonManager.IsAction = false;
-                BlackBoard.Instance.IsMeteoAttack = true;
+                _manager.IsAction = false;
+                _blackBoard.IsMeteoAttack = true;
             }
         }
 
@@ -34,6 +34,6 @@ public class Dragon_MeteoFlying_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsFlying = true;
+        _blackBoard.IsFlying = true;
     }
 }

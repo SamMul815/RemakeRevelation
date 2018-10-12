@@ -5,6 +5,7 @@ using DragonController;
 
 public abstract class ActionTask : TreeNode
 {
+
     [SerializeField]
     protected bool _isAttackAction;
     public bool IsAttackAction { get { return _isAttackAction; } }
@@ -41,8 +42,8 @@ public abstract class ActionTask : TreeNode
         { 
             CoroutineManager.DontCoroutine(_actionCor);
         }
-        DragonManager.IsTurn = false;
-        DragonManager.IsAction = false;
+        _manager.IsTurn = false;
+        _manager.IsAction = false;
         _isEnd = true;
     }
 

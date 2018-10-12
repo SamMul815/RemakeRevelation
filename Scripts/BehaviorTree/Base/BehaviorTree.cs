@@ -68,6 +68,7 @@ public class BehaviorTree : ScriptableObject
             int n = i;
             i += ChildNodes[i].GetComponentsInChildren<TreeNode>().Length - 1;
             ChildNodes[n].NodeState = TASKSTATE.FAULURE;
+            ChildNodes[n].Init();
 
             if (ChildNodes[n].GetComponent<ActionTask>())
             {
@@ -77,6 +78,11 @@ public class BehaviorTree : ScriptableObject
 
             Initialize(ChildNodes[n]);
         }
+
+    }
+
+    private void Init()
+    {
 
     }
 

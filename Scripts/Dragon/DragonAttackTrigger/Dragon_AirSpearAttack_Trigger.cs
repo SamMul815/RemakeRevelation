@@ -14,7 +14,7 @@ public class Dragon_AirSpearAttack_Trigger : DragonAttackTrigger
         if(other.CompareTag("Player"))
         {
             Vector3 dir = 
-                Vector3.Normalize(DragonManager.Player.position - DragonManager.Instance.transform.position);
+                Vector3.Normalize(_manager.Player.position - _manager.transform.position);
 
             dir += new Vector3(0.0f, 0.4f, 0.0f);
 

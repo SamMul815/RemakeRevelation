@@ -8,17 +8,14 @@ public class Dragon_LeftPawAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        //DragonAniManager.SwicthAnimation("Dragon_RightPow");
         DragonAniManager.SwicthAnimation("Dragon_LeftPaw");
-        Clock.Instance.CurPawCoolingTime = 0.0f;
+        EffectManager.Instance.PoolParticleEffectOn("LeftPaw", Dragon);
+        _clock.CurPawCoolingTime = 0.0f;
         //초기화
     }
 
     public override bool Run()
     {
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
-
         Vector3 DragonPos = Dragon.position;
         Vector3 PlayerPos = Player.position;
 
@@ -38,7 +35,7 @@ public class Dragon_LeftPawAttack_Action : ActionTask
                 0.05f);
             return false;
         }
-        DragonManager.IsTurn = true;
+        _manager.IsTurn = true;
         //}
         return false;
     }

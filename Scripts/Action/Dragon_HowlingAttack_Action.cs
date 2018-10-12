@@ -10,7 +10,7 @@ public class Dragon_HowlingAttack_Action : ActionTask
     {
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_Howling");
-        Clock.Instance.CurHowlingCoolingTime = 0.0f;
+        _clock.CurHowlingCoolingTime = 0.0f;
     }
 
     public override bool Run()

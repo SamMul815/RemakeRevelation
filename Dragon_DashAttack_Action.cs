@@ -5,25 +5,26 @@ using DragonController;
 
 public class Dragon_DashAttack_Action : ActionTask
 {
+    Vector3 forward;
 
     public override void OnStart()
     {
         BlackBoard.Instance.IsDashAttackOn = false;
         BlackBoard.Instance.IsRushAttackOn = false;
-        DragonManager.Instance.Stat.DashMovePosition = DragonManager.Player.transform.position;
         Clock.Instance.CurDashCoolingTime = 0.0f;
 
+        //Vector3 DragonPos = Dragon.position;
+        //DragonPos.y = 0.0f;
+
+        forward = (Dragon.position - Player.position).normalized;
         base.OnStart();
     }
 
     public override bool Run()
     {
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
 
-        if (!DragonManager.IsTurn)
+        if (!_manager.IsTurn)
         {
-
             Vector3 DragonPos = Dragon.position;
             Vector3 PlayerPos = Player.position;
 
@@ -42,17 +43,13 @@ public class Dragon_DashAttack_Action : ActionTask
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_Dash");
-            DragonManager.IsTurn = true;
+            _manager.IsTurn = true;
         }
 
-        if (BlackBoard.Instance.IsDashAttackOn)
+        if (_blackBoard.IsDashAttackOn)
         {
-            float Distance = DragonManager.Instance.Stat.DashMoveDistance;
-
-            float DashSpeed = Distance * (1.0f - Time.deltaTime);
-
-            Vector3 forward = (Dragon.position - DragonManager.Instance.Stat.DashMovePosition).normalized;
-
+            float Distance = _manager.Stat.DashMoveDistance;
+            float DashSpeed = Distance; // *(dashTime - Time.deltaTime);
             Dragon.Translate(forward * DashSpeed * Time.deltaTime);
         }
         
@@ -62,8 +59,8 @@ public class Dragon_DashAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsDashAttackOn = false;
-        BlackBoard.Instance.IsRushAttackOn = false;
+        _blackBoard.IsDashAttackOn = false;
+        _blackBoard.IsRushAttackOn = false;
     }
 
 }

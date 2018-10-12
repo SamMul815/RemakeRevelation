@@ -13,18 +13,18 @@ public class Dragon_WatingState_Action : ActionTask
 
     public override bool Run()
     {
-        Clock.Instance.CurWaitingCoolingTime -= Time.deltaTime;
+        _clock.CurWaitingCoolingTime -= Time.deltaTime;
 
-        if (Clock.Instance.CurWaitingCoolingTime <= 0.0f)
-            DragonManager.IsAction = false;
+        if (_clock.CurWaitingCoolingTime <= 0.0f)
+            _manager.IsAction = false;
         return false;
     }
 
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsWatingState = false;
-        Clock.Instance.CurWaitingCoolingTime = Clock.Instance.WaitingCoolingTime;
+        _blackBoard.IsWatingState = false;
+        _clock.CurWaitingCoolingTime = _clock.WaitingCoolingTime;
     }
 
 

@@ -14,40 +14,38 @@ public class Dragon_MeteoFlying_Decorator : DecoratorTask
     public override bool Run()
     {
 
-        float MaxHP = DragonManager.Instance.Stat.MaxHP;
-        float HP = DragonManager.Instance.Stat.HP;
-        float SaveHP = DragonManager.Instance.Stat.MeteoSaveHP;
+        float MaxHP = _manager.Stat.MaxHP;
+        float HP = _manager.Stat.HP;
+        float SaveHP = _manager.Stat.MeteoSaveHP;
 
-        float MeteoHP = DragonManager.Instance.Stat.MeteoHP;
+        float MeteoHP = _manager.Stat.MeteoHP;
 
         bool IsMeteo = MeteoHP - (SaveHP - HP) <= 0.0f;
-        bool IsAction = DragonManager.IsAction;
 
-        bool IsFlying = BlackBoard.Instance.IsFlying;
-        bool IsGround = BlackBoard.Instance.IsGround;
+        bool IsFlying = _blackBoard.IsFlying;
+        bool IsGround = _blackBoard.IsGround;
 
-        if ((MaxHP > HP && IsMeteo && IsGround && !IsFlying && !IsAction) || (IsAction))
+        if ((MaxHP > HP && IsMeteo && IsGround && !IsFlying && !_manager.IsAction) || (_manager.IsAction))
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+            if (_childAction)
             {
-                if(!childAction.IsRunning)
+                if(!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                else if(childAction.IsRunning && !childAction.IsEnd)
+                else if(_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
-                    return childAction.Run();
+
+                    return _childAction.Run();
                 }
             }
             else if (NodeState != TASKSTATE.RUNNING)

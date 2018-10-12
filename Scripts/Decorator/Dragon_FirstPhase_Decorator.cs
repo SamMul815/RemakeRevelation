@@ -12,30 +12,27 @@ public class Dragon_FirstPhase_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float FirstPhaseHP = DragonManager.Instance.Stat.FirstPhaseHP;
-        float HP = DragonManager.Instance.Stat.HP;
+        float FirstPhaseHP = _manager.Stat.FirstPhaseHP;
+        float HP = _manager.Stat.HP;
 
         bool IsFirstPhase = (HP <= FirstPhaseHP);
-        bool IsAction = DragonManager.IsAction;
 
-        if ((IsFirstPhase && !IsAction) || IsAction)
+        if ((IsFirstPhase && !_manager.IsAction) || _manager.IsAction)
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+            if (_childAction)
             {
-                if (!childAction.IsRunning)
+                if (!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if (childAction.IsRunning && !childAction.IsEnd)
+                if (_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
@@ -45,9 +42,9 @@ public class Dragon_FirstPhase_Decorator : DecoratorTask
             }
             else if (NodeState != TASKSTATE.RUNNING)
             {
-                if (!DragonManager.IsAction)
+                if (!_manager.IsAction)
                     OnStart();
-                else if (DragonManager.IsAction)
+                else if (_manager.IsAction)
                     return true;
             }
             return ChildNode.Run();
