@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
 
     }
 
-    public void Fire()
+    public void Fire(PlayerHand hand)
     {
         if(firePos == null || fireCoolTime > 0.0f || currentBullet <= 0)
         {
@@ -104,8 +104,8 @@ public class Gun : MonoBehaviour
 
         GameObject muzzle;
         PoolManager.Instance.PopObject(muzzlePrefab, out muzzle);
-
         muzzle.transform.position = firePos.position;
+        hand.Vibration(0.15f, 4000);
 
         //gunBulletCountSlider.value = (float)currentBullet / maxBullet;
         //gunBulletCountText.text = currentBullet.ToString();
@@ -169,7 +169,7 @@ public class Gun : MonoBehaviour
         }
         if (hand.GetTriggerButton())
         {
-            Fire();
+            Fire(hand);
         }
         if(GetCanSkill && hand.GetGripButtonDown())
         {

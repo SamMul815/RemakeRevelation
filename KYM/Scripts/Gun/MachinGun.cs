@@ -165,8 +165,8 @@ public class MachinGun : MonoBehaviour {
 
             BulletManager.Instance.CreatePlayerBaseBullet(shootPos.position, dir.normalized);
             currentGauge -= shootGauge;
-            hand.Vibration(0.1f, 4000.0f);
-            hand.otherHand.Vibration(0.1f, 4000.0f);
+            hand.Vibration(0.2f, 6000.0f);
+            hand.otherHand.Vibration(0.2f, 6000.0f);
             Player.instance.playerHead.PlayerShake(0.1f, 0.05f);
 
             Quaternion rot = gunBarrelBack.transform.localRotation;

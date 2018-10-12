@@ -9,7 +9,7 @@ public class GunReload : MonoBehaviour
 
     private void Update()
     {
-        if (currentTime >= 0) currentTime -= Time.deltaTime;
+        if (currentTime >= 0) currentTime -= Time.unscaledDeltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
