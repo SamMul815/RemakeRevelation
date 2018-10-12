@@ -67,7 +67,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void RushAttackOn(EvnData evnData)
     {
         _blackBoard.IsRushAttackOn = true;
-        _manager.AttackOn(DragonAttackTriggers.Dash);
+        _manager.AttackOn(DragonAttackTriggers.Rush);
     }
 
     private void AttackOff(EvnData evnData)

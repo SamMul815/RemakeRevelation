@@ -234,7 +234,6 @@ public class NodeManager : MonoBehaviour
 
             for (int i = 0; i < Nodes[_curNodeIndex].NodeEvent.Count; i++)
             {
-
                 float t = (1.0f / Nodes[_curNodeIndex].NodeSegment) * _segmentIndex;
 
                 if (t >= 1.0f)

@@ -12,7 +12,7 @@ public class Dragon_PlayerRushAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsPlayerDashAttack = _blackBoard.IsPlayerDashAttack;
+        bool IsPlayerDashAttack = _blackBoard.IsPlayerRushAttack;
 
         if ((IsPlayerDashAttack))
         {

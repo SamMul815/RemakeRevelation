@@ -13,7 +13,14 @@ public abstract class DecoratorTask : TreeNode
     public override void Init()
     {
         base.Init();
-        _childAction = ChildNode.GetComponent<ActionTask>();
+        if (ChildNode.GetComponent<ActionTask>())
+        {
+            _childAction = ChildNode.GetComponent<ActionTask>();
+        }
+        else
+        {
+            _childAction = null;
+        }
     }
 
     public override void OnStart()

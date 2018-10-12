@@ -10,7 +10,8 @@ public enum DragonAttackTriggers
     NearHowling,
     NearBreath,
     AirSpear,
-    Tail
+    Tail,
+    Rush
 }
 
 
@@ -103,8 +104,7 @@ namespace DragonController
         {
             if (_currentActionTask)
             {
-                if (_currentActionTask.IsRunning && 
-                    _currentActionTask.NodeState != TASKSTATE.FAULURE)
+                if (_currentActionTask.IsRunning && _currentActionTask.NodeState != TASKSTATE.FAULURE)
                 {
                     _currentActionTask.OnEnd();
                 }
@@ -119,14 +119,14 @@ namespace DragonController
             Debug.Log("Dragon Hit : " + damage);
         }
 
-        public void AttackOn(DragonAttackTriggers attackTag)
+        public void AttackOn(DragonAttackTriggers attackTrigger)
         {
             if (_isInit)
             {
                 _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(false);
                 _dragonAttackTriggers[_currentAttackTrigger].enabled = false;
             }
-            _currentAttackTrigger = attackTag;
+            _currentAttackTrigger = attackTrigger;
             _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(true);
             _dragonAttackTriggers[_currentAttackTrigger].enabled = true;
         }
@@ -135,7 +135,6 @@ namespace DragonController
         {
             _dragonAttackTriggers[_currentAttackTrigger].enabled = false;
             _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(false);
-
         }
 
         private void FixedUpdate()

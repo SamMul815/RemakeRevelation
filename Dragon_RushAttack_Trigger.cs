@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DragonController;
 
-public class Dragon_AirSpearAttack_Trigger : DragonAttackTrigger
+public class Dragon_RushAttack_Trigger : DragonAttackTrigger
 {
     [SerializeField]
     protected float _pushPower;
@@ -11,18 +11,17 @@ public class Dragon_AirSpearAttack_Trigger : DragonAttackTrigger
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Vector3 dir = 
+            Vector3 dir =
                 Vector3.Normalize(_manager.Player.position - _manager.transform.position);
 
-            dir += new Vector3(0.0f, 0.4f, 0.0f);
+            dir += new Vector3(0.0f, 0.2f, 0.0f);
 
             Player.instance.playerRigid.PlayerPush(dir, _pushPower);
+            BlackBoard.Instance.IsPlayerRushAttack = true;
             DragonManager.Instance.AttackOff();
 
         }
     }
-
-
 }
