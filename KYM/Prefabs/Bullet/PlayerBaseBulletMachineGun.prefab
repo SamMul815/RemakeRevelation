@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4154279889774784}
   - component: {fileID: 96653530596693648}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 136504615109468892}
   - component: {fileID: 114607220810387996}
   - component: {fileID: 114286768646753302}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: PlayerBaseBulletMachineGun
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4282861723508156}
   - component: {fileID: 96563529074587398}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -75,6 +75,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1856770748398870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4458651815265940}
+  - component: {fileID: 114820021001373736}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1895787810647142
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +161,19 @@ Transform:
   m_Father: {fileID: 4937106812172274}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4458651815265940
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856770748398870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4937106812172274}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4574855354006930
 Transform:
   m_ObjectHideFlags: 1
@@ -186,6 +215,7 @@ Transform:
   - {fileID: 4857654446613244}
   - {fileID: 4170449836561228}
   - {fileID: 4178443242248778}
+  - {fileID: 4458651815265940}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -243,6 +273,12 @@ MonoBehaviour:
   - poolObject: {fileID: 1118533640688316, guid: 45fae325c58556544adcd49a0a1b2086,
       type: 2}
     initialCount: 1
+  - poolObject: {fileID: 1563069165791020, guid: c051a1ebd70579149819eed504ec0b5c,
+      type: 2}
+    initialCount: 10
+  - poolObject: {fileID: 1502653574976536, guid: fdbded1f67a6e864dac62e35e41e060f,
+      type: 2}
+    initialCount: 10
 --- !u!114 &114450824410820312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,6 +297,8 @@ MonoBehaviour:
   dragonRotateBullet: {fileID: 1159996866615532, guid: fbab84e811b85fd46829eb7d2ab87bcd,
     type: 2}
   dragonBreathPrefab: {fileID: 1118533640688316, guid: 45fae325c58556544adcd49a0a1b2086,
+    type: 2}
+  dragonMeteoPrefab: {fileID: 1563069165791020, guid: c051a1ebd70579149819eed504ec0b5c,
     type: 2}
   DragonBaseBulletSpeed: 30
 --- !u!114 &114483535368983656
@@ -292,6 +330,65 @@ MonoBehaviour:
     type: 2}
   popupTextYellow: {fileID: 1063717698855360, guid: 1a7d91bc5a197dc42b026db6c17f46f8,
     type: 2}
+--- !u!114 &114820021001373736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856770748398870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64753167dfeea0a4d9efc74205efb7fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioList:
+  - name: da1
+    sound: {fileID: 8300000, guid: 12dd1729add644e9d8bb12589dbd0c59, type: 3}
+  - name: da2
+    sound: {fileID: 8300000, guid: 92dba52c0546d40fe85f8c28ce8b8ed3, type: 3}
+  - name: da3
+    sound: {fileID: 8300000, guid: d6243dd5f2ac94ce8a22b42f50d2303b, type: 3}
+  - name: da4
+    sound: {fileID: 8300000, guid: 3cc28a251c4a04fb6a32b9fe78e5eba6, type: 3}
+  - name: dc1
+    sound: {fileID: 8300000, guid: 3e06cc8ca727f4191980c0d93471464c, type: 3}
+  - name: dc2
+    sound: {fileID: 8300000, guid: 61d875589f9894053acb7c164182c328, type: 3}
+  - name: dc3
+    sound: {fileID: 8300000, guid: a23dd1cb760974a8bb7465c213254717, type: 3}
+  - name: dc4
+    sound: {fileID: 8300000, guid: 927c5c595e7414d1ea844a09ffe2434f, type: 3}
+  - name: dd1
+    sound: {fileID: 8300000, guid: c0dfc5a1f4d254a74ac25f2428533b8b, type: 3}
+  - name: dd2
+    sound: {fileID: 8300000, guid: 6f0d373f37847431085a74f213aca3a9, type: 3}
+  - name: dd3
+    sound: {fileID: 8300000, guid: 2caac8ea187e34af390c7462ff308078, type: 3}
+  - name: dd4
+    sound: {fileID: 8300000, guid: e0e8beedff4ad49608f174e122c4f049, type: 3}
+  - name: dh1
+    sound: {fileID: 8300000, guid: 8c8ba0b50179746259b209165730beea, type: 3}
+  - name: hd2
+    sound: {fileID: 8300000, guid: 2bafed6a03ae84dcd9d51f40e90d037d, type: 3}
+  - name: dh3
+    sound: {fileID: 8300000, guid: fc1a120d78cd34f5998148ca1c597491, type: 3}
+  - name: dh4
+    sound: {fileID: 8300000, guid: dfe7f4671556940df94860d892fa2a1a, type: 3}
+  - name: dt1
+    sound: {fileID: 8300000, guid: 963628846aa3140a197cd2f7afcf0fe8, type: 3}
+  - name: dt2
+    sound: {fileID: 8300000, guid: 93eac92fd885f4fbca7a9b89b38078d9, type: 3}
+  - name: dt3
+    sound: {fileID: 8300000, guid: d54e24cf0a3ec4b4d9346ac20e553017, type: 3}
+  - name: dt4
+    sound: {fileID: 8300000, guid: 72d32dcc38e5b4dd49b1ecc67e60ff39, type: 3}
+  - name: bgm1
+    sound: {fileID: 8300000, guid: f480091c3c59e4f49a590777b7d70f20, type: 3}
+  - name: bgm2
+    sound: {fileID: 8300000, guid: 68db71da3f965874fbf8c6646524d4e9, type: 3}
+  - name: aaahhh
+    sound: {fileID: 8300000, guid: a93ce8dd966882c4389385f52048895d, type: 3}
+  audioSoundObject: {fileID: 0}
 --- !u!114 &114847746839651598
 MonoBehaviour:
   m_ObjectHideFlags: 1

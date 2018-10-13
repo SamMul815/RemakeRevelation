@@ -33,12 +33,12 @@ public class PlayerRigid : MonoBehaviour
         if(rigid)
         {
             //Debug.Log(rigid.velocity.magnitude);
-            if(rigid.velocity.magnitude > minVelocity &&
+            if(rigid.velocity.sqrMagnitude > minVelocity * minVelocity &&
                 playerStat.playerVRState != PlayerStat.PlayerVRState.Teleporting)
             {
                 playerStat.playerVRState = PlayerStat.PlayerVRState.Pushing;
             }
-            else if(rigid.velocity.magnitude  <= minVelocity &&
+            else if(rigid.velocity.sqrMagnitude <= minVelocity * minVelocity &&
                 playerStat.playerVRState == PlayerStat.PlayerVRState.Pushing)
             {
                 playerStat.playerVRState = PlayerStat.PlayerVRState.Idle;

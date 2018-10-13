@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour {
     protected float moveSpeed;             //투사체 속도
 
     [SerializeField]
-    LayerMask hitLayer;                    //충돌되는 레이어들
+    protected LayerMask hitLayer;                    //충돌되는 레이어들
 
     [SerializeField]
     private float maxMoveDistance = 20000.0f;
