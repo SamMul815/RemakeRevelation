@@ -163,7 +163,7 @@ public class MachinGun : MonoBehaviour {
             //   // dir = Aim.position - shootPos.position;
             //}
 
-            BulletManager.Instance.CreatePlayerBaseBullet(shootPos.position, dir.normalized);
+            BulletManager.Instance.CreatePlayerMachinBullet(shootPos.position, dir.normalized);
             currentGauge -= shootGauge;
             hand.Vibration(0.2f, 6000.0f);
             hand.otherHand.Vibration(0.2f, 6000.0f);

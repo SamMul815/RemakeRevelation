@@ -237,9 +237,6 @@ MonoBehaviour:
   - poolObject: {fileID: 1455987169917528, guid: ef9a0b8948d45a34397e9a4dc7a357e3,
       type: 2}
     initialCount: 90
-  - poolObject: {fileID: 1647649571766330, guid: b03c4d0d424f621469864a598ef9cc33,
-      type: 2}
-    initialCount: 1
   - poolObject: {fileID: 1685542203615724, guid: 4a662ba58db10cf4bb6634f27ac28812,
       type: 2}
     initialCount: 1
@@ -255,9 +252,9 @@ MonoBehaviour:
   - poolObject: {fileID: 1053803461520408, guid: 658a13efe06a4664b8a9bea63be2f895,
       type: 2}
     initialCount: 1
-  - poolObject: {fileID: 1258507552130136, guid: 09245cc37de1f6c468dc1c1a54d67cd6,
+  - poolObject: {fileID: 1595224445038750, guid: 4d872c7832c0fc74c87d7a6e56167a27,
       type: 2}
-    initialCount: 1
+    initialCount: 10
   - poolObject: {fileID: 1899818161322040, guid: 339508f6086eeea488d7f239b75cb068,
       type: 2}
     initialCount: 1
@@ -267,7 +264,7 @@ MonoBehaviour:
   - poolObject: {fileID: 1420575820040750, guid: 4ee899c36659dc941bbce3ae312c3124,
       type: 2}
     initialCount: 10
-  - poolObject: {fileID: 1187798113854730, guid: a9b0989f0e3239940a05739dd2a1577e,
+  - poolObject: {fileID: 1244637099381106, guid: ce41bfa691281094c9fc903eb76cc3c5,
       type: 2}
     initialCount: 10
   - poolObject: {fileID: 1118533640688316, guid: 45fae325c58556544adcd49a0a1b2086,
@@ -277,6 +274,12 @@ MonoBehaviour:
       type: 2}
     initialCount: 10
   - poolObject: {fileID: 1502653574976536, guid: fdbded1f67a6e864dac62e35e41e060f,
+      type: 2}
+    initialCount: 10
+  - poolObject: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
+      type: 2}
+    initialCount: 10
+  - poolObject: {fileID: 1915113466459928, guid: 02028f915c0650648b2235995a5bc738,
       type: 2}
     initialCount: 10
 --- !u!114 &114450824410820312
@@ -291,6 +294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBaseBullet: {fileID: 1077627483473738, guid: 88ebd8a552980c14fb4e704a2f46129f,
+    type: 2}
+  playerMachinBullet: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
     type: 2}
   dragonBaseBullet: {fileID: 1455987169917528, guid: ef9a0b8948d45a34397e9a4dc7a357e3,
     type: 2}

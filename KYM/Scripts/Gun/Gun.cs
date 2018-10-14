@@ -103,8 +103,9 @@ public class Gun : MonoBehaviour
         //cartridge.transform.position = magazine.transform.position;
 
         GameObject muzzle;
-        PoolManager.Instance.PopObject(muzzlePrefab, out muzzle);
-        muzzle.transform.position = firePos.position;
+        PoolManager.Instance.PopObject(muzzlePrefab,firePos.position,firePos.rotation,out muzzle);
+        //muzzle.transform.position = firePos.position;
+        //muzzle.transform.rotation = Quaternion.LookRotation(firePos.forward, Vector3.up);
         hand.Vibration(0.15f, 4000);
 
         //gunBulletCountSlider.value = (float)currentBullet / maxBullet;

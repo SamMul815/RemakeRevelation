@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletManager : Singleton<BulletManager>
 {
     [SerializeField] private GameObject playerBaseBullet;
+    [SerializeField] private GameObject playerMachinBullet;
     [SerializeField] private GameObject dragonBaseBullet;
     [SerializeField] private GameObject dragonRotateBullet;
     [SerializeField] private GameObject dragonBreathPrefab;
@@ -16,7 +17,6 @@ public class BulletManager : Singleton<BulletManager>
     private void Start()
     {
         player = Player.instance.transform;
-        
     }
 
     public float DragonBaseBulletSpeed = 50.0f;
@@ -33,6 +33,21 @@ public class BulletManager : Singleton<BulletManager>
     {
         GameObject bullet;
         PoolManager.Instance.PopObject(playerBaseBullet, _firePos.position, _firePos.rotation, out bullet);
+        bullet.GetComponent<Bullet>().FireEvent();
+    }
+
+    public void CreatePlayerMachinBullet(Vector3 _position, Vector3 _dir)
+    {
+        Quaternion rot = Quaternion.LookRotation(_dir, Vector3.up);
+        GameObject bullet;
+        PoolManager.Instance.PopObject(playerMachinBullet, _position, rot, out bullet);
+        bullet.GetComponent<Bullet>().FireEvent();
+    }
+
+    public void CreatePlayerMachinBullet(Transform _firePos)
+    {
+        GameObject bullet;
+        PoolManager.Instance.PopObject(playerMachinBullet, _firePos.position, _firePos.rotation, out bullet);
         bullet.GetComponent<Bullet>().FireEvent();
     }
 
@@ -144,7 +159,7 @@ public class BulletManager : Singleton<BulletManager>
                 meteo.transform.position = position + up * fireCircle.y + right * fireCircle.x;
             }
             meteo.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
-            meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(150 - Random.Range(0, 30.0f));
+            meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(300 - Random.Range(0, 50.0f));
             yield return new WaitForSeconds(0.1f);
         }
         yield return null;

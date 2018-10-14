@@ -5,61 +5,79 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class WeakPoint : MonoBehaviour {
 
-    public float maxHP;
-    public GameObject hideObject;
+    public GameObject baseObject;
+    public GameObject brokenObject;
     public GameObject throwablePrefab;
-    public GameObject breakEffect;
-    public Transform attachPoint;
+    public GameObject brokenEffectPrefab;
+    //public Transform attachPoint;
+
+
+    public float maxHP;
     private float currentHP;
     private Collider col;
-	// Use this for initialization
+    private Transform weakTransform;
+    // Use this for initialization
 	void Awake ()
     {
+
+        baseObject.SetActive(true);
+        brokenObject.SetActive(false);
         currentHP = maxHP;
-        col = this.GetComponent<Collider>();
-        if (attachPoint == null)
-            attachPoint = this.transform;
+        col = GetComponent<Collider>();
+        //weakTransform = this.transform;
+
+        //if (attachPoint == null)
+        //{
+        //    attachPoint = this.transform;
+        //}
+        //else
+        //{
+        //    //weakTransform.parent = attachPoint;
+        //    //weakTransform.localPosition = Vector3.zero;
+        //    //weakTransform.localRotation = Quaternion.identity;
+        //    baseObject.transform.parent = attachPoint;
+        //    //baseObject.transform.localPosition = Vector3.zero;
+        //    //baseObject.transform.localRotation = Quaternion.identity;
+        //}
+
 	}	
-	// Update is called once per frame
-	void Update ()
-    {
-	    if(ISBreak())
-        {
-            BreakEvent();
-            col.enabled = false;
-        }
-	}
 
     protected virtual void BreakEvent()
     {
-        if(breakEffect != null)
+        if (baseObject != null)
         {
-            GameObject effectObject;
-            PoolManager.Instance.PopObject(breakEffect, out effectObject);
-            effectObject.transform.position = attachPoint.position;
+            baseObject.SetActive(false);
         }
 
-        if(throwablePrefab != null)
+        if (brokenObject != null)
+        {
+            brokenObject.SetActive(true);
+        }
+
+        if (throwablePrefab != null)
         {
             GameObject throwableObject;
             PoolManager.Instance.PopObject(throwablePrefab, out throwableObject);
-            throwableObject.transform.position = attachPoint.position;
+            throwableObject.transform.position = weakTransform.position;
         }
-        if(hideObject != null)
-        {
-            hideObject.SetActive(false);
-        }
-        this.enabled = false;
 
-        //effectObject.transform.rotation = attachPoint.rotation;
-        //Instantiate(throwablePrefab);
+        if (brokenEffectPrefab != null)
+        {
+            GameObject effectObject;
+            PoolManager.Instance.PopObject(brokenEffectPrefab, out effectObject);
+            effectObject.transform.position = weakTransform.position;
+        }
+
+        this.enabled = false;
+        //this.gameObject.SetActive(false);
     }
 
     public void Hit(float damage)
     {
         currentHP -= damage;
+        if(currentHP <= 0.0f)
+        {
+            BreakEvent();
+        }
     }
-
-    bool ISBreak() { return currentHP <= 0.0f; }
-
 }

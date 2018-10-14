@@ -9,11 +9,10 @@
 
 	}
 	SubShader {
-		Tags { "RenderType"="Transparant"} cull off
+		Tags { "RenderType"="Transparant" } cull off
 		LOD 200
 
 		CGPROGRAM
-
 		#pragma surface surf Lambert alpha:fade
 
 		#pragma target 3.0
@@ -33,11 +32,11 @@
 
 		void surf (Input IN, inout SurfaceOutput o) {
 			float4 n = tex2D(_MainTex2, float2(IN.uv_MainTex2.x - _Time.y * _uspeed, IN.uv_MainTex2.y - _Time.y * _vspeed));
-			float4 c = tex2D (_MainTex, IN.uv_MainTex + n.xy * _Slide) * _Color;
+			fixed4 c = tex2D (_MainTex, IN.uv_MainTex + n.xy * _Slide);
 			o.Emission =c.rgb * IN.color.rgb;
-			o.Alpha = (c.a * IN.color.a) * 0.5;
+			o.Alpha = c.a * IN.color.a;
 		}
 		ENDCG
 	}
-	FallBack "Transparent"
+	FallBack "Transparant"
 }

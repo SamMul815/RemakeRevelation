@@ -2667,7 +2667,7 @@ MonoBehaviour:
   magazine: {fileID: 1605178064311498}
   cartridgePrefab: {fileID: 1420575820040750, guid: 4ee899c36659dc941bbce3ae312c3124,
     type: 2}
-  muzzlePrefab: {fileID: 1874823788645224, guid: 9e5fb77f6c7f73a4bbcf30399ba335a4,
+  muzzlePrefab: {fileID: 1244637099381106, guid: ce41bfa691281094c9fc903eb76cc3c5,
     type: 2}
 --- !u!114 &114013761481161988
 MonoBehaviour:
@@ -3897,8 +3897,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114527204172517378}
   m_HandleRect: {fileID: 224832229812476450}
   m_Direction: 2
-  m_Value: 0.00000059339646
-  m_Size: 0.5261356
+  m_Value: 0.000000084770925
+  m_Size: 0.5263154
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5002,7 +5002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00016277736, y: 180.00006}
+  m_AnchoredPosition: {x: 0.00018636984, y: 180.00012}
   m_SizeDelta: {x: 0, y: 380}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224643378359691516
