@@ -28,6 +28,7 @@ public class WeakPoint : MonoBehaviour {
 
         currentHP = maxHP;
         col = GetComponent<Collider>();
+        //GetComponents<Collider>
         weakTransform = this.transform;
 
         //if (attachPoint == null)
@@ -48,16 +49,15 @@ public class WeakPoint : MonoBehaviour {
 
     protected virtual void BreakEvent()
     {
+        if (brokenObject != null)
+        {
+            brokenObject.SetActive(true);
+            brokenObject.transform.parent = baseObject.transform.parent;
+        }
         if (baseObject != null)
         {
             baseObject.SetActive(false);
         }
-
-        if (brokenObject != null)
-        {
-            brokenObject.SetActive(true);
-        }
-
         if (throwablePrefab != null)
         {
             GameObject throwableObject;

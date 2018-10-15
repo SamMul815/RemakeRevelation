@@ -249,9 +249,6 @@ MonoBehaviour:
   - poolObject: {fileID: 1464670765200634, guid: 1f215c3e2707b234789af95ba8c69ee3,
       type: 2}
     initialCount: 1
-  - poolObject: {fileID: 1053803461520408, guid: 658a13efe06a4664b8a9bea63be2f895,
-      type: 2}
-    initialCount: 1
   - poolObject: {fileID: 1595224445038750, guid: 4d872c7832c0fc74c87d7a6e56167a27,
       type: 2}
     initialCount: 10
@@ -393,7 +390,8 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: 68db71da3f965874fbf8c6646524d4e9, type: 3}
   - name: aaahhh
     sound: {fileID: 8300000, guid: a93ce8dd966882c4389385f52048895d, type: 3}
-  audioSoundObject: {fileID: 0}
+  audioSoundObject: {fileID: 1641174234834690, guid: 86d6c5b82368d4440b829a3c14a4f61d,
+    type: 2}
 --- !u!114 &114847746839651598
 MonoBehaviour:
   m_ObjectHideFlags: 1
