@@ -20,11 +20,15 @@ public class WeakPoint : MonoBehaviour {
 	void Awake ()
     {
 
-        baseObject.SetActive(true);
-        brokenObject.SetActive(false);
+        if(baseObject != null)
+            baseObject.SetActive(true);
+
+        if(brokenObject != null)
+            brokenObject.SetActive(false);
+
         currentHP = maxHP;
         col = GetComponent<Collider>();
-        //weakTransform = this.transform;
+        weakTransform = this.transform;
 
         //if (attachPoint == null)
         //{

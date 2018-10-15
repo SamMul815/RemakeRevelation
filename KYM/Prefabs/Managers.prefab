@@ -266,7 +266,7 @@ MonoBehaviour:
     initialCount: 10
   - poolObject: {fileID: 1244637099381106, guid: ce41bfa691281094c9fc903eb76cc3c5,
       type: 2}
-    initialCount: 10
+    initialCount: 20
   - poolObject: {fileID: 1118533640688316, guid: 45fae325c58556544adcd49a0a1b2086,
       type: 2}
     initialCount: 1
@@ -278,10 +278,10 @@ MonoBehaviour:
     initialCount: 10
   - poolObject: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
       type: 2}
-    initialCount: 10
-  - poolObject: {fileID: 1915113466459928, guid: 02028f915c0650648b2235995a5bc738,
+    initialCount: 100
+  - poolObject: {fileID: 1121619590847894, guid: 83261521903a17a438f943f03a20b2ad,
       type: 2}
-    initialCount: 10
+    initialCount: 100
 --- !u!114 &114450824410820312
 MonoBehaviour:
   m_ObjectHideFlags: 1
