@@ -13,26 +13,22 @@ public class Dragon_Ground_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsGround = BlackBoard.Instance.IsGround;
-
-        if (IsGround)
+        if (_blackBoard.IsGround)
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+            if (_childAction)
             {
-                if (!childAction.IsRunning)
+                if (!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if(childAction.IsRunning && !childAction.IsEnd)
+                if(_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();

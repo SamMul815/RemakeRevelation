@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8450d5402b0111b4c8a0649bcc4329da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waitingCoolingTime: 0
+  _waitingCoolingTime: 0.2
   _bulletBreathCoolingTime: 15
   _howlingCoolingTime: 10
   _dashCoolingTime: 10

@@ -92,8 +92,8 @@ public class BlackBoard : Singleton<BlackBoard>
     private bool _isDestroyPart;
     public bool IsDestroyPart { set { _isDestroyPart = value; } get { return _isDestroyPart; } }
 
-    private bool _isPlayerDahsAttack;
-    public bool IsPlayerDashAttack { set { _isPlayerDahsAttack = value; } get { return _isPlayerDahsAttack; } }
+    private bool _isPlayerRushAttack;
+    public bool IsPlayerRushAttack { set { _isPlayerRushAttack = value; } get { return _isPlayerRushAttack; } }
 
     public float Acceleration(float fCurSpeed, float fMaxSpeed, float fAccSpeed)
     {

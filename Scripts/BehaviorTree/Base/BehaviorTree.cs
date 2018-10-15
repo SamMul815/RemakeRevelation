@@ -1,5 +1,4 @@
-﻿using DragonController;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -68,6 +67,7 @@ public class BehaviorTree : ScriptableObject
             int n = i;
             i += ChildNodes[i].GetComponentsInChildren<TreeNode>().Length - 1;
             ChildNodes[n].NodeState = TASKSTATE.FAULURE;
+            ChildNodes[n].Init();
 
             if (ChildNodes[n].GetComponent<ActionTask>())
             {
@@ -80,9 +80,9 @@ public class BehaviorTree : ScriptableObject
 
     }
 
-    public void OnEnable()
+    private void Init()
     {
-        Initialize(_root);
+
     }
 
 #if UNITY_EDITOR

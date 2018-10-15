@@ -9,16 +9,13 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
     {
         base.OnStart();
         //DragonAniManager.SwicthAnimation("Dragon_Shot_Breath");
-        Clock.Instance.CurBulletBreathCoolingTime = 0.0f;
+        _clock.CurBulletBreathCoolingTime = 0.0f;
     }
 
     public override bool Run()
     {
-        if (!DragonManager.IsTurn)
+        if (!_manager.IsTurn)
         {
-            Transform Dragon = DragonManager.Instance.transform;
-            Transform Player = DragonManager.Player;
-
             Vector3 DragonPos = Dragon.position;
             Vector3 PlayerPos = Player.position;
 
@@ -38,7 +35,7 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_Bullet_Breath");
-            DragonManager.IsTurn = true;
+            _manager.IsTurn = true;
         }
         return false;
     }

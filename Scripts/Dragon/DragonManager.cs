@@ -10,7 +10,8 @@ public enum DragonAttackTriggers
     NearHowling,
     NearBreath,
     AirSpear,
-    Tail
+    Tail,
+    Rush
 }
 
 
@@ -24,6 +25,14 @@ namespace DragonController
         [SerializeField]
         private BehaviorTree _dragonBehaviroTree;
         public BehaviorTree DragonBehaviroTree { get { return _dragonBehaviroTree; } }
+
+        [SerializeField]
+        private Transform _leftPawTransform;
+        public Transform LeftPawTransform { get { return _leftPawTransform; } }
+
+        [SerializeField]
+        private Transform _rightPawTransform;
+        public Transform RightPawTransform { get { return _rightPawTransform; } }
 
         private DragonStat _stat;
         public DragonStat Stat { get { return _stat; } }
@@ -42,22 +51,20 @@ namespace DragonController
         private DragonAttackTriggers _currentAttackTrigger;
         public DragonAttackTriggers CurrentAttackTrigger { get { return _currentAttackTrigger; } }
 
-        private static bool _isAction;
-        public static bool IsAction { set { _isAction = value; } get { return _isAction; } }
+        private bool _isAction;
+        public bool IsAction { set { _isAction = value; } get { return _isAction; } }
 
-        private static bool _isTurn;
-        public static bool IsTurn { set { _isTurn = value; } get { return _isTurn; } }
+        private bool _isTurn;
+        public bool IsTurn { set { _isTurn = value; } get { return _isTurn; } }
 
-        private static bool _flyingOn;
-        public static bool FlyingOn { set { _flyingOn = value; } get { return _flyingOn; } }
+        private bool _flyingOn;
+        public bool FlyingOn { set { _flyingOn = value; } get { return _flyingOn; } }
 
-        private static bool _landingOn;
-        public static bool LandingOn { set { _landingOn = value; } get { return _landingOn; } }
+        private bool _landingOn;
+        public bool LandingOn { set { _landingOn = value; } get { return _landingOn; } }
 
-        private static  Transform _player;
-        public static Transform Player { get { return _player; } }
-
-        IEnumerator _dragonAiCor;
+        private  Transform _player;
+        public Transform Player { get { return _player; } }
 
         static bool _isInit;
 
@@ -81,9 +88,7 @@ namespace DragonController
             }
 
             IsAction = false;
-
             _dragonBehaviroTree.Initialize(_dragonBehaviroTree.Root);
-            _dragonAiCor = StartDragonAI();
 
         }
 
@@ -91,7 +96,6 @@ namespace DragonController
         {
             if (Application.isPlaying)
             {
-                CoroutineManager.DoCoroutine(_dragonAiCor);
                 _isInit = true;
             } 
 	    }
@@ -104,12 +108,11 @@ namespace DragonController
             Hit(FinalDamage);
         }
 
-        public static void SetActionTask(ActionTask newActionTask)
+        public void SetActionTask(ActionTask newActionTask)
         {
             if (_currentActionTask)
             {
-                if (_currentActionTask.IsRunning && 
-                    _currentActionTask.NodeState != TASKSTATE.FAULURE)
+                if (_currentActionTask.IsRunning && _currentActionTask.NodeState != TASKSTATE.FAULURE)
                 {
                     _currentActionTask.OnEnd();
                 }
@@ -124,14 +127,14 @@ namespace DragonController
             Debug.Log("Dragon Hit : " + damage);
         }
 
-        public void AttackOn(DragonAttackTriggers attackTag)
+        public void AttackOn(DragonAttackTriggers attackTrigger)
         {
             if (_isInit)
             {
                 _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(false);
                 _dragonAttackTriggers[_currentAttackTrigger].enabled = false;
             }
-            _currentAttackTrigger = attackTag;
+            _currentAttackTrigger = attackTrigger;
             _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(true);
             _dragonAttackTriggers[_currentAttackTrigger].enabled = true;
         }
@@ -140,15 +143,12 @@ namespace DragonController
         {
             _dragonAttackTriggers[_currentAttackTrigger].enabled = false;
             _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(false);
-
         }
 
-        IEnumerator StartDragonAI()
+        private void FixedUpdate()
         {
-            while (!_dragonBehaviroTree.Root.Run())
-            {
-                yield return CoroutineManager.FiexdUpdate;
-            }
+            if (!_dragonBehaviroTree.Root.Run())
+                return;
         }
     }
 }

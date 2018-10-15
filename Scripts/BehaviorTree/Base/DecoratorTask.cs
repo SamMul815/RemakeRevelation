@@ -8,13 +8,27 @@ public abstract class DecoratorTask : TreeNode
     protected TreeNode _childNode;
     public TreeNode ChildNode { get { return _childNode; } }
 
-    public override void OnStart()
+    protected ActionTask _childAction;
+
+    public override void Init()
     {
+        base.Init();
         if (ChildNode.GetComponent<ActionTask>())
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-            DragonManager.SetActionTask(childAction);
-            DragonManager.IsAction = true;
+            _childAction = ChildNode.GetComponent<ActionTask>();
+        }
+        else
+        {
+            _childAction = null;
+        }
+    }
+
+    public override void OnStart()
+    {
+        if (_childAction)
+        {
+            _manager.SetActionTask(_childAction);
+            _manager.IsAction = true;
         }
         base.OnStart();
     }
@@ -22,9 +36,9 @@ public abstract class DecoratorTask : TreeNode
     public override void OnEnd()
     {
         base.OnEnd();
-        if (ChildNode.GetComponent<ActionTask>())
+        if (_childAction)
         {
-            if (ChildNode.GetComponent<ActionTask>().IsRunning)
+            if (_childAction.IsRunning)
             {
                 ChildNode.OnEnd();
             }

@@ -12,37 +12,31 @@ public class Dragon_PawsAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CurCoolingTime = Clock.Instance.CurPawCoolingTime;
-        float CoolingTime = Clock.Instance.PawCoolingTime;
+        float CurCoolingTime = _clock.CurPawCoolingTime;
+        float CoolingTime = _clock.PawCoolingTime;
 
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
-
-        float Distance = BlackBoard.Instance.PawAttackDistance;
+        float Distance = _blackBoard.PawAttackDistance;
 
         bool IsPaw_Attack = UtilityManager.DistanceCalc(Dragon, Player, Distance);
-        bool IsAction = DragonManager.IsAction;
        
-        if (((CurCoolingTime >= CoolingTime && IsPaw_Attack)  && !IsAction) || IsAction)
+        if (((CurCoolingTime >= CoolingTime && IsPaw_Attack)  && !_manager.IsAction) || _manager.IsAction)
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+            if (_childAction)
             {
-                if (!childAction.IsRunning)
+                if (!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if (childAction.IsRunning && !childAction.IsEnd)
+                if (_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                     return ChildNode.Run();
                 }

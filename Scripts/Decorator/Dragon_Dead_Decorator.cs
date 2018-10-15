@@ -12,27 +12,25 @@ public class Dragon_Dead_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CurHP = DragonManager.Instance.Stat.HP;
+        float CurHP = _manager.Stat.HP;
 
         if (0.0f >= CurHP)
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+            if (_childAction)
             {
-                if(!childAction.IsRunning)
+                if(!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction || !_childAction.IsRunning)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
 
-                if(childAction.IsRunning && !childAction.IsEnd)
+                if(_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();

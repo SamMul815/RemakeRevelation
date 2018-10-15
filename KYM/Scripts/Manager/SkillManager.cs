@@ -7,7 +7,6 @@ public class SkillManager : Singleton<SkillManager> {
     public GameObject leftSkill;
     public GameObject rightSkill;
 
-
     public void UseLeftSkill()
     {
         leftSkill.SetActive(true);
@@ -17,6 +16,5 @@ public class SkillManager : Singleton<SkillManager> {
     {
         rightSkill.SetActive(true);
     }
-
 
 }

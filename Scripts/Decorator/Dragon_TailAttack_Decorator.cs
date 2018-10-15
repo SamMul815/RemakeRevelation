@@ -12,35 +12,28 @@ public class Dragon_TailAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
-
         Vector3 toTarget = (Player.position - Dragon.position).normalized;
 
         float Dot = Vector3.Dot(Dragon.forward, toTarget);
 
-        bool IsAction = DragonManager.IsAction;
-
-        if((Dot < Mathf.Cos(Mathf.Deg2Rad * 180.0f * 0.5f) && !IsAction) || IsAction)
+        if((Dot < Mathf.Cos(Mathf.Deg2Rad * 180.0f * 0.5f) && !_manager.IsAction) || _manager.IsAction)
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+            if (_childAction)
             {
-                if (!childAction.IsRunning)
+                if (!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if (childAction.IsRunning && !childAction.IsEnd)
+                if (_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                     return ChildNode.Run();
                 }

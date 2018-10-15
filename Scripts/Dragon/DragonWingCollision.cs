@@ -16,29 +16,14 @@ public class DragonWingCollision : MonoBehaviour
 
     int[] triangles;
 
-    IEnumerator _wingColliderCor;
+    //IEnumerator _wingColliderCor;
 
     private void Awake()
     {
 
-        _wingColliderCor = WingColliderUpdate();
-
         _wingCollider = GetComponent<MeshCollider>();
         _wingMesh = new Mesh();
-
-        CoroutineManager.DoCoroutine(_wingColliderCor);
         vertices = new Vector3[_wingTransform.Length];
-    }
-
-    private void WingCollider()
-    {
-
-        for (int i = 0; i < _wingTransform.Length; i++)
-        {
-            vertices[i] = _wingTransform[i].position;
-            //vertices.Add(_wingTransform[i].position);
-            //vertices[i] -= this.transform.position;
-        }
 
         triangles = new int[]
         {
@@ -62,6 +47,20 @@ public class DragonWingCollision : MonoBehaviour
             11, 12, 13
 
         };
+    }
+
+    private void FixedUpdate()
+    {
+        WingCollider();
+    }
+
+    private void WingCollider()
+    {
+
+        for (int i = 0; i < _wingTransform.Length; i++)
+        {
+            vertices[i] = _wingTransform[i].position;
+        }
 
         _wingMesh.vertices = vertices;
         _wingMesh.triangles = triangles;
@@ -70,20 +69,5 @@ public class DragonWingCollision : MonoBehaviour
         _wingMesh.name = this.gameObject.name;
         _wingCollider.sharedMesh = _wingMesh;
     }
-
-    IEnumerator WingColliderUpdate()
-    {
-        int count = 0;
-        while (true)
-        {
-            yield return CoroutineManager.EndOfFrame;
-            if(count % 2 == 0)
-            WingCollider();
-
-            count++;
-
-        }
-    }
-
 
 }

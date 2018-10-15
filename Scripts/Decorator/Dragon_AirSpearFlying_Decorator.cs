@@ -13,36 +13,33 @@ public class Dragon_AirSpearFlying_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float MaxHP = DragonManager.Instance.Stat.MaxHP;
-        float HP = DragonManager.Instance.Stat.HP;
-        float SaveHP = DragonManager.Instance.Stat.AirSpearSaveHP;
+        float MaxHP = _manager.Stat.MaxHP;
+        float HP = _manager.Stat.HP;
+        float SaveHP = _manager.Stat.AirSpearSaveHP;
 
-        float AirSpearHP = DragonManager.Instance.Stat.AirSpearHP;
+        float AirSpearHP = _manager.Stat.AirSpearHP;
 
         bool IsAirSpear = AirSpearHP - (SaveHP - HP) <= 0.0f;
-        bool IsAction = DragonManager.IsAction;
 
-        bool IsFlying = BlackBoard.Instance.IsFlying;
-        bool IsGround = BlackBoard.Instance.IsGround;
+        bool IsFlying = _blackBoard.IsFlying;
+        bool IsGround = _blackBoard.IsGround;
 
-        if ((MaxHP > HP && IsAirSpear && IsGround && !IsFlying && !IsAction) || IsAction)
+        if ((MaxHP > HP && IsAirSpear && IsGround && !IsFlying && !_manager.IsAction) || _manager.IsAction)
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+            if (_childAction)
             {
-                if (!childAction.IsRunning)
+                if (!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if (childAction.IsRunning && !childAction.IsEnd)
+                if (_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
@@ -52,9 +49,9 @@ public class Dragon_AirSpearFlying_Decorator : DecoratorTask
             }
             else if (NodeState != TASKSTATE.RUNNING)
             {
-                if (!DragonManager.IsAction)
+                if (!_manager.IsAction)
                     OnStart();
-                else if (DragonManager.IsAction)
+                else if (_manager.IsAction)
                     return true;
             }
             return ChildNode.Run();

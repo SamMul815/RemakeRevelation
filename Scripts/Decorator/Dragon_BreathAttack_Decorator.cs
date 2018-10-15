@@ -12,35 +12,30 @@ public class Dragon_BreathAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CoolingTime = Clock.Instance.BreathCoolingTime;
-        float CurCooingTime = Clock.Instance.CurBreathCoolingTime;
+        float CoolingTime = _clock.BreathCoolingTime;
+        float CurCooingTime = _clock.CurBreathCoolingTime;
 
-        float Distance = BlackBoard.Instance.BreathAttackDistance;
+        float Distance = _blackBoard.BreathAttackDistance;
 
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
+        bool IsBreathAttack = UtilityManager.DistanceCalc(Dragon, Player, Distance);;
 
-        bool IsBreathAttack = UtilityManager.DistanceCalc(Dragon, Player, Distance);
-        bool IsAction = DragonManager.IsAction;
-
-        if (((CurCooingTime >= CoolingTime && IsBreathAttack) && !IsAction) || IsAction)
+        if (((CurCooingTime >= CoolingTime && IsBreathAttack) && !_manager.IsAction) 
+            || _manager.IsAction)
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+            if (_childAction)
             {
-                if (!childAction.IsRunning)
+                if (!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if (childAction.IsRunning && !childAction.IsEnd)
+                if (_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();

@@ -14,26 +14,24 @@ public class Dragon_WatingState_Decorator : DecoratorTask
     public override bool Run()
     {
         float curCoolingTime = Clock.Instance.CurWaitingCoolingTime;
-        bool IsAction = DragonManager.IsAction;
         
-        if ((Clock.Instance.CurWaitingCoolingTime > 0.0f && BlackBoard.Instance.IsWatingState && !IsAction) || IsAction)
+        if ((_clock.CurWaitingCoolingTime > 0.0f && _blackBoard.IsWatingState && !_manager.IsAction) || _manager.IsAction)
         {
-            ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-
-            if (childAction)
+          
+            if (_childAction)
             {
-                if(!childAction.IsRunning)
+                if(!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAction.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if(childAction.IsRunning && !childAction.IsEnd)
+                if(_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();

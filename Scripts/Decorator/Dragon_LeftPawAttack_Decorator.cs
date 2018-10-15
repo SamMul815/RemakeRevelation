@@ -12,8 +12,6 @@ public class Dragon_LeftPawAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
 
         Vector3 toTarget = (Player.position - Dragon.position).normalized;
 
@@ -24,29 +22,27 @@ public class Dragon_LeftPawAttack_Decorator : DecoratorTask
             Vector3 Cross = Vector3.Cross(Dragon.forward, toTarget);
 
             float Result = Vector3.Dot(Cross, Vector3.up);
-            bool IsAction = DragonManager.IsAction;
 
-            if ((Result < 0.0f && !IsAction) || IsAction)
+            if ((Result < 0.0f && !_manager.IsAction) || _manager.IsAction)
             {
-                ActionTask childAction = ChildNode.GetComponent<ActionTask>();
-                if (childAction)
+                if (_childAction)
                 {
-                    if (!childAction.IsRunning)
+                    if (!_childAction.IsRunning)
                     {
-                        if (!DragonManager.IsAction)
+                        if (!_manager.IsAction)
                             OnStart();
-                        else if (DragonManager.IsAction)
+                        else if (_manager.IsAction)
                             return true;
-                        else if (!childAction.IsRunning)
+                        else if (!_childAction.IsRunning)
                             OnStart();
                     }
-                    if (childAction.IsRunning && !childAction.IsEnd)
+                    if (_childAction.IsRunning && !_childAction.IsEnd)
                     {
-                        if (!DragonManager.IsAction)
+                        if (!_manager.IsAction)
                             OnStart();
-                        else if (!childAction.IsRunning)
+                        else if (!_childAction.IsRunning)
                             OnStart();
-                        return ChildNode.Run();
+                        return _childAction.Run();
                     }
                 }
                 else

@@ -8,7 +8,7 @@ public class Dragon_DestroyPart_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        DragonManager.Instance.AttackOff();
+        _manager.AttackOff();
         DragonAniManager.SwicthAnimation("Dragon_DestroyPart");
     }
 
@@ -20,7 +20,7 @@ public class Dragon_DestroyPart_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsDestroyPart = false;
+        _blackBoard.IsDestroyPart = false;
     }
 
 }

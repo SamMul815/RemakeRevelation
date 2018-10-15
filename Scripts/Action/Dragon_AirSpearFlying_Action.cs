@@ -9,9 +9,9 @@ public class Dragon_AirSpearFlying_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        DragonManager.Instance.AttackOff();
-        DragonManager.Instance.Stat.AirSpearSaveHP = DragonManager.Instance.Stat.HP;
-        MovementManager.Instance.SetMovement(MovementType.AirSpear);
+        _manager.AttackOff();
+        _manager.Stat.AirSpearSaveHP = DragonManager.Instance.Stat.HP;
+        _movement.SetMovement(MovementType.AirSpear);
         DragonAniManager.SwicthAnimation("Dragon_DescentFlying");
 
     }
@@ -19,12 +19,12 @@ public class Dragon_AirSpearFlying_Action : ActionTask
     public override bool Run()
     {
 
-        if (DragonManager.FlyingOn)
+        if (_manager.FlyingOn)
         {
-            if (MovementManager.Instance.CurrentNodeManager().IsMoveEnd)
+            if (_movement.CurrentNodeManager().IsMoveEnd)
             {
-                DragonManager.IsAction = false;
-                BlackBoard.Instance.IsLanding = true;
+                _manager.IsAction = false;
+                _blackBoard.IsLanding = true;
             }
         }
 

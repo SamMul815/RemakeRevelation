@@ -35,6 +35,7 @@ namespace DragonController {
         {
             if (Application.isPlaying)
             {
+                _aniParamName = "Idle";
                 _isInit = true;
             }
         }

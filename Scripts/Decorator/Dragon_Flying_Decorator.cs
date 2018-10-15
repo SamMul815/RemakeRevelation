@@ -12,26 +12,24 @@ public class Dragon_Flying_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsFlying = BlackBoard.Instance.IsFlying;
+        bool IsFlying = _blackBoard.IsFlying;
 
         if (IsFlying)
         {
-            ActionTask childAcion = ChildNode.GetComponent<ActionTask>();
-
-            if (childAcion)
+            if (_childAction)
             {
-                if(!childAcion.IsRunning)
+                if(!_childAction.IsRunning)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
-                    else if (DragonManager.IsAction)
+                    else if (_manager.IsAction)
                         return true;
-                    else if (!childAcion.IsRunning)
+                    else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if (childAcion.IsRunning && !childAcion.IsEnd)
+                if (_childAction.IsRunning && !_childAction.IsEnd)
                 {
-                    if (!DragonManager.IsAction)
+                    if (!_manager.IsAction)
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();

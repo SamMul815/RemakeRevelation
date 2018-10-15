@@ -10,68 +10,67 @@ public class Dragon_Landing_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        BlackBoard.Instance.IsFlying = false;
-        DragonManager.Instance.AttackOff();
+        _blackBoard.IsFlying = false;
+        _manager.AttackOff();
 
         DragonAniManager.SwicthAnimation("Dragon_Gliding");
-        DragonManager.Instance.AttackOn(DragonAttackTriggers.AirSpear);
+        _manager.AttackOn(DragonAttackTriggers.AirSpear);
     }
 
     public override bool Run()
     {
 
-        float Distance = BlackBoard.Instance.DescentAttackFiexdDistance;
-        Transform Player = DragonManager.Player;
+        float Distance = _blackBoard.DescentAttackFiexdDistance;
 
-        float MaxSpeed = DragonManager.Instance.Stat.MaxSpeed;
-        float AccSpeed = DragonManager.Instance.Stat.AccSpeed;
+        float MaxSpeed = _manager.Stat.MaxSpeed;
+        float AccSpeed = _manager.Stat.AccSpeed;
 
-        Vector3 forward = (Player.position - DragonManager.Instance.transform.position).normalized;
+        Vector3 forward = (Player.position - _manager.transform.position).normalized;
 
-        MovementManager.Instance.CurSpeed =
-            BlackBoard.Instance.Acceleration(MovementManager.Instance.CurSpeed, MaxSpeed, AccSpeed);
+        _movement.CurSpeed =
+            _blackBoard.Acceleration(_movement.CurSpeed, MaxSpeed, AccSpeed);
 
         bool IsLandingAttackFiexdDistance =
-            UtilityManager.DistanceCalc(DragonManager.Instance.transform, Player, Distance);
+            UtilityManager.DistanceCalc(Dragon, Player, Distance);
 
-        if(!IsLandingAttackFiexdDistance && !BlackBoard.Instance.IsFiexdPosition)
+        if(!IsLandingAttackFiexdDistance && !_blackBoard.IsFiexdPosition)
         {
-            DragonManager.Instance.transform.position = Vector3.MoveTowards(
-                DragonManager.Instance.transform.position,
+            Dragon.position = Vector3.MoveTowards(
+                Dragon.position,
                 Player.position,
-                MovementManager.Instance.CurSpeed * Time.deltaTime);
+                _movement.CurSpeed * Time.deltaTime);
 
-            DragonManager.Instance.transform.rotation = Quaternion.Slerp(
-                DragonManager.Instance.transform.rotation,
+            Dragon.rotation = Quaternion.Slerp(
+                Dragon.rotation,
                 Quaternion.LookRotation(forward, Vector3.up),
                 0.1f);
 
             return false;
         }
 
-        if (!BlackBoard.Instance.IsFiexdPosition)
+        if (!_blackBoard.IsFiexdPosition)
         {
-            BlackBoard.Instance.FiexdPosition = Player.position + new Vector3(0.0f, -10.0f, 0.0f);
-            BlackBoard.Instance.IsFiexdPosition = true;
-            FiexdPos = BlackBoard.Instance.FiexdPosition;
+            _blackBoard.FiexdPosition = Player.position + new Vector3(0.0f, -10.0f, 0.0f);
+            _blackBoard.IsFiexdPosition = true;
+            FiexdPos = _blackBoard.FiexdPosition;
         }
 
-        float LandingDistance = BlackBoard.Instance.LandingDistance;
+        float LandingDistance = _blackBoard.LandingDistance;
 
         if (!UtilityManager.DistanceCalc(
-            DragonManager.Instance.transform.position, 
-            BlackBoard.Instance.FiexdPosition, LandingDistance))
+            Dragon.position, 
+            _blackBoard.FiexdPosition, LandingDistance))
         {
-            forward = (BlackBoard.Instance.FiexdPosition - DragonManager.Instance.transform.position).normalized;
+            forward = (_blackBoard.FiexdPosition - Dragon.position).normalized;
 
-            DragonManager.Instance.transform.position =
+            Dragon.position =
                 Vector3.MoveTowards(
-                    DragonManager.Instance.transform.position,
-                    BlackBoard.Instance.FiexdPosition,
-                    MovementManager.Instance.CurSpeed * Time.deltaTime);
+                    Dragon.position,
+                    _blackBoard.FiexdPosition,
+                    _movement.CurSpeed * Time.deltaTime);
 
-            DragonManager.Instance.transform.rotation = Quaternion.Slerp(
-                DragonManager.Instance.transform.rotation,
+            Dragon.rotation = Quaternion.Slerp(
+                Dragon.rotation,
                 Quaternion.LookRotation(forward, Vector3.up),
                 0.1f);
 
@@ -80,64 +79,39 @@ public class Dragon_Landing_Action : ActionTask
 
         DragonAniManager.SwicthAnimation("Dragon_Landing");
 
-        DragonManager.Instance.transform.position = Vector3.MoveTowards(
-            DragonManager.Instance.transform.position,
-            BlackBoard.Instance.FiexdPosition,
-            MovementManager.Instance.CurSpeed * Time.deltaTime);
+        Dragon.position = Vector3.MoveTowards(
+            Dragon.position,
+            _blackBoard.FiexdPosition,
+            _movement.CurSpeed * Time.deltaTime);
 
-        Vector3 DragonPos = DragonManager.Instance.transform.position;
+        Vector3 DragonPos = Dragon.position;
 
         if(UtilityManager.DistanceCalc(DragonPos, FiexdPos, 0.0f))
         {
-            BlackBoard.Instance.FiexdPosition = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
-            DragonManager.Instance.transform.position = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
+            _blackBoard.FiexdPosition = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
+            Dragon.position = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
         }
 
-        if (DragonManager.LandingOn)
+        if (_manager.LandingOn)
         {
-            forward = (DragonManager.Player.position - DragonManager.Instance.transform.position).normalized;
+            forward = (Player.position - Dragon.position).normalized;
             forward.y = 0.0f;
 
-            DragonManager.Instance.transform.rotation =
-                Quaternion.Slerp(DragonManager.Instance.transform.rotation,
-                Quaternion.LookRotation(forward),
-                0.05f);
+            Dragon.rotation =
+                Quaternion.Slerp(
+                    Dragon.rotation,
+                    Quaternion.LookRotation(forward),
+                    0.05f);
         }
-
-        //DragonManager.Instance.transform.position = Vector3.MoveTowards(
-        //        DragonManager.Instance.transform.position,
-        //        BlackBoard.Instance.FiexdPosition,
-        //        MovementManager.Instance.CurSpeed * Time.deltaTime);
-
-        //Vector3 DragonPos = DragonManager.Instance.transform.position;
-
-        //if (UtilityManager.DistanceCalc(DragonPos, FiexdPos, 0.0f))
-        //{
-        //    BlackBoard.Instance.FiexdPosition = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
-        //    DragonManager.Instance.transform.position = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
-        //}
-
-        //if (DragonManager.LandingOn)
-        //{
-        //    forward = (DragonManager.Player.position - 
-        //        DragonManager.Instance.transform.position).normalized;
-        //    forward.y = 0.0f;
-
-        //    DragonManager.Instance.transform.rotation =
-        //        Quaternion.Slerp(
-        //            DragonManager.Instance.transform.rotation,
-        //            Quaternion.LookRotation(forward),
-        //            0.05f);
-        //}
         return false;
     }
 
     public override void OnEnd()
     {
         base.OnEnd();
-        BlackBoard.Instance.IsFiexdPosition = false;
-        BlackBoard.Instance.IsLanding = false;
-        BlackBoard.Instance.IsGround = true;
+        _blackBoard.IsFiexdPosition = false;
+        _blackBoard.IsLanding = false;
+        _blackBoard.IsGround = true;
     }
 
 }

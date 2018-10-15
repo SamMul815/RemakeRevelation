@@ -154,7 +154,7 @@ public class PoolManager : Singleton<PoolManager>
             {
                 Stack<GameObject> stack = new Stack<GameObject>();
                 poolStacks.Add(_poolObj.pooltag, stack);
-                _gameObject = Instantiate(_original,_position,Quaternion.identity);
+                _gameObject = Instantiate(_original, _position, Quaternion.identity);
             }
             if (_gameObject.GetComponent<PoolObject>().Init != null)
                 _gameObject.GetComponent<PoolObject>().Init();

@@ -14,8 +14,6 @@ public class Dragon_Walk_Action : ActionTask
 
     public override bool Run()
     {
-        Transform Dragon = DragonManager.Instance.transform;
-        Transform Player = DragonManager.Player;
 
         Vector3 DragonPos = Dragon.position;
         Vector3 PlayerPos = Player.position;
@@ -33,7 +31,7 @@ public class Dragon_Walk_Action : ActionTask
                 0.05f);
         }
 
-        float WalkSpeed = DragonManager.Instance.Stat.WalkSpeed;
+        float WalkSpeed = _manager.Stat.WalkSpeed;
 
         Dragon.position = Vector3.MoveTowards(
             Dragon.position,
