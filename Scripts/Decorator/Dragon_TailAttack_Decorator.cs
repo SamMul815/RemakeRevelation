@@ -12,7 +12,6 @@ public class Dragon_TailAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-
         Vector3 toTarget = (Player.position - Dragon.position).normalized;
 
         float Dot = Vector3.Dot(Dragon.forward, toTarget);

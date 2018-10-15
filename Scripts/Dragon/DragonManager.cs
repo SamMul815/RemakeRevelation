@@ -26,6 +26,14 @@ namespace DragonController
         private BehaviorTree _dragonBehaviroTree;
         public BehaviorTree DragonBehaviroTree { get { return _dragonBehaviroTree; } }
 
+        [SerializeField]
+        private Transform _leftPawTransform;
+        public Transform LeftPawTransform { get { return _leftPawTransform; } }
+
+        [SerializeField]
+        private Transform _rightPawTransform;
+        public Transform RightPawTransform { get { return _rightPawTransform; } }
+
         private DragonStat _stat;
         public DragonStat Stat { get { return _stat; } }
 

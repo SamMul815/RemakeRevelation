@@ -9,15 +9,13 @@ public class Dragon_DashAttack_Action : ActionTask
 
     public override void OnStart()
     {
+        base.OnStart();
         BlackBoard.Instance.IsDashAttackOn = false;
         BlackBoard.Instance.IsRushAttackOn = false;
         Clock.Instance.CurDashCoolingTime = 0.0f;
 
-        //Vector3 DragonPos = Dragon.position;
-        //DragonPos.y = 0.0f;
+        forward = (Player.position - Dragon.position).normalized;
 
-        forward = (Dragon.position - Player.position).normalized;
-        base.OnStart();
     }
 
     public override bool Run()
@@ -50,7 +48,7 @@ public class Dragon_DashAttack_Action : ActionTask
         {
             float Distance = _manager.Stat.DashMoveDistance;
             float DashSpeed = Distance; // *(dashTime - Time.deltaTime);
-            Dragon.Translate(forward * DashSpeed * Time.deltaTime);
+            Dragon.position += (forward) * DashSpeed * Time.deltaTime;
         }
         
         return false;

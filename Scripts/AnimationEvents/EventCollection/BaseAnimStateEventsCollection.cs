@@ -6,7 +6,7 @@ using DragonController;
 
 public class BaseAnimStateEventsCollection : MonoBehaviour
 {
-    protected DragonManager _manager;
+    protected DragonManager _manager; //변수형 타입은 DragonManager 변수명은 _manager;
     public DragonManager Manager { get { return _manager; } }
 
     protected BlackBoard _blackBoard;

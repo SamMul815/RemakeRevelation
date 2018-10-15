@@ -1,5 +1,4 @@
-﻿using DragonController;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -84,11 +83,6 @@ public class BehaviorTree : ScriptableObject
     private void Init()
     {
 
-    }
-
-    public void OnEnable()
-    {
-        Initialize(_root);
     }
 
 #if UNITY_EDITOR

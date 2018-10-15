@@ -233,6 +233,8 @@ MonoBehaviour:
   _particlesList:
   - {fileID: 1441271155620236, guid: 871e658f5f45dea4abd4e3a5e695f4ed, type: 2}
   - {fileID: 1201230306409686, guid: 6861b06094330934c89a36a9cfa0039a, type: 2}
+  - {fileID: 1492819822406986, guid: 09c01b97ced6b3b48ad4a509053fce21, type: 2}
+  - {fileID: 1872982495496528, guid: 5b388df4b6872f249a84030a494c9338, type: 2}
 --- !u!114 &114247043299693604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,6 +295,12 @@ MonoBehaviour:
   - poolObject: {fileID: 1201230306409686, guid: 6861b06094330934c89a36a9cfa0039a,
       type: 2}
     initialCount: 2
+  - poolObject: {fileID: 1492819822406986, guid: 09c01b97ced6b3b48ad4a509053fce21,
+      type: 2}
+    initialCount: 0
+  - poolObject: {fileID: 1872982495496528, guid: 5b388df4b6872f249a84030a494c9338,
+      type: 2}
+    initialCount: 0
 --- !u!114 &114450824410820312
 MonoBehaviour:
   m_ObjectHideFlags: 1

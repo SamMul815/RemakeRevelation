@@ -12,10 +12,10 @@ public class Dragon_PawsAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CurCoolingTime = Clock.Instance.CurPawCoolingTime;
-        float CoolingTime = Clock.Instance.PawCoolingTime;
+        float CurCoolingTime = _clock.CurPawCoolingTime;
+        float CoolingTime = _clock.PawCoolingTime;
 
-        float Distance = BlackBoard.Instance.PawAttackDistance;
+        float Distance = _blackBoard.PawAttackDistance;
 
         bool IsPaw_Attack = UtilityManager.DistanceCalc(Dragon, Player, Distance);
        

@@ -10,7 +10,6 @@ public class Dragon_RightPawAttack_Action : ActionTask
     {
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_RightPaw");
-        EffectManager.Instance.PoolParticleEffectOn("RightPaw", Dragon);
         _clock.CurPawCoolingTime = 0.0f;
     }
 
@@ -24,8 +23,8 @@ public class Dragon_RightPawAttack_Action : ActionTask
 
         Vector3 forward = (PlayerPos - DragonPos).normalized;
 
-        //if (!DragonManager.IsTurn)
-        //{
+        if (!_manager.IsTurn)
+        {
             if (Vector3.Dot(Dragon.forward, forward) < 0.99f)
             {
                 //DragonAniManager.SwicthAnimation("LeftTrun");
@@ -35,9 +34,11 @@ public class Dragon_RightPawAttack_Action : ActionTask
                     0.05f);
                 return false;
             }
-            _manager.IsTurn = true;
-        //}
 
+            DragonAniManager.SwicthAnimation("Dragon_RightPaw");
+            EffectManager.Instance.PoolParticleEffectOn("RightPaw", Dragon);
+            _manager.IsTurn = true;
+        }
         return false;
     }
 

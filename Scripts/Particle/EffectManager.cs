@@ -47,9 +47,12 @@ public class EffectManager : Singleton<EffectManager>
 
             if (Particle != null)
             {
-                Particle.transform.parent = Parent;
-                Particle.transform.localRotation = Quaternion.identity;
-                Particle.transform.localPosition = Vector3.zero;
+                if (!Particle.transform.parent)
+                {
+                    Particle.transform.parent = Parent;
+                    Particle.transform.localRotation = Quaternion.identity;
+                    Particle.transform.localPosition = Vector3.zero;
+                }
                 return;
             }
         }
@@ -65,7 +68,7 @@ public class EffectManager : Singleton<EffectManager>
             Quaternion rot = Quaternion.LookRotation(CreateDir.normalized);
             PoolManager.Instance.PopObject(_particles[ParticleTag].gameObject, CreatePos, rot, out Particle);
 
-            if(Particle != null)
+            if(Particle == null)
             {
                 Debug.LogWarning("Not Found any particles in the object.");
             }
@@ -99,7 +102,7 @@ public class EffectManager : Singleton<EffectManager>
         }
     }
 
-    public void PoolParticleEffectOn(PoolObject obj, Transform parent)
+    public void PoolParticleEffectOn(PoolObject obj, Transform Parent)
     {
 
         if (_particles.ContainsKey(obj.pooltag))
@@ -109,9 +112,12 @@ public class EffectManager : Singleton<EffectManager>
 
             if (Particle != null)
             {
-                Particle.transform.parent = parent;
-                Particle.transform.localRotation = Quaternion.identity;
-                Particle.transform.localPosition = Vector3.zero;
+                if (!Particle.transform.parent)
+                {
+                    Particle.transform.parent = Parent;
+                    Particle.transform.localRotation = Quaternion.identity;
+                    Particle.transform.localPosition = Vector3.zero;
+                }
                 return;
             }
         }
@@ -157,7 +163,7 @@ public class EffectManager : Singleton<EffectManager>
         }
     }
 
-    public void PoolParticleEffectOn(GameObject obj, Transform parent)
+    public void PoolParticleEffectOn(GameObject obj, Transform Parent)
     {
 
         PoolObject ParticleObj = obj.GetComponent<ParticleObject>();
@@ -171,9 +177,12 @@ public class EffectManager : Singleton<EffectManager>
 
                 if (Particle != null)
                 {
-                    Particle.transform.rotation = parent.rotation;
-                    Particle.transform.parent = parent;
-                    Particle.transform.position = Vector3.zero;
+                    if (!Particle.transform.parent)
+                    {
+                        Particle.transform.parent = Parent;
+                        Particle.transform.localRotation = Quaternion.identity;
+                        Particle.transform.localPosition = Vector3.zero;
+                    }
                     return;
                 }
             }

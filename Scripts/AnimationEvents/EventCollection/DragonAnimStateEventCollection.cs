@@ -8,46 +8,49 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     protected override void Awake()
     {
         base.Awake();
-
         
         AddAnimTimeEventFunc(BreathAttackOn, "Breath");
+        AddAnimTimeEventFunc(ActionEnd, "Breath");
 
         AddAnimTimeEventFunc(LandingOn, "Landing");
         AddAnimTimeEventFunc(LadingEnd, "Landing");
+        AddAnimTimeEventFunc(ActionEnd, "Landing");
 
         AddAnimTimeEventFunc(RightPawAttackOn, "RightPaw");
+        AddAnimTimeEventFunc(AttackOff, "RightPaw");
+        AddAnimTimeEventFunc(ActionEnd, "RightPaw");
+
         AddAnimTimeEventFunc(LeftPawAttackOn, "LeftPaw");
+        AddAnimTimeEventFunc(AttackOff, "LeftPaw");
+        AddAnimTimeEventFunc(ActionEnd, "LeftPaw");
+
 
         AddAnimTimeEventFunc(DashAttackOn, "Dash");
+        AddAnimTimeEventFunc(DashFirstRightPaw, "Dash");
+        AddAnimTimeEventFunc(DashLeftAttack, "Dash");
+        AddAnimTimeEventFunc(DashLastRightPaw, "Dash");
+        AddAnimTimeEventFunc(ActionEnd, "Dash");
+
+
         AddAnimTimeEventFunc(RushAttackOn, "Rush");
+        AddAnimTimeEventFunc(AttackOff, "Rush");
+        AddAnimTimeEventFunc(ActionEnd, "Rush");
 
 
         AddAnimTimeEventFunc(ShotBreathAttackOn ,"Shot_Breath");
+        AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
+
         AddAnimTimeEventFunc(HowlingAttackOn, "Howling");
-
-
+        AddAnimTimeEventFunc(ActionEnd, "Howling");
 
         AddAnimTimeEventFunc(DescentFlyingOn, "DescentFlying");
-        AddAnimTimeEventFunc(MeteoTakeOffOn, "MeteoTakeOff");
+
+        AddAnimTimeEventFunc(MeteoFlyingStart, "MeteoTakeOff");
 
         AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
 
-        AddAnimTimeEventFunc(DashAttackOff, "Dash");
-        AddAnimTimeEventFunc(AttackOff, "Rush");
-
-        AddAnimTimeEventFunc(LeftPawAttackOff, "LeftPaw");
-        AddAnimTimeEventFunc(RightPawAttackOff, "RightPaw");
-
-        AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
-        AddAnimTimeEventFunc(ActionEnd, "RightPaw");
-        AddAnimTimeEventFunc(ActionEnd, "LeftPaw");
-        AddAnimTimeEventFunc(ActionEnd, "Dash");
-        AddAnimTimeEventFunc(ActionEnd, "Rush");
-        AddAnimTimeEventFunc(ActionEnd, "Howling");
-        AddAnimTimeEventFunc(ActionEnd, "Breath");
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
-        AddAnimTimeEventFunc(ActionEnd, "Landing");
         AddAnimTimeEventFunc(ActionEnd, "Tail");
 
     }
@@ -64,6 +67,26 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     }
 
+    private void DashFirstRightPaw(EvnData evnData)
+    {
+        Vector3 Pos = _manager.RightPawTransform.position;
+        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, Vector3.zero);
+    }
+
+    private void DashLeftAttack(EvnData evnData)
+    {
+        Vector3 Pos = _manager.LeftPawTransform.position;
+        EffectManager.Instance.PoolParticleEffectOn("LeftDash", Pos, Vector3.zero);
+    }
+
+    private void DashLastRightPaw(EvnData evnData)
+    {
+        Vector3 Pos = _manager.RightPawTransform.position;
+        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, Vector3.zero);
+        BlackBoard.IsDashAttackOn = false;
+        _manager.AttackOff();
+    }
+
     private void RushAttackOn(EvnData evnData)
     {
         _blackBoard.IsRushAttackOn = true;
@@ -75,13 +98,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.AttackOff();
     }
 
-    private void DashAttackOff(EvnData evnData)
-    {
-        _manager.AttackOff();
-        BlackBoard.IsDashAttackOn = false;
-    }
-
-    
     private void RightPawAttackOn(EvnData evnData)
     {
         _manager.AttackOn(DragonAttackTriggers.RightPaw);
@@ -91,17 +107,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         _manager.AttackOn(DragonAttackTriggers.LeftPaw);
     }
-
-    private void RightPawAttackOff(EvnData evnDat)
-    {
-        _manager.AttackOff();
-    }
-
-    private void LeftPawAttackOff(EvnData evnData)
-    {
-        _manager.AttackOff();
-    }
-
 
     private void LandingOn(EvnData evnData)
     {
@@ -121,13 +126,11 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     }
 
-
     private void ShotBreathAttackOn(EvnData evnData)
     {
         Transform DragonMouth = _blackBoard.DragonMouth;
         BulletManager.Instance.CreateDragonBaseBulletTest(DragonMouth.position, 0.15f, 10);
     }
-
 
     private void HowlingAttackOn(EvnData evnData)
     {
@@ -162,7 +165,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _blackBoard.IsFlying = true;
     }
 
-    private void MeteoTakeOffOn(EvnData evnData)
+    private void MeteoFlyingStart(EvnData evnData)
     {
         _manager.FlyingOn = true;
         _manager.DragonRigidBody.useGravity = false;

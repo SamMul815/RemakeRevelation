@@ -13,6 +13,7 @@ public class ParticleObject : PoolObject
     public void Awake()
     {
         this.Init = Initialize;
+        Initialize();
     }
 
     private void Initialize()
@@ -20,7 +21,6 @@ public class ParticleObject : PoolObject
         _currentTime = _holdingTime;
     }
 	
-    // Update is called once per frame
 	void Update ()
     {
         _currentTime -= Time.deltaTime;
