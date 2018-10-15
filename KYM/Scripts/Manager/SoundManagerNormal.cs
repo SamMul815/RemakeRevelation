@@ -50,6 +50,7 @@ public class SoundManagerNormal : Singleton<SoundManagerNormal>
         {
             audioDictionary.Add(audioList[i].name, audioList[i].sound);
         }
+        
         //audioSoundObject = new GameObject();
         //audioSoundObject.AddComponent<AudioSound>();
         //audioSoundObject.gameObject.name = "AudioSoundObjectBase";

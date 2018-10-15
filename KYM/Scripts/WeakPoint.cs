@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DragonController;
 [RequireComponent(typeof(Collider))]
 public class WeakPoint : MonoBehaviour {
 
@@ -16,6 +16,7 @@ public class WeakPoint : MonoBehaviour {
     private float currentHP;
     private Collider col;
     private Transform weakTransform;
+    private DragonManager dragonManager;
     // Use this for initialization
 	void Awake ()
     {
@@ -31,6 +32,8 @@ public class WeakPoint : MonoBehaviour {
         //GetComponents<Collider>
         weakTransform = this.transform;
 
+        dragonManager = DragonManager.Instance;
+
         //if (attachPoint == null)
         //{
         //    attachPoint = this.transform;
@@ -45,7 +48,7 @@ public class WeakPoint : MonoBehaviour {
         //    //baseObject.transform.localRotation = Quaternion.identity;
         //}
 
-	}	
+    }	
 
     protected virtual void BreakEvent()
     {
@@ -79,9 +82,17 @@ public class WeakPoint : MonoBehaviour {
     public void Hit(float damage)
     {
         currentHP -= damage;
+
+        if(dragonManager != null)
+        {
+            dragonManager.Hit(damage);
+        }
+
+
         if(currentHP <= 0.0f)
         {
             BreakEvent();
+            dragonManager.OnDestroyPart(damage * 10);
         }
     }
 }

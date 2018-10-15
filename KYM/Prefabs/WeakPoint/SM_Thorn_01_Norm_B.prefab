@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseObject: {fileID: 1420145253853678}
   brokenObject: {fileID: 1053865218617190}
-  throwablePrefab: {fileID: 0}
+  throwablePrefab: {fileID: 1464670765200634, guid: 1f215c3e2707b234789af95ba8c69ee3,
+    type: 2}
   brokenEffectPrefab: {fileID: 0}
   maxHP: 500
