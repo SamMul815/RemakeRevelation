@@ -27,6 +27,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1010534987484180
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4423407155866874}
+  - component: {fileID: 114108907325729632}
+  m_Layer: 0
+  m_Name: Dragon_MeteoHovering_Decorator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1024677289533644
 GameObject:
   m_ObjectHideFlags: 1
@@ -235,6 +251,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1134313243016626
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4645389887901886}
+  - component: {fileID: 114767833147383354}
+  m_Layer: 0
+  m_Name: Dragon_MeteoLoitering_Action
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1158333936753854
 GameObject:
   m_ObjectHideFlags: 1
@@ -326,6 +358,22 @@ GameObject:
   - component: {fileID: 114362401059187676}
   m_Layer: 0
   m_Name: Dragon_ThirdPhase_Decorator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1246859986281330
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4638628914107666}
+  - component: {fileID: 114814067945177502}
+  m_Layer: 0
+  m_Name: Dragon_MeteoHovering_Action
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1467,6 +1515,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1921263796570564
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4606957892268036}
+  - component: {fileID: 114741927035264778}
+  m_Layer: 0
+  m_Name: Dragon_MeteoLoitering_Decorator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1926230557723294
 GameObject:
   m_ObjectHideFlags: 1
@@ -1958,7 +2022,7 @@ Transform:
   m_Children:
   - {fileID: 4048899422965390}
   m_Father: {fileID: 4487468814470782}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4172034611405374
 Transform:
@@ -2334,6 +2398,20 @@ Transform:
   m_Father: {fileID: 4922775277442536}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4423407155866874
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010534987484180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4638628914107666}
+  m_Father: {fileID: 4487468814470782}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4438117845899702
 Transform:
   m_ObjectHideFlags: 1
@@ -2406,6 +2484,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4606957892268036}
+  - {fileID: 4423407155866874}
   - {fileID: 4156697819316440}
   - {fileID: 4822987618637564}
   m_Father: {fileID: 4467814678026316}
@@ -2563,6 +2643,20 @@ Transform:
   m_Father: {fileID: 4202983091640752}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4606957892268036
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921263796570564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4645389887901886}
+  m_Father: {fileID: 4487468814470782}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4613841675601472
 Transform:
   m_ObjectHideFlags: 1
@@ -2575,6 +2669,19 @@ Transform:
   m_Children:
   - {fileID: 4851182612084726}
   m_Father: {fileID: 4151860379719362}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4638628914107666
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246859986281330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4423407155866874}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4641674419310092
@@ -2590,6 +2697,19 @@ Transform:
   - {fileID: 4366450413830478}
   m_Father: {fileID: 4438117845899702}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4645389887901886
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134313243016626}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4606957892268036}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4650755028367330
 Transform:
@@ -2914,7 +3034,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4487468814470782}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4832627817858176
 Transform:
@@ -3320,6 +3440,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e44dacfa562ff8428a35b54ebce1694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 0}
+  _blackBoard: {fileID: 0}
+  _clock: {fileID: 0}
+  _movement: {fileID: 0}
+  Dragon: {fileID: 0}
+  Player: {fileID: 0}
+--- !u!114 &114108907325729632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010534987484180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e97f7b7ef8ffe41944e78a66744624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
@@ -4498,6 +4635,23 @@ MonoBehaviour:
   Dragon: {fileID: 0}
   Player: {fileID: 0}
   _isAttackAction: 0
+--- !u!114 &114741927035264778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921263796570564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d618ec1bca69ee943b34ab553c6a9b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 0}
+  _blackBoard: {fileID: 0}
+  _clock: {fileID: 0}
+  _movement: {fileID: 0}
+  Dragon: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!114 &114743265875109182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4584,6 +4738,24 @@ MonoBehaviour:
   _movement: {fileID: 0}
   Dragon: {fileID: 0}
   Player: {fileID: 0}
+--- !u!114 &114767833147383354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134313243016626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa741cb026d10f44b8e3d94a24de99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 0}
+  _blackBoard: {fileID: 0}
+  _clock: {fileID: 0}
+  _movement: {fileID: 0}
+  Dragon: {fileID: 0}
+  Player: {fileID: 0}
+  _isAttackAction: 0
 --- !u!114 &114792401594510774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4636,6 +4808,24 @@ MonoBehaviour:
   _movement: {fileID: 0}
   Dragon: {fileID: 0}
   Player: {fileID: 0}
+--- !u!114 &114814067945177502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246859986281330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4816191a5a23c494aaf08378bffe5890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 0}
+  _blackBoard: {fileID: 0}
+  _clock: {fileID: 0}
+  _movement: {fileID: 0}
+  Dragon: {fileID: 0}
+  Player: {fileID: 0}
+  _isAttackAction: 0
 --- !u!114 &114818477384731766
 MonoBehaviour:
   m_ObjectHideFlags: 1

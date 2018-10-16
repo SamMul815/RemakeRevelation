@@ -5,16 +5,16 @@ using DragonController;
 
 public class Dragon_TailAttack_Action : ActionTask
 {
-    Vector3 forward = Vector3.zero;
-    float turnTime = 0.13f;
-    float curTurnTime = 0.0f;
+    //Vector3 forward = Vector3.zero;
+    //float turnTime = 0.13f;
+    //float curTurnTime = 0.0f;
 
     public override void OnStart()
     {
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_Tail");
         _clock.CurPawCoolingTime = 0.0f;
-        curTurnTime = 0.0f;
+        //curTurnTime = 0.0f;
         //forward = (Player.position - Dragon.position).normalized;
     }
 

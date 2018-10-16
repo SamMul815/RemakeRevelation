@@ -5,6 +5,13 @@ using DragonController;
 
 public class Dragon_MeteoAttack_Decorator : DecoratorTask
 {
+    bool isMeteoAttack;
+
+    public override void Init()
+    {
+        base.Init();
+        isMeteoAttack = false;
+    }
 
     public override void OnStart()
     {
@@ -13,9 +20,9 @@ public class Dragon_MeteoAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsMeteoAttack = _blackBoard.IsMeteoAttack;
+        isMeteoAttack = _blackBoard.IsMeteoAttack;
 
-        if((IsMeteoAttack && !_manager.IsAction) || _manager.IsAction)
+        if((isMeteoAttack && !_manager.IsAction) || _manager.IsAction)
         {
             if (_childAction)
             {
@@ -35,7 +42,7 @@ public class Dragon_MeteoAttack_Decorator : DecoratorTask
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
 
-                    return ChildNode.Run();
+                    return _childAction.Run();
                 }
             }
             else if (NodeState != TASKSTATE.RUNNING)

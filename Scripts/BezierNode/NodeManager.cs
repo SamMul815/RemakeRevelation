@@ -265,6 +265,7 @@ public class NodeManager : MonoBehaviour
         {
             if (!IsLoop)
             {
+                _manager.CurSpeed = _stat.NodeSpeed[_segmentIndex - 1];
                 _isMoveEnd = true;
                 _isMoving = false;
                 enabled = false;

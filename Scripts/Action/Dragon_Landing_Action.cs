@@ -15,6 +15,7 @@ public class Dragon_Landing_Action : ActionTask
 
         DragonAniManager.SwicthAnimation("Dragon_Gliding");
         _manager.AttackOn(DragonAttackTriggers.AirSpear);
+        _movement.CurSpeed += 20.0f;
     }
 
     public override bool Run()
@@ -50,16 +51,14 @@ public class Dragon_Landing_Action : ActionTask
 
         if (!_blackBoard.IsFiexdPosition)
         {
-            _blackBoard.FiexdPosition = Player.position + new Vector3(0.0f, -10.0f, 0.0f);
+            _blackBoard.FiexdPosition = Player.position;
             _blackBoard.IsFiexdPosition = true;
             FiexdPos = _blackBoard.FiexdPosition;
         }
 
         float LandingDistance = _blackBoard.LandingDistance;
 
-        if (!UtilityManager.DistanceCalc(
-            Dragon.position, 
-            _blackBoard.FiexdPosition, LandingDistance))
+        if (!UtilityManager.DistanceCalc(Dragon.position, _blackBoard.FiexdPosition, LandingDistance))
         {
             forward = (_blackBoard.FiexdPosition - Dragon.position).normalized;
 
@@ -73,7 +72,6 @@ public class Dragon_Landing_Action : ActionTask
                 Dragon.rotation,
                 Quaternion.LookRotation(forward, Vector3.up),
                 0.1f);
-
             return false;
         }
 
@@ -88,8 +86,8 @@ public class Dragon_Landing_Action : ActionTask
 
         if(UtilityManager.DistanceCalc(DragonPos, FiexdPos, 0.0f))
         {
-            _blackBoard.FiexdPosition = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
-            Dragon.position = FiexdPos + new Vector3(0.0f, 10.0f, 0.0f);
+            _blackBoard.FiexdPosition = FiexdPos;
+            Dragon.position = FiexdPos;
         }
 
         if (_manager.LandingOn)

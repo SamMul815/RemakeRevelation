@@ -13,7 +13,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "Breath");
 
         AddAnimTimeEventFunc(LandingOn, "Landing");
-        AddAnimTimeEventFunc(LadingEnd, "Landing");
         AddAnimTimeEventFunc(ActionEnd, "Landing");
 
 
@@ -139,14 +138,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.DragonRigidBody.useGravity = true;
         _manager.DragonGroundCollider.enabled = true;
 
-        Vector3 MoveDir = Vector3.down;
-        _manager.DragonRigidBody.AddForce(MoveDir * 500.0f, ForceMode.Impulse);
-
-    }
-
-    private void LadingEnd(EvnData evnData)
-    {
-
     }
 
     private void ShotBreathAttackOn(EvnData evnData)
@@ -199,13 +190,13 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void MeteoAttackOn(EvnData evnData)
     {
-        BulletManager.Instance.CreateDragonMeteoBullet(_manager.transform, 50.0f, 20);
+        BulletManager.Instance.CreateDragonMeteoBullet(_manager.transform, 50.0f, 10);
     }
 
     private void MeteoAttackEnd(EvnData evnData)
     {
         _manager.IsAction = false;
-        _blackBoard.IsLanding = true;
+        _blackBoard.IsMeteoHovering = true;
     }
 
 
