@@ -50,6 +50,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(MeteoFlyingStart, "MeteoTakeOff");
 
+        AddAnimTimeEventFunc(MeteoAttackOn, "MeteoAttack");
         AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
 
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
@@ -194,6 +195,11 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.DragonGroundCollider.enabled = false;
         MovementManager.Instance.SetMovement(MovementType.Meteo);
 
+    }
+
+    private void MeteoAttackOn(EvnData evnData)
+    {
+        BulletManager.Instance.CreateDragonMeteoBullet(_manager.transform, 50.0f, 20);
     }
 
     private void MeteoAttackEnd(EvnData evnData)
