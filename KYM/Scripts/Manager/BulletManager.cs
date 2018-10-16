@@ -83,6 +83,12 @@ public class BulletManager : Singleton<BulletManager>
         StartCoroutine(CorTestDragonBaseBullet(_position, _time, _amount));
     }
 
+    public void CreateDragonBaseBulletTest(Transform trans, float _time, int _amount)
+    {
+        StartCoroutine(CorTestDragonBaseBullet(trans, _time, _amount));
+    }
+
+
     public void CreateDragonBreath(Vector3 _position, Vector3 _dir)
     {
         GameObject breath;
@@ -115,6 +121,25 @@ public class BulletManager : Singleton<BulletManager>
             yield return new WaitForSeconds(_time - Random.Range(0, _time * 0.5f));
         }
     }
+
+
+    IEnumerator CorTestDragonBaseBullet(Transform _trans, float _time, int _amount)
+    {
+        for (int i = 0; i < _amount; i++)
+        {           
+            for(int j = 0; j<3; j++)
+            {
+                GameObject bullet;
+                PoolManager.Instance.PopObject(dragonBaseBullet, out bullet);
+                bullet.transform.position = _trans.position;
+                bullet.transform.rotation = Quaternion.LookRotation(_trans.forward, Vector3.up);
+                bullet.transform.rotation *= Quaternion.Euler(Random.insideUnitSphere * 15.0f + new Vector3(0,0,Random.Range(-15.0f,0.0f)));
+                bullet.GetComponent<BulletBaseDragon>().ChangeSpeed(30 + Random.Range(10, 20.0f));
+            }
+            yield return new WaitForSeconds(_time - Random.Range(0, _time * 0.5f));
+        }
+    }
+
 
     IEnumerator CorDragonMeteoBullet(Transform _dragon, float _fireRadius, float _hitRadius, int _amount)
     {
