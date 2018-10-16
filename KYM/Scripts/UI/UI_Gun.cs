@@ -27,6 +27,9 @@ public class UI_Gun : MonoBehaviour {
     public Color emptyColor;
     public Color baseColor;
 
+    private Color baseSkillColor;
+    public Color emptySkillColor;
+
     private Color textOutlineColor;
 
     private Color textImageColor1;
@@ -42,6 +45,9 @@ public class UI_Gun : MonoBehaviour {
     {
         holoColor1 = holoImage1.color;
         holoColor2 = holoImage2.color;
+
+        baseSkillColor = skillSymbol.color;
+
 
         textOutlineColor = textOutline.color;
 
@@ -130,6 +136,15 @@ public class UI_Gun : MonoBehaviour {
         if(gun.gunType == Gun.GunType.Left)
         {
             skillOutline.transform.Rotate(0, 0, angleSpeed * 0.25f);
+        }
+
+        if(gun.GetCanSkill)
+        {
+            skillSymbol.color = baseSkillColor;
+        }
+        else
+        {
+            skillSymbol.color = emptySkillColor;
         }
 
 	}

@@ -20,6 +20,7 @@ public class Dragon_RushAttack_Action : ActionTask
         _moveDistance = (Dragon.position - Player.position).sqrMagnitude;
         _moveDistance = Mathf.Sqrt(_moveDistance);
 
+       //SoundManagerNormal.Instance.PlayAudio("dh1", Dragon.position);
     }
 
     public override bool Run()

@@ -16,6 +16,9 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(LadingEnd, "Landing");
         AddAnimTimeEventFunc(ActionEnd, "Landing");
 
+
+
+
         AddAnimTimeEventFunc(RightPawAttackOn, "RightPaw");
         AddAnimTimeEventFunc(AttackOff, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
@@ -53,6 +56,25 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
         AddAnimTimeEventFunc(ActionEnd, "Tail");
 
+        //---------------------Sound Start------------------------
+        ////Howling
+        //AddAnimTimeEventFunc(SoundHowling, "Howling");
+
+        ////Breath
+        //AddAnimTimeEventFunc(SoundBreath, "Breath");
+
+        ////Breath
+        //AddAnimTimeEventFunc(SoundShot_Breath, "Shot_Breath");
+
+        ////Dash
+        //AddAnimTimeEventFunc(SoundDashAttack1, "Dash");
+        //AddAnimTimeEventFunc(SoundDashAttack2, "Dash");
+        //AddAnimTimeEventFunc(SoundDashAttack3, "Dash");
+
+        ////Rush
+        //AddAnimTimeEventFunc(SoundRushAttack, "Rush");
+
+        //---------------------Sound End--------------------------
     }
 
     private void ActionEnd(EvnData evnData)
@@ -179,5 +201,49 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.IsAction = false;
         _blackBoard.IsLanding = true;
     }
+
+
+    //---------------------Sound Function Start -----------------------------------------------
+
+    //Howling
+    private void SoundHowling(EvnData evenData)
+    {
+        SoundManagerNormal.Instance.PlayAudio("dt1", DragonManager.Instance.transform.position,0.0f,AudioDType._3D);
+    }
+
+    //Breath
+    private void SoundBreath(EvnData evnData)
+    {
+        SoundManagerNormal.Instance.PlayAudio("dt3", DragonManager.Instance.transform.position,1.0f, AudioDType._3D);
+    }
+
+    //Shot_Breath
+    private void SoundShot_Breath(EvnData evnData)
+    {
+        SoundManagerNormal.Instance.PlayAudio("dt4", DragonManager.Instance.transform.position, 1.0f, AudioDType._3D);
+    }
+
+    //Dash
+    private void SoundDashAttack1(EvnData evnData)
+    {
+        SoundManagerNormal.Instance.PlayAudio("da1",DragonManager.Instance.transform.position,0.0f, AudioDType._3D);
+    }
+    private void SoundDashAttack2(EvnData evnData)
+    {
+        SoundManagerNormal.Instance.PlayAudio("da2", DragonManager.Instance.transform.position,0.0f, AudioDType._3D);
+    }
+    private void SoundDashAttack3(EvnData evnData)
+    {
+        SoundManagerNormal.Instance.PlayAudio("da3", DragonManager.Instance.transform.position,0.0f, AudioDType._3D);
+
+    }
+
+    //Rush
+    private void SoundRushAttack(EvnData evnData)
+    {
+        SoundManagerNormal.Instance.PlayAudio("dt3", DragonManager.Instance.transform.position,1.0f, AudioDType._3D);
+    }
+
+    //---------------------Sound Function End--------------------------------------------------
 
 }

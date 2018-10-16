@@ -75,7 +75,6 @@ public class Player : MonoBehaviour
 
     public PlayerHead playerHead;
 
-
     private void Start()
     {
         if(playerStat == null)
@@ -91,7 +90,5 @@ public class Player : MonoBehaviour
             playerHead = GetComponentInChildren<PlayerHead>();
         }
     }
-
-
 
 }

@@ -21,13 +21,24 @@ public class BulletBaseDragon : Bullet
         currentHP = bulletHP;
     }
 
+    protected override void OnCollisionEvent()
+    {
+        //base.OnCollisionEvent();
+
+        Collider _col = hitInfo.collider;
+        if(_col.CompareTag("Player"))
+        {
+            Player.instance.playerStat.Hit(damage);
+        }
+        DestroyHitBullet();
+    }
+
     public void Hit(float damage)
     {
         currentHP -= damage;
         if(currentHP <= 0)
         {
             DestroyDieBullet();
-            //PoolManager.Instance.PushObject(this.gameObject);
         }
     }
     protected override void Move()

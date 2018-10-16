@@ -17,6 +17,7 @@ public class Dragon_BreathAttack_Action : ActionTask
             return;
         }
         Clock.Instance.CurBreathCoolingTime = 0.0f;
+        
     }
 
     public override bool Run()

@@ -594,7 +594,7 @@ public class PlayerHand : MonoBehaviour
 
     IEnumerator LongVibration(float length, float strength)
     {
-        for (float i = 0; i < length; i += Time.deltaTime)
+        for (float i = 0; i < length; i += Time.unscaledDeltaTime)
         {
             controller.TriggerHapticPulse((ushort)Mathf.Lerp(0, strength, length - i));
             yield return null;
