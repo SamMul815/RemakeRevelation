@@ -747,6 +747,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1512895312978546
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4980429725656550}
+  - component: {fileID: 114548239288148860}
+  m_Layer: 0
+  m_Name: Dragon_RedZoneAttack_Action
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1520118012092838
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +774,22 @@ GameObject:
   - component: {fileID: 114747606415679688}
   m_Layer: 0
   m_Name: Dragon_DestroyPart_Decorator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1532948229308002
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4598010887860352}
+  - component: {fileID: 114133897924401600}
+  m_Layer: 0
+  m_Name: Dragon_RedZone_Decorator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1796,7 +1828,7 @@ Transform:
   m_Children:
   - {fileID: 4778971324197152}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4059751938283940
 Transform:
@@ -1993,13 +2025,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4757690254642622}
-  - {fileID: 4554345451983462}
+  - {fileID: 4598010887860352}
   - {fileID: 4450032068434108}
+  - {fileID: 4554345451983462}
   - {fileID: 4668279941650638}
   - {fileID: 4987830717912322}
+  - {fileID: 4946775040483136}
   - {fileID: 4657246126613396}
   - {fileID: 4058420459278070}
-  - {fileID: 4946775040483136}
   m_Father: {fileID: 4410237379055692}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2487,7 +2520,7 @@ Transform:
   m_Children:
   - {fileID: 4666143695054148}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4575301505406698
 Transform:
@@ -2515,6 +2548,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4235685169414066}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4598010887860352
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532948229308002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4980429725656550}
+  m_Father: {fileID: 4202983091640752}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4613841675601472
 Transform:
@@ -2570,7 +2617,7 @@ Transform:
   m_Children:
   - {fileID: 4756221457419066}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4662140690411654
 Transform:
@@ -2613,7 +2660,7 @@ Transform:
   m_Children:
   - {fileID: 4943095217521836}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4693238201310710
 Transform:
@@ -3059,7 +3106,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4962438725101172
 Transform:
@@ -3102,6 +3149,19 @@ Transform:
   m_Father: {fileID: 4733586396420488}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4980429725656550
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512895312978546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4598010887860352}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4986722311850910
 Transform:
   m_ObjectHideFlags: 1
@@ -3128,7 +3188,7 @@ Transform:
   m_Children:
   - {fileID: 4286697013644748}
   m_Father: {fileID: 4202983091640752}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114007399039858302
 MonoBehaviour:
@@ -3294,6 +3354,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a0479825eb01ed428b1caae5d40f9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 0}
+  _blackBoard: {fileID: 0}
+  _clock: {fileID: 0}
+  _movement: {fileID: 0}
+  Dragon: {fileID: 0}
+  Player: {fileID: 0}
+--- !u!114 &114133897924401600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532948229308002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736de92ce2d370b4f89819c2223281e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
@@ -4000,6 +4077,24 @@ MonoBehaviour:
   _movement: {fileID: 0}
   Dragon: {fileID: 0}
   Player: {fileID: 0}
+--- !u!114 &114548239288148860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1512895312978546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2bdda148dfce243b591f08f312e458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 0}
+  _blackBoard: {fileID: 0}
+  _clock: {fileID: 0}
+  _movement: {fileID: 0}
+  Dragon: {fileID: 0}
+  Player: {fileID: 0}
+  _isAttackAction: 1
 --- !u!114 &114552275082015278
 MonoBehaviour:
   m_ObjectHideFlags: 1
