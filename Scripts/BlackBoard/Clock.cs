@@ -53,6 +53,13 @@ public class Clock : Singleton<Clock>
     private float _breathWaitingTime;
     public float BreathWaitingTime { get { return _breathWaitingTime; } }
 
+    private float _curRedZoneTime;
+    public float CurRedZoneTime { set { _curRedZoneTime = value; } get { return _curRedZoneTime; } }
+
+    [SerializeField]
+    private float _timeInterval;
+    public float TimeInterval { get { return _timeInterval; } }
+
 
     private void Awake()
     {
@@ -76,6 +83,22 @@ public class Clock : Singleton<Clock>
 
         if (_curBreathCoolingTime < _breathCoolingTime)
             _curBreathCoolingTime += Time.deltaTime;
+
+        if (BlackBoard.Instance.IsRedZoneIn)
+        {
+            _curRedZoneTime += _timeInterval;
+        }
+        else
+        {
+            if (_curRedZoneTime > 0.0f)
+            {
+                _curRedZoneTime -= _timeInterval;
+            }
+            else
+            {
+                _curRedZoneTime = 0.0f;
+            }
+        }
 
     }
 

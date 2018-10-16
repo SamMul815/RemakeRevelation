@@ -5,6 +5,22 @@ using DragonController;
 
 public class Dragon_BreathAttack_Decorator : DecoratorTask
 {
+    float breathAttackDistance = 0.0f;
+
+    float redZoneDistance = 0.0f;
+    float curCoolingTime = 0.0f;
+    float coolingTime = 0.0f;
+
+    bool isBreathAttack = false;
+
+    public override void Init()
+    {
+        base.Init();
+        breathAttackDistance = _blackBoard.BreathAttackDistance;
+        redZoneDistance = _blackBoard.RedZoneDistance;
+        coolingTime = _clock.BreathCoolingTime;
+    }
+
     public override void OnStart()
     {
         base.OnStart();
@@ -12,14 +28,12 @@ public class Dragon_BreathAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CoolingTime = _clock.BreathCoolingTime;
-        float CurCooingTime = _clock.CurBreathCoolingTime;
+        curCoolingTime = _clock.CurBreathCoolingTime;
 
-        float Distance = _blackBoard.BreathAttackDistance;
+        isBreathAttack = UtilityManager.DistanceCalc(Dragon, Player, breathAttackDistance) &&
+                            !(UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance));
 
-        bool IsBreathAttack = UtilityManager.DistanceCalc(Dragon, Player, Distance);;
-
-        if (((CurCooingTime >= CoolingTime && IsBreathAttack) && !_manager.IsAction) 
+        if (((curCoolingTime >= coolingTime && isBreathAttack) && !_manager.IsAction) 
             || _manager.IsAction)
         {
             if (_childAction)
@@ -39,7 +53,7 @@ public class Dragon_BreathAttack_Decorator : DecoratorTask
                         OnStart();
                     else if (NodeState == TASKSTATE.FAULURE)
                         OnStart();
-                    return ChildNode.Run();
+                    return _childAction.Run();
                 }
             }
             else
@@ -54,7 +68,6 @@ public class Dragon_BreathAttack_Decorator : DecoratorTask
         {
             OnEnd();
         }
-
         return true;
     }
 

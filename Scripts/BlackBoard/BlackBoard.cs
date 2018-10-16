@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BlackBoard : Singleton<BlackBoard>
 {
+    [SerializeField]
+    private bool _isPlayer;
+    public bool IsPlayer { get { return _isPlayer; } }
+
 
     [SerializeField]
     private Transform _dragonMouth;
@@ -50,6 +54,10 @@ public class BlackBoard : Singleton<BlackBoard>
     private float _landingDistance;
     public float LandingDistance { get { return _landingDistance; } }
 
+    [SerializeField]
+    private float _redZoneDistance;
+    public float RedZoneDistance { get { return _redZoneDistance; } }
+    
     [Space]
     [Header("Bullet Breath Amount")]
 
@@ -94,6 +102,9 @@ public class BlackBoard : Singleton<BlackBoard>
 
     private bool _isPlayerRushAttack;
     public bool IsPlayerRushAttack { set { _isPlayerRushAttack = value; } get { return _isPlayerRushAttack; } }
+
+    private bool _isRedZoneIn;
+    public bool IsRedZoneIn { set { _isRedZoneIn = value; } get { return _isRedZoneIn; } }
 
     public float Acceleration(float fCurSpeed, float fMaxSpeed, float fAccSpeed)
     {

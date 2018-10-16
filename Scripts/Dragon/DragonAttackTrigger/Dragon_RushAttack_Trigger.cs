@@ -18,7 +18,9 @@ public class Dragon_RushAttack_Trigger : DragonAttackTrigger
 
             dir += new Vector3(0.0f, 0.2f, 0.0f);
 
-            //Player.instance.playerRigid.PlayerPush(dir, _pushPower);
+            if (BlackBoard.Instance.IsPlayer)
+                Player.instance.playerRigid.PlayerPush(dir, _pushPower);
+
             BlackBoard.Instance.IsPlayerRushAttack = true;
             DragonManager.Instance.AttackOff();
 

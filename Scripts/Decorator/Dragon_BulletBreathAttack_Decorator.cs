@@ -5,6 +5,22 @@ using DragonController;
 
 public class Dragon_BulletBreathAttack_Decorator : DecoratorTask
 {
+    float bullletBreathAttackDistance = 0.0f;
+    float redZoneDistance = 0.0f;
+
+    float curCoolingTime = 0.0f;
+    float coolingTime = 0.0f;
+
+    bool isBulletBreathAttck = false;
+
+    public override void Init()
+    {
+        base.Init();
+        bullletBreathAttackDistance = _blackBoard.BullletBreathAttackDistance;
+        redZoneDistance = _blackBoard.RedZoneDistance;
+        coolingTime = _clock.BulletBreathCoolingTime;
+    }
+
     public override void OnStart()
     {
         base.OnStart();
@@ -12,14 +28,12 @@ public class Dragon_BulletBreathAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CurCoolingTime = Clock.Instance.CurBulletBreathCoolingTime;
-        float CoolingTime = Clock.Instance.BulletBreathCoolingTime;
+        curCoolingTime = _clock.CurBulletBreathCoolingTime;
 
-        float Distance = BlackBoard.Instance.BullletBreathAttackDistance;
+        isBulletBreathAttck = UtilityManager.DistanceCalc(Dragon, Player, bullletBreathAttackDistance) &&
+                                !(UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance));
 
-        bool IsBulletBreathAttck = UtilityManager.DistanceCalc(Dragon, Player, Distance);
-
-        if (((CurCoolingTime >= CoolingTime && IsBulletBreathAttck) && !_manager.IsAction)
+        if (((curCoolingTime >= coolingTime && isBulletBreathAttck) && !_manager.IsAction)
             || _manager.IsAction)
         {
             if (_childAction)
