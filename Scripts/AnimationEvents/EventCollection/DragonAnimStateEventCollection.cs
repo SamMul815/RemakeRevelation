@@ -128,7 +128,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void ShotBreathAttackOn(EvnData evnData)
     {
-        Transform DragonMouth = _blackBoard.DragonMouth;
+        Transform DragonMouth = _blackBoard.DragonBulletBreathMouth;
         BulletManager.Instance.CreateDragonBaseBulletTest(DragonMouth.position, 0.15f, 10);
     }
 
@@ -145,7 +145,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void BreathAttackOn(EvnData evnData)
     {
 
-        Transform DragonMouth = _blackBoard.DragonMouth;
+        Transform DragonMouth = _blackBoard.DragonBreathMouth;
 
         Vector3 dir =
             (_manager.Player.position -

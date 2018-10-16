@@ -22,8 +22,6 @@ public class Dragon_PushAttack_Trigger : DragonAttackTrigger
             //dir += new Vector3(0.0f, 0.4f, 0.0f);
             dir += _pushDir;
 
-            Debug.Log("OnHit");
-            Debug.Log(dir);
             if (BlackBoard.Instance.IsPlayer)
             {
                 Player.instance.playerRigid.PlayerPush(dir, _pushPower);
