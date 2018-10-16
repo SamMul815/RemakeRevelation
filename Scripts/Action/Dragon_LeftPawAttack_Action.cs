@@ -8,7 +8,7 @@ public class Dragon_LeftPawAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        DragonAniManager.SwicthAnimation("Dragon_LeftPaw");
+        //DragonAniManager.SwicthAnimation("Dragon_LeftPaw");
         _clock.CurPawCoolingTime = 0.0f;
         //초기화
     }

@@ -9,7 +9,6 @@ public class Dragon_RightPawAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        DragonAniManager.SwicthAnimation("Dragon_RightPaw");
         _clock.CurPawCoolingTime = 0.0f;
     }
 

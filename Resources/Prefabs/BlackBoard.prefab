@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a065fdc8480454fbf090ea519fbd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPlayer: 0
   _dragonMouth: {fileID: 0}
   _pawAttackDistance: 20
   _breathAttackDistance: 50
@@ -108,4 +109,5 @@ MonoBehaviour:
   _bullletBreathAttackDistance: 100
   _descentAttackFiexdDistance: 150
   _landingDistance: 40
+  _redZoneDistance: 20
   _fanShapeAmount: 30

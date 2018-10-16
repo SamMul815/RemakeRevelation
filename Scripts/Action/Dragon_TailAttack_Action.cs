@@ -7,15 +7,15 @@ public class Dragon_TailAttack_Action : ActionTask
 {
     Vector3 forward = Vector3.zero;
     float turnTime = 0.13f;
-    float curturnTime = 0.0f;
+    float curTurnTime = 0.0f;
 
     public override void OnStart()
     {
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_Tail");
         _clock.CurPawCoolingTime = 0.0f;
-        curturnTime = 0.0f;
-        forward = (Player.position - Dragon.position).normalized;
+        curTurnTime = 0.0f;
+        //forward = (Player.position - Dragon.position).normalized;
     }
 
     public override bool Run()

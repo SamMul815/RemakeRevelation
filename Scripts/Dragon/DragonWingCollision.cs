@@ -9,14 +9,11 @@ public class DragonWingCollision : MonoBehaviour
     public Transform[] WingTransform { get { return _wingTransform; } }
     
     private MeshCollider _wingCollider;
-    Mesh _wingMesh;
+    private Mesh _wingMesh;
 
-    Vector3[] vertices;
-    //List<Vector3> vertices = new List<Vector3>();
+    private Vector3[] vertices;
 
-    int[] triangles;
-
-    //IEnumerator _wingColliderCor;
+    private int[] triangles;
 
     private void Awake()
     {
