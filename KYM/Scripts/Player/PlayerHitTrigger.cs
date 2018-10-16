@@ -10,11 +10,11 @@ public class PlayerHitTrigger : MonoBehaviour {
     public float delay = 0.0f;
     public UI_PlayerHP playerHpUI;
 
-	// Use this for initialization
-	void Start ()
-    {
+	//// Use this for initialization
+	//void Start ()
+ //   {
 		
-	}
+	//}
 	
 	// Update is called once per frame
 	void Update ()
@@ -38,9 +38,9 @@ public class PlayerHitTrigger : MonoBehaviour {
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
+    //private void OnTriggerStay(Collider other)
+    //{
         
-    }
+    //}
 
 }
