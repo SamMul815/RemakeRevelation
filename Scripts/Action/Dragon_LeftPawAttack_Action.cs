@@ -35,7 +35,7 @@ public class Dragon_LeftPawAttack_Action : ActionTask
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_LeftPaw");
-            EffectManager.Instance.PoolParticleEffectOn("LeftPaw", Dragon);
+            EffectManager.Instance.PoolParticleEffectOn("LeftPaw", Dragon.position, Dragon.forward);
             _manager.IsTurn = true;
         }
         return false;
