@@ -565,7 +565,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346636400116198, guid: faf678769e0aca5418820aec6b55c384, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 333
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: faf678769e0aca5418820aec6b55c384, type: 2}
@@ -629,6 +633,48 @@ GameObject:
   m_PrefabParentObject: {fileID: 1475790246427812, guid: d5708e23b79af6b49ae1ddc2a26a633d,
     type: 2}
   m_PrefabInternal: {fileID: 1968364560}
+--- !u!1001 &443441248
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4452859570256358, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452859570256358, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452859570256358, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 155.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452859570256358, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452859570256358, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452859570256358, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452859570256358, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452859570256358, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 31e4e31015309564e95abb50f6b16340, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &579848613 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114323235126228776, guid: 998b2a45ea8ce284b91dd446b27fb055,
@@ -705,6 +751,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &883972026 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4163184861067072, guid: 86f5fb21fb410c84380386057c25dd81,
+    type: 2}
+  m_PrefabInternal: {fileID: 397271055}
+--- !u!114 &883972028 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114419189472252056, guid: 86f5fb21fb410c84380386057c25dd81,
+    type: 2}
+  m_PrefabInternal: {fileID: 397271055}
+  m_Script: {fileID: 11500000, guid: 42ddf7e138d2cd74281d8f501b7c9e40, type: 3}
+--- !u!114 &883972029 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114848487453884614, guid: 86f5fb21fb410c84380386057c25dd81,
+    type: 2}
+  m_PrefabInternal: {fileID: 397271055}
+  m_Script: {fileID: 11500000, guid: 968b3f1dcab3dcd4f835a8cd15c1a966, type: 3}
 --- !u!1001 &941030921
 Prefab:
   m_ObjectHideFlags: 0
@@ -749,21 +812,6 @@ Prefab:
       propertyPath: _dragonMouth
       value: 
       objectReference: {fileID: 991756885}
-    - target: {fileID: 114323235126228776, guid: 998b2a45ea8ce284b91dd446b27fb055,
-        type: 2}
-      propertyPath: _curRedZoneTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114323235126228776, guid: 998b2a45ea8ce284b91dd446b27fb055,
-        type: 2}
-      propertyPath: _timeInterval
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114741746881747342, guid: 998b2a45ea8ce284b91dd446b27fb055,
-        type: 2}
-      propertyPath: _isPlayer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 998b2a45ea8ce284b91dd446b27fb055, type: 2}
   m_IsPrefabParent: 0
@@ -852,10 +900,6 @@ Prefab:
     - target: {fileID: 4805583645833736, guid: 35422541af9624041893ce4d21eb6407, type: 2}
       propertyPath: m_RootOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1937915422469126, guid: 35422541af9624041893ce4d21eb6407, type: 2}
-      propertyPath: m_Name
-      value: AirSpear
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35422541af9624041893ce4d21eb6407, type: 2}
@@ -1471,1521 +1515,101 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114548239288148860, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
+      propertyPath: _manager
       value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114548239288148860, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _blackBoard
       value: 
       objectReference: {fileID: 1594705415}
-    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114548239288148860, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _clock
       value: 
       objectReference: {fileID: 579848613}
-    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114548239288148860, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: _blackBoard
+      propertyPath: _movement
       value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114548239288148860, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: _clock
+      propertyPath: Dragon
       value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114548239288148860, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: Player
       value: 
       objectReference: {fileID: 292178311}
-    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114133897924401600, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: Player
+      propertyPath: _manager
       value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114133897924401600, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _blackBoard
       value: 
       objectReference: {fileID: 1594705415}
-    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114133897924401600, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _clock
       value: 
       objectReference: {fileID: 579848613}
-    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114133897924401600, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: _blackBoard
+      propertyPath: _movement
       value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114133897924401600, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: _clock
+      propertyPath: Dragon
       value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114133897924401600, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: Player
       value: 
       objectReference: {fileID: 292178311}
-    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: Player
+      propertyPath: _manager
       value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _blackBoard
       value: 
       objectReference: {fileID: 1594705415}
-    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _clock
       value: 
       objectReference: {fileID: 579848613}
-    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 292178311}
-    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: _blackBoard
+      propertyPath: _movement
       value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: _clock
+      propertyPath: Dragon
       value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: Player
       value: 
       objectReference: {fileID: 292178311}
-    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _blackBoard
-      value: 
-      objectReference: {fileID: 1594705415}
-    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
-        type: 2}
-      propertyPath: _clock
-      value: 
-      objectReference: {fileID: 579848613}
-    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114139972705601620, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
-      propertyPath: Player
+      propertyPath: _manager
       value: 
-      objectReference: {fileID: 292178311}
+      objectReference: {fileID: 883972028}
     - target: {fileID: 114139972705601620, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _blackBoard
@@ -2998,72 +1622,3051 @@ Prefab:
       objectReference: {fileID: 579848613}
     - target: {fileID: 114139972705601620, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114139972705601620, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114139972705601620, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
       propertyPath: Player
       value: 
       objectReference: {fileID: 292178311}
-    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _blackBoard
       value: 
       objectReference: {fileID: 1594705415}
-    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: _clock
       value: 
       objectReference: {fileID: 579848613}
-    - target: {fileID: 114362401059187676, guid: f2e09cb25cf36674a804037e7ad80d22,
+    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114747606415679688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114191903443342834, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114792401594510774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114620611136202280, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114680799260856742, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114154998958874006, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114028180668965482, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114767096687498228, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114945420486016186, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114627706653229152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114086310323571086, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114190059246175658, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114515445696917208, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114725519938217914, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114979960820729232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114512827066763670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114457290973457118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114316412447948256, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114588158312600070, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114477522940990012, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114552275082015278, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114874594022579888, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114649528911937886, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114978975752499480, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114629039263470390, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114109971620232418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114234819396969294, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114944260659301570, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114594938470918322, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114064852989539332, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114730117124034870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114922574879513758, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114850545180425514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114210538835751376, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114298240105565824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114921473362028696, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114034356738747194, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114133441086095406, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114586719049815616, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114327019260744440, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114806259544074526, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114578217814145686, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114763246413877824, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114986129433770398, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114157821765559546, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114948062307010054, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114995684579091018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114631050382317660, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114335537134776772, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114663804595051364, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114200320625887052, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114163322817397004, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114497416419549118, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114504026548755018, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114368299600522320, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114564059535905428, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114183607204126050, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114720218925823680, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114859824971319882, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114884754310338774, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114300720540199360, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114504397330370588, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114878674217079870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114593862817509900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114262864871427688, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114901997906713328, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114743265875109182, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114576290042614352, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114795714306581902, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114186718073621538, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114840103116314600, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114208447927202950, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114455255757324870, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114697125199990152, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114994094446317162, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114016271377797112, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114332293690647514, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114999938110227010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114251024111038754, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114168792800723532, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114886625038180810, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114093922130814594, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114341557619318652, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114567551057582496, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114615855246913656, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114320524724014878, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114007399039858302, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114767649740674798, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114899465151204138, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114899349584683232, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114476440265317418, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114052660122157190, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114589716968785670, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114459877018756780, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114323381054563900, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114337307175591572, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114248084224643430, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114299431713661368, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114818477384731766, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114151863340751010, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 292178311}
+    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 883972028}
+    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _blackBoard
+      value: 
+      objectReference: {fileID: 1594705415}
+    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _clock
+      value: 
+      objectReference: {fileID: 579848613}
+    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: _movement
+      value: 
+      objectReference: {fileID: 883972029}
+    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
+        type: 2}
+      propertyPath: Dragon
+      value: 
+      objectReference: {fileID: 883972026}
+    - target: {fileID: 114554176678181676, guid: f2e09cb25cf36674a804037e7ad80d22,
         type: 2}
       propertyPath: Player
       value: 
       objectReference: {fileID: 292178311}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2e09cb25cf36674a804037e7ad80d22, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1573132002
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4967796591683248, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1721939422264144, guid: faf678769e0aca5418820aec6b55c384, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: faf678769e0aca5418820aec6b55c384, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1594705415 stripped
 MonoBehaviour:
