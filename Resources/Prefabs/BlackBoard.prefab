@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isPlayer: 0
-  _dragonMouth: {fileID: 0}
+  _dragonBulletBreathMouth: {fileID: 0}
+  _dragonBreathMouth: {fileID: 0}
   _pawAttackDistance: 20
   _breathAttackDistance: 50
   _howlingDistance: 60

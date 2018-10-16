@@ -10,8 +10,12 @@ public class BlackBoard : Singleton<BlackBoard>
 
 
     [SerializeField]
-    private Transform _dragonMouth;
-    public Transform DragonMouth { get { return _dragonMouth; } }
+    private Transform _dragonBulletBreathMouth;
+    public Transform DragonBulletBreathMouth { get { return _dragonBulletBreathMouth; } }
+
+    [SerializeField]
+    private Transform _dragonBreathMouth;
+    public Transform DragonBreathMouth { get { return _dragonBreathMouth; } }
 
     private Vector3 _fiexdPosition;
     public Vector3 FiexdPosition { set { _fiexdPosition = value; } get { return _fiexdPosition; } }
