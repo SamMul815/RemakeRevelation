@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4720302134441364}
   - component: {fileID: 65875575457002536}
-  - component: {fileID: 114559600835121168}
+  - component: {fileID: 114338862509494480}
   m_Layer: 11
   m_Name: Dragon_Dash
   m_TagString: Untagged
@@ -456,7 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4738661950961800}
   - component: {fileID: 65891346421356094}
-  - component: {fileID: 114144776820733578}
+  - component: {fileID: 114227943759824422}
   m_Layer: 11
   m_Name: Dragon_LPaw
   m_TagString: Untagged
@@ -873,7 +873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4129474075716454}
   - component: {fileID: 65824015023191996}
-  - component: {fileID: 114570687100882394}
+  - component: {fileID: 114226873160023396}
   m_Layer: 11
   m_Name: Dragon_RPaw
   m_TagString: Untagged
@@ -3332,7 +3332,7 @@ Transform:
   m_GameObject: {fileID: 1952279926253744}
   m_LocalRotation: {x: -0.000000016705597, y: -0.000000038824506, z: -0.000000009073573,
     w: 1}
-  m_LocalPosition: {x: -137.05707, y: 89.67183, z: 80.9747}
+  m_LocalPosition: {x: 0, y: 5.66, z: 17.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4163184861067072}
@@ -3767,19 +3767,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114144776820733578
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1260084049996638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e2da98a11565648b8422d675f5b813, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerTag: 1
-  _damage: 15
 --- !u!114 &114205376831627464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3811,6 +3798,51 @@ MonoBehaviour:
   _secondPhaseAirSpearHPPrecent: 0.1
   _thirdPhaseAirSpearHPPrecent: 0.07
   _meteofHpPercent: 0.04
+--- !u!114 &114226873160023396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480855603689154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671c256e36df31f47918bb026d8fc9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerTag: 2
+  _damage: 15
+  _pushPower: 20
+  _pushDir: {x: 0, y: 1, z: 0}
+--- !u!114 &114227943759824422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1260084049996638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671c256e36df31f47918bb026d8fc9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerTag: 1
+  _damage: 15
+  _pushPower: 20
+  _pushDir: {x: 0, y: 1, z: 0}
+--- !u!114 &114338862509494480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1085874701096270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671c256e36df31f47918bb026d8fc9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerTag: 0
+  _damage: 15
+  _pushPower: 30
+  _pushDir: {x: 0, y: 0.2, z: 0}
 --- !u!114 &114419189472252056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3848,33 +3880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3410fac73f973cd40aa141b9ca78c896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114559600835121168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1085874701096270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5ee7e52024ca4543929ce49d692c13f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerTag: 0
-  _damage: 15
-  _pushPower: 50
---- !u!114 &114570687100882394
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1480855603689154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e2da98a11565648b8422d675f5b813, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerTag: 2
-  _damage: 15
 --- !u!114 &114848487453884614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3899,8 +3904,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerTag: 7
-  _damage: 50
-  _pushPower: 15
+  _damage: 15
+  _pushPower: 30
+  _pushDir: {x: 0, y: 0.2, z: 0}
 --- !u!114 &114872312649296418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3915,6 +3921,7 @@ MonoBehaviour:
   _triggerTag: 5
   _damage: 100
   _pushPower: 30
+  _pushDir: {x: 0, y: 0.4, z: 0}
 --- !u!114 &114923299835813586
 MonoBehaviour:
   m_ObjectHideFlags: 1

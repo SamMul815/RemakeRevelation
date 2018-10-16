@@ -37,7 +37,6 @@ public class Dragon_RightPawAttack_Action : ActionTask
             DragonAniManager.SwicthAnimation("Dragon_RightPaw");
             Vector3 Pos = Dragon.position;
             EffectManager.Instance.PoolParticleEffectOn("LeftPaw", Dragon.position, Dragon.forward);
-            //EffectManager.Instance.PoolParticleEffectOn("RightPaw", Dragon);
             _manager.IsTurn = true;
         }
         return false;
