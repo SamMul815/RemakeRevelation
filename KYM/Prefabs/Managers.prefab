@@ -292,8 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBaseBullet: {fileID: 1077627483473738, guid: 88ebd8a552980c14fb4e704a2f46129f,
     type: 2}
-  playerMachinBullet: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
-    type: 2}
+  playerMachinBullet: {fileID: 0}
   dragonBaseBullet: {fileID: 1455987169917528, guid: ef9a0b8948d45a34397e9a4dc7a357e3,
     type: 2}
   dragonRotateBullet: {fileID: 1159996866615532, guid: fbab84e811b85fd46829eb7d2ab87bcd,
