@@ -57,22 +57,22 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "Tail");
 
         //---------------------Sound Start------------------------
-        //Howling
-        AddAnimTimeEventFunc(SoundHowling, "Howling");
+        ////Howling
+        //AddAnimTimeEventFunc(SoundHowling, "Howling");
 
-        //Breath
-        AddAnimTimeEventFunc(SoundBreath, "Breath");
+        ////Breath
+        //AddAnimTimeEventFunc(SoundBreath, "Breath");
 
-        //Breath
-        AddAnimTimeEventFunc(SoundShot_Breath, "Shot_Breath");
+        ////Breath
+        //AddAnimTimeEventFunc(SoundShot_Breath, "Shot_Breath");
 
-        //Dash
-        AddAnimTimeEventFunc(SoundDashAttack1, "Dash");
-        AddAnimTimeEventFunc(SoundDashAttack2, "Dash");
-        AddAnimTimeEventFunc(SoundDashAttack3, "Dash");
+        ////Dash
+        //AddAnimTimeEventFunc(SoundDashAttack1, "Dash");
+        //AddAnimTimeEventFunc(SoundDashAttack2, "Dash");
+        //AddAnimTimeEventFunc(SoundDashAttack3, "Dash");
 
-        //Rush
-        AddAnimTimeEventFunc(SoundRushAttack, "Rush");
+        ////Rush
+        //AddAnimTimeEventFunc(SoundRushAttack, "Rush");
 
         //---------------------Sound End--------------------------
     }
