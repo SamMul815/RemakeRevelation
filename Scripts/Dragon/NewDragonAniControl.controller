@@ -817,6 +817,10 @@ MonoBehaviour:
     RunTime: 0
     IsLoop: 0
   StateTimeEvent:
+  - RunTime: 0.334
+    IsLoop: 0
+  - RunTime: 0.611
+    IsLoop: 0
   - RunTime: 0.999
     IsLoop: 0
 --- !u!114 &114971487880958676
@@ -2921,7 +2925,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.9464286
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -10829,7 +10833,7 @@ AnimatorStateMachine:
     m_Position: {x: 492, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102488284229516420}
-    m_Position: {x: 204, y: 564, z: 0}
+    m_Position: {x: 216, y: 588, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

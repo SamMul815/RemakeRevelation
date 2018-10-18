@@ -42,7 +42,6 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
 
                     return ChildNode.Run();
                 }
-
             }
             else
             {

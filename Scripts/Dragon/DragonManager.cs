@@ -142,8 +142,13 @@ namespace DragonController
 
         private void FixedUpdate()
         {
-            if (!_dragonBehaviroTree.Root.Run())
+            if (!_dragonBehaviroTree.Root.Run() && _stat.HP > 0.0f)
                 return;
+            else
+            {
+                //죽었을 시...
+                Debug.Log("Dead");
+            }
         }
     }
 }

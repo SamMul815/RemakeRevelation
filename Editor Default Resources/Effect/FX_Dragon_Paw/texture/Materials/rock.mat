@@ -80,7 +80,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Smoothness: 0
+    - _Smoothness: 0.321
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -88,6 +88,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AlphaColor: {r: 1, g: 0.4726166, b: 0.41176468, a: 1}
-    - _Color: {r: 0.33823526, g: 0.33171755, b: 0.32580015, a: 1}
+    - _Color: {r: 0.33823523, g: 0.33171752, b: 0.32580012, a: 0}
     - _EColor: {r: 1.7647058, g: 0.5259217, b: 0.35034603, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

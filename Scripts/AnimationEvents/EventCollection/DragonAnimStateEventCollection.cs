@@ -38,6 +38,10 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(AttackOff, "Rush");
         AddAnimTimeEventFunc(ActionEnd, "Rush");
 
+        AddAnimTimeEventFunc(TailAttackOn, "Tail");
+        AddAnimTimeEventFunc(TailAttackOff, "Tail");
+        AddAnimTimeEventFunc(ActionEnd, "Tail");
+
 
         AddAnimTimeEventFunc(ShotBreathAttackOn ,"Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
@@ -54,7 +58,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
-        AddAnimTimeEventFunc(ActionEnd, "Tail");
 
         //---------------------Sound Start------------------------
         ////Howling
@@ -89,6 +92,11 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     }
 
+    private void AttackOff(EvnData evnData)
+    {
+        _manager.AttackOff();
+    }
+
     private void DashFirstRightPaw(EvnData evnData)
     {
         Vector3 Pos = _manager.RightPawTransform.position;
@@ -113,11 +121,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         _blackBoard.IsRushAttackOn = true;
         _manager.AttackOn(DragonAttackTriggers.Rush);
-    }
-
-    private void AttackOff(EvnData evnData)
-    {
-        _manager.AttackOff();
     }
 
     private void RightPawAttackOn(EvnData evnData)
@@ -197,6 +200,18 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         _manager.IsAction = false;
         _blackBoard.IsMeteoHovering = true;
+    }
+
+    private void TailAttackOn(EvnData evnData)
+    {
+        _blackBoard.IsTailAttackOn = true;
+        _manager.AttackOn(DragonAttackTriggers.Tail);
+    }
+
+    private void TailAttackOff(EvnData evnData)
+    {
+        _blackBoard.IsTailAttackOn = false;
+        _manager.AttackOff();
     }
 
 
