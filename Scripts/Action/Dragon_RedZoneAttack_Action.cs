@@ -5,7 +5,6 @@ using DragonController;
 
 public class Dragon_RedZoneAttack_Action : ActionTask
 {
-
     Vector3 forward = Vector3.zero;
 
 

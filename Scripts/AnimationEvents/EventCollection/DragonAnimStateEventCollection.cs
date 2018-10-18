@@ -162,7 +162,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         Transform DragonMouth = _blackBoard.DragonBreathMouth;
 
         Vector3 dir =
-            (_manager.Player.position -
+            (_utility.Player.position -
             _manager.transform.position).normalized;
         dir.y = 0.0f;
 

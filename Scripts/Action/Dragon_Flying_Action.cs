@@ -13,7 +13,6 @@ public class Dragon_Flying_Action : ActionTask
 
     public override bool Run()
     {
-        Debug.Log("test");
         return false;
     }
 

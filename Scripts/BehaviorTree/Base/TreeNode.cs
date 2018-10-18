@@ -34,7 +34,7 @@ public abstract class TreeNode : MonoBehaviour
         _clock = Clock.Instance;
 
         Dragon = DragonManager.Instance.transform;
-        Player = DragonManager.Instance.Player;
+        Player = UtilityManager.Instance.Player;
 
     }
 

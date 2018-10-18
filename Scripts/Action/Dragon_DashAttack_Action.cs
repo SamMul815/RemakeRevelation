@@ -7,6 +7,11 @@ public class Dragon_DashAttack_Action : ActionTask
 {
     Vector3 forward;
 
+    public override void Init()
+    {
+        base.Init();
+    }
+
     public override void OnStart()
     {
         base.OnStart();
@@ -33,10 +38,13 @@ public class Dragon_DashAttack_Action : ActionTask
                 Dragon.rotation = Quaternion.Slerp(
                     Dragon.rotation,
                     Quaternion.LookRotation(forward),
-                    0.05f);
+                    CurTurnTime / MaxTurnTime);
+
+                CurTurnTime += Time.deltaTime;
 
                 return false;
             }
+
             DragonAniManager.SwicthAnimation("Dragon_Dash");
             _manager.IsTurn = true;
             forward = (Player.position - Dragon.position).normalized;

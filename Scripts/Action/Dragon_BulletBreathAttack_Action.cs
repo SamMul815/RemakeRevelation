@@ -8,7 +8,6 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        //DragonAniManager.SwicthAnimation("Dragon_Shot_Breath");
         _clock.CurBulletBreathCoolingTime = 0.0f;
     }
 
@@ -31,7 +30,8 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
                 Dragon.rotation = Quaternion.Slerp(
                     Dragon.rotation,
                     Quaternion.LookRotation(forward),
-                    0.05f);
+                    CurTurnTime / MaxTurnTime);
+                CurTurnTime += Time.deltaTime;
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_Bullet_Breath");

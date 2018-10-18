@@ -33,7 +33,8 @@ public class Dragon_MeteoAttack_Action : ActionTask
                 Dragon.rotation = Quaternion.Slerp(
                     Dragon.rotation,
                     Quaternion.LookRotation(forward),
-                    0.03f);
+                    CurTurnTime / MaxTurnTime);
+                CurTurnTime += Time.deltaTime;
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_MeteoAttack");

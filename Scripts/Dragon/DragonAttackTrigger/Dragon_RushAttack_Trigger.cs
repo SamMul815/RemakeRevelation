@@ -11,7 +11,7 @@ public class Dragon_RushAttack_Trigger : Dragon_PushAttack_Trigger
         if (other.CompareTag("Player"))
         {
             Vector3 dir =
-                Vector3.Normalize(_manager.Player.position - _manager.transform.position);
+                Vector3.Normalize(_utility.Player.position - _manager.transform.position);
 
             //dir += new Vector3(0.0f, 0.2f, 0.0f);
             dir += _pushDir;

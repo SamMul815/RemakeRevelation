@@ -9,6 +9,9 @@ public class BaseAnimStateEventsCollection : MonoBehaviour
     protected DragonManager _manager; //변수형 타입은 DragonManager 변수명은 _manager;
     public DragonManager Manager { get { return _manager; } }
 
+    protected UtilityManager _utility;
+    public UtilityManager Utility { get { return _utility; } }
+
     protected BlackBoard _blackBoard;
     public BlackBoard BlackBoard { get { return _blackBoard; } }
 
@@ -28,6 +31,7 @@ public class BaseAnimStateEventsCollection : MonoBehaviour
     {
         _manager = DragonManager.Instance;
         _blackBoard = BlackBoard.Instance;
+        _utility = UtilityManager.Instance;
     }
 
     protected List<bool> GetIsAnimTimeEventRun(Dictionary<string, List<bool>> Target, string Key)

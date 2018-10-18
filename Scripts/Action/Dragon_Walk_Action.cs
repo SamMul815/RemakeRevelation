@@ -28,7 +28,9 @@ public class Dragon_Walk_Action : ActionTask
             Dragon.rotation = Quaternion.Slerp(
                 Dragon.rotation,
                 Quaternion.LookRotation(forward),
-                0.05f);
+                CurTurnTime / MaxTurnTime);
+
+            CurTurnTime += Time.deltaTime;
         }
 
         float WalkSpeed = _manager.Stat.WalkSpeed;

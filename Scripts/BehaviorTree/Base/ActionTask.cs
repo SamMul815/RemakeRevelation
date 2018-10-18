@@ -19,6 +19,19 @@ public abstract class ActionTask : TreeNode
     protected IEnumerator _actionCor;
     public IEnumerator ActionCor { set { _actionCor = value; } get { return _actionCor; } }
 
+    protected float _curTurnTime;
+    public float CurTurnTime { set { _curTurnTime = value; } get { return _curTurnTime; } }
+
+    protected float _maxTurnTime;
+    public float MaxTurnTime { get { return _maxTurnTime; } }
+
+    public override void Init()
+    {
+        base.Init();
+        _curTurnTime = 0.0f;
+        _maxTurnTime = 3.0f;
+    }
+
     public override void OnStart()
     {
         base.OnStart();
@@ -31,6 +44,7 @@ public abstract class ActionTask : TreeNode
             CoroutineManager.DoCoroutine(_actionCor);
         }
         _isEnd = false;
+        _curTurnTime = 0.0f;
     }
 
     public override void OnEnd()

@@ -127,7 +127,7 @@ public class NodeManager : MonoBehaviour
         if (IsStick)
         {
             transform.position = _manager.transform.position;
-            Vector3 PlayerPos = DragonManager.Instance.Player.position;
+            Vector3 PlayerPos = UtilityManager.Instance.Player.position;
             Vector3 thisPos = transform.position;
 
             PlayerPos.y = 0.0f;
