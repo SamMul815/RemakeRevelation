@@ -13,7 +13,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "Breath");
 
         AddAnimTimeEventFunc(LandingOn, "Landing");
-        AddAnimTimeEventFunc(LadingEnd, "Landing");
         AddAnimTimeEventFunc(ActionEnd, "Landing");
 
 
@@ -93,19 +92,19 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void DashFirstRightPaw(EvnData evnData)
     {
         Vector3 Pos = _manager.RightPawTransform.position;
-        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, Vector3.zero);
+        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, _manager.transform.forward);
     }
 
     private void DashLeftAttack(EvnData evnData)
     {
         Vector3 Pos = _manager.LeftPawTransform.position;
-        EffectManager.Instance.PoolParticleEffectOn("LeftDash", Pos, Vector3.zero);
+        EffectManager.Instance.PoolParticleEffectOn("LeftDash", Pos, _manager.transform.forward);
     }
 
     private void DashLastRightPaw(EvnData evnData)
     {
         Vector3 Pos = _manager.RightPawTransform.position;
-        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, Vector3.zero);
+        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, _manager.transform.forward);
         BlackBoard.IsDashAttackOn = false;
         _manager.AttackOff();
     }
@@ -139,14 +138,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.DragonRigidBody.useGravity = true;
         _manager.DragonGroundCollider.enabled = true;
 
-        Vector3 MoveDir = Vector3.down;
-        _manager.DragonRigidBody.AddForce(MoveDir * 500.0f, ForceMode.Impulse);
-
-    }
-
-    private void LadingEnd(EvnData evnData)
-    {
-
     }
 
     private void ShotBreathAttackOn(EvnData evnData)
@@ -169,7 +160,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         Transform DragonMouth = _blackBoard.DragonBreathMouth;
 
         Vector3 dir =
-            (_manager.Player.position -
+            (_utility.Player.position -
             _manager.transform.position).normalized;
         dir.y = 0.0f;
 
@@ -203,7 +194,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void MeteoAttackEnd(EvnData evnData)
     {
         _manager.IsAction = false;
-        _blackBoard.IsLanding = true;
+        _blackBoard.IsMeteoHovering = true;
     }
 
 

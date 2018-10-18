@@ -9,6 +9,9 @@ public class DragonAttackTrigger : MonoBehaviour
     protected DragonManager _manager;
     public DragonManager Manager { get { return _manager; } }
 
+    protected UtilityManager _utility;
+    public UtilityManager Utility { get { return _utility; } }
+
     [SerializeField]
     protected DragonAttackTriggers _triggerTag;
     public  DragonAttackTriggers TriggerTag { get { return _triggerTag; } }
@@ -20,6 +23,7 @@ public class DragonAttackTrigger : MonoBehaviour
     private void Awake()
     {
         _manager = DragonManager.Instance;
+        _utility = UtilityManager.Instance;
     }
 
     protected virtual void OnTriggerEnter(Collider other)

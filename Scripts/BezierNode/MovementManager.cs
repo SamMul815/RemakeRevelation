@@ -6,7 +6,7 @@ using UnityEngine;
 public enum MovementType
 {
     Meteo,
-    MeteoHovering,
+    MeteoFlying,
     AirSpear
 }
 

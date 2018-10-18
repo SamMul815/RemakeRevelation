@@ -12,8 +12,13 @@ public class BezierNodeEventCollection : MonoBehaviour
         _manager = MovementManager.Instance;
     }
 
-    private void Rotation()
+    private void AniGliding()
     {
-        //Vector3 forward = this.transform.position - _manager.transform.position;
+        DragonAniManager.SwicthAnimation("Dragon_Gliding");
+    }
+
+    private void AniFlying()
+    {
+        DragonAniManager.SwicthAnimation("Dragon_Flying");
     }
 }

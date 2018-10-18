@@ -127,7 +127,7 @@ public class NodeManager : MonoBehaviour
         if (IsStick)
         {
             transform.position = _manager.transform.position;
-            Vector3 PlayerPos = DragonManager.Instance.Player.position;
+            Vector3 PlayerPos = UtilityManager.Instance.Player.position;
             Vector3 thisPos = transform.position;
 
             PlayerPos.y = 0.0f;
@@ -265,6 +265,7 @@ public class NodeManager : MonoBehaviour
         {
             if (!IsLoop)
             {
+                _manager.CurSpeed = _stat.NodeSpeed[_segmentIndex - 1];
                 _isMoveEnd = true;
                 _isMoving = false;
                 enabled = false;

@@ -5,6 +5,14 @@ using DragonController;
 
 public class Dragon_LeftPawAttack_Action : ActionTask
 {
+    Vector3 forward;
+    Vector3 Test;
+
+    public override void Init()
+    {
+        base.Init();
+    }
+
     public override void OnStart()
     {
         base.OnStart();
@@ -21,7 +29,7 @@ public class Dragon_LeftPawAttack_Action : ActionTask
         DragonPos.y = 0.0f;
         PlayerPos.y = 0.0f;
 
-        Vector3 forward = (PlayerPos - DragonPos).normalized;
+        forward = (PlayerPos - DragonPos).normalized;
 
         if (!_manager.IsTurn)
         {
@@ -31,7 +39,8 @@ public class Dragon_LeftPawAttack_Action : ActionTask
                 Dragon.rotation = Quaternion.Slerp(
                     Dragon.rotation,
                     Quaternion.LookRotation(forward),
-                    0.05f);
+                    CurTurnTime / MaxTurnTime);
+                CurTurnTime += Time.deltaTime;
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_LeftPaw");

@@ -63,9 +63,6 @@ namespace DragonController
         private bool _landingOn;
         public bool LandingOn { set { _landingOn = value; } get { return _landingOn; } }
 
-        private  Transform _player;
-        public Transform Player { get { return _player; } }
-
         static bool _isInit;
 
         private void Awake()
@@ -75,8 +72,6 @@ namespace DragonController
             _stat = GetComponent<DragonStat>();
 
             _dragonRigidBody = GetComponent<Rigidbody>();
-
-            _player = GameObject.FindWithTag("Player").transform;
 
             DragonAttackTrigger []triggers = GetComponentsInChildren<DragonAttackTrigger>();
 

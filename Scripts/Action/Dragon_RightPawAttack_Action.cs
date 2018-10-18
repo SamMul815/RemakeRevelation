@@ -5,6 +5,10 @@ using DragonController;
 
 public class Dragon_RightPawAttack_Action : ActionTask
 {
+    public override void Init()
+    {
+        base.Init();
+    }
 
     public override void OnStart()
     {
@@ -30,7 +34,9 @@ public class Dragon_RightPawAttack_Action : ActionTask
                 Dragon.rotation = Quaternion.Slerp(
                     Dragon.rotation,
                     Quaternion.LookRotation(forward),
-                    0.05f);
+                    CurTurnTime/ MaxTurnTime);
+
+                CurTurnTime += Time.deltaTime;
                 return false;
             }
 

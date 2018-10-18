@@ -6,6 +6,21 @@ using DragonController;
 public class Dragon_MeteoFlying_Decorator : DecoratorTask
 {
 
+    float MaxHP = 0.0f;
+    float HP = 0.0f;
+    float SaveHP = 0.0f;
+    float MeteoHP = 0.0f;
+    bool IsMeteo = false;
+
+    public override void Init()
+    {
+        base.Init();
+        MaxHP = _manager.Stat.MaxHP;
+        HP = _manager.Stat.HP;
+        SaveHP = _manager.Stat.MeteoSaveHP;
+        MeteoHP = _manager.Stat.MeteoHP;
+    }
+
     public override void OnStart()
     {
         base.OnStart();
@@ -14,18 +29,12 @@ public class Dragon_MeteoFlying_Decorator : DecoratorTask
     public override bool Run()
     {
 
-        float MaxHP = _manager.Stat.MaxHP;
-        float HP = _manager.Stat.HP;
-        float SaveHP = _manager.Stat.MeteoSaveHP;
+        HP = _manager.Stat.HP;
+        SaveHP = _manager.Stat.MeteoSaveHP;
 
-        float MeteoHP = _manager.Stat.MeteoHP;
+        IsMeteo = MeteoHP - (SaveHP - HP) <= 0.0f;
 
-        bool IsMeteo = MeteoHP - (SaveHP - HP) <= 0.0f;
-
-        bool IsFlying = _blackBoard.IsFlying;
-        bool IsGround = _blackBoard.IsGround;
-
-        if ((MaxHP > HP && IsMeteo && IsGround && !IsFlying && !_manager.IsAction) || (_manager.IsAction))
+        if ((MaxHP > HP && IsMeteo && _blackBoard.IsGround && !_blackBoard.IsFlying && !_manager.IsAction) || (_manager.IsAction))
         {
             if (_childAction)
             {
