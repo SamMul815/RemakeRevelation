@@ -14,7 +14,6 @@ public enum DragonAttackTriggers
     Rush
 }
 
-
 namespace DragonController
 {
     [RequireComponent(typeof(MovementManager))]
@@ -94,7 +93,6 @@ namespace DragonController
                 _isInit = true;
             } 
 	    }
-
 
         public void OnDestroyPart(float _damage)
         {

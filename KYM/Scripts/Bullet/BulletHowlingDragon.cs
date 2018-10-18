@@ -10,6 +10,7 @@ public class BulletHowlingDragon : BulletBase
     {
         prevPosition = transform.position;
         moveDir = transform.forward;
+        MoveDistance = MaxMoveDistance;
     }
 
     protected override void OnCollisionEvent()
@@ -22,6 +23,5 @@ public class BulletHowlingDragon : BulletBase
             Player.instance.playerStat.Hit(damage);
             isHitPlayer = true;
         }
-
     }
 }

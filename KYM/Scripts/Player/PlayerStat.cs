@@ -12,6 +12,8 @@ public class PlayerStat : MonoBehaviour
         Teleporting
     }
     public PlayerVRState playerVRState = PlayerVRState.Idle;
+    public UI_Player playerUI;
+
 
     [SerializeField]
     private float maxHP;
@@ -34,6 +36,8 @@ public class PlayerStat : MonoBehaviour
             currentHP = 0;
             isPlayerDie = true;
         }
+
+        playerUI.Hit();
     }
 
     public float GetCurrentHP()

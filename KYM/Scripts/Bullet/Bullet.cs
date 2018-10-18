@@ -21,15 +21,16 @@ public class Bullet : MonoBehaviour {
     protected float moveSpeed;             //투사체 속도
 
     [SerializeField]
-    protected LayerMask hitLayer;                    //충돌되는 레이어들
+    protected LayerMask hitLayer;          //충돌되는 레이어들
 
     [SerializeField]
     private float maxMoveDistance = 20000.0f;
     private float moveDistance;
+    public float MaxMoveDistance { get { return maxMoveDistance; } }
     public float MoveDistance { set { moveDistance = value; } }
     //protected Vector3 startPosition;
 
-    protected SphereCollider col;  //컬라이더 정보
+    protected SphereCollider col;   //컬라이더 정보
     protected Vector3 moveDir;             //이동 방향
     protected Vector3 prevPosition;        //이전 위치
     protected RaycastHit hitInfo;        //충돌 정보    
