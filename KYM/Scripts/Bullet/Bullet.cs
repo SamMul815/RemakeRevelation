@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour {
     [SerializeField]
     private float maxMoveDistance = 20000.0f;
     private float moveDistance;
+    public float MoveDistance { set { moveDistance = value; } }
     //protected Vector3 startPosition;
 
     protected SphereCollider col;  //컬라이더 정보

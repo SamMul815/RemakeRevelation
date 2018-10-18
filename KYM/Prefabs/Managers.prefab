@@ -43,6 +43,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1528676113503118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4540561572803718}
+  - component: {fileID: 114526917983058814}
+  m_Layer: 0
+  m_Name: EffectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1723941361430222
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +190,19 @@ Transform:
   m_Father: {fileID: 4937106812172274}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4540561572803718
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528676113503118}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4937106812172274}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4574855354006930
 Transform:
   m_ObjectHideFlags: 1
@@ -216,6 +245,7 @@ Transform:
   - {fileID: 4170449836561228}
   - {fileID: 4178443242248778}
   - {fileID: 4458651815265940}
+  - {fileID: 4540561572803718}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -279,6 +309,9 @@ MonoBehaviour:
   - poolObject: {fileID: 1121619590847894, guid: 83261521903a17a438f943f03a20b2ad,
       type: 2}
     initialCount: 100
+  - poolObject: {fileID: 1069826527463908, guid: c1e0facab5877974a891a0c8ab35b3c9,
+      type: 2}
+    initialCount: 100
 --- !u!114 &114450824410820312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,7 +325,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBaseBullet: {fileID: 1077627483473738, guid: 88ebd8a552980c14fb4e704a2f46129f,
     type: 2}
-  playerMachinBullet: {fileID: 0}
+  playerMachinBullet: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
+    type: 2}
   dragonBaseBullet: {fileID: 1455987169917528, guid: ef9a0b8948d45a34397e9a4dc7a357e3,
     type: 2}
   dragonRotateBullet: {fileID: 1159996866615532, guid: fbab84e811b85fd46829eb7d2ab87bcd,
@@ -315,6 +349,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSkill: {fileID: 0}
   rightSkill: {fileID: 0}
+--- !u!114 &114526917983058814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528676113503118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d078d930ed72449acf47c5762fa540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particlesList:
+  - {fileID: 1441271155620236, guid: 871e658f5f45dea4abd4e3a5e695f4ed, type: 2}
+  - {fileID: 1201230306409686, guid: 6861b06094330934c89a36a9cfa0039a, type: 2}
+  - {fileID: 1492819822406986, guid: 09c01b97ced6b3b48ad4a509053fce21, type: 2}
+  - {fileID: 1872982495496528, guid: 5b388df4b6872f249a84030a494c9338, type: 2}
 --- !u!114 &114657818410702986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -389,7 +439,7 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: 68db71da3f965874fbf8c6646524d4e9, type: 3}
   - name: aaahhh
     sound: {fileID: 8300000, guid: a93ce8dd966882c4389385f52048895d, type: 3}
-  audioSoundObject: {fileID: 1641174234834690, guid: 86d6c5b82368d4440b829a3c14a4f61d,
+  audioSoundObject: {fileID: 1731873040759286, guid: 86d6c5b82368d4440b829a3c14a4f61d,
     type: 2}
 --- !u!114 &114847746839651598
 MonoBehaviour:

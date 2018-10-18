@@ -71,6 +71,7 @@ public class BulletBase : Bullet
     protected override void Move()
     {
         //this.transform.position += moveDir * Time.fixedUnscaledDeltaTime * moveSpeed;
+        moveDir = transform.forward;
         transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
     }
 

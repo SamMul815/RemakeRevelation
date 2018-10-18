@@ -7,7 +7,7 @@ public class BulletManager : Singleton<BulletManager>
     [SerializeField] private GameObject playerBaseBullet;
     [SerializeField] private GameObject playerMachinBullet;
     [SerializeField] private GameObject dragonBaseBullet;
-    [SerializeField] private GameObject dragonRotateBullet;
+    [SerializeField] private GameObject dragonHowlingBullet;
     [SerializeField] private GameObject dragonBreathPrefab;
     [SerializeField] private GameObject dragonMeteoPrefab;
 
@@ -57,26 +57,14 @@ public class BulletManager : Singleton<BulletManager>
         for (int i = 0; i< amount; i++)
         {
             GameObject bullet;
-            PoolManager.Instance.PopObject(dragonBaseBullet, out bullet);
+            PoolManager.Instance.PopObject(dragonHowlingBullet, out bullet);
             if (bullet == null) return;
             bullet.transform.position = _position;
             bullet.transform.rotation = Quaternion.Euler(0f, i * (360.0f / f_amount),0f);
-            bullet.GetComponent<BulletBaseDragon>().ChangeSpeed(DragonBaseBulletSpeed);
-
+            //bullet.GetComponent<BulletBaseDragon>().ChangeSpeed(DragonBaseBulletSpeed);
         }
     }
 
-    public void CreateDragonSlashSkill(Vector3 _position)
-    {
-        GameObject bullet;
-        for (int i = 0; i < 10; i++)
-        {
-            PoolManager.Instance.PopObject(dragonRotateBullet, out bullet);
-            bullet.GetComponent<BulletRotateYDragon>().BasePosition(_position);
-            bullet.transform.rotation = Quaternion.Euler(new Vector3(0.0f, i * 36, 0.0f));
-
-        }
-    }
 
     public void CreateDragonBaseBulletTest(Vector3 _position, float _time, int _amount)
     {
@@ -133,7 +121,7 @@ public class BulletManager : Singleton<BulletManager>
                 PoolManager.Instance.PopObject(dragonBaseBullet, out bullet);
                 bullet.transform.position = _trans.position;
                 bullet.transform.rotation = Quaternion.LookRotation(_trans.forward, Vector3.up);
-                bullet.transform.rotation *= Quaternion.Euler(Random.insideUnitSphere * 15.0f + new Vector3(0,0,Random.Range(-15.0f,0.0f)));
+                bullet.transform.rotation *= Quaternion.Euler(Random.insideUnitSphere * 15.0f + new Vector3(0,0,Random.Range(0.0f,15.0f)));
                 bullet.GetComponent<BulletBaseDragon>().ChangeSpeed(30 + Random.Range(10, 20.0f));
             }
             yield return new WaitForSeconds(_time - Random.Range(0, _time * 0.5f));

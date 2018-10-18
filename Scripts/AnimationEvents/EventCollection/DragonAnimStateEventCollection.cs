@@ -157,9 +157,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void HowlingAttackOn(EvnData evnData)
     {
-        Vector3 pos =
-            _manager.transform.position +
-            new Vector3(0.0f, 2.0f, 0.0f);
+        Vector3 pos =_manager.transform.position;
 
         int Amount = _blackBoard.FanShapeAmount;
         BulletManager.Instance.CreateDragonBaseBullet(pos, Amount);
@@ -199,7 +197,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void MeteoAttackOn(EvnData evnData)
     {
-        BulletManager.Instance.CreateDragonMeteoBullet(_manager.transform, 50.0f, 20);
+        BulletManager.Instance.CreateDragonMeteoBullet(_manager.transform, 50.0f, 10);
     }
 
     private void MeteoAttackEnd(EvnData evnData)
