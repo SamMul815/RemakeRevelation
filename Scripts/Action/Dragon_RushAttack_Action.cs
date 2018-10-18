@@ -7,6 +7,7 @@ public class Dragon_RushAttack_Action : ActionTask
 {
     private float _moveDistance = 0.0f;
     private float _rushSpeed;
+    Vector3 forward;
 
     public override void OnStart()
     {
@@ -34,7 +35,7 @@ public class Dragon_RushAttack_Action : ActionTask
             DragonPos.y = 0.0f;
             PlayerPos.y = 0.0f;
 
-            Vector3 forward = (PlayerPos - DragonPos).normalized;
+            forward = (PlayerPos - DragonPos).normalized;
 
             if (Vector3.Dot(Dragon.forward, forward) < 0.99f)
             {
@@ -46,6 +47,7 @@ public class Dragon_RushAttack_Action : ActionTask
                 return false;
             }
             DragonAniManager.SwicthAnimation("Dragon_Rush");
+            _manager.Stat.DashMovePosition = Player.position;
             _manager.IsTurn = true;
         }
 

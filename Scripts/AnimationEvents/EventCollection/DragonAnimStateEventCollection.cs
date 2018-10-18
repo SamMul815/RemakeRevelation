@@ -92,19 +92,19 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void DashFirstRightPaw(EvnData evnData)
     {
         Vector3 Pos = _manager.RightPawTransform.position;
-        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, Vector3.zero);
+        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, _manager.transform.forward);
     }
 
     private void DashLeftAttack(EvnData evnData)
     {
         Vector3 Pos = _manager.LeftPawTransform.position;
-        EffectManager.Instance.PoolParticleEffectOn("LeftDash", Pos, Vector3.zero);
+        EffectManager.Instance.PoolParticleEffectOn("LeftDash", Pos, _manager.transform.forward);
     }
 
     private void DashLastRightPaw(EvnData evnData)
     {
         Vector3 Pos = _manager.RightPawTransform.position;
-        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, Vector3.zero);
+        EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, _manager.transform.forward);
         BlackBoard.IsDashAttackOn = false;
         _manager.AttackOff();
     }

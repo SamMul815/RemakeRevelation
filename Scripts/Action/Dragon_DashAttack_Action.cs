@@ -13,7 +13,6 @@ public class Dragon_DashAttack_Action : ActionTask
         BlackBoard.Instance.IsDashAttackOn = false;
         BlackBoard.Instance.IsRushAttackOn = false;
         Clock.Instance.CurDashCoolingTime = 0.0f;
-
         forward = (Player.position - Dragon.position).normalized;
 
     }
@@ -29,8 +28,6 @@ public class Dragon_DashAttack_Action : ActionTask
             DragonPos.y = 0.0f;
             PlayerPos.y = 0.0f;
 
-            Vector3 forward = (PlayerPos - DragonPos).normalized;
-
             if (Vector3.Dot(Dragon.forward, forward) < 0.99f)
             {
                 Dragon.rotation = Quaternion.Slerp(
@@ -42,6 +39,7 @@ public class Dragon_DashAttack_Action : ActionTask
             }
             DragonAniManager.SwicthAnimation("Dragon_Dash");
             _manager.IsTurn = true;
+            forward = (Player.position - Dragon.position).normalized;
         }
 
         if (_blackBoard.IsDashAttackOn)
