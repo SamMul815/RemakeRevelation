@@ -140,7 +140,7 @@ namespace DragonController
             _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(false);
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if (!_dragonBehaviroTree.Root.Run() && _stat.HP > 0.0f)
                 return;

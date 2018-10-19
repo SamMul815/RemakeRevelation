@@ -5,11 +5,19 @@ using DragonController;
 
 public class Dragon_Walk_Action : ActionTask
 {
+    float angle;
+
+    public override void Init()
+    {
+        base.Init();
+        angle = 0.0f;
+    }
 
     public override void OnStart()
     {
         base.OnStart();
         DragonAniManager.SwicthAnimation("Walk");
+        angle = 0.0f;
     }
 
     public override bool Run()
@@ -22,6 +30,8 @@ public class Dragon_Walk_Action : ActionTask
         PlayerPos.y = 0.0f;
 
         Vector3 forward = (PlayerPos - DragonPos).normalized;
+
+        angle = Vector3.Dot(Dragon.forward, forward);
 
         if (Vector3.Dot(Dragon.forward, forward) < 0.99f)
         {

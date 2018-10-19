@@ -5,7 +5,6 @@ using DragonController;
 
 public class Dragon_HowlingAttack_Action : ActionTask
 {
-
     public override void OnStart()
     {
         base.OnStart();

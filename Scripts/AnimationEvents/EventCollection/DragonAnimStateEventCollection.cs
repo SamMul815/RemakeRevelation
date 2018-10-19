@@ -16,8 +16,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "Landing");
 
 
-
-
         AddAnimTimeEventFunc(RightPawAttackOn, "RightPaw");
         AddAnimTimeEventFunc(AttackOff, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
@@ -58,6 +56,8 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
+
+        AddAnimTimeEventFunc(ActionEnd, "NearHowling");
 
         //---------------------Sound Start------------------------
         ////Howling
@@ -156,6 +156,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
             new Vector3(0.0f, 2.0f, 0.0f);
 
         int Amount = _blackBoard.FanShapeAmount;
+        Vector3 Pos = _manager.LeftPawTransform.position;
         BulletManager.Instance.CreateDragonBaseBullet(pos, Amount);
     }
 
@@ -213,8 +214,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _blackBoard.IsTailAttackOn = false;
         _manager.AttackOff();
     }
-
-
     //---------------------Sound Function Start -----------------------------------------------
 
     //Howling

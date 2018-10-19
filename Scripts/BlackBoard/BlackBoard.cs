@@ -8,7 +8,6 @@ public class BlackBoard : Singleton<BlackBoard>
     private bool _isPlayer;
     public bool IsPlayer { get { return _isPlayer; } }
 
-
     [SerializeField]
     private Transform _dragonBulletBreathMouth;
     public Transform DragonBulletBreathMouth { get { return _dragonBulletBreathMouth; } }

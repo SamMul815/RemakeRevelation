@@ -26,8 +26,8 @@ public class Sequence : CompositeTask
                 }
                 if (!childAction.Run())
                     return false;
-
-                return true;
+                else
+                    return true;
             }
             if (!child.Run())
             {
