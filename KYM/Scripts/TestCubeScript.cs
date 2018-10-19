@@ -15,7 +15,7 @@ public class TestCubeScript : MonoBehaviour {
     {
 	    if(Input.GetKeyDown(KeyCode.Space))
         {
-            BulletManager.Instance.CreateDragonMeteoBullet(transform, 50, 20);
+           BulletManager.Instance.CreateDragonMeteoBullet(transform, 50, 100, 0.2f);
         }
 	}
 }

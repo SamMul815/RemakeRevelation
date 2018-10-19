@@ -11,12 +11,15 @@ public class BulletManager : Singleton<BulletManager>
     [SerializeField] private GameObject dragonBreathPrefab;
     [SerializeField] private GameObject dragonMeteoPrefab;
 
+
     private Transform player;
+    private MeteoSkill meteoSkill;
     //private Transform dragon;
 
     private void Start()
     {
         player = Player.instance.transform;
+        meteoSkill = this.GetComponent<MeteoSkill>();
     }
 
     public float DragonBaseBulletSpeed = 50.0f;
@@ -90,10 +93,12 @@ public class BulletManager : Singleton<BulletManager>
         StartCoroutine(CorDragonMeteoBullet(_dragon, _fireRadius, _hitRadius, _amount)); 
     }
 
-    public void CreateDragonMeteoBullet(Transform _dragon, float _fireRadius, int _amount)
+    public void CreateDragonMeteoBullet(Transform _dragon, float _fireRadius, int _amount,float dealyTime)
     {
-        StartCoroutine(CorDragonMeteoBullet(_dragon, _fireRadius, _amount));
+        StartCoroutine(CorDragonMeteoBullet(_dragon, _fireRadius, _amount, dealyTime));
     }
+
+
 
     IEnumerator CorTestDragonBaseBullet(Vector3 _position, float _time, int _amount)
     {
@@ -143,7 +148,6 @@ public class BulletManager : Singleton<BulletManager>
         }
     }
 
-
     IEnumerator CorDragonMeteoBullet(Transform _dragon, float _fireRadius, float _hitRadius, int _amount)
     {
         Vector3 up = _dragon.up;
@@ -166,29 +170,50 @@ public class BulletManager : Singleton<BulletManager>
         yield return null;
     }
 
-    IEnumerator CorDragonMeteoBullet(Transform _dragon, float _fireRadius, int _amount)
-    {
-        Vector3 up = _dragon.up;
-        Vector3 right = _dragon.right;
-        Vector3 position = _dragon.position;
+    //IEnumerator CorDragonMeteoBullet(Transform _dragon, float _fireRadius, int _amount, float dealyTime)
+    //{
+    //    Vector3 up = _dragon.up;
+    //    Vector3 right = _dragon.right;
+    //    Vector3 position = _dragon.position;
 
+    //    for (int i = 0; i < _amount; i++)
+    //    {
+    //        GameObject meteo;
+    //        PoolManager.Instance.PopObject(dragonMeteoPrefab, out meteo);
+    //        Vector2 fireCircle = Random.insideUnitCircle * _fireRadius;
+    //        Vector3 dir = player.transform.position - position;
+    //        if(i % 10 == 0)
+    //        {
+    //            meteo.transform.position = position + up * fireCircle.y*0.1f + right * fireCircle.x*0.1f;
+    //        }
+    //        else
+    //        {
+    //            meteo.transform.position = position + up * fireCircle.y + right * fireCircle.x;
+    //        }
+    //        meteo.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+    //        meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(300 - Random.Range(0, 50.0f));
+    //        yield return new WaitForSeconds(dealyTime);
+    //    }
+    //    yield return null;
+    //}
+
+    IEnumerator CorDragonMeteoBullet(Transform _dragon, float _fireRadius, int _amount, float dealyTime)
+    {
+        //Vector3 up = _dragon.up;
+        //Vector3 right = _dragon.right;
+        //Vector3 position = _dragon.position;
         for (int i = 0; i < _amount; i++)
         {
             GameObject meteo;
-            PoolManager.Instance.PopObject(dragonMeteoPrefab, out meteo);
-            Vector2 fireCircle = Random.insideUnitCircle * _fireRadius;
-            Vector3 dir = player.transform.position - position;
-            if(i % 10 == 0)
-            {
-                meteo.transform.position = position + up * fireCircle.y*0.1f + right * fireCircle.x*0.1f;
-            }
-            else
-            {
-                meteo.transform.position = position + up * fireCircle.y + right * fireCircle.x;
-            }
-            meteo.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
-            meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(300 - Random.Range(0, 50.0f));
-            yield return new WaitForSeconds(0.1f);
+            PoolManager.Instance.PopObject(dragonMeteoPrefab,_dragon.position, out meteo);
+            //meteo.transform.position = _dragon.position;
+
+            Vector3 throwPos = meteoSkill.GetRndPos();
+            Vector3 dir = throwPos - meteo.transform.position;
+            meteo.transform.rotation = Quaternion.LookRotation(dir,Vector3.up);
+            meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(250);
+            //meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(250 - Random.Range(0, 50.0f));
+            yield return new WaitForSeconds(dealyTime);
         }
         yield return null;
     }

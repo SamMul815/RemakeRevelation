@@ -196,6 +196,7 @@ public class PoolManager : Singleton<PoolManager>
                 else
                 {
                     _gameObject = Instantiate(_original, _position, _rot);
+                    _gameObject.SetActive(true);
                 }
             }
             else
