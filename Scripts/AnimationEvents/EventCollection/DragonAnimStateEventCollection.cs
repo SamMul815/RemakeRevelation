@@ -47,7 +47,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(HowlingAttackOn, "Howling");
         AddAnimTimeEventFunc(ActionEnd, "Howling");
 
-        AddAnimTimeEventFunc(DescentFlyingOn, "DescentFlying");
+        AddAnimTimeEventFunc(DescentFlyingStart, "AirSpearTakeOff");
 
         AddAnimTimeEventFunc(MeteoFlyingStart, "MeteoTakeOff");
 
@@ -138,6 +138,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         _manager.FlyingOn = false;
         _manager.LandingOn = true;
+        _manager.DragonRigidBody.freezeRotation = false;
         _manager.DragonRigidBody.useGravity = true;
         _manager.DragonGroundCollider.enabled = true;
 
@@ -174,13 +175,14 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     }
     
-    private void DescentFlyingOn(EvnData evnData)
+    private void DescentFlyingStart(EvnData evnData)
     {
         _manager.FlyingOn = true;
         _manager.DragonRigidBody.useGravity = false;
-
+        _manager.DragonGroundCollider.enabled = false;
         _blackBoard.IsGround = false;
         _blackBoard.IsFlying = true;
+        MovementManager.Instance.SetMovement(MovementType.AirSpear);
     }
 
     private void MeteoFlyingStart(EvnData evnData)

@@ -24,7 +24,6 @@ public class Dragon_RedZoneAttack_Action : ActionTask
 
     public override bool Run()
     {
-        Debug.Log("at");
         return false;
     }
 

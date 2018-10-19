@@ -46,7 +46,7 @@ public class DragonWingCollision : MonoBehaviour
         };
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         WingCollider();
     }
@@ -65,6 +65,7 @@ public class DragonWingCollision : MonoBehaviour
         _wingMesh.MarkDynamic();
         _wingMesh.name = this.gameObject.name;
         _wingCollider.sharedMesh = _wingMesh;
+
     }
 
 }

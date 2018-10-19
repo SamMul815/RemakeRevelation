@@ -17,6 +17,7 @@ public class Dragon_MeteoLoitering_Action : ActionTask
     {
         if (_movement.CurrentNodeManager().IsMoveEnd)
         {
+            _blackBoard.IsMeteoLoitering = false;
             _manager.IsAction = false;
             _blackBoard.IsLanding = true;
         }
