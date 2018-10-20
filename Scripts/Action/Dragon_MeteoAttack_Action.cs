@@ -11,7 +11,6 @@ public class Dragon_MeteoAttack_Action : ActionTask
         base.OnStart();
         MovementManager.Instance.CurSpeed = 0.0f;
         DragonAniManager.SwicthAnimation("Dragon_MeteoWaiting");
-        DragonManager.Instance.DragonGroundCollider.enabled = true;
     }
 
     public override bool Run()
