@@ -188,7 +188,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void MeteoAttackOn(EvnData evnData)
     {
-        //BulletManager.Instance.CreateDragonMeteoBullet(_manager.transform, 50.0f, 10);
+        BulletManager.Instance.CreateDragonMeteoBullet(_manager.transform, 50.0f, 100,0.1f);
     }
 
     private void MeteoAttackEnd(EvnData evnData)

@@ -8,6 +8,8 @@ public class MeteoSkill : MonoBehaviour {
     public float heightSize = 10.0f;
     public int width = 10;
     public int height = 10;
+    public int playerDirFireCount;
+    public int count;
 
     public List<Vector3> MeteoPosList;
     public List<Vector3> rndList;
@@ -28,22 +30,37 @@ public class MeteoSkill : MonoBehaviour {
                 MeteoPosList.Add(pos + new Vector3(x, 0.0f, z));
             }
         }
+        count = 0;
         //RndInput();
     }
 
     public Vector3 GetRndPos()
     {
-
+        Vector3 retPos;
+        count++;
         if(rndList.Count <= 0)
         {
             RndInput();
         }
 
-        int rnd = Random.Range(0, rndList.Count - 1);
-
-        Vector3 retPos = rndList[rnd];
-        rndList.RemoveAt(rnd);
-
+        if(count % playerDirFireCount == 0 && playerDirFireCount != 0)
+        {
+            int index = GetPlayerIndex();
+            if(index != -1)
+                retPos = MeteoPosList[index];
+            else
+            {
+                int rnd = Random.Range(0, rndList.Count - 1);
+                retPos = rndList[rnd];
+                rndList.RemoveAt(rnd);
+            }
+        }
+        else
+        {
+            int rnd = Random.Range(0, rndList.Count - 1);
+            retPos = rndList[rnd];
+            rndList.RemoveAt(rnd);
+        }      
         return retPos;
     }
 
