@@ -152,57 +152,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1297751212134106, guid: e477605a0a2a98a4a9b26b74b9015289, type: 2}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1717368304057528, guid: e477605a0a2a98a4a9b26b74b9015289, type: 2}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327630599305766, guid: e477605a0a2a98a4a9b26b74b9015289, type: 2}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198898291049711438, guid: e477605a0a2a98a4a9b26b74b9015289,
-        type: 2}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 198898291049711438, guid: e477605a0a2a98a4a9b26b74b9015289,
-        type: 2}
-      propertyPath: ShapeModule.m_Scale.y
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 198898291049711438, guid: e477605a0a2a98a4a9b26b74b9015289,
-        type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198898291049711438, guid: e477605a0a2a98a4a9b26b74b9015289,
-        type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544114360728662, guid: e477605a0a2a98a4a9b26b74b9015289, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544114360728662, guid: e477605a0a2a98a4a9b26b74b9015289, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 198898291049711438, guid: e477605a0a2a98a4a9b26b74b9015289,
-        type: 2}
-      propertyPath: randomSeed
-      value: -1796564519
-      objectReference: {fileID: 0}
     - target: {fileID: 1717368304057528, guid: e477605a0a2a98a4a9b26b74b9015289, type: 2}
       propertyPath: m_Name
       value: blood_effect_1016
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 64434583418604446, guid: e477605a0a2a98a4a9b26b74b9015289, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e477605a0a2a98a4a9b26b74b9015289, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &50544966
@@ -5206,19 +5160,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1717368304057528, guid: e477605a0a2a98a4a9b26b74b9015289,
     type: 2}
   m_PrefabInternal: {fileID: 27822372}
---- !u!114 &776396452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 776396450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546e969b7ccb709468f8533b416fc484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isUnscale: 1
-  time: 2
 --- !u!1001 &813400774
 Prefab:
   m_ObjectHideFlags: 0
@@ -5347,12 +5288,12 @@ Prefab:
     - target: {fileID: 114848487453884614, guid: 86f5fb21fb410c84380386057c25dd81,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114419189472252056, guid: 86f5fb21fb410c84380386057c25dd81,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86f5fb21fb410c84380386057c25dd81, type: 2}
@@ -6623,7 +6564,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1898408569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 352, z: -465}
+  m_LocalPosition: {x: 0, y: 0, z: 98.6}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}

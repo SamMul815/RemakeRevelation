@@ -98,8 +98,6 @@ public class BulletManager : Singleton<BulletManager>
         StartCoroutine(CorDragonMeteoBullet(_dragon, _fireRadius, _amount, dealyTime));
     }
 
-
-
     IEnumerator CorTestDragonBaseBullet(Vector3 _position, float _time, int _amount)
     {
         float range = Vector3.Distance(_position, player.transform.position) * 0.1f;
@@ -127,8 +125,14 @@ public class BulletManager : Singleton<BulletManager>
                 //Vector3 dir = player.position - _trans.position;
                 //Vector3 lerp = Vector3.Lerp(_trans.forward,dir, 0.8f);
 
+                
                 Vector3 rnd = Random.insideUnitSphere * 15.0f;
                 rnd.x = Random.Range(-20.0f, -5.0f);
+                float distance = Vector3.Distance(_trans.position, Player.instance.transform.position);
+                if(distance < 50)
+                    rnd.x = Random.Range(-20.0f, -5.0f) + distance *0.5f;
+
+
 
                 bullet.transform.position = _trans.position;
                 bullet.transform.rotation = Quaternion.LookRotation(_trans.forward, Vector3.up);

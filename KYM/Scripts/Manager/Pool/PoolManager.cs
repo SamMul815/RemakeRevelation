@@ -41,7 +41,7 @@ public class PoolManager : Singleton<PoolManager>
             }
             else
             {
-                Debug.LogWarning(poolObject.name + "PoolObject Init component is null");
+                Debug.Log(poolObject.name + "PoolObject Init component is null");
             }
         }
     }
@@ -58,7 +58,7 @@ public class PoolManager : Singleton<PoolManager>
             //if (_poolObj.Reset != null)
             //    _poolObj.Reset();
             //else
-            //    Debug.LogWarning("PooloObject Reset() NULL");
+            //    Debug.Log("PooloObject Reset() NULL");
 
             if (poolStacks.ContainsKey(_poolObj.pooltag))
             {
@@ -113,7 +113,7 @@ public class PoolManager : Singleton<PoolManager>
             if (_gameObject.GetComponent<PoolObject>().Init != null)
                 _gameObject.GetComponent<PoolObject>().Init();
             else
-                Debug.LogWarning("PooloObject Init() NULL");
+                Debug.Log("PooloObject Init() NULL");
         }
         //객체에 PoolObject가 없음
         //이경우도 만들려면 만들수 있는데 너무 소모 비용이 커서 딱히 만들 필요가 없어보임...
@@ -159,7 +159,7 @@ public class PoolManager : Singleton<PoolManager>
             if (_gameObject.GetComponent<PoolObject>().Init != null)
                 _gameObject.GetComponent<PoolObject>().Init();
             else
-                Debug.LogWarning("PooloObject Init() NULL");
+                Debug.Log("PooloObject Init() NULL");
         }
         //객체에 PoolObject가 없음
         //이경우도 만들려면 만들수 있는데 너무 소모 비용이 커서 딱히 만들 필요가 없어보임...
@@ -208,7 +208,7 @@ public class PoolManager : Singleton<PoolManager>
             if (_gameObject.GetComponent<PoolObject>().Init != null)
                 _gameObject.GetComponent<PoolObject>().Init();
             else
-                Debug.LogWarning("PooloObject Init() NULL");
+                Debug.Log("PooloObject Init() NULL");
         }
         //객체에 PoolObject가 없음
         //이경우도 만들려면 만들수 있는데 너무 소모 비용이 커서 딱히 만들 필요가 없어보임...
@@ -249,7 +249,7 @@ public class PoolManager : Singleton<PoolManager>
         if (_poolObj.Init != null)
             _poolObj.Init();
         else
-            Debug.LogWarning("PooloObject Init() NULL");
+            Debug.Log("PooloObject Init() NULL");
     }
 }
 
