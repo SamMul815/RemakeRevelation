@@ -103,13 +103,13 @@ MonoBehaviour:
   _isPlayer: 0
   _dragonBulletBreathMouth: {fileID: 0}
   _dragonBreathMouth: {fileID: 0}
-  _pawAttackDistance: 20
-  _breathAttackDistance: 50
-  _howlingDistance: 60
-  _dashDistance: 40
-  _rushDistance: 100
+  _pawAttackDistance: 10
+  _breathAttackDistance: 25
+  _howlingDistance: 30
+  _dashDistance: 25
+  _rushDistance: 80
   _bullletBreathAttackDistance: 100
   _descentAttackFiexdDistance: 150
   _landingDistance: 50
-  _redZoneDistance: 20
+  _redZoneDistance: 9
   _fanShapeAmount: 30

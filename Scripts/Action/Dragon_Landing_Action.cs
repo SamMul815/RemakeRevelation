@@ -34,7 +34,7 @@ public class Dragon_Landing_Action : ActionTask
     public override bool Run()
     {
 
-        forward = (Player.position - _manager.transform.position).normalized;
+        forward = (Player.position - Dragon.position).normalized;
 
         _movement.CurSpeed =
             _blackBoard.Acceleration(_movement.CurSpeed, maxSpeed, accSpeed);
@@ -60,10 +60,10 @@ public class Dragon_Landing_Action : ActionTask
 
         if (!_blackBoard.IsFiexdPosition)
         {
+            CurTurnTime = 0.0f;
+            fiexdPos = _blackBoard.FiexdPosition;
             _blackBoard.FiexdPosition = Player.position;
             _blackBoard.IsFiexdPosition = true;
-            fiexdPos = _blackBoard.FiexdPosition;
-            CurTurnTime = 0.0f;
         }
 
         float LandingDistance = _blackBoard.LandingDistance;
@@ -94,25 +94,21 @@ public class Dragon_Landing_Action : ActionTask
             _movement.CurSpeed * Time.deltaTime);
 
         Vector3 DragonPos = Dragon.position;
+        Vector3 PlayerPos = Player.position;
 
-        if(UtilityManager.DistanceCalc(DragonPos, fiexdPos, 0.0f))
+        if (UtilityManager.DistanceCalc(DragonPos, fiexdPos, 0.0f))
         {
             _blackBoard.FiexdPosition = fiexdPos;
-            Dragon.position = fiexdPos;
+            forward = (_blackBoard.FiexdPosition - Dragon.position).normalized;
+            Dragon.rotation = Quaternion.LookRotation(forward);
             CurTurnTime = 0.0f;
         }
 
         if (_manager.LandingOn)
         {
-            forward = (Player.position - Dragon.position).normalized;
-            forward.y = 0.0f;
-
-            Dragon.rotation =
-                Quaternion.Slerp(
-                    Dragon.rotation,
-                    Quaternion.LookRotation(forward),
-                    CurTurnTime / MaxTurnTime);
-            CurTurnTime += Time.deltaTime;
+            forward = (_blackBoard.FiexdPosition - Dragon.position).normalized;
+            _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezePosition;
+            Dragon.rotation = Quaternion.LookRotation(forward);
         }
         return false;
     }
@@ -120,6 +116,8 @@ public class Dragon_Landing_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
+        _manager.DragonRigidBody.constraints = RigidbodyConstraints.None;
+        _manager.DragonRigidBody.freezeRotation = true;
         _blackBoard.IsFiexdPosition = false;
         _blackBoard.IsLanding = false;
         _blackBoard.IsGround = true;

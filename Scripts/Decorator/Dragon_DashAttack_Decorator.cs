@@ -5,6 +5,21 @@ using DragonController;
 
 public class Dragon_DashAttack_Decorator : DecoratorTask
 {
+    float curCoolingTime = 0.0f;
+    float coolingTime = 0.0f;
+
+    float redZoneDistance = 0.0f;
+    float distance = 0.0f;
+    bool isRush_Attack;
+
+    public override void Init()
+    {
+        base.Init();
+        isRush_Attack = false;
+        distance = _blackBoard.DashDistance;
+        coolingTime = _clock.DashCoolingTime;
+        redZoneDistance = _blackBoard.RedZoneDistance;
+    }
 
     public override void OnStart()
     {
@@ -13,14 +28,12 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CurCoolingTime = _clock.CurDashCoolingTime;
-        float CoolingTime = _clock.DashCoolingTime;
- 
-        float Distance = _blackBoard.DashDistance;
+        curCoolingTime = _clock.CurDashCoolingTime;
 
-        bool IsRush_Attack = UtilityManager.DistanceCalc(Dragon, Player, Distance);
+        isRush_Attack = UtilityManager.DistanceCalc(Dragon, Player, distance) &&
+                                !(UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance));
 
-        if (((CurCoolingTime >= CoolingTime && IsRush_Attack) && !_manager.IsAction) || _manager.IsAction)
+        if (((curCoolingTime >= coolingTime && isRush_Attack) && !_manager.IsAction) || _manager.IsAction)
         {
             if (_childAction)
             {
@@ -42,7 +55,6 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
 
                     return ChildNode.Run();
                 }
-
             }
             else
             {

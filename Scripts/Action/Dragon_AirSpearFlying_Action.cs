@@ -10,9 +10,8 @@ public class Dragon_AirSpearFlying_Action : ActionTask
     {
         base.OnStart();
         _manager.AttackOff();
-        _manager.Stat.AirSpearSaveHP = DragonManager.Instance.Stat.HP;
-        _movement.SetMovement(MovementType.AirSpear);
-        DragonAniManager.SwicthAnimation("Dragon_DescentFlying");
+        _manager.Stat.AirSpearSaveHP = _manager.Stat.HP;
+        DragonAniManager.SwicthAnimation("Dragon_DescentTakeOff");
 
     }
 

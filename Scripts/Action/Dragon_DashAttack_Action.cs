@@ -6,10 +6,14 @@ using DragonController;
 public class Dragon_DashAttack_Action : ActionTask
 {
     Vector3 forward;
+    float dot;
+    float angle;
 
     public override void Init()
     {
         base.Init();
+        dot = 0.0f;
+        angle = 0.0f;
     }
 
     public override void OnStart()
@@ -19,6 +23,7 @@ public class Dragon_DashAttack_Action : ActionTask
         BlackBoard.Instance.IsRushAttackOn = false;
         Clock.Instance.CurDashCoolingTime = 0.0f;
         forward = (Player.position - Dragon.position).normalized;
+        dot = 0.0f;
 
     }
 
@@ -33,8 +38,32 @@ public class Dragon_DashAttack_Action : ActionTask
             DragonPos.y = 0.0f;
             PlayerPos.y = 0.0f;
 
-            if (Vector3.Dot(Dragon.forward, forward) < 0.99f)
+            dot = Vector3.Dot(Dragon.forward, forward);
+
+            if (dot < 0.99f)
             {
+
+                Vector3 Cross = Vector3.Cross(Dragon.forward, forward);
+
+                float Result = Vector3.Dot(Cross, Vector3.up);
+
+                if(Result < 0.0f)
+                {
+                    angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+
+                    if (angle >= 30.0f && angle <= 120.0f)
+                        DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
+                }
+                else
+                {
+                    angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+
+                    if(angle >= 30.0f && angle <= 120.0f)
+                    {
+                        DragonAniManager.SwicthAnimation("Dragon_RightTrun");
+                    }
+                }
+
                 Dragon.rotation = Quaternion.Slerp(
                     Dragon.rotation,
                     Quaternion.LookRotation(forward),
@@ -47,14 +76,13 @@ public class Dragon_DashAttack_Action : ActionTask
 
             DragonAniManager.SwicthAnimation("Dragon_Dash");
             _manager.IsTurn = true;
-            forward = (Player.position - Dragon.position).normalized;
         }
 
         if (_blackBoard.IsDashAttackOn)
         {
             float Distance = _manager.Stat.DashMoveDistance;
             float DashSpeed = Distance; // *(dashTime - Time.deltaTime);
-            Dragon.position += (forward) * DashSpeed * Time.deltaTime;
+            Dragon.position += (Dragon.forward) * DashSpeed * Time.deltaTime;
         }
         
         return false;

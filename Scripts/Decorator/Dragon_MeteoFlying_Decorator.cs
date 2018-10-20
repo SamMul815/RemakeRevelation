@@ -28,13 +28,13 @@ public class Dragon_MeteoFlying_Decorator : DecoratorTask
 
     public override bool Run()
     {
-
         HP = _manager.Stat.HP;
+        MeteoHP = _manager.Stat.MeteoHP;
         SaveHP = _manager.Stat.MeteoSaveHP;
 
         IsMeteo = MeteoHP - (SaveHP - HP) <= 0.0f;
 
-        if ((MaxHP > HP && IsMeteo && _blackBoard.IsGround && !_blackBoard.IsFlying && !_manager.IsAction) || (_manager.IsAction))
+        if ((MaxHP > HP && IsMeteo && _blackBoard.IsGround && !_blackBoard.IsFlying && !_manager.IsAction) || _manager.IsAction)
         {
             if (_childAction)
             {

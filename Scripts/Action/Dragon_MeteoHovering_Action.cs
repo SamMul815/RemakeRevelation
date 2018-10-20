@@ -6,13 +6,13 @@ using DragonController;
 public class Dragon_MeteoHovering_Action : ActionTask
 {
     float curTime = 0.0f;
-    float maxTime = 3.0f;
+    float maxTime = 2.0f;
 
     public override void Init()
     {
         base.Init();
         curTime = 0.0f;
-        maxTime = 3.0f;
+        maxTime = 2.0f;
     }
 
     public override void OnStart()

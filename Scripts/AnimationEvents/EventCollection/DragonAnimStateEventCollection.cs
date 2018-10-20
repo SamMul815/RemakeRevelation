@@ -16,8 +16,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "Landing");
 
 
-
-
         AddAnimTimeEventFunc(RightPawAttackOn, "RightPaw");
         AddAnimTimeEventFunc(AttackOff, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
@@ -38,6 +36,10 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(AttackOff, "Rush");
         AddAnimTimeEventFunc(ActionEnd, "Rush");
 
+        AddAnimTimeEventFunc(TailAttackOn, "Tail");
+        AddAnimTimeEventFunc(TailAttackOff, "Tail");
+        AddAnimTimeEventFunc(ActionEnd, "Tail");
+
 
         AddAnimTimeEventFunc(ShotBreathAttackOn ,"Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
@@ -45,7 +47,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(HowlingAttackOn, "Howling");
         AddAnimTimeEventFunc(ActionEnd, "Howling");
 
-        AddAnimTimeEventFunc(DescentFlyingOn, "DescentFlying");
+        AddAnimTimeEventFunc(DescentFlyingStart, "AirSpearTakeOff");
 
         AddAnimTimeEventFunc(MeteoFlyingStart, "MeteoTakeOff");
 
@@ -54,7 +56,8 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
-        AddAnimTimeEventFunc(ActionEnd, "Tail");
+
+        AddAnimTimeEventFunc(ActionEnd, "NearHowling");
 
         //---------------------Sound Start------------------------
         ////Howling
@@ -89,6 +92,11 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     }
 
+    private void AttackOff(EvnData evnData)
+    {
+        _manager.AttackOff();
+    }
+
     private void DashFirstRightPaw(EvnData evnData)
     {
         Vector3 Pos = _manager.RightPawTransform.position;
@@ -115,11 +123,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.AttackOn(DragonAttackTriggers.Rush);
     }
 
-    private void AttackOff(EvnData evnData)
-    {
-        _manager.AttackOff();
-    }
-
     private void RightPawAttackOn(EvnData evnData)
     {
         _manager.AttackOn(DragonAttackTriggers.RightPaw);
@@ -135,6 +138,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         _manager.FlyingOn = false;
         _manager.LandingOn = true;
+        _manager.DragonRigidBody.freezeRotation = false;
         _manager.DragonRigidBody.useGravity = true;
         _manager.DragonGroundCollider.enabled = true;
 
@@ -151,6 +155,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         Vector3 pos =_manager.transform.position;
 
         int Amount = _blackBoard.FanShapeAmount;
+        Vector3 Pos = _manager.LeftPawTransform.position;
         BulletManager.Instance.CreateDragonBaseBullet(pos, Amount);
     }
 
@@ -168,13 +173,14 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     }
     
-    private void DescentFlyingOn(EvnData evnData)
+    private void DescentFlyingStart(EvnData evnData)
     {
         _manager.FlyingOn = true;
         _manager.DragonRigidBody.useGravity = false;
-
+        _manager.DragonGroundCollider.enabled = false;
         _blackBoard.IsGround = false;
         _blackBoard.IsFlying = true;
+        MovementManager.Instance.SetMovement(MovementType.AirSpear);
     }
 
     private void MeteoFlyingStart(EvnData evnData)
@@ -197,7 +203,17 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _blackBoard.IsMeteoHovering = true;
     }
 
+    private void TailAttackOn(EvnData evnData)
+    {
+        _blackBoard.IsTailAttackOn = true;
+        _manager.AttackOn(DragonAttackTriggers.Tail);
+    }
 
+    private void TailAttackOff(EvnData evnData)
+    {
+        _blackBoard.IsTailAttackOn = false;
+        _manager.AttackOff();
+    }
     //---------------------Sound Function Start -----------------------------------------------
 
     //Howling

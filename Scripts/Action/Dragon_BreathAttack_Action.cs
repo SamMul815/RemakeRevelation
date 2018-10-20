@@ -5,9 +5,11 @@ using DragonController;
 
 public class Dragon_BreathAttack_Action : ActionTask
 {
+    float dot;
     public override void Init()
     {
         base.Init();
+        float dot;
     }
 
     public override void OnStart()
@@ -21,7 +23,8 @@ public class Dragon_BreathAttack_Action : ActionTask
             return;
         }
         Clock.Instance.CurBreathCoolingTime = 0.0f;
-        
+        dot = 0.0f;
+
     }
 
     public override bool Run()
@@ -36,8 +39,27 @@ public class Dragon_BreathAttack_Action : ActionTask
 
             Vector3 forward = (PlayerPos - DragonPos).normalized;
 
-            if (Vector3.Dot(Dragon.forward, forward) < 0.99f)
+            dot = Vector3.Dot(Dragon.forward, forward);
+
+            if (dot < 0.99f)
             {
+
+                Vector3 Cross = Vector3.Cross(Dragon.forward, forward);
+                float Result = Vector3.Dot(Cross, Vector3.up);
+
+                if (Result < 0.0f)
+                {
+                    float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+                    if (angle >= 30.0f && angle <= 120.0f)
+                        DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
+                }
+                else
+                {
+                    float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+                    if (angle >= 30.0f && angle <= 120.0f)
+                        DragonAniManager.SwicthAnimation("Dragon_RightTrun");
+                }
+
                 Dragon.rotation = Quaternion.Slerp(
                     Dragon.rotation,
                     Quaternion.LookRotation(forward),

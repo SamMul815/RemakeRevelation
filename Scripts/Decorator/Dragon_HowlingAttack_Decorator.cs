@@ -5,6 +5,21 @@ using DragonController;
 
 public class Dragon_HowlingAttack_Decorator : DecoratorTask
 {
+    float curCoolingTime = 0.0f;
+    float coolingTime = 0.0f;
+
+    float redZoneDistance = 0.0f;
+    float distance = 0.0f;
+    bool isHowling_Attack;
+
+    public override void Init()
+    {
+        base.Init();
+        isHowling_Attack = false;
+        distance = _blackBoard.HowlingDistance;
+        coolingTime = _clock.HowlingCoolingTime;
+        redZoneDistance = _blackBoard.RedZoneDistance;
+    }
 
     public override void OnStart()
     {
@@ -13,14 +28,12 @@ public class Dragon_HowlingAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        float CurCoolingTime = _clock.CurHowlingCoolingTime;
-        float CoolingTime = _clock.HowlingCoolingTime;
+        curCoolingTime = _clock.CurHowlingCoolingTime;
 
-        float Distance = _blackBoard.HowlingDistance;
+        isHowling_Attack = UtilityManager.DistanceCalc(Dragon, Player, distance) &&
+                                !(UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance));
 
-        bool IsHowling_Attack = UtilityManager.DistanceCalc(Dragon, Player, Distance);
-
-        if (((CurCoolingTime > CoolingTime && IsHowling_Attack) && !_manager.IsAction) || _manager.IsAction)
+        if (((curCoolingTime > coolingTime && isHowling_Attack) && !_manager.IsAction) || _manager.IsAction)
         {
             if (_childAction)
             {

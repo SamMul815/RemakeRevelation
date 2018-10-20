@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f67db999db3cf344c8bd51053e729888
-timeCreated: 1539011427
+guid: feff4eb3496a68e46a632df2c5c9d59b
+timeCreated: 1539948031
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -105,7 +105,6 @@ ModelImporter:
     100194: Bip001 TailNub
     100196: Bone001
     100198: //RootNode
-    100200: SM_Creature
     400000: Bip001
     400002: Bip001 Bip001_L_wingA_1
     400004: Bip001 Bip001_L_wingA_10
@@ -206,21 +205,8 @@ ModelImporter:
     400194: Bip001 TailNub
     400196: Bone001
     400198: //RootNode
-    400200: SM_Creature
-    2100000: 'Material #59'
-    2100002: 08 - Default
-    2100004: 02 - Default
-    2100006: 07 - Default
-    2100008: 13 - Default
-    2100010: 19 - Default
-    2100012: 14 - Default
-    2100014: 09 - Default
-    2100016: 15 - Default
-    2100018: 03 - Default
-    4300000: SM_Creature
     7400000: Take 001
     9500000: //RootNode
-    13700000: SM_Creature
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -241,9 +227,9 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     animationCompression: 1
-    animationRotationError: 0
-    animationPositionError: 0
-    animationScaleError: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []

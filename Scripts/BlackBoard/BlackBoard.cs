@@ -8,7 +8,6 @@ public class BlackBoard : Singleton<BlackBoard>
     private bool _isPlayer;
     public bool IsPlayer { get { return _isPlayer; } }
 
-
     [SerializeField]
     private Transform _dragonBulletBreathMouth;
     public Transform DragonBulletBreathMouth { get { return _dragonBulletBreathMouth; } }
@@ -75,6 +74,10 @@ public class BlackBoard : Singleton<BlackBoard>
 
     private bool _isRushAttackOn;
     public bool IsRushAttackOn { set { _isRushAttackOn = value; } get { return _isRushAttackOn; } }
+
+    private bool _isTailAttackOn;
+    public bool IsTailAttackOn { set { _isTailAttackOn = value; } get { return _isTailAttackOn; } }
+
 
     //Dragon State
     private bool _isWatingState;

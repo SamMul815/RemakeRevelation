@@ -5,7 +5,6 @@ using UnityEngine;
 public class Dragon_RedZone_Decorator : DecoratorTask
 {
     float redZoneDistance = 0.0f;
-
     bool isRedZone;
 
     public override void Init()
@@ -21,7 +20,7 @@ public class Dragon_RedZone_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        isRedZone = false;//UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance);
+        isRedZone = UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance);
 
         if((isRedZone && !_manager.IsAction) || _manager.IsAction)
         {
