@@ -35,6 +35,7 @@ public class BulletMeteoDragon : Bullet {
             PoolManager.Instance.PopObject(destroyParticle, out particle);
             particle.transform.position = hitInfo.point;
             particle.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Debug.Log("메테오 폭발");
         }
         else
         {

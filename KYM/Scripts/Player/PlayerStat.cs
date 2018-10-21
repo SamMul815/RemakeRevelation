@@ -36,7 +36,6 @@ public class PlayerStat : MonoBehaviour
             currentHP = 0;
             isPlayerDie = true;
         }
-
         playerUI.Hit();
     }
 
