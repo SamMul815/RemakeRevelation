@@ -1697,7 +1697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4898460785093540}
   m_Layer: 0
-  m_Name: Paw
+  m_Name: RayTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3209,13 +3209,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1952279926253744}
-  m_LocalRotation: {x: 0.70710194, y: 0.00085695845, z: -0.70711064, w: 0.00085919746}
-  m_LocalPosition: {x: -8.084196, y: 8.454154, z: 0.0001561431}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 3.41, y: 3.57, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4487593182762142}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 90, z: 0}
 --- !u!4 &4899418922172290
 Transform:
   m_ObjectHideFlags: 1
@@ -3470,8 +3470,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.5, y: 6, z: 9.5}
-  m_Center: {x: -2.5, y: 0.3, z: 0}
+  m_Size: {x: 11.7, y: 3, z: 12.3}
+  m_Center: {x: -5.4, y: 2, z: 0.7}
 --- !u!65 &65875575457002536
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3494,8 +3494,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.5, y: 6, z: 9.5}
-  m_Center: {x: -2.5, y: 0.3, z: -0.05}
+  m_Size: {x: 11.7, y: 3, z: 12.3}
+  m_Center: {x: -5.4, y: 2, z: 0.7}
 --- !u!95 &95459984061760550
 Animator:
   serializedVersion: 3
@@ -3527,7 +3527,7 @@ MonoBehaviour:
   _walkSpeed: 10
   _turnSpeed: 360
   _flyingSpeed: 100
-  _maxSpeed: 200
+  _maxSpeed: 150
   _accSpeed: 100
   _dashSpeed: 30
   _rushSpeed: 100
@@ -3537,6 +3537,8 @@ MonoBehaviour:
   _saveTakeDamage: 0
   _dashMoveDistance: 15
   _rushMoveLimitDistance: 10
+  _meteoLandingDistance: 65
+  _airSpearLandingDistance: 20
   _destroyPartDamagePercent: 0.05
   _firstPhaseHpPercent: 1
   _secondPhaseHpPercent: 0.49
@@ -3603,7 +3605,7 @@ MonoBehaviour:
   _dragonAvoidLayers:
     serializedVersion: 2
     m_Bits: 256
-  _paw: {fileID: 4898460785093540}
+  _rayTransfrom: {fileID: 4898460785093540}
   _dragonBehaviroTree: {fileID: 11400000, guid: 2a7740d21fd56a94783b7c81b9d90d87,
     type: 2}
   _leftPawTransform: {fileID: 4181977616560140}

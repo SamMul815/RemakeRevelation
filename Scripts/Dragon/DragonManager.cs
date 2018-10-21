@@ -24,9 +24,11 @@ namespace DragonController
 
         [SerializeField]
         private LayerMask _dragonAvoidLayers;
+        public LayerMask DragonAvoidLayers { get { return _dragonAvoidLayers; } }
 
         [SerializeField]
-        private Transform _paw;
+        private Transform _rayTransfrom;
+        public Transform RayTransfrom { get { return _rayTransfrom; } }
 
         [SerializeField]
         private BehaviorTree _dragonBehaviroTree;
@@ -69,6 +71,9 @@ namespace DragonController
         private bool _landingOn;
         public bool LandingOn { set { _landingOn = value; } get { return _landingOn; } }
 
+        private bool _test;
+        public bool Test { get { return _test; } }
+
         static bool _isInit;
 
         private void Awake()
@@ -101,7 +106,6 @@ namespace DragonController
             } 
 	    }
 
-
         public void OnDestroyPart(float _damage)
         {
             float FinalDamage = _damage * Stat.DestroyPartDamagePercent;
@@ -131,10 +135,8 @@ namespace DragonController
         public void AttackOn(DragonAttackTriggers attackTrigger)
         {
             if (_isInit)
-            {
-                _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(false);
-                _dragonAttackTriggers[_currentAttackTrigger].enabled = false;
-            }
+                AttackOff();
+
             _currentAttackTrigger = attackTrigger;
             _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(true);
             _dragonAttackTriggers[_currentAttackTrigger].enabled = true;
@@ -145,6 +147,8 @@ namespace DragonController
             _dragonAttackTriggers[_currentAttackTrigger].enabled = false;
             _dragonAttackTriggers[_currentAttackTrigger].gameObject.SetActive(false);
         }
+
+        
 
         private void Update()
         {
@@ -159,23 +163,23 @@ namespace DragonController
 
         private void OnDrawGizmos()
         {
-            float MaxDistance = 25.0f;
+            float MaxDistance = BlackBoard.Instance.LandingDistance;
 
             RaycastHit hit;
             bool isHit = Physics.SphereCast(
-                _paw.position, transform.lossyScale.x / 2, 
+                _rayTransfrom.position, transform.lossyScale.x / 2, 
                 transform.forward, out hit, MaxDistance, _dragonAvoidLayers);
 
             Gizmos.color = Color.blue;
             if (isHit)
             {
-                Gizmos.DrawRay(_paw.position, transform.forward * hit.distance);
-                Gizmos.DrawWireSphere(_paw.position + transform.forward * hit.distance, transform.lossyScale.x / 2);
-                Debug.Log("Ground");
+                Gizmos.DrawRay(_rayTransfrom.position, transform.forward * hit.distance);
+                Gizmos.DrawWireSphere(_rayTransfrom.position + transform.forward * hit.distance, transform.lossyScale.x / 2);
+                //_test = true;
             }
             else
             {
-                Gizmos.DrawRay(_paw.position, transform.forward * MaxDistance);
+                Gizmos.DrawRay(_rayTransfrom.position, transform.forward * MaxDistance);
             }
         }
 
