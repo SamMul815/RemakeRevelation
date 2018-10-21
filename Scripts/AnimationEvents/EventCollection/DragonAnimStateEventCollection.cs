@@ -8,7 +8,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     protected override void Awake()
     {
         base.Awake();
-        
+
         AddAnimTimeEventFunc(BreathAttackOn, "Breath");
         AddAnimTimeEventFunc(ActionEnd, "Breath");
 
@@ -33,7 +33,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
 
         AddAnimTimeEventFunc(RushAttackOn, "Rush");
-        AddAnimTimeEventFunc(AttackOff, "Rush");
+        AddAnimTimeEventFunc(RushAttackOff, "Rush");
         AddAnimTimeEventFunc(ActionEnd, "Rush");
 
         AddAnimTimeEventFunc(TailAttackOn, "Tail");
@@ -41,7 +41,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "Tail");
 
 
-        AddAnimTimeEventFunc(ShotBreathAttackOn ,"Shot_Breath");
+        AddAnimTimeEventFunc(ShotBreathAttackOn, "Shot_Breath");
         AddAnimTimeEventFunc(ActionEnd, "Shot_Breath");
 
         AddAnimTimeEventFunc(HowlingAttackOn, "Howling");
@@ -83,7 +83,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void ActionEnd(EvnData evnData)
     {
         _manager.IsAction = false;
-    }     
+    }
 
     private void DashAttackOn(EvnData evnData)
     {
@@ -120,7 +120,14 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void RushAttackOn(EvnData evnData)
     {
         _blackBoard.IsRushAttackOn = true;
+        _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezeRotation;
         _manager.AttackOn(DragonAttackTriggers.Rush);
+    }
+
+    private void RushAttackOff(EvnData evnData)
+    {
+        _blackBoard.IsRushAttackOn = false;
+        _manager.AttackOff();
     }
 
     private void RightPawAttackOn(EvnData evnData)
@@ -135,13 +142,8 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void LandingOn(EvnData evnData)
     {
-
-        _manager.FlyingOn = false;
-        _manager.LandingOn = true;
-        _manager.DragonRigidBody.freezeRotation = false;
-        _manager.DragonRigidBody.useGravity = true;
         _manager.DragonGroundCollider.enabled = true;
-
+        _manager.DragonRigidBody.freezeRotation = true;
     }
 
     private void ShotBreathAttackOn(EvnData evnData)
@@ -175,20 +177,20 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     
     private void DescentFlyingStart(EvnData evnData)
     {
-        _manager.FlyingOn = true;
+        MovementManager.Instance.SetMovement(MovementType.AirSpear);
         _manager.DragonRigidBody.useGravity = false;
         _manager.DragonGroundCollider.enabled = false;
         _blackBoard.IsGround = false;
-        _blackBoard.IsFlying = true;
-        MovementManager.Instance.SetMovement(MovementType.AirSpear);
+        _manager.FlyingOn = true;
     }
-
+    
     private void MeteoFlyingStart(EvnData evnData)
     {
-        _manager.FlyingOn = true;
+        MovementManager.Instance.SetMovement(MovementType.Meteo);
         _manager.DragonRigidBody.useGravity = false;
         _manager.DragonGroundCollider.enabled = false;
-        MovementManager.Instance.SetMovement(MovementType.Meteo);
+        _blackBoard.IsGround = false;
+        _manager.FlyingOn = true;
 
     }
 

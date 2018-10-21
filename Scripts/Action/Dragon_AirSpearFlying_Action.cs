@@ -10,7 +10,9 @@ public class Dragon_AirSpearFlying_Action : ActionTask
     {
         base.OnStart();
         _manager.AttackOff();
+        _blackBoard.IsFlying = true;
         _manager.Stat.AirSpearSaveHP = _manager.Stat.HP;
+        _blackBoard.LandingDistance = _manager.Stat.AirSpearLandingDistance;
         DragonAniManager.SwicthAnimation("Dragon_DescentTakeOff");
 
     }
@@ -22,8 +24,8 @@ public class Dragon_AirSpearFlying_Action : ActionTask
         {
             if (_movement.CurrentNodeManager().IsMoveEnd)
             {
-                _manager.IsAction = false;
                 _blackBoard.IsLanding = true;
+                _manager.IsAction = false;
             }
         }
 

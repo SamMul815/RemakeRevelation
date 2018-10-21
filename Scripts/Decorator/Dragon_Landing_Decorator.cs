@@ -15,10 +15,6 @@ public class Dragon_Landing_Decorator : DecoratorTask
         float LandingDistance = _blackBoard.LandingDistance;
 
         bool IsLanding = _blackBoard.IsLanding;
-
-        //bool IsLanding = UtilityManager.DistanceCalc(DragonManager.Instance.transform.position, 
-        //    BlackBoard.Instance.FiexdPosition, LandingDistance) && BlackBoard.Instance.IsFiexdPosition;
-
         bool IsFlying = _blackBoard.IsFlying;
         bool IsGround = _blackBoard.IsGround;
 

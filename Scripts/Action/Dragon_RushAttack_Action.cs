@@ -21,8 +21,6 @@ public class Dragon_RushAttack_Action : ActionTask
     {
         base.OnStart();
         _manager.IsAction = true;
-        _blackBoard.IsDashAttackOn = false;
-        _blackBoard.IsRushAttackOn = false;
         _manager.Stat.DashMovePosition = Player.position;
         _clock.CurDashCoolingTime = 0.0f;
         dot = 0.0f;
@@ -101,8 +99,8 @@ public class Dragon_RushAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        _blackBoard.IsDashAttackOn = false;
-        _blackBoard.IsRushAttackOn = false;
+        _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
+        _manager.DragonRigidBody.freezeRotation = true;
     }
 
 }

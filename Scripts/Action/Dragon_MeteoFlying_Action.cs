@@ -9,9 +9,9 @@ public class Dragon_MeteoFlying_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        _blackBoard.IsGround = false;
         _manager.AttackOff();
         _manager.Stat.MeteoSaveHP = _manager.Stat.HP;
+        _blackBoard.LandingDistance = _manager.Stat.MeteoLandingDistance;
         DragonAniManager.SwicthAnimation("Dragon_MeteoTakeOff");
 
     }

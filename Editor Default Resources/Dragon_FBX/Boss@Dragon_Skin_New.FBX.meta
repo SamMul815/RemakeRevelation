@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 87834e9dbb4b4f648b7ac3f61fd6d8f5
-timeCreated: 1538109724
+guid: a69ef1a42fa29f14caa3facdbf32aa2c
+timeCreated: 1540117225
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -105,7 +105,7 @@ ModelImporter:
     100194: Bip001 TailNub
     100196: Bone001
     100198: //RootNode
-    100200: SM_Creature
+    100200: SM_Creature11
     400000: Bip001
     400002: Bip001 Bip001_L_wingA_1
     400004: Bip001 Bip001_L_wingA_10
@@ -206,19 +206,17 @@ ModelImporter:
     400194: Bip001 TailNub
     400196: Bone001
     400198: //RootNode
-    400200: SM_Creature
+    400200: SM_Creature11
     2100000: 'Material #59'
     2100002: 08 - Default
-    2100004: 02 - Default
-    2100006: 13 - Default
+    2100004: 07 - Default
+    2100006: 09 - Default
     2100008: 19 - Default
     2100010: 14 - Default
-    2100012: 09 - Default
-    2100014: 15 - Default
-    2100016: 03 - Default
-    4300000: SM_Creature
+    2100012: 15 - Default
+    4300000: SM_Creature11
     9500000: //RootNode
-    13700000: SM_Creature
+    13700000: SM_Creature11
   externalObjects: {}
   materials:
     importMaterials: 1

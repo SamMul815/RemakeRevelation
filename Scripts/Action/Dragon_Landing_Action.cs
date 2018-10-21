@@ -6,10 +6,14 @@ using DragonController;
 public class Dragon_Landing_Action : ActionTask
 {
     Vector3 forward;
+    Transform rayTransfrom;
 
-    float maxSpeed = 0.0f;
-    float accSpeed = 0.0f;
-    float distance = 0.0f;
+    float maxSpeed;
+    float accSpeed;
+    float distance;
+
+    float landingDistance;
+    bool isLandingAttackFiexdDistance;
 
     public override void Init()
     {
@@ -17,6 +21,9 @@ public class Dragon_Landing_Action : ActionTask
         maxSpeed = _manager.Stat.MaxSpeed;
         accSpeed = _manager.Stat.AccSpeed;
         distance = _blackBoard.DescentAttackFiexdDistance;
+        landingDistance = _blackBoard.LandingDistance;
+        isLandingAttackFiexdDistance = false;
+       rayTransfrom = _manager.RayTransfrom;
     }
 
     public override void OnStart()
@@ -25,23 +32,23 @@ public class Dragon_Landing_Action : ActionTask
         _blackBoard.IsFlying = false;
         DragonAniManager.SwicthAnimation("Dragon_Gliding");
         _manager.AttackOn(DragonAttackTriggers.AirSpear);
+        landingDistance = _blackBoard.LandingDistance;
         _movement.CurSpeed += 20.0f;
-
     }
 
     public override bool Run()
     {
 
-        forward = (Player.position - Dragon.position).normalized;
-
-        _movement.CurSpeed =
-            _blackBoard.Acceleration(_movement.CurSpeed, maxSpeed, accSpeed);
-
-        bool IsLandingAttackFiexdDistance =
+        isLandingAttackFiexdDistance =
             UtilityManager.DistanceCalc(Dragon, Player, distance);
 
-        if(!IsLandingAttackFiexdDistance && !_blackBoard.IsFiexdPosition)
+        if (!isLandingAttackFiexdDistance && !_blackBoard.IsFiexdPosition)
         {
+            _movement.CurSpeed =
+               _blackBoard.Acceleration(_movement.CurSpeed, maxSpeed, accSpeed);
+
+            forward = (Player.position - Dragon.position).normalized;
+
             Dragon.position = Vector3.MoveTowards(
                 Dragon.position,
                 Player.position,
@@ -49,7 +56,7 @@ public class Dragon_Landing_Action : ActionTask
 
             Dragon.rotation = Quaternion.Slerp(
                 Dragon.rotation,
-                Quaternion.LookRotation(forward, Vector3.up),
+                Quaternion.LookRotation(forward),
                 CurTurnTime / MaxTurnTime);
 
             CurTurnTime += Time.deltaTime;
@@ -58,49 +65,51 @@ public class Dragon_Landing_Action : ActionTask
 
         if (!_blackBoard.IsFiexdPosition)
         {
-            CurTurnTime = 0.0f;
             _blackBoard.FiexdPosition = Player.position;
             _blackBoard.IsFiexdPosition = true;
         }
 
-        if (!UtilityManager.DistanceCalc(Dragon.position, _blackBoard.FiexdPosition,
-            _blackBoard.LandingDistance))
+        forward = (_blackBoard.FiexdPosition - Dragon.position);
+
+        if (!_manager.LandingOn)
         {
-            forward = (_blackBoard.FiexdPosition - Dragon.position).normalized;
+            _manager.LandingOn =
+                _blackBoard.Landing(rayTransfrom,
+                rayTransfrom.forward, landingDistance, _manager.DragonAvoidLayers);
 
-            Dragon.position =
-                Vector3.MoveTowards(
-                    Dragon.position,
-                    _blackBoard.FiexdPosition,
-                    _movement.CurSpeed * Time.deltaTime);
-
-            Dragon.rotation = Quaternion.Slerp(
-                Dragon.rotation,
-                Quaternion.LookRotation(forward, Vector3.up),
-                CurTurnTime / MaxTurnTime);
-            CurTurnTime += Time.deltaTime;
-            return false;
+            if (_manager.LandingOn)
+            {
+                CurTurnTime = 0.0f;
+                _movement.CurSpeed = 40.0f;
+                _manager.DragonRigidBody.useGravity = true;
+                DragonAniManager.SwicthAnimation("Dragon_Landing");
+            }
+        }
+        else
+        {
+            forward.x = 0.0f;
+            forward.y = 0.0f;
         }
 
-        DragonAniManager.SwicthAnimation("Dragon_Landing");
+        if (forward == Vector3.zero && !_manager.IsTurn)
+            _manager.IsTurn = true;
 
         Dragon.position = Vector3.MoveTowards(
             Dragon.position,
             _blackBoard.FiexdPosition,
             _movement.CurSpeed * Time.deltaTime);
 
-        if (_manager.LandingOn)
+        if (!_manager.IsTurn)
         {
-            forward = (_blackBoard.FiexdPosition - Dragon.position).normalized;
-            if (Vector3.Dot(Dragon.forward, forward) < 0.99f)
-            {
-                Dragon.rotation = Quaternion.Slerp(
+            Dragon.rotation =
+                Quaternion.RotateTowards(
                     Dragon.rotation,
-                     Quaternion.LookRotation(forward),
-                     CurTurnTime / MaxTurnTime);
-                CurTurnTime += Time.deltaTime;
-            }
+                    Quaternion.LookRotation(forward),
+                    360.0f * Time.deltaTime);
+
+            CurTurnTime += Time.deltaTime;
         }
+
         return false;
     }
 
@@ -110,6 +119,9 @@ public class Dragon_Landing_Action : ActionTask
         _blackBoard.IsFiexdPosition = false;
         _blackBoard.IsLanding = false;
         _blackBoard.IsGround = true;
+
+        _manager.LandingOn = false;
+        _manager.FlyingOn = false;
     }
 
 }

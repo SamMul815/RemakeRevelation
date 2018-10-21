@@ -15,8 +15,6 @@ public class Dragon_DashAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        BlackBoard.Instance.IsDashAttackOn = false;
-        BlackBoard.Instance.IsRushAttackOn = false;
         Clock.Instance.CurDashCoolingTime = 0.0f;
         forward = (Player.position - Dragon.position).normalized;
 
@@ -86,8 +84,6 @@ public class Dragon_DashAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        _blackBoard.IsDashAttackOn = false;
-        _blackBoard.IsRushAttackOn = false;
     }
 
 }

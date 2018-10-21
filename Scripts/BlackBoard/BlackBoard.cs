@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DragonController;
 
 public class BlackBoard : Singleton<BlackBoard>
 {
@@ -53,9 +54,8 @@ public class BlackBoard : Singleton<BlackBoard>
     private float _descentAttackFiexdDistance;
     public float DescentAttackFiexdDistance { get { return _descentAttackFiexdDistance; } }
 
-    [SerializeField]
     private float _landingDistance;
-    public float LandingDistance { get { return _landingDistance; } }
+    public float LandingDistance { set { _landingDistance = value; } get { return _landingDistance; } }
 
     [SerializeField]
     private float _redZoneDistance;
@@ -132,6 +132,18 @@ public class BlackBoard : Singleton<BlackBoard>
     private void Awake()
     {
         _isGround = true;
+    }
+
+    public bool Landing(Transform trans, Vector3 dir, float distance, int layer)
+    {
+        RaycastHit hit;
+
+        bool Hit = Physics.SphereCast(trans.position, trans.lossyScale.x / 2, dir, out hit, distance, layer);
+
+        if (Hit)
+            return true;
+        
+        return false;
     }
 
 
