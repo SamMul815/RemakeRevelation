@@ -175,7 +175,6 @@ namespace DragonController
             {
                 Gizmos.DrawRay(_rayTransfrom.position, transform.forward * hit.distance);
                 Gizmos.DrawWireSphere(_rayTransfrom.position + transform.forward * hit.distance, transform.lossyScale.x / 2);
-                //_test = true;
             }
             else
             {
