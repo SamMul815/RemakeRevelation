@@ -83,6 +83,7 @@ public class Dragon_Landing_Action : ActionTask
                 _movement.CurSpeed = 40.0f;
                 _manager.DragonRigidBody.useGravity = true;
                 DragonAniManager.SwicthAnimation("Dragon_Landing");
+                EffectManager.Instance.PoolParticleEffectOn("Landing", _blackBoard.FiexdPosition, Dragon.forward);
             }
         }
         else
@@ -116,6 +117,8 @@ public class Dragon_Landing_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
+        //EffectManager.Instance.PoolParticleEffectOff("Landing");
+
         _blackBoard.IsFiexdPosition = false;
         _blackBoard.IsLanding = false;
         _blackBoard.IsGround = true;
