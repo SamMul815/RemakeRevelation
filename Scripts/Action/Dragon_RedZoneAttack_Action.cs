@@ -29,6 +29,7 @@ public class Dragon_RedZoneAttack_Action : ActionTask
 
     public override void OnEnd()
     {
+        EffectManager.Instance.PoolParticleEffectOff("NearHowling");
         base.OnEnd();
     }
 

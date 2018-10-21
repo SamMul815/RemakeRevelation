@@ -12,9 +12,7 @@ public class Dragon_DestroyPart_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsDestroyPart = _blackBoard.IsDestroyPart;
-
-        if ((IsDestroyPart))
+        if ((_blackBoard.IsDestroyPart))
         {
 
             if (_childAction)

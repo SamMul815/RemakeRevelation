@@ -63,6 +63,7 @@ public class Dragon_RightPawAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
+        EffectManager.Instance.PoolParticleEffectOff("RightPaw");
     }
 
 
