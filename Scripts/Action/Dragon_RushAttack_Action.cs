@@ -68,8 +68,9 @@ public class Dragon_RushAttack_Action : ActionTask
                 CurTurnTime += Time.deltaTime;
                 return false;
             }
-            DragonAniManager.SwicthAnimation("Dragon_Rush");
             _manager.Stat.DashMovePosition = Player.position;
+            DragonAniManager.SwicthAnimation("Dragon_Rush");
+            EffectManager.Instance.PoolParticleEffectOn("Rush", Dragon);
 
             _moveDistance = (Dragon.position - Player.position).sqrMagnitude;
             _moveDistance = Mathf.Sqrt(_moveDistance);
