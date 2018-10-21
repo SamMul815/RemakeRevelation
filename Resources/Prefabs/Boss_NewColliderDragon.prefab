@@ -420,6 +420,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1197855167592146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4080506931936396}
+  m_Layer: 0
+  m_Name: DragonBreathMouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1230901286359536
 GameObject:
   m_ObjectHideFlags: 1
@@ -1675,14 +1690,14 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1952279926253744
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4898460785093540}
   m_Layer: 0
-  m_Name: DragonBreathMouth
+  m_Name: Paw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1852,7 +1867,7 @@ Transform:
   m_Children:
   - {fileID: 4690259761888442}
   m_Father: {fileID: 4487593182762142}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4044213978107742
 Transform:
@@ -1895,7 +1910,7 @@ Transform:
   - {fileID: 4057883675694572}
   - {fileID: 4908298604892402}
   m_Father: {fileID: 4487593182762142}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4076161053525534
 Transform:
@@ -1924,6 +1939,20 @@ Transform:
   - {fileID: 4389048071606490}
   m_Father: {fileID: 4908298604892402}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4080506931936396
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1197855167592146}
+  m_LocalRotation: {x: 0.000000007974449, y: -0.00000003253808, z: -0.000000009062261,
+    w: 1}
+  m_LocalPosition: {x: -0, y: 5, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4163184861067072}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4090090845577940
 Transform:
@@ -2103,7 +2132,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 4898460785093540}
+  - {fileID: 4080506931936396}
   - {fileID: 4013206112740852}
   - {fileID: 4720302134441364}
   - {fileID: 4977408671104036}
@@ -2399,7 +2428,7 @@ Transform:
   - {fileID: 4974892582198476}
   - {fileID: 4829031839014636}
   m_Father: {fileID: 4487593182762142}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4342294102336736
 Transform:
@@ -2503,7 +2532,7 @@ Transform:
   m_Children:
   - {fileID: 4507893937317110}
   m_Father: {fileID: 4487593182762142}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4415817232627264
 Transform:
@@ -2655,6 +2684,7 @@ Transform:
   m_LocalPosition: {x: -2.6020012, y: -0.0026202393, z: -0.000000006817281}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
   m_Children:
+  - {fileID: 4898460785093540}
   - {fileID: 4068791502472706}
   - {fileID: 4696240135413514}
   - {fileID: 4316827660653110}
@@ -2965,7 +2995,7 @@ Transform:
   m_Children:
   - {fileID: 4947790405939516}
   m_Father: {fileID: 4487593182762142}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4699022260298350
 Transform:
@@ -3179,12 +3209,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1952279926253744}
-  m_LocalRotation: {x: 0.000000007974449, y: -0.00000003253808, z: -0.000000009062261,
-    w: 1}
-  m_LocalPosition: {x: -0, y: 4.58, z: 20.28}
+  m_LocalRotation: {x: 0.70710194, y: 0.00085695845, z: -0.70711064, w: 0.00085919746}
+  m_LocalPosition: {x: -8.084196, y: 8.454154, z: 0.0001561431}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4163184861067072}
+  m_Father: {fileID: 4487593182762142}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4899418922172290
@@ -3279,8 +3308,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1880376627802902}
-  m_LocalRotation: {x: 0.56022143, y: -0.43157285, z: -0.5597902, w: -0.43189326}
-  m_LocalPosition: {x: 0.56, y: 2.06, z: -0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 2.5, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4507893937317110}
@@ -3504,7 +3533,7 @@ MonoBehaviour:
   _rushSpeed: 100
   _landingSpeed: 100
   _maxHP: 100000
-  _hp: 100000
+  _hp: 49000
   _saveTakeDamage: 0
   _dashMoveDistance: 15
   _rushMoveLimitDistance: 10
@@ -3571,6 +3600,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ddf7e138d2cd74281d8f501b7c9e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dragonAvoidLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  _paw: {fileID: 4898460785093540}
   _dragonBehaviroTree: {fileID: 11400000, guid: 2a7740d21fd56a94783b7c81b9d90d87,
     type: 2}
   _leftPawTransform: {fileID: 4181977616560140}

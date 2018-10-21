@@ -22,6 +22,12 @@ namespace DragonController
     public class DragonManager : Singleton<DragonManager> {
 
         [SerializeField]
+        private LayerMask _dragonAvoidLayers;
+
+        [SerializeField]
+        private Transform _paw;
+
+        [SerializeField]
         private BehaviorTree _dragonBehaviroTree;
         public BehaviorTree DragonBehaviroTree { get { return _dragonBehaviroTree; } }
 
@@ -148,5 +154,28 @@ namespace DragonController
                 Debug.Log("Dead");
             }
         }
+
+        private void OnDrawGizmos()
+        {
+            float MaxDistance = 25.0f;
+
+            RaycastHit hit;
+            bool isHit = Physics.SphereCast(
+                _paw.position, transform.lossyScale.x / 2, 
+                transform.forward, out hit, MaxDistance, _dragonAvoidLayers);
+
+            Gizmos.color = Color.blue;
+            if (isHit)
+            {
+                Gizmos.DrawRay(_paw.position, transform.forward * hit.distance);
+                Gizmos.DrawWireSphere(_paw.position + transform.forward * hit.distance, transform.lossyScale.x / 2);
+                Debug.Log("Ground");
+            }
+            else
+            {
+                Gizmos.DrawRay(_paw.position, transform.forward * MaxDistance);
+            }
+        }
+
     }
 }

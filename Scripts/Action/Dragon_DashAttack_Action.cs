@@ -6,14 +6,10 @@ using DragonController;
 public class Dragon_DashAttack_Action : ActionTask
 {
     Vector3 forward;
-    float dot;
-    float angle;
 
     public override void Init()
     {
         base.Init();
-        dot = 0.0f;
-        angle = 0.0f;
     }
 
     public override void OnStart()
@@ -23,7 +19,6 @@ public class Dragon_DashAttack_Action : ActionTask
         BlackBoard.Instance.IsRushAttackOn = false;
         Clock.Instance.CurDashCoolingTime = 0.0f;
         forward = (Player.position - Dragon.position).normalized;
-        dot = 0.0f;
 
     }
 
@@ -38,7 +33,7 @@ public class Dragon_DashAttack_Action : ActionTask
             DragonPos.y = 0.0f;
             PlayerPos.y = 0.0f;
 
-            dot = Vector3.Dot(Dragon.forward, forward);
+            float dot = Vector3.Dot(Dragon.forward, forward);
 
             if (dot < 0.99f)
             {
@@ -49,19 +44,19 @@ public class Dragon_DashAttack_Action : ActionTask
 
                 if(Result < 0.0f)
                 {
-                    angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+                    float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
 
-                    if (angle >= 30.0f && angle <= 120.0f)
+                    //if (angle >= 30.0f && angle <= 120.0f)
                         DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
                 }
                 else
                 {
-                    angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+                    float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+                    DragonAniManager.SwicthAnimation("Dragon_RightTrun");
 
-                    if(angle >= 30.0f && angle <= 120.0f)
-                    {
-                        DragonAniManager.SwicthAnimation("Dragon_RightTrun");
-                    }
+                    //if (angle >= 30.0f && angle <= 120.0f)
+                    //{
+                    //}
                 }
 
                 Dragon.rotation = Quaternion.Slerp(

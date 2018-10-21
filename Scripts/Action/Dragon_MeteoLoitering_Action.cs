@@ -10,7 +10,7 @@ public class Dragon_MeteoLoitering_Action : ActionTask
     {
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_Flying");
-        _movement.SetMovement(MovementType.MeteoFlying);
+        _movement.SetMovement(MovementType.MeteoHovering);
     }
 
     public override bool Run()
