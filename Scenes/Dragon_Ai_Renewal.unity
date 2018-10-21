@@ -4754,43 +4754,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1085874701096270, guid: 86f5fb21fb410c84380386057c25dd81, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485484330359600, guid: 86f5fb21fb410c84380386057c25dd81, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1964434775002274, guid: 86f5fb21fb410c84380386057c25dd81, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65102300371907758, guid: 86f5fb21fb410c84380386057c25dd81,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 5.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54366473474462320, guid: 86f5fb21fb410c84380386057c25dd81,
-        type: 2}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54366473474462320, guid: 86f5fb21fb410c84380386057c25dd81,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 114205376831627464, guid: 86f5fb21fb410c84380386057c25dd81,
-        type: 2}
-      propertyPath: _hp
-      value: 100000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114205376831627464, guid: 86f5fb21fb410c84380386057c25dd81,
-        type: 2}
-      propertyPath: _meteoLandingDistance
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86f5fb21fb410c84380386057c25dd81, type: 2}
   m_IsPrefabParent: 0

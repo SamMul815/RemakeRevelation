@@ -3398,7 +3398,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65053918496093464
 BoxCollider:
@@ -3423,7 +3423,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 12.5, y: 10, z: 20}
-  m_Center: {x: 0, y: 5, z: 4.5}
+  m_Center: {x: 0, y: 5.1, z: 4.5}
 --- !u!65 &65591116842795148
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3533,11 +3533,11 @@ MonoBehaviour:
   _rushSpeed: 100
   _landingSpeed: 100
   _maxHP: 100000
-  _hp: 49000
+  _hp: 100000
   _saveTakeDamage: 0
   _dashMoveDistance: 15
   _rushMoveLimitDistance: 10
-  _meteoLandingDistance: 65
+  _meteoLandingDistance: 20
   _airSpearLandingDistance: 20
   _destroyPartDamagePercent: 0.05
   _firstPhaseHpPercent: 1
