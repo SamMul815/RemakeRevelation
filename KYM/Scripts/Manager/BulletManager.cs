@@ -130,9 +130,7 @@ public class BulletManager : Singleton<BulletManager>
                 rnd.x = Random.Range(-20.0f, -5.0f);
                 float distance = Vector3.Distance(_trans.position, Player.instance.transform.position);
                 if(distance < 50)
-                    rnd.x = Random.Range(-20.0f, -5.0f) + distance *0.5f;
-
-
+                    rnd.x = Random.Range(-20.0f, -5.0f) + (25 - distance *0.5f);
 
                 bullet.transform.position = _trans.position;
                 bullet.transform.rotation = Quaternion.LookRotation(_trans.forward, Vector3.up);
@@ -143,8 +141,6 @@ public class BulletManager : Singleton<BulletManager>
                 //    bullet.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
                 //    //bullet.transform.rotation *= Quaternion.Euler(Random.insideUnitSphere * 5f);
                 //}
-
-
 
                 bullet.GetComponent<BulletBaseDragon>().ChangeSpeed(30 + Random.Range(10, 20.0f));
             }
