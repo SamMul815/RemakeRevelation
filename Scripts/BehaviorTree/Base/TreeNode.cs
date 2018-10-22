@@ -12,15 +12,15 @@ public enum TASKSTATE
 
 public abstract class TreeNode : MonoBehaviour
 {
-
-    [HideInInspector]public DragonManager _manager;
-    [HideInInspector]public BlackBoard _blackBoard;
-    [HideInInspector]public Clock _clock;
+    [HideInInspector] public Player _playerManager;
+    [HideInInspector] public DragonManager _manager;
+    [HideInInspector] public BlackBoard _blackBoard;
+    [HideInInspector] public Clock _clock;
 
     [HideInInspector] public MovementManager _movement;
 
-    [HideInInspector]public Transform Dragon;
-    [HideInInspector]public Transform Player;
+    [HideInInspector] public Transform DragonTransform;
+    [HideInInspector] public Transform PlayerTransform;
 
     protected TASKSTATE _nodeState;
     public TASKSTATE NodeState { set { _nodeState = value; } get { return _nodeState; } }
@@ -29,12 +29,13 @@ public abstract class TreeNode : MonoBehaviour
     {
         _manager = DragonManager.Instance;
         _movement = MovementManager.Instance;
+        _playerManager = Player.instance;
 
         _blackBoard = BlackBoard.Instance;
         _clock = Clock.Instance;
 
-        Dragon = DragonManager.Instance.transform;
-        Player = UtilityManager.Instance.Player;
+        DragonTransform = DragonManager.Instance.transform;
+        PlayerTransform = UtilityManager.Instance.Player;
 
     }
 

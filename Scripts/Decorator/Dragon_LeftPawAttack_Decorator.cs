@@ -13,13 +13,13 @@ public class Dragon_LeftPawAttack_Decorator : DecoratorTask
     public override bool Run()
     {
 
-        Vector3 toTarget = (Player.position - Dragon.position).normalized;
+        Vector3 toTarget = (PlayerTransform.position - DragonTransform.position).normalized;
 
-        float Dot = Vector3.Dot(Dragon.forward, toTarget);
+        float Dot = Vector3.Dot(DragonTransform.forward, toTarget);
 
         if (Dot >= Mathf.Cos(Mathf.Deg2Rad * 180.0f * 0.5f))
         {
-            Vector3 Cross = Vector3.Cross(Dragon.forward, toTarget);
+            Vector3 Cross = Vector3.Cross(DragonTransform.forward, toTarget);
 
             float Result = Vector3.Dot(Cross, Vector3.up);
 

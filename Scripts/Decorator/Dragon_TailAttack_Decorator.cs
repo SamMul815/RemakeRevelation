@@ -12,9 +12,9 @@ public class Dragon_TailAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        Vector3 toTarget = (Player.position - Dragon.position).normalized;
+        Vector3 toTarget = (PlayerTransform.position - DragonTransform.position).normalized;
 
-        float Dot = Vector3.Dot(Dragon.forward, toTarget);
+        float Dot = Vector3.Dot(DragonTransform.forward, toTarget);
 
         if((Dot < Mathf.Cos(Mathf.Deg2Rad * 180.0f * 0.5f) && !_manager.IsAction) || _manager.IsAction)
         {

@@ -20,7 +20,7 @@ public class Dragon_RedZone_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        isRedZone = UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance);
+        isRedZone = UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, redZoneDistance);
 
         if((isRedZone && !_manager.IsAction) || _manager.IsAction)
         {

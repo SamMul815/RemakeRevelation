@@ -2129,7 +2129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959864358240288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -222}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4080506931936396}
@@ -3533,19 +3533,19 @@ MonoBehaviour:
   _rushSpeed: 100
   _landingSpeed: 100
   _maxHP: 100000
-  _hp: 100000
+  _hp: 49000
   _saveTakeDamage: 0
   _dashMoveDistance: 15
   _rushMoveLimitDistance: 10
   _meteoLandingDistance: 20
   _airSpearLandingDistance: 20
-  _destroyPartDamagePercent: 0.05
+  _objectHitDamagePercent: 0
   _firstPhaseHpPercent: 1
   _secondPhaseHpPercent: 0.49
   _thirdPhaseHpPercent: 0.14
   _secondPhaseAirSpearHPPrecent: 0.1
   _thirdPhaseAirSpearHPPrecent: 0.07
-  _meteofHpPercent: 0.04
+  _meteofHpPercent: 0.07
 --- !u!114 &114226873160023396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3604,7 +3604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dragonAvoidLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8448
   _rayTransfrom: {fileID: 4898460785093540}
   _dragonBehaviroTree: {fileID: 11400000, guid: 2a7740d21fd56a94783b7c81b9d90d87,
     type: 2}

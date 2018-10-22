@@ -6,23 +6,42 @@ using DragonController;
 public class Dragon_AirSpearFlying_Decorator : DecoratorTask
 {
 
+    float MaxHP;
+    float HP;
+    float SaveHP;
+    float AirSpearHP;
+
+    bool IsAirSpear;
+    bool IsFlying;
+    bool IsGround;
+
+    public override void Init()
+    {
+        base.Init();
+        MaxHP = _manager.Stat.MaxHP;
+        HP = _manager.Stat.HP;
+        SaveHP = _manager.Stat.AirSpearSaveHP;
+        AirSpearHP = _manager.Stat.AirSpearHP;
+
+        IsFlying = _blackBoard.IsFlying;
+        IsGround = _blackBoard.IsGround;
+    }
+
     public override void OnStart()
     {
         base.OnStart();
+        _blackBoard.IsAirSpear = true;
     }
 
     public override bool Run()
     {
-        float MaxHP = _manager.Stat.MaxHP;
-        float HP = _manager.Stat.HP;
-        float SaveHP = _manager.Stat.AirSpearSaveHP;
+        HP = _manager.Stat.HP;
+        SaveHP = _manager.Stat.AirSpearSaveHP;
 
-        float AirSpearHP = _manager.Stat.AirSpearHP;
+        IsAirSpear = AirSpearHP - (SaveHP - HP) <= 0.0f;
 
-        bool IsAirSpear = AirSpearHP - (SaveHP - HP) <= 0.0f;
-
-        bool IsFlying = _blackBoard.IsFlying;
-        bool IsGround = _blackBoard.IsGround;
+        IsFlying = _blackBoard.IsFlying;
+        IsGround = _blackBoard.IsGround;
 
         if ((MaxHP > HP && IsAirSpear && IsGround && !IsFlying && !_manager.IsAction) || _manager.IsAction)
         {

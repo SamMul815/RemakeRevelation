@@ -23,7 +23,7 @@ public class Dragon_TailAttack_Action : ActionTask
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_Tail");
         _clock.CurPawCoolingTime = 0.0f;
-        forward = (Player.position - Dragon.position).normalized;
+        forward = (PlayerTransform.position - DragonTransform.position).normalized;
         Angle = 0.0f;
         SumAngle = 0.0f;
     }
@@ -49,7 +49,7 @@ public class Dragon_TailAttack_Action : ActionTask
                 Angle = maxTurn - (maxTurn * (1.0f - CurTurnTime));
                 CurTurnTime += Time.deltaTime;
 
-                Dragon.Rotate(Dragon.up, Turn, Space.World);
+                DragonTransform.Rotate(DragonTransform.up, Turn, Space.World);
 
                 Debug.Log(Turn);
 

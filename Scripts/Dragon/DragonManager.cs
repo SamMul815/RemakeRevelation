@@ -81,7 +81,6 @@ namespace DragonController
             _dragonGroundCollider = GetComponent<BoxCollider>();
 
             _stat = GetComponent<DragonStat>();
-
             _dragonRigidBody = GetComponent<Rigidbody>();
 
             DragonAttackTrigger []triggers = GetComponentsInChildren<DragonAttackTrigger>();
@@ -94,7 +93,6 @@ namespace DragonController
             }
 
             IsAction = false;
-            _dragonBehaviroTree.Initialize(_dragonBehaviroTree.Root);
 
         }
 
@@ -102,13 +100,14 @@ namespace DragonController
         {
             if (Application.isPlaying)
             {
+                _dragonBehaviroTree.Initialize(_dragonBehaviroTree.Root);
                 _isInit = true;
             } 
 	    }
 
         public void OnDestroyPart(float _damage)
         {
-            float FinalDamage = _damage * Stat.DestroyPartDamagePercent;
+            float FinalDamage = (_damage); /*+ Stat.MaxHP * Stat.ObejctHitDamagePercent;*/
             BlackBoard.Instance.IsDestroyPart = true;
             Hit(FinalDamage);
         }
@@ -152,41 +151,36 @@ namespace DragonController
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                BlackBoard.Instance.IsDestroyPart = true;
-                Debug.Log("test");
-            }
-
-            if (!_dragonBehaviroTree.Root.Run() && _stat.HP > 0.0f)
+            if (!_dragonBehaviroTree.Root.Run())
             {
 
             }
             else
             {
                 //죽었을 시...
-                Debug.Log("Dead");
+                AttackOff();
+                Debug.Log("AI Dead");
             }
         }
 
         private void OnDrawGizmos()
         {
-            float MaxDistance = BlackBoard.Instance.LandingDistance;
+            float MaxDistance = 2.0f;
 
             RaycastHit hit;
             bool isHit = Physics.SphereCast(
-                _rayTransfrom.position, transform.lossyScale.x / 2, 
-                transform.forward, out hit, MaxDistance, _dragonAvoidLayers);
+                _rayTransfrom.position, transform.lossyScale.x / 2,
+                -_rayTransfrom.forward, out hit, MaxDistance, _dragonAvoidLayers);
 
             Gizmos.color = Color.blue;
             if (isHit)
             {
-                Gizmos.DrawRay(_rayTransfrom.position, transform.forward * hit.distance);
-                Gizmos.DrawWireSphere(_rayTransfrom.position + transform.forward * hit.distance, transform.lossyScale.x / 2);
+                Gizmos.DrawRay(_rayTransfrom.position, -_rayTransfrom.forward * hit.distance);
+                Gizmos.DrawWireSphere(_rayTransfrom.position + (-_rayTransfrom.forward) * hit.distance, transform.lossyScale.x / 2);
             }
             else
             {
-                Gizmos.DrawRay(_rayTransfrom.position, transform.forward * MaxDistance);
+                Gizmos.DrawRay(_rayTransfrom.position, -_rayTransfrom.forward * MaxDistance);
             }
         }
 

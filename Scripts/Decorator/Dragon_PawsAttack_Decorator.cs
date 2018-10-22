@@ -28,8 +28,8 @@ public class Dragon_PawsAttack_Decorator : DecoratorTask
     public override bool Run()
     {
 
-        isPaw_Attack = UtilityManager.DistanceCalc(Dragon, Player, distance) && 
-            !(UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance));
+        isPaw_Attack = UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, distance) && 
+            !(UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, redZoneDistance));
        
         if (((curCoolingTime >= coolingTime && isPaw_Attack)  && !_manager.IsAction) || _manager.IsAction)
         {

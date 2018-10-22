@@ -61,6 +61,7 @@ namespace DragonController {
 
         private float _secondPhaseHP;
         public float SecondPhaseHP { get { return _secondPhaseHP; } }
+
         private float _thirdPhaseHP;
         public float ThirdPhaseHP { get { return _thirdPhaseHP; } }
 
@@ -89,12 +90,13 @@ namespace DragonController {
         [SerializeField] private float _airSpearLandingDistance;
         public float AirSpearLandingDistance { get { return _airSpearLandingDistance; } }
 
+
         [Space]
         [Header("Dragon Part Destroy Damage")]
 
         [Range(0.0f, 1.0f)]
-        [SerializeField] private float _destroyPartDamagePercent;
-        public float DestroyPartDamagePercent { get { return _destroyPartDamagePercent; } }
+        [SerializeField] private float _objectHitDamagePercent;
+        public float ObjectHitDamagePercent { get { return _objectHitDamagePercent; } }
 
         [Space]
         [Header("Dragon Phase HPBar Precent")]
