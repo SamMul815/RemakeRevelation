@@ -44,6 +44,9 @@ public class Dragon_RedZoneAttack_Action : ActionTask
                 float FinalDistance = (DragonTransform.position - PlayerTransform.position).sqrMagnitude;
                 float FinalPushPower = pushPower * (distance - Mathf.Sqrt(FinalDistance));
 
+                dir = (PlayerTransform.position - DragonTransform.position).normalized;
+                dir += new Vector3(0.0f, 0.2f, 0.0f);
+
                 FinalPushPower = Mathf.RoundToInt(FinalPushPower);
                 _playerManager.playerRigid.PlayerPush(dir, FinalPushPower);
                 _playerManager.playerStat.Hit(damege);
