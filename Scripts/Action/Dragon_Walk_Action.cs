@@ -47,7 +47,7 @@ public class Dragon_Walk_Action : ActionTask
 
         DragonTransform.position = Vector3.MoveTowards(
             DragonTransform.position,
-            PlayerPos,
+            PlayerTransform.position,
             WalkSpeed * Time.deltaTime
             );
         return false;
