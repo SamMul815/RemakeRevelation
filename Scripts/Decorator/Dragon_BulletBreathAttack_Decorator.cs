@@ -30,8 +30,8 @@ public class Dragon_BulletBreathAttack_Decorator : DecoratorTask
     {
         curCoolingTime = _clock.CurBulletBreathCoolingTime;
 
-        isBulletBreathAttck = UtilityManager.DistanceCalc(Dragon, Player, bullletBreathAttackDistance) &&
-                                !(UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance));
+        isBulletBreathAttck = UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, bullletBreathAttackDistance) &&
+                                !(UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, redZoneDistance));
 
         if (((curCoolingTime >= coolingTime && isBulletBreathAttck) && !_manager.IsAction)
             || _manager.IsAction)

@@ -12,9 +12,7 @@ public class Dragon_Flying_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        bool IsFlying = _blackBoard.IsFlying;
-
-        if (IsFlying)
+        if (_blackBoard.IsFlying)
         {
             if (_childAction)
             {

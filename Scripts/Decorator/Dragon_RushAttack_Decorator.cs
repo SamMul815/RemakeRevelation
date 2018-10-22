@@ -15,6 +15,7 @@ public class Dragon_RushAttack_Decorator : DecoratorTask
     public override void Init()
     {
         base.Init();
+        curCoolingTime = 0.0f;
         coolingTime = _clock.DashCoolingTime;
         redZoneDistance = _blackBoard.RedZoneDistance;
         distance = _blackBoard.RushDistance;
@@ -30,9 +31,8 @@ public class Dragon_RushAttack_Decorator : DecoratorTask
     {
         curCoolingTime = _clock.CurDashCoolingTime;
 
-        isRush_Attack = UtilityManager.DistanceCalc(Dragon, Player, distance) &&
-                                !(UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance));
-        ;
+        isRush_Attack = UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, distance) &&
+                                !(UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, redZoneDistance));
 
         if (((curCoolingTime >= coolingTime && isRush_Attack) && !_manager.IsAction) || _manager.IsAction)
         {

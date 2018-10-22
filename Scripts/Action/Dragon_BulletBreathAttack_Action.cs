@@ -22,19 +22,19 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
     {
         if (!_manager.IsTurn)
         {
-            Vector3 DragonPos = Dragon.position;
-            Vector3 PlayerPos = Player.position;
+            Vector3 DragonPos = DragonTransform.position;
+            Vector3 PlayerPos = PlayerTransform.position;
 
             DragonPos.y = 0.0f;
             PlayerPos.y = 0.0f;
 
             Vector3 forward = (PlayerPos - DragonPos).normalized;
-            float dot = Vector3.Dot(Dragon.forward, forward);
+            float dot = Vector3.Dot(DragonTransform.forward, forward);
 
             if (dot < 0.99f)
             {
 
-                Vector3 Cross = Vector3.Cross(Dragon.forward, forward);
+                Vector3 Cross = Vector3.Cross(DragonTransform.forward, forward);
                 float Result = Vector3.Dot(Cross, Vector3.up);
 
                 if (Result < 0.0f)
@@ -50,8 +50,8 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
                     DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
 
-                Dragon.rotation = Quaternion.Slerp(
-                    Dragon.rotation,
+                DragonTransform.rotation = Quaternion.Slerp(
+                    DragonTransform.rotation,
                     Quaternion.LookRotation(forward),
                     CurTurnTime / MaxTurnTime);
 

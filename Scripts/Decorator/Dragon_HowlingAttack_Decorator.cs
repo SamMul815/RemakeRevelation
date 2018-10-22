@@ -30,8 +30,8 @@ public class Dragon_HowlingAttack_Decorator : DecoratorTask
     {
         curCoolingTime = _clock.CurHowlingCoolingTime;
 
-        isHowling_Attack = UtilityManager.DistanceCalc(Dragon, Player, distance) &&
-                                !(UtilityManager.DistanceCalc(Dragon, Player, redZoneDistance));
+        isHowling_Attack = UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, distance) &&
+                                !(UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, redZoneDistance));
 
         if (((curCoolingTime > coolingTime && isHowling_Attack) && !_manager.IsAction) || _manager.IsAction)
         {

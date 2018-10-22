@@ -144,7 +144,9 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         _manager.DragonGroundCollider.enabled = true;
         _manager.DragonRigidBody.freezeRotation = true;
+        EffectManager.Instance.PoolParticleEffectOn("Landing", _blackBoard.FiexdPosition, _manager.transform.forward);
     }
+
 
     private void ShotBreathAttackOn(EvnData evnData)
     {

@@ -20,10 +20,12 @@ public class Dragon_Landing_Action : ActionTask
         base.Init();
         maxSpeed = _manager.Stat.MaxSpeed;
         accSpeed = _manager.Stat.AccSpeed;
+
         distance = _blackBoard.DescentAttackFiexdDistance;
         landingDistance = _blackBoard.LandingDistance;
+
         isLandingAttackFiexdDistance = false;
-       rayTransfrom = _manager.RayTransfrom;
+        rayTransfrom = _manager.RayTransfrom;
     }
 
     public override void OnStart()
@@ -40,22 +42,22 @@ public class Dragon_Landing_Action : ActionTask
     {
 
         isLandingAttackFiexdDistance =
-            UtilityManager.DistanceCalc(Dragon, Player, distance);
+            UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, distance);
 
         if (!isLandingAttackFiexdDistance && !_blackBoard.IsFiexdPosition)
         {
             _movement.CurSpeed =
                _blackBoard.Acceleration(_movement.CurSpeed, maxSpeed, accSpeed);
 
-            forward = (Player.position - Dragon.position).normalized;
+            forward = (PlayerTransform.position - DragonTransform.position).normalized;
 
-            Dragon.position = Vector3.MoveTowards(
-                Dragon.position,
-                Player.position,
+            DragonTransform.position = Vector3.MoveTowards(
+                DragonTransform.position,
+                PlayerTransform.position,
                 _movement.CurSpeed * Time.deltaTime);
 
-            Dragon.rotation = Quaternion.Slerp(
-                Dragon.rotation,
+            DragonTransform.rotation = Quaternion.Slerp(
+                DragonTransform.rotation,
                 Quaternion.LookRotation(forward),
                 CurTurnTime / MaxTurnTime);
 
@@ -65,16 +67,16 @@ public class Dragon_Landing_Action : ActionTask
 
         if (!_blackBoard.IsFiexdPosition)
         {
-            _blackBoard.FiexdPosition = Player.position;
+            _blackBoard.FiexdPosition = PlayerTransform.position;
             _blackBoard.IsFiexdPosition = true;
         }
 
-        forward = (_blackBoard.FiexdPosition - Dragon.position);
+        forward = (_blackBoard.FiexdPosition - DragonTransform.position);
 
         if (!_manager.LandingOn)
         {
             _manager.LandingOn =
-                _blackBoard.Landing(rayTransfrom,
+                _blackBoard.RayHit(rayTransfrom,
                 rayTransfrom.forward, landingDistance, _manager.DragonAvoidLayers);
 
             if (_manager.LandingOn)
@@ -83,7 +85,7 @@ public class Dragon_Landing_Action : ActionTask
                 _movement.CurSpeed = 40.0f;
                 _manager.DragonRigidBody.useGravity = true;
                 DragonAniManager.SwicthAnimation("Dragon_Landing");
-                EffectManager.Instance.PoolParticleEffectOn("Landing", _blackBoard.FiexdPosition, Dragon.forward);
+
             }
         }
         else
@@ -95,16 +97,16 @@ public class Dragon_Landing_Action : ActionTask
         if (forward == Vector3.zero && !_manager.IsTurn)
             _manager.IsTurn = true;
 
-        Dragon.position = Vector3.MoveTowards(
-            Dragon.position,
+        DragonTransform.position = Vector3.MoveTowards(
+            DragonTransform.position,
             _blackBoard.FiexdPosition,
             _movement.CurSpeed * Time.deltaTime);
 
         if (!_manager.IsTurn)
         {
-            Dragon.rotation =
+            DragonTransform.rotation =
                 Quaternion.RotateTowards(
-                    Dragon.rotation,
+                    DragonTransform.rotation,
                     Quaternion.LookRotation(forward),
                     360.0f * Time.deltaTime);
 
@@ -117,8 +119,6 @@ public class Dragon_Landing_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        //EffectManager.Instance.PoolParticleEffectOff("Landing");
-
         _blackBoard.IsFiexdPosition = false;
         _blackBoard.IsLanding = false;
         _blackBoard.IsGround = true;

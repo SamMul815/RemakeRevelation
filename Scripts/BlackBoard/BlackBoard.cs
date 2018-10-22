@@ -60,7 +60,15 @@ public class BlackBoard : Singleton<BlackBoard>
     [SerializeField]
     private float _redZoneDistance;
     public float RedZoneDistance { get { return _redZoneDistance; } }
-    
+
+    [SerializeField]
+    private float _fallingDistance;
+    public float FallingDistance { get { return _fallingDistance; } }
+
+    [SerializeField]
+    private float _airSpearLimitDistance;
+    public float AirSpearLimitDistance { get { return _airSpearLimitDistance; } }
+
     [Space]
     [Header("Bullet Breath Amount")]
 
@@ -116,6 +124,19 @@ public class BlackBoard : Singleton<BlackBoard>
     private bool _isRedZoneIn;
     public bool IsRedZoneIn { set { _isRedZoneIn = value; } get { return _isRedZoneIn; } }
 
+    private bool _isAirSpear;
+    public bool IsAirSpear { set { _isAirSpear = value; } get { return _isAirSpear; } }
+
+    [SerializeField]
+    private float _redZoneDamage;
+    public float RedZoneDamage { get { return _redZoneDamage; } }
+
+
+    private void Awake()
+    {
+        _isGround = true;
+    }
+
     public float Acceleration(float fCurSpeed, float fMaxSpeed, float fAccSpeed)
     {
         if (fCurSpeed >= fMaxSpeed)
@@ -129,21 +150,10 @@ public class BlackBoard : Singleton<BlackBoard>
 
     }
 
-    private void Awake()
-    {
-        _isGround = true;
-    }
-
-    public bool Landing(Transform trans, Vector3 dir, float distance, int layer)
+    public bool RayHit(Transform trans, Vector3 dir, float distance, int layer)
     {
         RaycastHit hit;
-
-        bool Hit = Physics.SphereCast(trans.position, trans.lossyScale.x / 2, dir, out hit, distance, layer);
-
-        if (Hit)
-            return true;
-        
-        return false;
+        return Physics.SphereCast(trans.position, trans.lossyScale.x / 2, dir, out hit, distance, layer);
     }
 
 

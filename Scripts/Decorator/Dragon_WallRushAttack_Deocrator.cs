@@ -1,24 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DragonController;
 
-public class Dragon_DashAttack_Decorator : DecoratorTask
+public class Dragon_WallRushAttack_Deocrator : DecoratorTask
 {
-    float curCoolingTime = 0.0f;
-    float coolingTime = 0.0f;
-
     float redZoneDistance = 0.0f;
-    float distance = 0.0f;
+    float distance;
     bool isRush_Attack;
 
     public override void Init()
     {
         base.Init();
-        isRush_Attack = false;
-        distance = _blackBoard.DashDistance;
-        coolingTime = _clock.DashCoolingTime;
         redZoneDistance = _blackBoard.RedZoneDistance;
+        distance = _blackBoard.RushDistance;
+        isRush_Attack = false;
     }
 
     public override void OnStart()
@@ -28,43 +23,44 @@ public class Dragon_DashAttack_Decorator : DecoratorTask
 
     public override bool Run()
     {
-        curCoolingTime = _clock.CurDashCoolingTime;
-
         isRush_Attack = UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, distance) &&
-                                !(UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, redZoneDistance));
+            !(UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, redZoneDistance));
 
-        if (((curCoolingTime >= coolingTime && isRush_Attack) && !_manager.IsAction) || _manager.IsAction)
+
+        if ((isRush_Attack && !_manager.IsAction) || _manager.IsAction)
         {
             if (_childAction)
             {
-                if(!_childAction.IsRunning)
+                if (!_childAction.IsRunning)
                 {
                     if (!_manager.IsAction)
                         OnStart();
                     else if (_manager.IsAction)
-                        return true;
+                        OnStart();
                     else if (!_childAction.IsRunning)
                         OnStart();
                 }
-                if(!_childAction.IsRunning || _childAction.IsEnd)
+                if(_childAction.IsRunning || _childAction.IsEnd)
                 {
                     if (!_manager.IsAction)
                         OnStart();
                     else if (!_childAction.IsRunning)
                         OnStart();
 
-                    return ChildNode.Run();
+                    return _childAction.Run();
                 }
             }
             else
             {
-                if(NodeState != TASKSTATE.RUNNING)
+                if (NodeState != TASKSTATE.RUNNING)
                     OnStart();
             }
+
             return ChildNode.Run();
+
         }
-        else if(NodeState == TASKSTATE.RUNNING ||
-            ChildNode.NodeState == TASKSTATE.RUNNING)
+        else if (NodeState == TASKSTATE.RUNNING ||
+           ChildNode.NodeState == TASKSTATE.RUNNING)
         {
             OnEnd();
         }

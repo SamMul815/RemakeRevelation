@@ -48,6 +48,16 @@ public class MovementManager : Singleton<MovementManager>
         return _nodesManager[_currentMoveType];
     }
 
+    public void StopMovement()
+    {
+        if (!_nodesManager[_currentMoveType].IsMoveEnd)
+        {
+            _nodesManager[_currentMoveType].IsMoveEnd = true;
+            _nodesManager[_currentMoveType].enabled = false;
+        }
+
+    }
+
     public void SetMovement(MovementType MoveType)
     {
         if (_isInit)

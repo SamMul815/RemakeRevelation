@@ -19,18 +19,18 @@ public class Dragon_MeteoAttack_Action : ActionTask
 
         if (!_manager.IsTurn)
         {
-            Vector3 DragonPos = Dragon.position;
-            Vector3 PlayerPos = Player.position;
+            Vector3 DragonPos = DragonTransform.position;
+            Vector3 PlayerPos = PlayerTransform.position;
 
             DragonPos.y = 0.0f;
             PlayerPos.y = 0.0f;
 
             forward = (PlayerPos - DragonPos).normalized;
 
-            if(Vector3.Dot(Dragon.forward, forward) < 0.99f)
+            if(Vector3.Dot(DragonTransform.forward, forward) < 0.99f)
             {
-                Dragon.rotation = Quaternion.Slerp(
-                    Dragon.rotation,
+                DragonTransform.rotation = Quaternion.Slerp(
+                    DragonTransform.rotation,
                     Quaternion.LookRotation(forward),
                     CurTurnTime / MaxTurnTime);
                 CurTurnTime += Time.deltaTime;

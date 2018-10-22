@@ -23,20 +23,20 @@ public class Dragon_Walk_Action : ActionTask
     public override bool Run()
     {
 
-        Vector3 DragonPos = Dragon.position;
-        Vector3 PlayerPos = Player.position;
+        Vector3 DragonPos = DragonTransform.position;
+        Vector3 PlayerPos = PlayerTransform.position;
 
         DragonPos.y = 0.0f;
         PlayerPos.y = 0.0f;
 
         Vector3 forward = (PlayerPos - DragonPos).normalized;
 
-        angle = Vector3.Dot(Dragon.forward, forward);
+        angle = Vector3.Dot(DragonTransform.forward, forward);
 
-        if (Vector3.Dot(Dragon.forward, forward) < 0.99f)
+        if (Vector3.Dot(DragonTransform.forward, forward) < 0.99f)
         {
-            Dragon.rotation = Quaternion.Slerp(
-                Dragon.rotation,
+            DragonTransform.rotation = Quaternion.Slerp(
+                DragonTransform.rotation,
                 Quaternion.LookRotation(forward),
                 CurTurnTime / MaxTurnTime);
 
@@ -45,8 +45,8 @@ public class Dragon_Walk_Action : ActionTask
 
         float WalkSpeed = _manager.Stat.WalkSpeed;
 
-        Dragon.position = Vector3.MoveTowards(
-            Dragon.position,
+        DragonTransform.position = Vector3.MoveTowards(
+            DragonTransform.position,
             PlayerPos,
             WalkSpeed * Time.deltaTime
             );
