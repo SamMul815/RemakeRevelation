@@ -202,18 +202,22 @@ public class BulletManager : Singleton<BulletManager>
         //Vector3 up = _dragon.up;
         //Vector3 right = _dragon.right;
         //Vector3 position = _dragon.position;
-        for (int i = 0; i < _amount; i++)
+        for (int i = 0; i < _amount/4; i++)
         {
-            GameObject meteo;
-            PoolManager.Instance.PopObject(dragonMeteoPrefab,_dragon.position, out meteo);
-            //meteo.transform.position = _dragon.position;
+            for(int j = 0; j<4; j++)
+            {
+                GameObject meteo;
+                PoolManager.Instance.PopObject(dragonMeteoPrefab, _dragon.position, out meteo);
+                //meteo.transform.position = _dragon.position;
 
-            Vector3 throwPos = meteoSkill.GetRndPos();
-            Vector3 dir = throwPos - meteo.transform.position;
-            meteo.transform.rotation = Quaternion.LookRotation(dir,Vector3.up);
-            meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(250);
+                Vector3 throwPos = meteoSkill.GetRndPos();
+                Vector3 dir = throwPos - meteo.transform.position;
+                meteo.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+                meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(250);
+            }
+
             //meteo.GetComponent<BulletMeteoDragon>().ChangeSpeed(250 - Random.Range(0, 50.0f));
-            yield return new WaitForSeconds(dealyTime);
+            yield return new WaitForSeconds(dealyTime * 2);
         }
         yield return null;
     }

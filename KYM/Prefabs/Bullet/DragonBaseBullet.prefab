@@ -411,13 +411,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyParticle: {fileID: 1899818161322040, guid: 339508f6086eeea488d7f239b75cb068,
     type: 2}
-  damage: 20
+  damage: 10
   damagePlusMinusValue: 3
   moveSpeed: 30
   hitLayer:
     serializedVersion: 2
     m_Bits: 4352
   maxMoveDistance: 500
+  bulletHP: 0
   homingPower: 0.03
 --- !u!135 &135173632238965660
 SphereCollider:

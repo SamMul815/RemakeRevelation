@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4574855354006930}
   - component: {fileID: 114450824410820312}
+  - component: {fileID: 114190391098585296}
   m_Layer: 0
   m_Name: BulletManager
   m_TagString: Untagged
@@ -210,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447103096129256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -177, y: 0, z: -182.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4937106812172274}
@@ -249,6 +250,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114190391098585296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447103096129256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c628f9ef1ec4feb49b0d5000459756ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  widthSize: 30
+  heightSize: 30
+  width: 12
+  height: 12
+  playerDirFireCount: 30
+  count: 0
+  MeteoPosList: []
+  rndList: []
 --- !u!114 &114247043299693604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,15 +314,15 @@ MonoBehaviour:
   - poolObject: {fileID: 1244637099381106, guid: ce41bfa691281094c9fc903eb76cc3c5,
       type: 2}
     initialCount: 20
-  - poolObject: {fileID: 1118533640688316, guid: 45fae325c58556544adcd49a0a1b2086,
+  - poolObject: {fileID: 1798456009025268, guid: 072b0584c62d0534fbb0b6de6f6d502c,
       type: 2}
     initialCount: 1
   - poolObject: {fileID: 1563069165791020, guid: c051a1ebd70579149819eed504ec0b5c,
       type: 2}
-    initialCount: 10
+    initialCount: 50
   - poolObject: {fileID: 1502653574976536, guid: fdbded1f67a6e864dac62e35e41e060f,
       type: 2}
-    initialCount: 10
+    initialCount: 50
   - poolObject: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
       type: 2}
     initialCount: 100
@@ -311,7 +331,13 @@ MonoBehaviour:
     initialCount: 100
   - poolObject: {fileID: 1069826527463908, guid: c1e0facab5877974a891a0c8ab35b3c9,
       type: 2}
-    initialCount: 100
+    initialCount: 10
+  - poolObject: {fileID: 1721591259711116, guid: 0e44587b69f31d6498f23914aa0f8eb4,
+      type: 2}
+    initialCount: 30
+  - poolObject: {fileID: 1874823788645224, guid: 9e5fb77f6c7f73a4bbcf30399ba335a4,
+      type: 2}
+    initialCount: 30
 --- !u!114 &114450824410820312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,9 +355,9 @@ MonoBehaviour:
     type: 2}
   dragonBaseBullet: {fileID: 1455987169917528, guid: ef9a0b8948d45a34397e9a4dc7a357e3,
     type: 2}
-  dragonRotateBullet: {fileID: 1159996866615532, guid: fbab84e811b85fd46829eb7d2ab87bcd,
+  dragonHowlingBullet: {fileID: 1721591259711116, guid: 0e44587b69f31d6498f23914aa0f8eb4,
     type: 2}
-  dragonBreathPrefab: {fileID: 1118533640688316, guid: 45fae325c58556544adcd49a0a1b2086,
+  dragonBreathPrefab: {fileID: 1798456009025268, guid: 072b0584c62d0534fbb0b6de6f6d502c,
     type: 2}
   dragonMeteoPrefab: {fileID: 1563069165791020, guid: c051a1ebd70579149819eed504ec0b5c,
     type: 2}

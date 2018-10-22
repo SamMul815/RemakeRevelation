@@ -35,6 +35,8 @@ public class MachinGun : MonoBehaviour {
 
     public UI_MachineGun machingunUI;
 
+    public GameObject MuzzleFlash;
+
     
     IEnumerator startShoot;
     IEnumerator stopShoot;
@@ -141,7 +143,7 @@ public class MachinGun : MonoBehaviour {
         gunBarrelFront.transform.position = baseGunBarrelPos.transform.position;
         for (float fTime = 0.0f; fTime < startDelay; fTime+= Time.unscaledDeltaTime)
         {
-            gunBarrelFront.transform.position = Vector3.Slerp(baseGunBarrelPos.transform.position, shootGunBarrelPos.transform.position, fTime / startDelay);
+            gunBarrelFront.transform.position = Vector3.Lerp(baseGunBarrelPos.transform.position, shootGunBarrelPos.transform.position, fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
         float currentShootDelay = shootDelay * 3.0f;
@@ -150,7 +152,7 @@ public class MachinGun : MonoBehaviour {
         {
             Vector3 sphere = Random.insideUnitSphere * 0.1f;
             Vector3 dir =  Aim.position + sphere - headcol.position;
-            
+
             //Ray ray = new Ray(Aim.position, dir);
             //RaycastHit rayHit;
             //if (Physics.Raycast(ray,out rayHit, 1000.0f))
@@ -162,6 +164,9 @@ public class MachinGun : MonoBehaviour {
             //{
             //   // dir = Aim.position - shootPos.position;
             //}
+
+            GameObject muzzleFlash;
+            PoolManager.Instance.PopObject(MuzzleFlash, shootPos.position + shootPos.forward*0.1f, out muzzleFlash);
 
             BulletManager.Instance.CreatePlayerMachinBullet(shootPos.position, dir.normalized);
             currentGauge -= shootGauge;
@@ -184,8 +189,6 @@ public class MachinGun : MonoBehaviour {
             }
       
             
-            //yield return new WaitForSecondsRealtime(0.1f);
-            //yield return new WaitForSecondsRealtime(shootDealy);
         }
     }
 
@@ -202,7 +205,7 @@ public class MachinGun : MonoBehaviour {
         gunBarrelFront.transform.position = shootGunBarrelPos.transform.position;
         for (float fTime = 0.0f; fTime < startDelay; fTime += Time.unscaledDeltaTime)
         {
-            gunBarrelFront.transform.position = Vector3.Slerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
+            gunBarrelFront.transform.position = Vector3.Lerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
 
