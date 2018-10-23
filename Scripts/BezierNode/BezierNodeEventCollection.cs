@@ -21,4 +21,14 @@ public class BezierNodeEventCollection : MonoBehaviour
     {
         DragonAniManager.SwicthAnimation("Dragon_Flying");
     }
+
+    private void AniHovering()
+    {
+        DragonAniManager.SwicthAnimation("Dragon_Hovering");
+    }
+
+    private void AniLanding()
+    {
+        DragonAniManager.SwicthAnimation("Dragon_Landing");
+    }
 }

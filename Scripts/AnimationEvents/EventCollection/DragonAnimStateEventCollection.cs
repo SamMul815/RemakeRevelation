@@ -55,6 +55,8 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
 
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
+
+        AddAnimTimeEventFunc(TakeOff, "TakeOff");
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
 
         AddAnimTimeEventFunc(ActionEnd, "NearHowling");
@@ -78,6 +80,12 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         //AddAnimTimeEventFunc(SoundRushAttack, "Rush");
 
         //---------------------Sound End--------------------------
+    }
+
+
+    private void TakeOff(EvnData evnData)
+    {
+        MovementManager.Instance.SetMovement(MovementType.DirectNode);
     }
 
     private void ActionEnd(EvnData evnData)
@@ -144,7 +152,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         _manager.DragonGroundCollider.enabled = true;
         _manager.DragonRigidBody.freezeRotation = true;
-        EffectManager.Instance.PoolParticleEffectOn("Landing", _blackBoard.FiexdPosition, _manager.transform.forward);
+        EffectManager.Instance.PoolParticleEffectOn("Landing", _manager.transform.position, _manager.transform.forward);
     }
 
 

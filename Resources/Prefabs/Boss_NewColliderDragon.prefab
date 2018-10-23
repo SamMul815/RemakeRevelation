@@ -1471,6 +1471,7 @@ GameObject:
   - component: {fileID: 114923299835813586}
   - component: {fileID: 114474380703878838}
   - component: {fileID: 114553503530276006}
+  - component: {fileID: 114832100367931982}
   m_Layer: 0
   m_Name: Boss@Dragon_Skin_New
   m_TagString: Untagged
@@ -1731,6 +1732,7 @@ GameObject:
   - component: {fileID: 114848487453884614}
   - component: {fileID: 114419189472252056}
   - component: {fileID: 65102300371907758}
+  - component: {fileID: 114700633428186412}
   m_Layer: 9
   m_Name: Boss_NewColliderDragon
   m_TagString: Dragon
@@ -2129,14 +2131,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959864358240288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -222}
+  m_LocalPosition: {x: 0, y: 0, z: -124.3}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4080506931936396}
   - {fileID: 4013206112740852}
   - {fileID: 4720302134441364}
-  - {fileID: 4977408671104036}
   - {fileID: 4944668035514096}
+  - {fileID: 4977408671104036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3300,7 +3302,7 @@ Transform:
   - {fileID: 4699022260298350}
   - {fileID: 4135142554706738}
   m_Father: {fileID: 4163184861067072}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4945214053375118
 Transform:
@@ -3383,7 +3385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4163184861067072}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &54366473474462320
 Rigidbody:
@@ -3395,10 +3397,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65053918496093464
 BoxCollider:
@@ -3533,7 +3535,7 @@ MonoBehaviour:
   _rushSpeed: 100
   _landingSpeed: 100
   _maxHP: 100000
-  _hp: 49000
+  _hp: 1400
   _saveTakeDamage: 0
   _dashMoveDistance: 15
   _rushMoveLimitDistance: 10
@@ -3632,6 +3634,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3410fac73f973cd40aa141b9ca78c896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114700633428186412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959864358240288}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9430b184d55f1c34dbf88d95d97dd3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dirTransform: {fileID: 0}
+  _dirTransform2: {fileID: 0}
+  _hoveringTime: 4
+--- !u!114 &114832100367931982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1830361936374908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114848487453884614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3673,7 +3700,7 @@ MonoBehaviour:
   _triggerTag: 5
   _damage: 100
   _pushPower: 30
-  _pushDir: {x: 0, y: 0.4, z: 0}
+  _pushDir: {x: 0, y: 0.2, z: 0}
 --- !u!114 &114923299835813586
 MonoBehaviour:
   m_ObjectHideFlags: 1

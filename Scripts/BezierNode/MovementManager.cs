@@ -7,7 +7,9 @@ public enum MovementType
 {
     Meteo,
     MeteoHovering,
-    AirSpear
+    AirSpear,
+    DirectNode,
+    DirectNode2
 }
 
 public class MovementManager : Singleton<MovementManager>
