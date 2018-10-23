@@ -175,8 +175,8 @@ public class UI_MachineGun : MonoBehaviour {
             aim3.transform.localRotation = Quaternion.Euler(0,0,0);
             yield return new WaitForEndOfFrame();
         }
-        aim2.transform.localPosition = Vector3.Slerp(aim2Pos, pos2, 1.0f);
-        aim3.transform.localPosition = Vector3.Slerp(aim3Pos, pos3, 1.0f);
+        aim2.transform.localPosition = Vector3.Lerp(aim2Pos, pos2, 1.0f);
+        aim3.transform.localPosition = Vector3.Lerp(aim3Pos, pos3, 1.0f);
 
         if (stopShoot != null)
         {

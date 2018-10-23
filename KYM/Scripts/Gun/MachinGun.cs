@@ -246,7 +246,7 @@ public class MachinGun : MonoBehaviour {
         gunBarrelFront.transform.position = shootGunBarrelPos.transform.position;
         for (float fTime = 0.0f; fTime < startDelay; fTime += Time.unscaledDeltaTime)
         {
-            gunBarrelFront.transform.position = Vector3.Slerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
+            gunBarrelFront.transform.position = Vector3.Lerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
 
