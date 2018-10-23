@@ -29,7 +29,7 @@ public class Dragon_MeteoAttack_Action : ActionTask
 
             if(Vector3.Dot(DragonTransform.forward, forward) < 0.99f)
             {
-                DragonTransform.rotation = Quaternion.Slerp(
+                DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
                     Quaternion.LookRotation(forward),
                     CurTurnTime / MaxTurnTime);

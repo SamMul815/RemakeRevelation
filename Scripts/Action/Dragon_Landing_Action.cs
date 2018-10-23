@@ -57,7 +57,7 @@ public class Dragon_Landing_Action : ActionTask
                 PlayerTransform.position,
                 _movement.CurSpeed * Time.deltaTime);
 
-            DragonTransform.rotation = Quaternion.Slerp(
+            DragonTransform.rotation = Quaternion.Lerp(
                 DragonTransform.rotation,
                 Quaternion.LookRotation(forward),
                 CurTurnTime / MaxTurnTime);

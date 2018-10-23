@@ -57,7 +57,7 @@ public class Dragon_DashAttack_Action : ActionTask
                     //}
                 }
 
-                DragonTransform.rotation = Quaternion.Slerp(
+                DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
                     Quaternion.LookRotation(forward),
                     CurTurnTime / MaxTurnTime);
