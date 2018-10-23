@@ -36,6 +36,7 @@ public class Dragon_Landing_Action : ActionTask
         _manager.AttackOn(DragonAttackTriggers.AirSpear);
         landingDistance = _blackBoard.LandingDistance;
         _movement.CurSpeed += 20.0f;
+        _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     public override bool Run()
@@ -119,6 +120,9 @@ public class Dragon_Landing_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
+        _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
+        _manager.DragonRigidBody.freezeRotation = true;
+
         _blackBoard.IsFiexdPosition = false;
         _blackBoard.IsLanding = false;
         _blackBoard.IsGround = true;
