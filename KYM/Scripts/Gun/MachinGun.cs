@@ -166,7 +166,7 @@ public class MachinGun : MonoBehaviour {
             //}
 
             GameObject muzzleFlash;
-            PoolManager.Instance.PopObject(MuzzleFlash, shootPos.position + shootPos.forward*0.1f, out muzzleFlash);
+            PoolManager.Instance.PopObject(MuzzleFlash, shootPos.position + shootPos.forward*0.1f,shootPos.rotation, out muzzleFlash);
 
             BulletManager.Instance.CreatePlayerMachinBullet(shootPos.position, dir.normalized);
             currentGauge -= shootGauge;
