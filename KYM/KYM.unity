@@ -724,11 +724,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waitingCoolingTime: 0
-  _bulletBreathCoolingTime: 200
-  _howlingCoolingTime: 200
-  _dashCoolingTime: 5
-  _breathCoolingTime: 200
-  _pawCoolingTime: 100
+  _bulletBreathCoolingTime: 15
+  _howlingCoolingTime: 10
+  _dashCoolingTime: 10
+  _breathCoolingTime: 20
+  _pawCoolingTime: 0
   _breathWaitingTime: 0
   _timeInterval: 0
 --- !u!1 &237088089
@@ -2361,12 +2361,12 @@ Prefab:
     - target: {fileID: 114205376831627464, guid: 86f5fb21fb410c84380386057c25dd81,
         type: 2}
       propertyPath: _maxHP
-      value: 50000
+      value: 30000
       objectReference: {fileID: 0}
     - target: {fileID: 114205376831627464, guid: 86f5fb21fb410c84380386057c25dd81,
         type: 2}
       propertyPath: _hp
-      value: 50000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 114856765830058694, guid: 86f5fb21fb410c84380386057c25dd81,
         type: 2}
