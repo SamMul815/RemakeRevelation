@@ -50,7 +50,7 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
                     DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
 
-                DragonTransform.rotation = Quaternion.Slerp(
+                DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
                     Quaternion.LookRotation(forward),
                     CurTurnTime / MaxTurnTime);

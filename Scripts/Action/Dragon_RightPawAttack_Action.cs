@@ -49,6 +49,13 @@ public class Dragon_RightPawAttack_Action : ActionTask
                     //if (angle >= 30.0f && angle <= 120.0f)
                     DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
+
+                DragonTransform.rotation = Quaternion.Lerp(
+                    DragonTransform.rotation,
+                    Quaternion.LookRotation(forward),
+                    CurTurnTime / MaxTurnTime);
+
+                CurTurnTime += Time.deltaTime;
                 return false;
             }
 

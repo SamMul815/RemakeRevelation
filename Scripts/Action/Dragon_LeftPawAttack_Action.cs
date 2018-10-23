@@ -55,7 +55,7 @@ public class Dragon_LeftPawAttack_Action : ActionTask
                     DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
 
-                DragonTransform.rotation = Quaternion.Slerp(
+                DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
                     Quaternion.LookRotation(forward),
                     CurTurnTime / MaxTurnTime);
