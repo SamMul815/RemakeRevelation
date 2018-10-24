@@ -106,10 +106,10 @@ public class Dragon_Landing_Action : ActionTask
         if (!_manager.IsTurn)
         {
             DragonTransform.rotation =
-                Quaternion.RotateTowards(
+                Quaternion.Lerp(
                     DragonTransform.rotation,
                     Quaternion.LookRotation(forward),
-                    360.0f * Time.deltaTime);
+                    CurTurnTime / MaxTurnTime);
 
             CurTurnTime += Time.deltaTime;
         }
