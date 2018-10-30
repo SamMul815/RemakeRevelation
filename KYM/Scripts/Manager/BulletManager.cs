@@ -199,16 +199,20 @@ public class BulletManager : Singleton<BulletManager>
 
     IEnumerator CorDragonMeteoBullet(Transform _dragon, float _fireRadius, int _amount, float dealyTime)
     {
-        //Vector3 up = _dragon.up;
-        //Vector3 right = _dragon.right;
-        //Vector3 position = _dragon.position;
+        Vector3 up = _dragon.up;
+        Vector3 right = _dragon.right;
+        Vector3 forward = _dragon.forward;
+        Vector3 position = _dragon.position;
         for (int i = 0; i < _amount/4; i++)
         {
             for(int j = 0; j<4; j++)
             {
                 GameObject meteo;
-                PoolManager.Instance.PopObject(dragonMeteoPrefab, _dragon.position, out meteo);
-                //meteo.transform.position = _dragon.position;
+                Vector2 circle = Random.insideUnitCircle * 100.0f;
+
+                Vector3 meteoPos = _dragon.position - (forward * 50.0f) + up * circle.y + right * circle.x;
+
+                PoolManager.Instance.PopObject(dragonMeteoPrefab, meteoPos, out meteo);
 
                 Vector3 throwPos = meteoSkill.GetRndPos();
                 Vector3 dir = throwPos - meteo.transform.position;

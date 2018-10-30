@@ -35,12 +35,13 @@ public class BulletMeteoDragon : Bullet {
             PoolManager.Instance.PopObject(destroyParticle, out particle);
             particle.transform.position = hitInfo.point;
             particle.transform.rotation = Quaternion.Euler(0, 0, 0);
-            Debug.Log("메테오 폭발");
+            //Debug.Log("메테오 폭발");
         }
         else
         {
             Debug.LogWarning(this.gameObject.name + "Not Found Destroy Particle");
         }
+        hitEffect.SetActive(false);
         PoolManager.Instance.PushObject(this.gameObject);
         //base.DestroyHitBullet();
     }
@@ -56,6 +57,7 @@ public class BulletMeteoDragon : Bullet {
         RaycastHit raycastHit;
         if (Physics.Raycast(ray, out raycastHit, rayDistance, hitLayer))
         {
+            hitEffect.SetActive(true);
             hitEffect.transform.position = raycastHit.point;
             hitEffect.transform.rotation = Quaternion.Euler(0, 0, 0);
         }

@@ -2366,7 +2366,7 @@ Prefab:
     - target: {fileID: 114205376831627464, guid: 86f5fb21fb410c84380386057c25dd81,
         type: 2}
       propertyPath: _hp
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114856765830058694, guid: 86f5fb21fb410c84380386057c25dd81,
         type: 2}
@@ -3817,6 +3817,29 @@ Prefab:
       value: 
       objectReference: {fileID: 1875761245958314, guid: 9e5fb77f6c7f73a4bbcf30399ba335a4,
         type: 2}
+    - target: {fileID: 114190391098585296, guid: 808829fe8a77c4a49991789b0e8d2976,
+        type: 2}
+      propertyPath: width
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114190391098585296, guid: 808829fe8a77c4a49991789b0e8d2976,
+        type: 2}
+      propertyPath: height
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114190391098585296, guid: 808829fe8a77c4a49991789b0e8d2976,
+        type: 2}
+      propertyPath: playerDirFireCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574855354006930, guid: 808829fe8a77c4a49991789b0e8d2976, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -169
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574855354006930, guid: 808829fe8a77c4a49991789b0e8d2976, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -206
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 808829fe8a77c4a49991789b0e8d2976, type: 2}
   m_IsPrefabParent: 0
