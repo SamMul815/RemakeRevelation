@@ -37,7 +37,15 @@ public class MachinGun : MonoBehaviour {
 
     public GameObject MuzzleFlash;
 
-    
+
+    public bool canRot = false;
+
+
+    private PoolManager poolManager;
+    private BulletManager bulletManager;
+    private PlayerHead playerHead;
+    private FmodManager fmodManager;
+
     IEnumerator startShoot;
     IEnumerator stopShoot;
     IEnumerator endMachingun;
@@ -45,7 +53,11 @@ public class MachinGun : MonoBehaviour {
     void Start ()
     {
         currentGauge = maxGauge;
-	}
+        poolManager = PoolManager.Instance;
+        bulletManager = BulletManager.Instance;
+        playerHead = Player.instance.playerHead;
+        fmodManager = FmodManager.Instance;
+    }
 
     private void OnEnable()
     {
@@ -99,12 +111,14 @@ public class MachinGun : MonoBehaviour {
             {
                 startShoot = CorShoot(hand);
                 StartCoroutine(startShoot);
+                canRot = true;
             }
         }
         else if (hand.GetTriggerButtonUp() && currentGauge > 0)
         {
             if(startShoot != null)
             {
+                canRot = false;
                 StopCoroutine(startShoot);
                 startShoot = null;
 
@@ -136,6 +150,12 @@ public class MachinGun : MonoBehaviour {
             //Player.instance.leftHand.currentAttachedObject.SetActive(true);
             //this.gameObject.SetActive(false);
         }
+
+        //if(canRot)
+        //{
+        //    gunBarrelBack.transform.localRotation = gunBarrelBack.transform.localRotation * Quaternion.Euler(0, 0, -20);
+        //}
+
     }
 
     IEnumerator CorShoot(PlayerHand hand)
@@ -153,42 +173,32 @@ public class MachinGun : MonoBehaviour {
             Vector3 sphere = Random.insideUnitSphere * 0.1f;
             Vector3 dir =  Aim.position + sphere - headcol.position;
 
-            //Ray ray = new Ray(Aim.position, dir);
-            //RaycastHit rayHit;
-            //if (Physics.Raycast(ray,out rayHit, 1000.0f))
-            //{
-            //    dir =  rayHit.point - shootPos.position;
-            //    Debug.Log(rayHit.collider.name +  "rayray");
-            //}
-            //else
-            //{
-            //   // dir = Aim.position - shootPos.position;
-            //}
-
             GameObject muzzleFlash;
-            PoolManager.Instance.PopObject(MuzzleFlash, shootPos.position + shootPos.forward*0.1f,shootPos.rotation, out muzzleFlash);
-
-            BulletManager.Instance.CreatePlayerMachinBullet(shootPos.position, dir.normalized);
+            fmodManager.PlaySoundOneShot(shootPos.position, "MachineGun");
+            poolManager.PopObject(MuzzleFlash, shootPos.position + shootPos.forward*0.1f,shootPos.rotation, out muzzleFlash);
+            bulletManager.CreatePlayerMachinBullet(shootPos.position, dir.normalized);
             currentGauge -= shootGauge;
             hand.Vibration(0.2f, 6000.0f);
             hand.otherHand.Vibration(0.2f, 6000.0f);
-            Player.instance.playerHead.PlayerShake(0.1f, 0.05f);
+            playerHead.PlayerShake(0.1f, 0.05f);
 
             Quaternion rot = gunBarrelBack.transform.localRotation;
-            Quaternion nextRot = rot * Quaternion.Euler(0.0f, 0.0f, 180.0f);
+            Quaternion nextRot = rot * Quaternion.Euler(0.0f, 0.0f, 60.0f);
 
             for(float fTime = 0.0f; fTime <= currentShootDelay; fTime += Time.fixedUnscaledDeltaTime)
             {
                 gunBarrelBack.transform.localRotation = Quaternion.Lerp(rot, nextRot, fTime / currentShootDelay);
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForFixedUpdate();
             }
 
             if(currentShootDelay > shootDelay)
             {
                 currentShootDelay -= shootDelay * 0.5f;
             }
-      
-            
+            else
+            {
+                currentShootDelay = shootDelay;
+            }         
         }
     }
 

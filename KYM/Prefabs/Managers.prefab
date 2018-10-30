@@ -60,6 +60,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1685672761588624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4639327338950506}
+  - component: {fileID: 114983462703620280}
+  - component: {fileID: 114493780955149340}
+  m_Layer: 0
+  m_Name: FmodManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1723941361430222
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1895787810647142
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,11 +228,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447103096129256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -177, y: 0, z: -182.5}
+  m_LocalPosition: {x: -224.9, y: 0, z: -150.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4937106812172274}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4639327338950506
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685672761588624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4937106812172274}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4857654446613244
 Transform:
@@ -237,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1895787810647142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 273.1, y: 50, z: 194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4266998262101692}
@@ -247,6 +277,7 @@ Transform:
   - {fileID: 4178443242248778}
   - {fileID: 4458651815265940}
   - {fileID: 4540561572803718}
+  - {fileID: 4639327338950506}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -263,8 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   widthSize: 30
   heightSize: 30
-  width: 12
-  height: 12
+  width: 14
+  height: 10
   playerDirFireCount: 30
   count: 0
   MeteoPosList: []
@@ -326,16 +357,13 @@ MonoBehaviour:
   - poolObject: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
       type: 2}
     initialCount: 100
-  - poolObject: {fileID: 1121619590847894, guid: 83261521903a17a438f943f03a20b2ad,
-      type: 2}
-    initialCount: 100
   - poolObject: {fileID: 1069826527463908, guid: c1e0facab5877974a891a0c8ab35b3c9,
       type: 2}
     initialCount: 10
   - poolObject: {fileID: 1721591259711116, guid: 0e44587b69f31d6498f23914aa0f8eb4,
       type: 2}
     initialCount: 30
-  - poolObject: {fileID: 1874823788645224, guid: 9e5fb77f6c7f73a4bbcf30399ba335a4,
+  - poolObject: {fileID: 1187798113854730, guid: a9b0989f0e3239940a05739dd2a1577e,
       type: 2}
     initialCount: 30
 --- !u!114 &114450824410820312
@@ -375,6 +403,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSkill: {fileID: 0}
   rightSkill: {fileID: 0}
+--- !u!114 &114493780955149340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685672761588624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/BGM/BGM
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 0
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!114 &114526917983058814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -391,6 +441,9 @@ MonoBehaviour:
   - {fileID: 1201230306409686, guid: 6861b06094330934c89a36a9cfa0039a, type: 2}
   - {fileID: 1492819822406986, guid: 09c01b97ced6b3b48ad4a509053fce21, type: 2}
   - {fileID: 1872982495496528, guid: 5b388df4b6872f249a84030a494c9338, type: 2}
+  - {fileID: 1046576829924918, guid: 5647d370751c1ce48901e6ad6b404cad, type: 2}
+  - {fileID: 1321024856992718, guid: 4ad9328edd0ef8042830623e4bec7a6a, type: 2}
+  - {fileID: 1972986835753414, guid: a1ce17bf468589c4eb6add8352716a88, type: 2}
 --- !u!114 &114657818410702986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,7 +466,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856770748398870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64753167dfeea0a4d9efc74205efb7fc, type: 3}
   m_Name: 
@@ -479,3 +532,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
+--- !u!114 &114983462703620280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685672761588624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090dad3af8fbe1c4cb33000cedc0b014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioList:
+  - tag: BGM
+    path: event:/BGM/BGM
+  - tag: Flying
+    path: event:/Dragon/Flying/Flying
+  - tag: Hovering
+    path: event:/Dragon/Flying/Hovering
+  - tag: Meteor
+    path: event:/Dragon/Flying/Meteor
+  - tag: Breath
+    path: event:/Dragon/Ground/Breath
+  - tag: Dying
+    path: event:/Dragon/Ground/Dying
+  - tag: Howling
+    path: event:/Dragon/Ground/Howling
+  - tag: Painful
+    path: event:/Dragon/Ground/Painful
+  - tag: Paw
+    path: event:/Dragon/Ground/Paw
+  - tag: Rush
+    path: event:/Dragon/Ground/Rush
+  - tag: Turn
+    path: event:/Dragon/Ground/Turn
+  - tag: Walk
+    path: event:/Dragon/Ground/Walk
+  - tag: Ammo
+    path: event:/Player/Ammo
+  - tag: Gun
+    path: event:/Player/Gun
+  - tag: MachineGun
+    path: event:/Player/Machinegun
+  - tag: Reload
+    path: event:/Player/Reload

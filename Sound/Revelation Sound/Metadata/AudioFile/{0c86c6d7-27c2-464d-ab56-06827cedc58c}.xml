@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{0c86c6d7-27c2-464d-ab56-06827cedc58c}">
+        <property name="assetPath">
+            <value>Dragon_Howling.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>7.020104166666667</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{274e8c19-43a3-40de-8f05-28012b43a31d}</destination>
+        </relationship>
+    </object>
+</objects>
