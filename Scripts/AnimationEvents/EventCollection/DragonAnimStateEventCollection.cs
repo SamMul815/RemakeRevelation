@@ -13,6 +13,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "Breath");
 
         AddAnimTimeEventFunc(LandingOn, "Landing");
+        AddAnimTimeEventFunc(LandingAttackOff, "Landing");
         AddAnimTimeEventFunc(ActionEnd, "Landing");
 
 
@@ -85,7 +86,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void TakeOff(EvnData evnData)
     {
-        MovementManager.Instance.SetMovement(MovementType.DirectNode);
     }
 
     private void ActionEnd(EvnData evnData)
@@ -153,6 +153,11 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.DragonGroundCollider.enabled = true;
         _manager.DragonRigidBody.freezeRotation = true;
         EffectManager.Instance.PoolParticleEffectOn("Landing", _manager.transform.position, _manager.transform.forward);
+    }
+
+    private void LandingAttackOff(EvnData evnData)
+    {
+        _manager.AttackOff();
     }
 
 
