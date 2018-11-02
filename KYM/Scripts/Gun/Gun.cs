@@ -30,12 +30,6 @@ public class Gun : MonoBehaviour
     public GameObject cartridgePrefab;
     public GameObject muzzlePrefab;
 
-    //[SerializeField] private string fireSound;
-    //[SerializeField] Text gunBulletCountText;
-    //[SerializeField] Color noBulletUIColor;
-    //[SerializeField] Slider gunBulletCountSlider;
-
-    //Color yesBulletUIColor;
     private int currentBullet;
     public int CurrentBullet { get { return currentBullet; } }
     private float fireCoolTime;
@@ -45,24 +39,23 @@ public class Gun : MonoBehaviour
     private float currentSkillCoolTime;
     public bool GetCanSkill { get { return currentSkillCoolTime <= 0.0f; } }
 
+    public bool IsTutorial = false;
+
 
     private void Awake()
     {
-        currentBullet = maxBullet;
-        fireCoolTime = 0.0f;
-        //currentSkillCoolTime = skillCoolTime;
-        //handAnimator = GetComponentInChildren<Animator>();
-    }
+        if(!IsTutorial)
+        {
+            currentBullet = maxBullet;
+            fireCoolTime = 0.0f;
+        }
+        else
+        {
+            currentBullet = 0;
+        }
 
-    // Use this for initialization
-    void Start ()
-    {
-        //gunBulletCountSlider.value = currentBullet / maxBullet;
-        //gunBulletCountText.text = currentBullet.ToString();
-        //yesBulletUIColor = gunBulletCountText.color;
-        //gunAni = GetComponent<GunAnimation>();
-	}
-	
+    }
+    
 	// Update is called once per  frame
 	void Update ()
     {       
@@ -71,10 +64,9 @@ public class Gun : MonoBehaviour
 
         if (currentSkillCoolTime > 0.0f)
             currentSkillCoolTime -= Time.unscaledDeltaTime;
-
     }
 
-    public void Fire(PlayerHand hand)
+    private void Fire(PlayerHand hand)
     {
         if(firePos == null || fireCoolTime > 0.0f || currentBullet <= 0)
         {
@@ -82,58 +74,18 @@ public class Gun : MonoBehaviour
                 Debug.LogWarning("Not FirePos");
             return;
         }
-
-        //FMODSoundManager.Instance.PlayFireSound(firePos.transform.position);
         BulletManager.Instance.CreatePlayerBaseBullet(firePos);
         fireCoolTime = fireDelay;
         currentBullet -= 1;
 
-        //GameObject cartridge;
-        //PoolManager.Instance.PopObject(cartridgePrefab, out cartridge);
-
-        //if(gunType == GunType.Left)
-        //{
-        //    cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, -40.0f, 0);
-        //}
-        //else if(gunType == GunType.Right)
-        //{
-        //    cartridge.transform.rotation = magazine.transform.rotation * Quaternion.Euler(0, 40.0f, 0);
-        //}
-
-        //cartridge.transform.position = magazine.transform.position;
-
         GameObject muzzle;
         PoolManager.Instance.PopObject(muzzlePrefab,firePos.position,firePos.rotation,out muzzle);
-        //muzzle.transform.position = firePos.position;
-        //muzzle.transform.rotation = Quaternion.LookRotation(firePos.forward, Vector3.up);
         hand.Vibration(0.15f, 4000);
-
-        //gunBulletCountSlider.value = (float)currentBullet / maxBullet;
-        //gunBulletCountText.text = currentBullet.ToString();
-        //if(currentBullet <= 0)
-        //{
-        //    gunBulletCountText.color = noBulletUIColor;
-        //}
-        //if (gunAni != null)
-        //{
-        //    gunAni.MagazieTurn(0.1f, maxBullet);
-        //    gunAni.ShakeGun(fireDelay * 0.9f, 10.0f, 0.05f);
-        //    gunAni.FireParticle(firePos.position + firePos.forward * 0.1f);
-
-        //    if (isRight)
-        //        gunAni.Cartridge(transform.rotation * Quaternion.Euler(0, 40, 0));
-        //    else
-        //        gunAni.Cartridge(transform.rotation * Quaternion.Euler(0, -40, 0));
-        //}
-
     }
 
     public void Reload()
     {
         currentBullet = maxBullet;
-        //gunBulletCountText.text = currentBullet.ToString();
-        //gunBulletCountSlider.value = (float)currentBullet / maxBullet;
-        //gunBulletCountText.color = yesBulletUIColor;
     }
 
     private void OnAttachedToHand(PlayerHand hand)
@@ -198,4 +150,18 @@ public class Gun : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
+
+    public void SetCurrentBullet(int bulletCount)
+    {
+        if(bulletCount >= maxBullet)
+        {
+            currentBullet = maxBullet;
+        }
+        else
+        {
+            currentBullet = bulletCount;
+        } 
+    }
+
+
 }

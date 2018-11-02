@@ -4,30 +4,21 @@ using UnityEngine;
 
 public class TutorialTrigger : MonoBehaviour {
 
+    public bool isClear = false;
+
     //public Event unityEvent;
-    public TutorialEvent.TutorialState changeState;
+    //public TutorialEvent.TutorialState changeState;
 
-
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            TutorialEvent.Instance.EventChange(changeState);
-            this.gameObject.SetActive(false);
-            
+            isClear = true;
         }
     }
+
+    public bool IsClear() { return isClear; }
+
 
 }
