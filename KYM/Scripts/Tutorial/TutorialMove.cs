@@ -7,7 +7,8 @@ public class TutorialMove : TutorialBase
     public GameObject tutorialMoveObjects;
     public TutorialTrigger moveTrigger;
     public GameObject TeleportPointer;
-
+    public GameObject MovePoint;
+    public TutorialDoor door;
     private bool isTeleport;
 
     private void OnEnable()
@@ -15,6 +16,7 @@ public class TutorialMove : TutorialBase
         isTeleport = false;
         tutorialMoveObjects.SetActive(true);
         TeleportPointer.SetActive(false);
+        MovePoint.SetActive(false);
         StartCoroutine(corMove());
     }
 
@@ -59,6 +61,8 @@ public class TutorialMove : TutorialBase
         }
 
         TeleportPointer.SetActive(true);
+        MovePoint.SetActive(true);
+        door.Open();
         TutorialEvent.Instance.LeftHand.HighlightOnButton("trackpad");
         TutorialEvent.Instance.RightHand.HighlightOnButton("trackpad");
         isTeleport = false;

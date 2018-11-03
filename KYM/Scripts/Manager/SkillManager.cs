@@ -16,5 +16,4 @@ public class SkillManager : Singleton<SkillManager> {
     {
         rightSkill.SetActive(true);
     }
-
 }

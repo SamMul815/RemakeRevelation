@@ -42,6 +42,12 @@ public class BulletBase : Bullet
             UIManager.Instance.CreatePopupTextRed(damage.ToString(), hitInfo.point);
             _col.gameObject.GetComponent<WeakPoint>().Hit(damage);
         }
+        else if(_col.CompareTag("TutorialTarget"))
+        {
+            _col.gameObject.GetComponent<TutorialTarget>().Hit(damage);
+            UIManager.Instance.CreatePopupText(damage.ToString(), hitInfo.point);
+        }
+
         DestroyHitBullet();
 
         //for(int i = 0; i<hitInfo.Length; i++)

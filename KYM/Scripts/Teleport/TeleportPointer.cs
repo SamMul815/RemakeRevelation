@@ -166,7 +166,8 @@ public class TeleportPointer : MonoBehaviour
         if (selectionPadObject != null)
         {
             selectionPadObject.SetActive(CanTeleport);
-            selectionPadObject.transform.position = SelectedPoint + Vector3.one * 0.005f + Vector3.up * 0.05f;
+            //selectionPadObject.transform.position = SelectedPoint + Vector3.one * 0.005f + Vector3.up * 0.05f;
+            selectionPadObject.transform.position = SelectedPoint + Vector3.one * 0.005f + normal * 0.05f;
             if (CanTeleport)
             {
                 selectionPadObject.transform.rotation = Quaternion.LookRotation(normal);
@@ -176,7 +177,7 @@ public class TeleportPointer : MonoBehaviour
         if (invalidPadObject != null)
         {
             invalidPadObject.SetActive(!CanTeleport);
-            invalidPadObject.transform.position = SelectedPoint + Vector3.one * 0.005f + Vector3.up * 0.05f;
+            invalidPadObject.transform.position = SelectedPoint + Vector3.one * 0.005f + normal * 0.05f;
             if (!CanTeleport)
             {
                 invalidPadObject.transform.rotation = Quaternion.LookRotation(normal);

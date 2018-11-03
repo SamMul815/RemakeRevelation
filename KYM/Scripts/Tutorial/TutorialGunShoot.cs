@@ -6,6 +6,10 @@ public class TutorialGunShoot : TutorialBase {
 
     public GameObject tutorialGunShootObjects;
 
+    public TutorialTarget target1;
+    public TutorialTarget target2;
+    public TutorialTarget target3;
+
     private void OnEnable()
     {
         tutorialGunShootObjects.SetActive(true);
@@ -14,7 +18,17 @@ public class TutorialGunShoot : TutorialBase {
 
     private void OnDisable()
     {
+        TutorialEvent.Instance.OffNPC();
         tutorialGunShootObjects.SetActive(false);
+    }
+
+    protected override bool IsClear()
+    {
+        if(target1.IsDie() && target2.IsDie() && target3.IsDie())
+        {
+            return true;
+        }
+        return false;
     }
 
     IEnumerator corGunShoot()

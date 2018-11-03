@@ -41,17 +41,19 @@ public class Gun : MonoBehaviour
 
     public bool IsTutorial = false;
 
-
     private void Awake()
     {
         if(!IsTutorial)
         {
             currentBullet = maxBullet;
             fireCoolTime = 0.0f;
+            currentSkillCoolTime = 0.0f;
         }
         else
         {
             currentBullet = 0;
+            fireCoolTime = 0.0f;
+            currentSkillCoolTime = 9999.0f;
         }
 
     }
@@ -99,7 +101,6 @@ public class Gun : MonoBehaviour
             UILeft.SetActive(false);
             UIRight.SetActive(true);
             handAnimator = handRight.GetComponent<Animator>();
-            currentSkillCoolTime = 0.0f;
         }
         else if(hand.GetHandType() == PlayerHand.HandType.Left)
         {
@@ -109,7 +110,6 @@ public class Gun : MonoBehaviour
             UILeft.SetActive(true);
             UIRight.SetActive(false);
             handAnimator = handLeft.GetComponent<Animator>();
-            currentSkillCoolTime = 0.0f;
         }
         StartCoroutine(CorTriggerAxisAnim());
     }
@@ -163,5 +163,5 @@ public class Gun : MonoBehaviour
         } 
     }
 
-
+    public void SetSkillCoolTime(float skillTime) { currentSkillCoolTime = skillTime; }
 }

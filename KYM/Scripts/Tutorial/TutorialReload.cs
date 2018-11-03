@@ -26,6 +26,13 @@ public class TutorialReload : TutorialBase
         rightGun = Instantiate(tutorialGunPrefab);
         Player.instance.leftHand.AttachObject(leftGun, attachmentFlags);
         Player.instance.rightHand.AttachObject(rightGun, attachmentFlags);
+
+        TutorialEvent.Instance.LeftGun = leftGun.GetComponent<Gun>();
+        TutorialEvent.Instance.RightGun = rightGun.GetComponent<Gun>();
+
+        TutorialEvent.Instance.LeftHand.gameObject.SetActive(false);
+        TutorialEvent.Instance.RightHand.gameObject.SetActive(false);
+
         StartCoroutine(corReload());
     }
 

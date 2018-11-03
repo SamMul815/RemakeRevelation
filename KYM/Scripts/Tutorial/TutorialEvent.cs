@@ -23,7 +23,6 @@ public class TutorialEvent : Singleton<TutorialEvent>
             leftHand = value;
         }
     }
-
     public TutorialHand RightHand
     {
         get
@@ -40,6 +39,33 @@ public class TutorialEvent : Singleton<TutorialEvent>
         }
     }
 
+    private Gun leftGun;
+    private Gun rightGun;
+
+    public Gun LeftGun
+    {
+        get
+        {
+            return leftGun;
+        }
+        set
+        {
+            leftGun = value;
+        }
+    }
+    public Gun RightGun
+    {
+        get
+        {
+            return rightGun;
+        }
+        set
+        {
+            rightGun = value;
+        }
+    }
+
+   
     public Material[] npcMaterials;
     public float minValue;
     public float maxValue;
