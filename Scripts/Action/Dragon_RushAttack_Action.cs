@@ -5,10 +5,13 @@ using DragonController;
 
 public class Dragon_RushAttack_Action : ActionTask
 {
-    private float _moveDistance = 0.0f;
-    private float _rushSpeed;
-    Vector3 forward;
+    float _moveDistance = 0.0f;
+    float _rushSpeed;
     float dot;
+
+    Vector3 DragonPos;
+    Vector3 PlayerPos;
+    Vector3 forward;
 
 
     public override void Init()
@@ -37,8 +40,8 @@ public class Dragon_RushAttack_Action : ActionTask
     {
         if (!_manager.IsTurn)
         {
-            Vector3 DragonPos = DragonTransform.position;
-            Vector3 PlayerPos = PlayerTransform.position;
+            DragonPos = DragonTransform.position;
+            PlayerPos = PlayerTransform.position;
 
             DragonPos.y = 0.0f;
             PlayerPos.y = 0.0f;
@@ -69,12 +72,12 @@ public class Dragon_RushAttack_Action : ActionTask
 
                 DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
-                    Quaternion.LookRotation(forward),
+                    Quaternion.LookRotation(forward, Vector3.up),
                     CurTurnTime / MaxTurnTime);
                 CurTurnTime += Time.deltaTime;
                 return false;
             }
-            _manager.Stat.DashMovePosition = PlayerTransform.position;
+            _manager.Stat.DashMovePosition = PlayerPos;
             DragonAniManager.SwicthAnimation("Dragon_Rush");
             EffectManager.Instance.PoolParticleEffectOn("Rush", DragonTransform);
 
@@ -106,8 +109,6 @@ public class Dragon_RushAttack_Action : ActionTask
     public override void OnEnd()
     {
         base.OnEnd();
-        _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
-        _manager.DragonRigidBody.freezeRotation = true;
     }
 
 }

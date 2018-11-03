@@ -128,7 +128,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void RushAttackOn(EvnData evnData)
     {
         _blackBoard.IsRushAttackOn = true;
-        _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezeRotation;
         _manager.AttackOn(DragonAttackTriggers.Rush);
     }
 
@@ -151,7 +150,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void LandingOn(EvnData evnData)
     {
         _manager.DragonGroundCollider.enabled = true;
-        _manager.DragonRigidBody.freezeRotation = true;
         EffectManager.Instance.PoolParticleEffectOn("Landing", _manager.transform.position, _manager.transform.forward);
     }
 
@@ -265,7 +263,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void SoundDashAttack3(EvnData evnData)
     {
         SoundManagerNormal.Instance.PlayAudio("da3", DragonManager.Instance.transform.position,0.0f, AudioDType._3D);
-
     }
 
     //Rush

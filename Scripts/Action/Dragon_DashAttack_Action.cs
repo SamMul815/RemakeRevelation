@@ -59,7 +59,7 @@ public class Dragon_DashAttack_Action : ActionTask
 
                 DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
-                    Quaternion.LookRotation(forward),
+                    Quaternion.LookRotation(forward, Vector3.up),
                     CurTurnTime / MaxTurnTime);
 
                 CurTurnTime += Time.deltaTime;
@@ -75,6 +75,7 @@ public class Dragon_DashAttack_Action : ActionTask
         {
             float Distance = _manager.Stat.DashMoveDistance;
             float DashSpeed = Distance; // *(dashTime - Time.deltaTime);
+            forward.y = 0.0f;
             DragonTransform.position += (DragonTransform.forward) * DashSpeed * Time.deltaTime;
         }
         

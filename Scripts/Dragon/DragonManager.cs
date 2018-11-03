@@ -153,7 +153,6 @@ namespace DragonController
         {
             if (!_dragonBehaviroTree.Root.Run())
             {
-
             }
             else
             {
@@ -163,25 +162,11 @@ namespace DragonController
             }
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmos ()
         {
-            float MaxDistance = 2.0f;
+            Gizmos.color = Color.black;
+            Gizmos.DrawWireSphere(this.transform.position, 150.0f);
 
-            RaycastHit hit;
-            bool isHit = Physics.SphereCast(
-                _rayTransfrom.position, transform.lossyScale.x / 2,
-                -_rayTransfrom.forward, out hit, MaxDistance, _dragonAvoidLayers);
-
-            Gizmos.color = Color.blue;
-            if (isHit)
-            {
-                Gizmos.DrawRay(_rayTransfrom.position, -_rayTransfrom.forward * hit.distance);
-                Gizmos.DrawWireSphere(_rayTransfrom.position + (-_rayTransfrom.forward) * hit.distance, transform.lossyScale.x / 2);
-            }
-            else
-            {
-                Gizmos.DrawRay(_rayTransfrom.position, -_rayTransfrom.forward * MaxDistance);
-            }
         }
 
     }

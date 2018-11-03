@@ -150,10 +150,20 @@ public class BlackBoard : Singleton<BlackBoard>
 
     }
 
-    public bool RayHit(Transform trans, Vector3 dir, float distance, int layer)
+    public bool LandingRayHit(Transform trans, Vector3 dir, float distance, int layerMask)
     {
         RaycastHit hit;
-        return Physics.SphereCast(trans.position, trans.lossyScale.x / 2, dir, out hit, distance, layer);
+        return Physics.SphereCast(trans.position, trans.lossyScale.x, dir, out hit, distance, layerMask);
+    }
+
+    public bool IsAirSpearAttack(Transform trans, Vector3 dir, float distance, int layerMask)
+    {
+        Collider [] cols = Physics.OverlapSphere(trans.position, distance, layerMask);
+
+        for (int i = 0; i < cols.Length; i++)
+            if(LayerMask.LayerToName(cols[i].gameObject.layer) == "Wall") return true;
+
+        return false;
     }
 
 

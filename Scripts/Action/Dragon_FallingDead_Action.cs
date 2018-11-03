@@ -34,7 +34,6 @@ public class Dragon_FallingDead_Action : ActionTask
         _blackBoard.IsFlying = false;
         isFallingDead = false;
         DragonAniManager.SwicthAnimation("Dragon_Falling");
-        _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezeRotation;
         _manager.DragonRigidBody.useGravity = true;
         _manager.DragonGroundCollider.enabled = true;
         _manager.AttackOff();
@@ -46,7 +45,7 @@ public class Dragon_FallingDead_Action : ActionTask
         if (!isFallingDead)
         {
             isFallingDead = 
-                _blackBoard.RayHit(rayTransform, -rayTransform.up, fallingDistance, _manager.DragonAvoidLayers);
+                _blackBoard.LandingRayHit(rayTransform, -rayTransform.up, fallingDistance, _manager.DragonAvoidLayers);
             _movement.CurSpeed = _blackBoard.Acceleration(_movement.CurSpeed, maxSpeed, accSpeed);
             DragonTransform.position += (-DragonTransform.up) * _movement.CurSpeed * Time.deltaTime;
             DragonTransform.rotation = Quaternion.identity;
