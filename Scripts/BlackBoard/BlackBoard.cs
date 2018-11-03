@@ -158,12 +158,20 @@ public class BlackBoard : Singleton<BlackBoard>
 
     public bool IsAirSpearAttack(Transform trans, Vector3 dir, float distance, int layerMask)
     {
-        Collider [] cols = Physics.OverlapSphere(trans.position, distance, layerMask);
+        layerMask = 1 << LayerMask.NameToLayer("Wall"); //8192 2의 13
 
-        for (int i = 0; i < cols.Length; i++)
-            if(LayerMask.LayerToName(cols[i].gameObject.layer) == "Wall") return true;
+        RaycastHit hit;
+        bool isRayHit = Physics.Raycast(
+            trans.position, dir, out hit,distance, layerMask);
 
-        return false;
+        Collider [] colls = Physics.OverlapSphere(trans.position, distance, layerMask);
+
+        if (colls.Length <= 0)
+            return false;
+        else if(colls.Length > 0)
+            return true;
+
+        return !isRayHit;
     }
 
 

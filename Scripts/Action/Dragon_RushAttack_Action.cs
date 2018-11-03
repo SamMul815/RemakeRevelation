@@ -60,13 +60,13 @@ public class Dragon_RushAttack_Action : ActionTask
                 if (Result < 0.0f)
                 {
                     float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-                    //if (angle >= 30.0f && angle <= 120.0f)
+                    if (angle >= 15.0f /*&& angle <= 120.0f*/)
                         DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
                 }
                 else
                 {
                     float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-                    //if (angle >= 30.0f && angle <= 120.0f)
+                    if (angle >= 15.0f /*&& angle <= 120.0f*/)
                         DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
 

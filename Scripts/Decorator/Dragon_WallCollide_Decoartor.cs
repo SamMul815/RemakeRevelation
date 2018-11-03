@@ -28,7 +28,7 @@ public class Dragon_WallCollide_Decoartor : DecoratorTask
         isWallCollision = _blackBoard.IsAirSpearAttack(rayTransform, 
             -rayTransform.forward, limitDistance, wallLayer);
 
-        if ((!isWallCollision && !_manager.IsAction) || _manager.IsAction)
+        if ((isWallCollision && !_manager.IsAction) || _manager.IsAction)
         {
             if (_childAction)
             {

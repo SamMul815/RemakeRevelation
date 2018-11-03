@@ -40,14 +40,14 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
                 if (Result < 0.0f)
                 {
                     float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-                    //if (angle >= 30.0f && angle <= 120.0f)
-                    DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
+                    if (angle >= 15.0f/*&& angle <= 120.0f*/)
+                        DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
                 }
                 else
                 {
                     float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-                    //if (angle >= 30.0f && angle <= 120.0f)
-                    DragonAniManager.SwicthAnimation("Dragon_RightTrun");
+                    if (angle >= 15.0f/*&& angle <= 120.0f*/)
+                        DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
 
                 DragonTransform.rotation = Quaternion.Lerp(

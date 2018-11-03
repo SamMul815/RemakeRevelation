@@ -5,7 +5,6 @@ using DragonController;
 
 public class Dragon_TailAttack_Action : ActionTask
 {
-    Vector3 forward;
     float maxTurn;
     float Angle;
     float SumAngle;
@@ -23,7 +22,6 @@ public class Dragon_TailAttack_Action : ActionTask
         base.OnStart();
         DragonAniManager.SwicthAnimation("Dragon_Tail");
         _clock.CurPawCoolingTime = 0.0f;
-        forward = (PlayerTransform.position - DragonTransform.position).normalized;
         Angle = 0.0f;
         SumAngle = 0.0f;
     }

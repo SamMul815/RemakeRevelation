@@ -70,10 +70,7 @@ namespace DragonController
 
         private bool _landingOn;
         public bool LandingOn { set { _landingOn = value; } get { return _landingOn; } }
-
-        private bool _test;
-        public bool Test { get { return _test; } }
-
+        
         static bool _isInit;
 
         private void Awake()
@@ -153,6 +150,8 @@ namespace DragonController
         {
             if (!_dragonBehaviroTree.Root.Run())
             {
+                BlackBoard.Instance.IsAirSpearAttack
+                    (_rayTransfrom, -_rayTransfrom.forward, 150.0f, _dragonAvoidLayers);
             }
             else
             {
