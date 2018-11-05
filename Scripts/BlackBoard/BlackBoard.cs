@@ -156,22 +156,96 @@ public class BlackBoard : Singleton<BlackBoard>
         return Physics.SphereCast(trans.position, trans.lossyScale.x, dir, out hit, distance, layerMask);
     }
 
-    public bool IsAirSpearAttack(Transform trans, Vector3 dir, float distance, int layerMask)
+    public bool IsAirSpearAttack(Transform trans, float distance, int layerMask)
     {
         layerMask = 1 << LayerMask.NameToLayer("Wall"); //8192 2의 13
 
+
         RaycastHit hit;
-        bool isRayHit = Physics.Raycast(
-            trans.position, dir, out hit,distance, layerMask);
 
         Collider [] colls = Physics.OverlapSphere(trans.position, distance, layerMask);
-
         if (colls.Length <= 0)
-            return false;
-        else if(colls.Length > 0)
+        {
             return true;
+        }
+        else
+        {
+            Vector3 rayForward = trans.forward;
+            rayForward.y = 0.0f;
+            bool isForwardWall = Physics.Raycast(trans.position, rayForward, out hit, distance, layerMask);
+            bool isBackWall = Physics.Raycast(trans.position, -rayForward, out hit, distance, layerMask);
 
-        return !isRayHit;
+            if (isForwardWall || isBackWall)
+            {
+                return false;
+            }
+            else
+            {
+                Vector3 rayRight = trans.right;
+                rayRight.y = 0.0f;
+                bool isRightWall = Physics.Raycast(trans.position, rayRight, out hit, distance, layerMask);
+                bool isLeftWall = Physics.Raycast(trans.position, -rayRight, out hit, distance, layerMask);
+                if (isRightWall || isLeftWall)
+                {
+                    return false;
+                }
+                else
+                    return true;
+            }
+        }
+
+        //isRayHit = Physics.Raycast(trans.position, trans.forward, out hit, distance, layerMask);
+
+        //if (isRayHit)//맞지 않았을 때
+        //{
+        //    Collider [] colls = Physics.OverlapSphere(trans.position, distance, layerMask);
+
+        //    if (colls.Length <= 0)
+        //        return true;
+        //    else
+        //    {
+        //        bool isBackWall = Physics.Raycast(trans.position, -trans.forward, out hit, distance, layerMask);
+
+        //        if (isBackWall)
+        //        {
+        //            bool isForwardWall = Physics.Raycast(trans.position, trans.forward, out hit, distance, layerMask);
+
+        //            if (isForwardWall)
+        //            {
+        //                return true;
+        //            }
+        //        }
+        //        return false;
+        //    }
+        //}
+        //else
+        //{
+        //    isRayHit = Physics.Raycast(trans.position, -trans.forward, out hit, distance, layerMask);
+
+        //    if (isRayHit)//맞지 않았을 때
+        //    {
+        //        Collider [] colls = Physics.OverlapSphere(trans.position, distance, layerMask);
+        //        if (colls.Length <= 0)
+        //            return true;
+        //        else
+        //        {
+        //            bool isBackWall = Physics.Raycast(trans.position, -trans.forward, out hit, distance, layerMask);
+
+        //            if (isBackWall)
+        //            {
+        //                bool isForwardWall = Physics.Raycast(trans.position, trans.forward, out hit, distance, layerMask);
+
+        //                if (isForwardWall)
+        //                {
+        //                    return true;
+        //                }
+        //            }
+        //            return false;
+        //        }
+        //    }
+        //    return false;
+        //}
+
     }
 
 

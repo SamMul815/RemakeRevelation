@@ -151,7 +151,7 @@ namespace DragonController
             if (!_dragonBehaviroTree.Root.Run())
             {
                 BlackBoard.Instance.IsAirSpearAttack
-                    (_rayTransfrom, -_rayTransfrom.forward, 150.0f, _dragonAvoidLayers);
+                    (_rayTransfrom, 150.0f, _dragonAvoidLayers);
             }
             else
             {
@@ -165,6 +165,11 @@ namespace DragonController
         {
             Gizmos.color = Color.black;
             Gizmos.DrawWireSphere(this.transform.position, 150.0f);
+
+            Gizmos.color = Color.blue;
+            Vector3 rayForward = _rayTransfrom.forward;
+            rayForward.y = 0.0f;
+            Gizmos.DrawRay(_rayTransfrom.position, rayForward * 150.0f);
 
         }
 
