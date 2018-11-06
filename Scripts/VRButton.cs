@@ -30,11 +30,11 @@ public class VRButton : MonoBehaviour
 	// Update is called once per frame
 	protected virtual void Update ()
     {
-
+        OnButtonClick(_hand, _distance);
     }
 
 
-    protected virtual void OnButtonClick (PlayerHand hand, float distance)
+    private void OnButtonClick (PlayerHand hand, float distance)
     {
         LayerMask uiLayer = 1 << LayerMask.NameToLayer("UI");
         bool isButtonPointer = Physics.Raycast(hand.transform.position, hand.transform.forward, distance, uiLayer);

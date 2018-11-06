@@ -15,18 +15,6 @@ public class VRGameStartButton : VRButton
     protected override void Update ()
     {
         base.Update();
-        OnButtonClick(_hand, _distance);
-
-        if (_isOver)
-        {
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                if (ButtonEvent != null)
-                {
-                    ButtonEvent();
-                }
-            }
-        }
 	}
 
     private void GameStartScene()
@@ -35,11 +23,4 @@ public class VRGameStartButton : VRButton
         Debug.Log("GaemStart");
 
     }
-
-    protected override void OnButtonClick (PlayerHand hand, float distance)
-    {
-        base.OnButtonClick(hand, distance);
-    }
-
-
 }
