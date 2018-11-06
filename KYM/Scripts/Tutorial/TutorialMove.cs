@@ -69,8 +69,8 @@ public class TutorialMove : TutorialBase
 
         while (true)
         {
-            Player.instance.leftHand.Vibration(0.1f, 2000);
-            Player.instance.rightHand.Vibration(0.1f, 2000);
+            Player.instance.leftHand.Vibration(0.1f, 4000);
+            Player.instance.rightHand.Vibration(0.1f, 4000);
 
             if(isTeleport)
             {

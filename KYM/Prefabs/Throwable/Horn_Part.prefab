@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114685210687897686}
   - component: {fileID: 54269808894983246}
   - component: {fileID: 65939843495740432}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Horn_Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,13 +40,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1443985654776070}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.3432584, y: 0.5946888, z: 22.10691}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.50000006, y: -0.5, z: 0.50000006, w: 0.5}
+  m_LocalPosition: {x: 6.570424, y: 0.5474325, z: -1.629}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 90.00001}
 --- !u!23 &23061673049160682
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -87,7 +87,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1443985654776070}
-  m_Mesh: {fileID: 4300000, guid: 41a62849ad75333468d48830500df3ea, type: 3}
+  m_Mesh: {fileID: 4300000, guid: baad6002a11bf724791d48f810d51da7, type: 3}
 --- !u!54 &54269808894983246
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -98,7 +98,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -113,8 +113,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.34212014, y: 1.0261701, z: 0.39530942}
-  m_Center: {x: 0.0021451265, y: -0.0041756043, z: 0.001998507}
+  m_Size: {x: 0.8239988, y: 0.9344219, z: 1.6430885}
+  m_Center: {x: 0.012675541, y: -0.045874264, z: -0.25689563}
 --- !u!114 &114177739541587718
 MonoBehaviour:
   m_ObjectHideFlags: 1

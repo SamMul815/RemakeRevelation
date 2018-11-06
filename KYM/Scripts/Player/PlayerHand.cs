@@ -584,7 +584,7 @@ public class PlayerHand : MonoBehaviour
             controllerObject = GameObject.Instantiate(controllerPrefab);
             controllerObject.SetActive(true);
             controllerObject.name = controllerPrefab.name + "_" + this.name;
-            controllerObject.layer = gameObject.layer;
+            //controllerObject.layer = gameObject.layer;
             controllerObject.tag = gameObject.tag;
             //AttachObject()
             controller.TriggerHapticPulse(800);

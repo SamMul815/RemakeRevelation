@@ -37,9 +37,13 @@ public class MachinGun : MonoBehaviour {
 
     public GameObject MuzzleFlash;
 
-
     public bool canRot = false;
 
+    public float onTime = 0.5f;
+    public Material[] machinegunOnMaterials;
+    public GameObject MachineGunBody;
+    public GameObject MachineGunUIObject;
+    public GameObject MachineGunOnObject;
 
     private PoolManager poolManager;
     private BulletManager bulletManager;
@@ -49,7 +53,8 @@ public class MachinGun : MonoBehaviour {
     IEnumerator startShoot;
     IEnumerator stopShoot;
     IEnumerator endMachingun;
-    // Use this for initialization
+
+
     void Start ()
     {
         currentGauge = maxGauge;
@@ -62,30 +67,13 @@ public class MachinGun : MonoBehaviour {
     private void OnEnable()
     {
         currentGauge = maxGauge;
-        parentObject = Player.instance.rightHand.currentAttachedObject;
-        Player.instance.rightHand.currentAttachedObject.SetActive(false);
-        Player.instance.leftHand.currentAttachedObject.SetActive(false);
-        Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
+        
+        for(int i = 0; i< machinegunOnMaterials.Length; i++)
+        {
+            machinegunOnMaterials[i].SetFloat("_warf", -10.0f);
+        }
+        StartCoroutine(CorMachineGunOn());
     }
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    //if (Player.instance.rightHand.GetGripButtonDown())
-    //    //{
-    //    //    parentObject = Player.instance.rightHand.currentAttachedObject;
-    //    //    Player.instance.rightHand.currentAttachedObject.SetActive(false);
-    //    //    Player.instance.leftHand.currentAttachedObject.SetActive(false);
-    //    //    Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
-    //    //}
-
-    //    //if (Player.instance.leftHand.GetGripButtonDown())
-    //    //{
-    //    //    Player.instance.rightHand.DetachObject(gameObject, false);
-    //    //    Player.instance.rightHand.currentAttachedObject.SetActive(true);
-    //    //    Player.instance.leftHand.currentAttachedObject.SetActive(true);
-    //    //}
-    //}
 
     private void OnAttachedToHand(PlayerHand hand)
     {
@@ -94,12 +82,7 @@ public class MachinGun : MonoBehaviour {
 
     private void HandAttachedUpdate(PlayerHand hand)
     {
-        //Vector3 posDir = hand.transform.position - hand.otherHand.transform.position;
-        //this.transform.position = hand.transform.position + posDir * 0.5f;
         this.transform.position = hand.transform.position;
-        //Vector3 upDir = Quaternion.Euler(-15.0f, 0.0f, 0.0f) * hand.transform.up;
-        //this.transform.rotation =
-        //    Quaternion.LookRotation(this.transform.position - Player.instance.headCollider.transform.position, Vector3.up);
         this.transform.rotation =
             Quaternion.LookRotation(hand.otherHand.transform.position - hand.transform.position, Vector3.up);
 
@@ -140,22 +123,7 @@ public class MachinGun : MonoBehaviour {
                 endMachingun = CorEndMachinGun();
                 StartCoroutine(endMachingun);
             }
-            //StopCoroutine(startShoot);
-            //startShoot = null;
-            //stopShoot = null;
-            //stopShoot = CorStopShoot();
-            //StartCoroutine(stopShoot);
-            //Player.instance.rightHand.DetachObject(gameObject, false);
-            //Player.instance.rightHand.currentAttachedObject.SetActive(true);
-            //Player.instance.leftHand.currentAttachedObject.SetActive(true);
-            //this.gameObject.SetActive(false);
         }
-
-        //if(canRot)
-        //{
-        //    gunBarrelBack.transform.localRotation = gunBarrelBack.transform.localRotation * Quaternion.Euler(0, 0, -20);
-        //}
-
     }
 
     IEnumerator CorShoot(PlayerHand hand)
@@ -271,4 +239,51 @@ public class MachinGun : MonoBehaviour {
         this.gameObject.SetActive(false);
 
     }
+
+    IEnumerator CorMachineGunOn()
+    {
+        
+        MachineGunBody.SetActive(false);
+        MachineGunUIObject.SetActive(false);
+        MachineGunOnObject.SetActive(true);
+
+        this.transform.position =
+            Player.instance.headCollider.transform.position +
+            Player.instance.headCollider.transform.forward * 1.0f;
+        this.transform.rotation = 
+            Quaternion.LookRotation(
+                Player.instance.headCollider.transform.forward, Vector3.up);
+
+        Vector3 savePosition = this.transform.position;
+        Quaternion saveRot = this.transform.rotation;
+
+        parentObject = Player.instance.rightHand.currentAttachedObject;
+        Player.instance.rightHand.currentAttachedObject.SetActive(false);
+        Player.instance.leftHand.currentAttachedObject.SetActive(false);
+
+        for (float _t = 0.0f; _t < onTime; _t += Time.fixedUnscaledDeltaTime)
+        {
+            for (int i = 0; i < machinegunOnMaterials.Length; i++)
+            {
+                machinegunOnMaterials[i].SetFloat("_warf",-10.0f +  10.0f * _t / onTime);
+            }
+            this.transform.position = 
+                Vector3.Lerp(savePosition, parentObject.transform.position, _t / onTime);
+            this.transform.rotation = 
+                Quaternion.Lerp(saveRot, 
+                Quaternion.LookRotation(Player.instance.leftHand.transform.position - Player.instance.rightHand.transform.position, Vector3.up), _t / onTime);
+       
+            yield return new WaitForFixedUpdate();
+        }
+
+        Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
+        MachineGunOnObject.SetActive(false);
+        MachineGunBody.SetActive(true);
+        MachineGunUIObject.SetActive(true);
+
+
+
+        yield return null;
+    }
+
 }
