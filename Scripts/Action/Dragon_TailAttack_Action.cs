@@ -7,14 +7,12 @@ public class Dragon_TailAttack_Action : ActionTask
 {
     float maxTurn;
     float Angle;
-    float SumAngle;
 
     public override void Init()
     {
         base.Init();
         maxTurn = 180.0f;
         Angle = 0.0f;
-        SumAngle = 0.0f; 
     }
 
     public override void OnStart()
@@ -23,7 +21,6 @@ public class Dragon_TailAttack_Action : ActionTask
         DragonAniManager.SwicthAnimation("Dragon_Tail");
         _clock.CurPawCoolingTime = 0.0f;
         Angle = 0.0f;
-        SumAngle = 0.0f;
     }
 
     public override bool Run()
@@ -31,33 +28,21 @@ public class Dragon_TailAttack_Action : ActionTask
         float Turn = 0.0f;
         if (_blackBoard.IsTailAttackOn)
         {
-            if (!_manager.IsTurn)
+            if (Angle <= 0.0f) Turn = 0.0f;
+
+            else
             {
-                if (Angle <= 0.0f)
-                {
-                    Turn = 0.0f;
-                }
-                else
-                {
-                    Turn = maxTurn - Angle - (maxTurn * (1.0f - CurTurnTime));
-                    Angle = Turn;
-                }
-                Turn *= 2.0f;
-                SumAngle += Turn + Angle;
-                Angle = maxTurn - (maxTurn * (1.0f - CurTurnTime));
-                CurTurnTime += Time.deltaTime;
-
-                DragonTransform.Rotate(DragonTransform.up, Turn, Space.World);
-
-                Debug.Log(Turn);
-
-                if (SumAngle >= 180.0f)
-                {
-                    _manager.IsTurn = true;
-                    SumAngle = 180.0f;
-                }
-                return false;
+                Turn = maxTurn - Angle - (maxTurn * (1.0f - CurTurnTime));
+                Angle = Turn;
             }
+
+            Turn *= 2.0f;
+            Angle = maxTurn - (maxTurn * (1.0f - CurTurnTime));
+            CurTurnTime += Time.deltaTime;
+
+            DragonTransform.Rotate(DragonTransform.up, Turn, Space.World);
+                
+            return false;
         }
         return false;
     }
