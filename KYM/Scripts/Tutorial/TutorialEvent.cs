@@ -39,6 +39,9 @@ public class TutorialEvent : Singleton<TutorialEvent>
         }
     }
 
+    public GameObject reloadBox1;
+    public GameObject reloadBox2;
+
     private Gun leftGun;
     private Gun rightGun;
 
@@ -84,6 +87,18 @@ public class TutorialEvent : Singleton<TutorialEvent>
             npcMaterials[i].SetFloat("_warf", minValue);
         }
     }
+
+    public void OnReload()
+    {
+        reloadBox1.SetActive(true);
+        reloadBox2.SetActive(true);
+    }
+    public void OffReload()
+    {
+        reloadBox1.SetActive(false);
+        reloadBox2.SetActive(false);
+    }
+
 
     IEnumerator corOnNPC()
     {

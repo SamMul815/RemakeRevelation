@@ -45,7 +45,7 @@ public class PlayerHand : MonoBehaviour
     //잡을수 기준점
     public Transform hoverSphereTransform
 ;
-    public float hoverSphereRadius = 0.05f;
+    public float hoverSphereRadius = 0.1f;
     public LayerMask hoverLayerMask = -1;
     public float hoverUpdateInterval = 0.1f;
 

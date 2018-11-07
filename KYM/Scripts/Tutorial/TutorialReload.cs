@@ -6,9 +6,6 @@ public class TutorialReload : TutorialBase
 {
     public GameObject tutorialGunPrefab;
 
-    public GameObject ReloadBox1;
-    public GameObject ReloadBox2;
-
     public GameObject tutorialReloadObjects;
 
     GameObject leftGun;
@@ -19,8 +16,9 @@ public class TutorialReload : TutorialBase
 
     private void OnEnable()
     {
-        ReloadBox1.SetActive(false);
-        ReloadBox2.SetActive(false);
+        //ReloadBox1.SetActive(false);
+        //ReloadBox2.SetActive(false);
+        TutorialEvent.Instance.OffReload();
         tutorialReloadObjects.SetActive(true);
         leftGun = Instantiate(tutorialGunPrefab);
         rightGun = Instantiate(tutorialGunPrefab);
@@ -64,8 +62,9 @@ public class TutorialReload : TutorialBase
         yield return new WaitForSeconds(2.0f);
 
         //장전박스 ON
-        ReloadBox1.SetActive(true);
-        ReloadBox2.SetActive(true);
+        TutorialEvent.Instance.OnReload();
+        //ReloadBox1.SetActive(true);
+        //ReloadBox2.SetActive(true);
 
         yield return null;
     }

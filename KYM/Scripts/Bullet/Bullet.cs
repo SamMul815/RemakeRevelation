@@ -44,8 +44,6 @@ public class Bullet : MonoBehaviour {
           pool.Init = Init;
         }
 
-        //Debug.Log(gameObject.name + "Awake호출");
-        //GetComponent<PoolObject>().Reset = Reset;
         transform = this.GetComponent<Transform>();
         col = GetComponent<SphereCollider>();
         moveDistance = maxMoveDistance;
@@ -112,7 +110,6 @@ public class Bullet : MonoBehaviour {
 
     private void FixedUpdate()
     {
-
         if (CollisionCheck())
             OnCollisionEvent();
 

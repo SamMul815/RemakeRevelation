@@ -402,6 +402,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1522336698696080
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4980199452519816}
+  m_Layer: 12
+  m_Name: ThrowAt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1522948049828998
 GameObject:
   m_ObjectHideFlags: 1
@@ -522,7 +537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1669544109687942
 GameObject:
   m_ObjectHideFlags: 1
@@ -725,6 +740,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1920888870277164
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4580107210988978}
+  m_Layer: 12
+  m_Name: ThrowAt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1928445262309714
 GameObject:
   m_ObjectHideFlags: 1
@@ -897,8 +927,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323619232277918}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 8.49}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -8.43}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4447333316967646}
@@ -909,7 +939,7 @@ Transform:
   - {fileID: 4430684556573910}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4520003369983384
 Transform:
   m_ObjectHideFlags: 1
@@ -922,6 +952,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4956604787147366}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4580107210988978
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920888870277164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4843817382745108}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4612235642134196
 Transform:
@@ -945,7 +988,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4980199452519816}
   m_Father: {fileID: 4519385112394098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1041,7 +1085,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4580107210988978}
   m_Father: {fileID: 4519385112394098}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1061,6 +1106,19 @@ Transform:
   m_Father: {fileID: 4233379174013770}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!4 &4980199452519816
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522336698696080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4636711654801624}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20618287499648304
 Camera:
   m_ObjectHideFlags: 1
@@ -1382,12 +1440,12 @@ MonoBehaviour:
   otherHand: {fileID: 114410639681288778}
   handType: 0
   hoverSphereTransform: {fileID: 0}
-  hoverSphereRadius: 0.05
+  hoverSphereRadius: 0.1
   hoverLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  hoverUpdateInterval: 0.1
-  controllerPrefab: {fileID: 1928126070222266, guid: 6a9c4d1ca764ba54ba55143528cd5c2b,
+  hoverUpdateInterval: 0.05
+  controllerPrefab: {fileID: 1702424059927354, guid: 27690fe1339a4fc4184b1373be3e4931,
     type: 2}
 --- !u!114 &114146736990519182
 MonoBehaviour:
@@ -1624,12 +1682,12 @@ MonoBehaviour:
   otherHand: {fileID: 114146046845538820}
   handType: 1
   hoverSphereTransform: {fileID: 0}
-  hoverSphereRadius: 0.05
+  hoverSphereRadius: 0.1
   hoverLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  hoverUpdateInterval: 0.1
-  controllerPrefab: {fileID: 1928126070222266, guid: 6a9c4d1ca764ba54ba55143528cd5c2b,
+  hoverUpdateInterval: 0.05
+  controllerPrefab: {fileID: 1702424059927354, guid: 27690fe1339a4fc4184b1373be3e4931,
     type: 2}
 --- !u!114 &114445632482827942
 MonoBehaviour:

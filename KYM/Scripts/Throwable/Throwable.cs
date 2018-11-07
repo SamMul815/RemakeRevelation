@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Throwable : MonoBehaviour
 {
-    public PlayerHand.AttachmentFlags attachmentFlags = PlayerHand.AttachmentFlags.ParentToHand | PlayerHand.AttachmentFlags.DetachFromOtherHand | PlayerHand.AttachmentFlags.SnapOnAttach;
+    private PlayerHand.AttachmentFlags attachmentFlags = PlayerHand.AttachmentFlags.ParentToHand | PlayerHand.AttachmentFlags.DetachFromOtherHand | PlayerHand.AttachmentFlags.SnapOnAttach;
     public string attachmentPoint;
     public float maxAngularVeloctiy = 50.0f;
     public float catchSpeedThreshold = 0.0f;
@@ -21,11 +21,21 @@ public class Throwable : MonoBehaviour
     private bool IsThrow = false;
     private Rigidbody rb;
 
+    public Material OnMaterial;
+    public Material OffMaterial;
+
+    public GameObject explosionParticle;
+    public GameObject throwParticle;
+
+    private GameObject oldObject;
+
+
     private void Awake()
     {
         velocityEstimator = GetComponent<VelocityEstimator>();
         rb = GetComponent<Rigidbody>();
         GetComponent<Rigidbody>().maxAngularVelocity = maxAngularVeloctiy;
+        throwParticle.SetActive(false);
         IsThrow = false;
     }
 
@@ -33,15 +43,31 @@ public class Throwable : MonoBehaviour
     {
         if(!attached)
         {
-            if(hand.GetTriggerButton())
+            if(!IsThrow)
             {
-                Rigidbody rb = GetComponent<Rigidbody>();
-                if(rb.velocity.magnitude >= catchSpeedThreshold)
-                {
-                    hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
-                }
+                this.GetComponent<MeshRenderer>().material = OnMaterial;
             }
         }
+    }
+
+    private void OnHandHoverEnd(PlayerHand hand)
+    {
+        //if (!IsThrow)
+        //{
+            this.GetComponent<MeshRenderer>().material = OffMaterial;
+        //}
+        //copyMaterial.SetFloat("_Rimonoff", 0);
+        //if (!attached)
+        //{
+        //    if (hand.GetTriggerButton())
+        //    {
+        //        Rigidbody rb = GetComponent<Rigidbody>();
+        //        if (rb.velocity.magnitude >= catchSpeedThreshold)
+        //        {
+        //            hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
+        //        }
+        //    }
+        //}
     }
 
     private void HandHoverUpdate(PlayerHand hand)
@@ -49,7 +75,10 @@ public class Throwable : MonoBehaviour
         //Trigger got pressed
         if (hand.GetTriggerButton())
         {
-            if(IsTutorial)
+            oldObject = hand.currentAttachedObject;
+            if(oldObject != null)
+                oldObject.SetActive(false);
+            if (IsTutorial)
             {
                 GameObject tutorialObject = Instantiate(this.gameObject);
                 tutorialObject.GetComponent<Throwable>().IsTutorial = false;
@@ -83,7 +112,8 @@ public class Throwable : MonoBehaviour
     private void OnDetachedFromHand(PlayerHand hand)
     {
         attached = false;
-
+        if (oldObject != null)
+            oldObject.SetActive(true);
         //onDetachFromHand.Invoke();
 
         hand.HoverUnlock(null);
@@ -140,6 +170,7 @@ public class Throwable : MonoBehaviour
 
         hand.DetachObject(gameObject, restoreOriginalParent);
         IsThrow = true;
+        throwParticle.SetActive(true);
     }
 
     //-------------------------------------------------
@@ -161,6 +192,7 @@ public class Throwable : MonoBehaviour
         if(rb.velocity.sqrMagnitude <= 0.1f)
         {
             IsThrow = false;
+            throwParticle.SetActive(false);
         }
         else
         {
@@ -177,11 +209,16 @@ public class Throwable : MonoBehaviour
         {
             //용과 부딪혔을때 적용할 코드들 
         }
-        if(collision.gameObject.CompareTag("TutorialObject"))
+        else if(collision.gameObject.CompareTag("TutorialTarget"))
         {
-            //뭔가 알 수 없는 코드
-            this.gameObject.SetActive(false);
+            collision.gameObject.GetComponent<TutorialTarget>().Hit(500.0f);
         }
-    }
 
+        if(explosionParticle != null)
+        {
+            GameObject explosionObj;
+            PoolManager.Instance.PopObject(explosionParticle,this.transform.position,out explosionObj);
+        }
+        this.gameObject.SetActive(false);
+    }
 }
