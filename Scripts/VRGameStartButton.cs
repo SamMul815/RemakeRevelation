@@ -5,9 +5,9 @@ public class VRGameStartButton : VRButton
 {
 
     // Use this for initialization
-    protected override void Start ()
+    protected override void Awake ()
     {
-        base.Start();
+        base.Awake();
         ButtonEvent = GameStartScene;
     }
 
@@ -20,7 +20,6 @@ public class VRGameStartButton : VRButton
     private void GameStartScene()
     {
         //SceneManager.LoadScene(1);
-        Debug.Log("GaemStart");
-
+        Debug.Log("GameStart");
     }
 }
