@@ -13,23 +13,21 @@ public class TutorialThrowable : TutorialBase
         TutorialEvent.Instance.LeftGun.SetCurrentBullet(0);
         TutorialEvent.Instance.RightGun.SetCurrentBullet(0);
         TutorialEvent.Instance.OffReload();
+        TutorialEvent.Instance.RightGun.SetSkillCoolTime(999.0f);
     }
 
     private void OnDisable()
     {
         TutorialEvent.Instance.OnReload();
+        TutorialEvent.Instance.LeftGun.SetCurrentBullet(10);
+        TutorialEvent.Instance.RightGun.SetCurrentBullet(10);
         tutorialThrowObjects.SetActive(false);
     }
 
     protected override bool IsClear()
     {
-        targetObject.IsDie();
-        return base.IsClear();
+        return targetObject.IsDie();
+        //return base.IsClear();
     }
-
-    //IEnumerator corThrowable()
-    //{
-    //    yield return null;
-    //}
 
 }

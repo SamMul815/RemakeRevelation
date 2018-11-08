@@ -41,6 +41,8 @@ public class Gun : MonoBehaviour
 
     public bool IsTutorial = false;
 
+    private IEnumerator corTriggerAni;
+
     private void Awake()
     {
         if(!IsTutorial)
@@ -90,6 +92,26 @@ public class Gun : MonoBehaviour
         currentBullet = maxBullet;
     }
 
+    private void OnEnable()
+    {
+        if(corTriggerAni == null)
+        {
+            corTriggerAni = CorTriggerAxisAnim();
+            StartCoroutine(corTriggerAni);
+        }
+
+    }
+
+    private void OnDisable()
+    {
+        if(corTriggerAni != null)
+        {
+            StopCoroutine(corTriggerAni);
+            corTriggerAni = null;
+        }
+    }
+
+
     private void OnAttachedToHand(PlayerHand hand)
     {
         playerHand = hand;
@@ -111,7 +133,7 @@ public class Gun : MonoBehaviour
             UIRight.SetActive(false);
             handAnimator = handLeft.GetComponent<Animator>();
         }
-        StartCoroutine(CorTriggerAxisAnim());
+        //StartCoroutine(CorTriggerAxisAnim());
     }
 
     private void HandAttachedUpdate(PlayerHand hand)
