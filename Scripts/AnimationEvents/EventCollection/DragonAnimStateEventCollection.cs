@@ -13,6 +13,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(ActionEnd, "Breath");
 
         AddAnimTimeEventFunc(LandingOn, "Landing");
+        AddAnimTimeEventFunc(LandingAttackOff, "Landing");
         AddAnimTimeEventFunc(ActionEnd, "Landing");
 
 
@@ -55,6 +56,8 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
 
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
+
+        AddAnimTimeEventFunc(TakeOff, "TakeOff");
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
 
         AddAnimTimeEventFunc(ActionEnd, "NearHowling");
@@ -78,6 +81,11 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         //AddAnimTimeEventFunc(SoundRushAttack, "Rush");
 
         //---------------------Sound End--------------------------
+    }
+
+
+    private void TakeOff(EvnData evnData)
+    {
     }
 
     private void ActionEnd(EvnData evnData)
@@ -120,7 +128,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void RushAttackOn(EvnData evnData)
     {
         _blackBoard.IsRushAttackOn = true;
-        _manager.DragonRigidBody.constraints = RigidbodyConstraints.FreezeRotation;
         _manager.AttackOn(DragonAttackTriggers.Rush);
     }
 
@@ -143,8 +150,12 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void LandingOn(EvnData evnData)
     {
         _manager.DragonGroundCollider.enabled = true;
-        _manager.DragonRigidBody.freezeRotation = true;
-        EffectManager.Instance.PoolParticleEffectOn("Landing", _blackBoard.FiexdPosition, _manager.transform.forward);
+        EffectManager.Instance.PoolParticleEffectOn("Landing", _manager.transform.position, _manager.transform.forward);
+    }
+
+    private void LandingAttackOff(EvnData evnData)
+    {
+        _manager.AttackOff();
     }
 
 
@@ -250,7 +261,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void SoundDashAttack3(EvnData evnData)
     {
         SoundManagerNormal.Instance.PlayAudio("da3", DragonManager.Instance.transform.position,0.0f, AudioDType._3D);
-
     }
 
     //Rush

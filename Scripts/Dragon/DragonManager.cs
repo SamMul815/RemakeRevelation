@@ -69,10 +69,7 @@ namespace DragonController
 
         private bool _landingOn;
         public bool LandingOn { set { _landingOn = value; } get { return _landingOn; } }
-
-        private bool _test;
-        public bool Test { get { return _test; } }
-
+        
         static bool _isInit;
 
         private void Awake()
@@ -152,7 +149,8 @@ namespace DragonController
         {
             if (!_dragonBehaviroTree.Root.Run())
             {
-
+                BlackBoard.Instance.IsAirSpearAttack
+                    (_rayTransfrom, 150.0f, _dragonAvoidLayers);
             }
             else
             {
@@ -162,25 +160,16 @@ namespace DragonController
             }
         }
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmos ()
         {
-            float MaxDistance = 2.0f;
-
-            RaycastHit hit;
-            bool isHit = Physics.SphereCast(
-                _rayTransfrom.position, transform.lossyScale.x / 2,
-                -_rayTransfrom.forward, out hit, MaxDistance, _dragonAvoidLayers);
+            Gizmos.color = Color.black;
+            Gizmos.DrawWireSphere(this.transform.position, 150.0f);
 
             Gizmos.color = Color.blue;
-            if (isHit)
-            {
-                Gizmos.DrawRay(_rayTransfrom.position, -_rayTransfrom.forward * hit.distance);
-                Gizmos.DrawWireSphere(_rayTransfrom.position + (-_rayTransfrom.forward) * hit.distance, transform.lossyScale.x / 2);
-            }
-            else
-            {
-                Gizmos.DrawRay(_rayTransfrom.position, -_rayTransfrom.forward * MaxDistance);
-            }
+            Vector3 rayForward = _rayTransfrom.forward;
+            rayForward.y = 0.0f;
+            Gizmos.DrawRay(_rayTransfrom.position, rayForward * 150.0f);
+
         }
 
     }

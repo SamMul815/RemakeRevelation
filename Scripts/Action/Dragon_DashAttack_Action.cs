@@ -43,14 +43,14 @@ public class Dragon_DashAttack_Action : ActionTask
                 if(Result < 0.0f)
                 {
                     float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-
-                    //if (angle >= 30.0f && angle <= 120.0f)
+                    if (angle >= 15.0f/*&& angle <= 120.0f*/)
                         DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
                 }
                 else
                 {
                     float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-                    DragonAniManager.SwicthAnimation("Dragon_RightTrun");
+                    if (angle >= 15.0f/*&& angle <= 120.0f*/)
+                        DragonAniManager.SwicthAnimation("Dragon_RightTrun");
 
                     //if (angle >= 30.0f && angle <= 120.0f)
                     //{
@@ -59,7 +59,7 @@ public class Dragon_DashAttack_Action : ActionTask
 
                 DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
-                    Quaternion.LookRotation(forward,Vector3.up),
+                    Quaternion.LookRotation(forward, Vector3.up),
                     CurTurnTime / MaxTurnTime);
 
                 CurTurnTime += Time.deltaTime;
@@ -75,6 +75,7 @@ public class Dragon_DashAttack_Action : ActionTask
         {
             float Distance = _manager.Stat.DashMoveDistance;
             float DashSpeed = Distance; // *(dashTime - Time.deltaTime);
+            forward.y = 0.0f;
             DragonTransform.position += (DragonTransform.forward) * DashSpeed * Time.deltaTime;
         }
         

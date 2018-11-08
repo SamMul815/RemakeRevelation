@@ -48,8 +48,12 @@ public class Dragon_RedZoneAttack_Action : ActionTask
                 dir += new Vector3(0.0f, 0.2f, 0.0f);
 
                 FinalPushPower = Mathf.RoundToInt(FinalPushPower);
-                _playerManager.playerRigid.PlayerPush(dir, FinalPushPower);
-                _playerManager.playerStat.Hit(damege);
+                if (_blackBoard.IsPlayer)
+                {
+                    _playerManager.playerRigid.PlayerPush(dir, FinalPushPower);
+                    _playerManager.playerStat.Hit(damege);
+
+                }
                 isPushing = true;
             }
         }

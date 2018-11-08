@@ -451,6 +451,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4265514535776242}
+  - component: {fileID: 114170313616583610}
   m_Layer: 0
   m_Name: Dragon_Dead_Sequence
   m_TagString: Untagged
@@ -1538,9 +1539,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4627356075133658}
-  - component: {fileID: 114162180834747848}
+  - component: {fileID: 114329293602714954}
   m_Layer: 0
-  m_Name: Daagon_Ground_Decorator
+  m_Name: Dragon_DeadGround_Decorator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3890,12 +3891,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2bdda148dfce243b591f08f312e458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114007399039858302
 MonoBehaviour:
@@ -3908,12 +3910,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47131e963d4bf11489786a1abebedfe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114016271377797112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3925,12 +3928,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47131e963d4bf11489786a1abebedfe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114034356738747194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3942,12 +3946,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18b1fc66b38cd5428628f8701166937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114052660122157190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3959,12 +3964,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4697b2d9e8cffcf479aa99071c25b2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114064852989539332
 MonoBehaviour:
@@ -3977,12 +3983,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e100ffa46ef95764cb6febc52dd61b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114068722472695386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3994,12 +4001,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc54306dbd3e0ff41962f87418296fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114071198012272848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4011,12 +4019,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2bdda148dfce243b591f08f312e458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114086310323571086
 MonoBehaviour:
@@ -4029,12 +4038,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb744b871dbb964cb316d32c45a9e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114093922130814594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4046,12 +4056,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e44dacfa562ff8428a35b54ebce1694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114104495482081928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4063,12 +4074,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a918ccc92178cc41a52d1ae4bdafc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114108907325729632
 MonoBehaviour:
@@ -4081,12 +4093,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e97f7b7ef8ffe41944e78a66744624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114109971620232418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4098,12 +4111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114133441086095406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4115,12 +4129,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0479825eb01ed428b1caae5d40f9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114133897924401600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4132,12 +4147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736de92ce2d370b4f89819c2223281e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114139972705601620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4149,12 +4165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b35d549363719840a5362c50362abbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114151863340751010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4166,12 +4183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e8a8687812d74baffdead4e481b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114154998958874006
 MonoBehaviour:
@@ -4184,12 +4202,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e53e8f768836a49b71ea7c9011e54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114157821765559546
 MonoBehaviour:
@@ -4202,29 +4221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a401d2ad25ca9b43872cf5b88cf95ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
---- !u!114 &114162180834747848
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1814131643426280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb744b871dbb964cb316d32c45a9e68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _manager: {fileID: 0}
-  _blackBoard: {fileID: 0}
-  _clock: {fileID: 0}
-  _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114163322817397004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4236,12 +4239,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a401d2ad25ca9b43872cf5b88cf95ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114168792800723532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4253,12 +4257,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40485f77fe6ecbd44b7acf4e10d37df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
+--- !u!114 &114170313616583610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1217700223997802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
+  _manager: {fileID: 0}
+  _blackBoard: {fileID: 0}
+  _clock: {fileID: 0}
+  _movement: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114183607204126050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4270,12 +4293,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114187985430431188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4287,12 +4311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736de92ce2d370b4f89819c2223281e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114190059246175658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4304,12 +4329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6528e493e6c9f394dbf9f94f2e24aabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114191903443342834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4321,12 +4347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189ebc11bca9951449be709b5b247d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114200320625887052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4338,12 +4365,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af7ce1a6c6d8df48ad7308273e3eb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114208447927202950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4355,12 +4383,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a918ccc92178cc41a52d1ae4bdafc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114209084600285876
 MonoBehaviour:
@@ -4373,12 +4402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439901a2614ef1a47822fd04667c6cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114210538835751376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4390,12 +4420,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe5790a57c55e44890f2141d6bd5043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114211949508051934
 MonoBehaviour:
@@ -4408,12 +4439,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2bdda148dfce243b591f08f312e458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114234819396969294
 MonoBehaviour:
@@ -4426,12 +4458,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0479825eb01ed428b1caae5d40f9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114248084224643430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4443,12 +4476,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0251167ec5f43c3498346fd0feb33597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114251024111038754
 MonoBehaviour:
@@ -4461,12 +4495,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40485f77fe6ecbd44b7acf4e10d37df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114262864871427688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4478,12 +4513,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114267682015925432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4495,12 +4531,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439901a2614ef1a47822fd04667c6cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114298240105565824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4512,12 +4549,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0654708994ad9428ab78d5c566c6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114299431713661368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4529,12 +4567,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4697b2d9e8cffcf479aa99071c25b2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114300720540199360
 MonoBehaviour:
@@ -4547,12 +4586,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1caf4918f368ba4d9f8db00259508f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114316412447948256
 MonoBehaviour:
@@ -4565,12 +4605,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70556a72edc0d3f4882552be7447269d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114320524724014878
 MonoBehaviour:
@@ -4583,12 +4624,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c923cbc88be8e6541ba1249353e1c455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114321710586568586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4600,12 +4642,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d304718eaa7ca49a2fbdc2bb63d739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114323381054563900
 MonoBehaviour:
@@ -4618,12 +4661,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e8a8687812d74baffdead4e481b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114327019260744440
 MonoBehaviour:
@@ -4636,12 +4680,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c18394265cbfd743bcd6099521d81e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
+--- !u!114 &114329293602714954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814131643426280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bb2427f9a560a4c83f1a0ccf3e2ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
+  _manager: {fileID: 0}
+  _blackBoard: {fileID: 0}
+  _clock: {fileID: 0}
+  _movement: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114332293690647514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4653,12 +4716,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e44dacfa562ff8428a35b54ebce1694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114335537134776772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4670,12 +4734,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870f809d2b6df1d4db3fb2ef398cc9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114337307175591572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4687,12 +4752,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0251167ec5f43c3498346fd0feb33597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114341557619318652
 MonoBehaviour:
@@ -4705,12 +4771,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d304718eaa7ca49a2fbdc2bb63d739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114347410915329944
 MonoBehaviour:
@@ -4723,12 +4790,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9844ac500fedc4f8d78b0f2323bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114357771255316292
 MonoBehaviour:
@@ -4741,12 +4809,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a568263c9c058234e8fd81f285aacae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114362401059187676
 MonoBehaviour:
@@ -4759,12 +4828,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b2d504565541142a9e791a03b9433c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114368299600522320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4776,12 +4846,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a918ccc92178cc41a52d1ae4bdafc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114381023756041822
 MonoBehaviour:
@@ -4794,12 +4865,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c2e3cf18e4e7741a49d235d3b65e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114455255757324870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4811,12 +4883,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114457290973457118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4828,12 +4901,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b543a6cebddb9f4daf4296ac7157e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114459877018756780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4845,12 +4919,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0251167ec5f43c3498346fd0feb33597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114476440265317418
 MonoBehaviour:
@@ -4863,12 +4938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ed637ff6ec4804fb54abd2d8665b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114477522940990012
 MonoBehaviour:
@@ -4881,12 +4957,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d092d2e3bdbe5ea4581a3b8bd6d21f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114497416419549118
 MonoBehaviour:
@@ -4899,12 +4976,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114504026548755018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4916,12 +4994,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e8a8687812d74baffdead4e481b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114504397330370588
 MonoBehaviour:
@@ -4934,12 +5013,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1caf4918f368ba4d9f8db00259508f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114511152750717478
 MonoBehaviour:
@@ -4952,12 +5032,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9844ac500fedc4f8d78b0f2323bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114515445696917208
 MonoBehaviour:
@@ -4970,12 +5051,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb744b871dbb964cb316d32c45a9e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114522689124232764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4987,12 +5069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc54306dbd3e0ff41962f87418296fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114552275082015278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5004,12 +5087,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70556a72edc0d3f4882552be7447269d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114554176678181676
 MonoBehaviour:
@@ -5022,12 +5106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ed637ff6ec4804fb54abd2d8665b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114564059535905428
 MonoBehaviour:
@@ -5040,12 +5125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114564432659946692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5057,12 +5143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d304718eaa7ca49a2fbdc2bb63d739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114567551057582496
 MonoBehaviour:
@@ -5075,12 +5162,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d304718eaa7ca49a2fbdc2bb63d739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114576290042614352
 MonoBehaviour:
@@ -5093,12 +5181,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e8a8687812d74baffdead4e481b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114578217814145686
 MonoBehaviour:
@@ -5111,12 +5200,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c18394265cbfd743bcd6099521d81e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114586719049815616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5128,12 +5218,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18b1fc66b38cd5428628f8701166937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114589716968785670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5145,12 +5236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ed637ff6ec4804fb54abd2d8665b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114593862817509900
 MonoBehaviour:
@@ -5163,12 +5255,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1caf4918f368ba4d9f8db00259508f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114594938470918322
 MonoBehaviour:
@@ -5181,12 +5274,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe5790a57c55e44890f2141d6bd5043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114615855246913656
 MonoBehaviour:
@@ -5199,12 +5293,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c923cbc88be8e6541ba1249353e1c455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114620611136202280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5216,12 +5311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114627706653229152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5233,12 +5329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1969a0141b15cd49a7b29a3332fa0b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114629039263470390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5250,12 +5347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8f4acfde554a046955889d20b966e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114631050382317660
 MonoBehaviour:
@@ -5268,12 +5366,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870f809d2b6df1d4db3fb2ef398cc9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114632626863238038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5285,12 +5384,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736de92ce2d370b4f89819c2223281e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114636146020981986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5302,12 +5402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114649528911937886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5319,12 +5420,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114663804595051364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5336,12 +5438,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0479825eb01ed428b1caae5d40f9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114680799260856742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5353,12 +5456,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114685921763299106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5370,12 +5474,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc54306dbd3e0ff41962f87418296fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114697125199990152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5387,12 +5492,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e8a8687812d74baffdead4e481b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114720218925823680
 MonoBehaviour:
@@ -5405,12 +5511,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c62735024deda4ca5fb7eb0bdf2c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114725519938217914
 MonoBehaviour:
@@ -5423,12 +5530,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb744b871dbb964cb316d32c45a9e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114730117124034870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5440,12 +5548,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe5790a57c55e44890f2141d6bd5043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114735846218434114
 MonoBehaviour:
@@ -5458,12 +5567,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781ea3676e78d914d97872ef9461a316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114741927035264778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5475,12 +5585,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d618ec1bca69ee943b34ab553c6a9b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114743265875109182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5492,12 +5603,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c62735024deda4ca5fb7eb0bdf2c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114763246413877824
 MonoBehaviour:
@@ -5510,12 +5622,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0654708994ad9428ab78d5c566c6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114767096687498228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5527,12 +5640,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114767649740674798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5544,12 +5658,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40485f77fe6ecbd44b7acf4e10d37df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114767833147383354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5561,12 +5676,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa741cb026d10f44b8e3d94a24de99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114767899843127780
 MonoBehaviour:
@@ -5579,12 +5695,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781ea3676e78d914d97872ef9461a316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114792401594510774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5596,12 +5713,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190a2169416f6994cbf9b0283f1528b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114795714306581902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5613,12 +5731,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8286aa30b57e4469b83b30cbd5011b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114806259544074526
 MonoBehaviour:
@@ -5631,12 +5750,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a401d2ad25ca9b43872cf5b88cf95ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114814067945177502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5648,12 +5768,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4816191a5a23c494aaf08378bffe5890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114818477384731766
 MonoBehaviour:
@@ -5666,12 +5787,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614e8a8687812d74baffdead4e481b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114818695603718358
 MonoBehaviour:
@@ -5684,12 +5806,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114828894964434858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5701,12 +5824,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9844ac500fedc4f8d78b0f2323bd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114840103116314600
 MonoBehaviour:
@@ -5719,12 +5843,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114850545180425514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5736,12 +5861,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18b1fc66b38cd5428628f8701166937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114855983542473732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5753,12 +5879,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d092d2e3bdbe5ea4581a3b8bd6d21f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114859824971319882
 MonoBehaviour:
@@ -5771,12 +5898,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a153529366adf940a5204796a6ff730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114874594022579888
 MonoBehaviour:
@@ -5789,12 +5917,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114878674217079870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5806,12 +5935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c62735024deda4ca5fb7eb0bdf2c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114884754310338774
 MonoBehaviour:
@@ -5824,12 +5954,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a153529366adf940a5204796a6ff730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114886625038180810
 MonoBehaviour:
@@ -5842,12 +5973,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e44dacfa562ff8428a35b54ebce1694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114899349584683232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5859,12 +5991,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4697b2d9e8cffcf479aa99071c25b2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114899465151204138
 MonoBehaviour:
@@ -5877,12 +6010,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c923cbc88be8e6541ba1249353e1c455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114901450813934944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5894,12 +6028,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114901997906713328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5911,12 +6046,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a153529366adf940a5204796a6ff730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1
 --- !u!114 &114921473362028696
 MonoBehaviour:
@@ -5929,12 +6065,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c18394265cbfd743bcd6099521d81e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114922574879513758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5946,12 +6083,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870f809d2b6df1d4db3fb2ef398cc9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114944260659301570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5963,12 +6101,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6579d4b44d6ae0644b62ae758ab3e99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 0
 --- !u!114 &114945420486016186
 MonoBehaviour:
@@ -5981,12 +6120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b543a6cebddb9f4daf4296ac7157e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114948062307010054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5998,12 +6138,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0654708994ad9428ab78d5c566c6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114978975752499480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6015,12 +6156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b6135469df7e488da2c3744a0ebb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114979960820729232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6032,12 +6174,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c2e3cf18e4e7741a49d235d3b65e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114986129433770398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6049,12 +6192,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af7ce1a6c6d8df48ad7308273e3eb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114994094446317162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6066,12 +6210,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47131e963d4bf11489786a1abebedfe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114995684579091018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6083,12 +6228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af7ce1a6c6d8df48ad7308273e3eb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
 --- !u!114 &114999938110227010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6100,10 +6246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d304718eaa7ca49a2fbdc2bb63d739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManager: {fileID: 0}
   _manager: {fileID: 0}
   _blackBoard: {fileID: 0}
   _clock: {fileID: 0}
   _movement: {fileID: 0}
-  Dragon: {fileID: 0}
-  Player: {fileID: 0}
+  DragonTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
   _isAttackAction: 1

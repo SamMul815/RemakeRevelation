@@ -6,7 +6,8 @@ using DragonController;
 public class Dragon_LeftPawAttack_Action : ActionTask
 {
     Vector3 forward;
-    Vector3 Test;
+    Vector3 DragonPos;
+    Vector3 PlayerPos;
 
     public override void Init()
     {
@@ -16,9 +17,7 @@ public class Dragon_LeftPawAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
-        //DragonAniManager.SwicthAnimation("Dragon_LeftPaw");
         _clock.CurPawCoolingTime = 0.0f;
-        //초기화
     }
 
     public override bool Run()
@@ -26,8 +25,8 @@ public class Dragon_LeftPawAttack_Action : ActionTask
 
         if (!_manager.IsTurn)
         {
-            Vector3 DragonPos = DragonTransform.position;
-            Vector3 PlayerPos = PlayerTransform.position;
+            DragonPos = DragonTransform.position;
+            PlayerPos = PlayerTransform.position;
 
             DragonPos.y = 0.0f;
             PlayerPos.y = 0.0f;
@@ -45,19 +44,19 @@ public class Dragon_LeftPawAttack_Action : ActionTask
                 if (Result < 0.0f)
                 {
                     float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-                    //if (angle >= 30.0f && angle <= 120.0f)
-                    DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
+                    if (angle >= 15.0f/*&& angle <= 120.0f*/)
+                        DragonAniManager.SwicthAnimation("Dragon_LeftTrun");
                 }
                 else
                 {
                     float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
-                    //if (angle >= 30.0f && angle <= 120.0f)
-                    DragonAniManager.SwicthAnimation("Dragon_RightTrun");
+                    if (angle >= 15.0f/*&& angle <= 120.0f*/)
+                        DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
 
                 DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
-                    Quaternion.LookRotation(forward),
+                    Quaternion.LookRotation(forward, Vector3.up),
                     CurTurnTime / MaxTurnTime);
 
                 CurTurnTime += Time.deltaTime;

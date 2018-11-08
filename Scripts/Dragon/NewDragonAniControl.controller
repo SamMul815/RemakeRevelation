@@ -220,9 +220,9 @@ MonoBehaviour:
     RunTime: 0
     IsLoop: 0
   StateTimeEvent:
-  - RunTime: 0.3
+  - RunTime: 0.673
     IsLoop: 0
-  - RunTime: 0.6
+  - RunTime: 0.999
     IsLoop: 0
 --- !u!114 &114052229937622762
 MonoBehaviour:
@@ -359,6 +359,8 @@ MonoBehaviour:
     IsLoop: 0
   StateTimeEvent:
   - RunTime: 0.135
+    IsLoop: 0
+  - RunTime: 0.453
     IsLoop: 0
   - RunTime: 0.999
     IsLoop: 0
@@ -12347,7 +12349,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3db45e690396484498a2cdd8bb16dcb1, type: 3}
+  m_Motion: {fileID: 7400000, guid: 43b9664fb6a296e40a63a0b96652ef29, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
