@@ -104,7 +104,7 @@ namespace DragonController
 
         public void OnDestroyPart(float _damage)
         {
-            float FinalDamage = (_damage); /*+ Stat.MaxHP * Stat.ObejctHitDamagePercent;*/
+            float FinalDamage = (_damage) + Stat.MaxHP * Stat.ObjectHitDamagePercent;
             BlackBoard.Instance.IsDestroyPart = true;
             Hit(FinalDamage);
         }
@@ -150,27 +150,13 @@ namespace DragonController
         {
             if (!_dragonBehaviroTree.Root.Run())
             {
-                BlackBoard.Instance.IsAirSpearAttack
-                    (_rayTransfrom, 150.0f, _dragonAvoidLayers);
+
             }
             else
             {
-                //죽었을 시...
                 AttackOff();
                 Debug.Log("AI Dead");
             }
-        }
-
-        private void OnDrawGizmos ()
-        {
-            Gizmos.color = Color.black;
-            Gizmos.DrawWireSphere(this.transform.position, 150.0f);
-
-            Gizmos.color = Color.blue;
-            Vector3 rayForward = _rayTransfrom.forward;
-            rayForward.y = 0.0f;
-            Gizmos.DrawRay(_rayTransfrom.position, rayForward * 150.0f);
-
         }
 
     }
