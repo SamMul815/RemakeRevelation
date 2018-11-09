@@ -22,7 +22,7 @@ public class TutorialBase : MonoBehaviour {
 
     protected virtual void Update()
     {
-        if(IsClear())
+        if(IsClear() || Input.GetKeyDown(KeyCode.RightArrow))
         {
             Clear();
         }

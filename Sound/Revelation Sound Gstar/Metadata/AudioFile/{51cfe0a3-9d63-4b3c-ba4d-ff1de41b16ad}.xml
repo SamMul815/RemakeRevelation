@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{51cfe0a3-9d63-4b3c-ba4d-ff1de41b16ad}">
+        <property name="assetPath">
+            <value>Dragon_Painful.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>3.8713958333333331</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{274e8c19-43a3-40de-8f05-28012b43a31d}</destination>
+        </relationship>
+    </object>
+</objects>

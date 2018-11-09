@@ -8,7 +8,6 @@ public class TutorialGunShoot : TutorialBase {
 
     public TutorialTarget target1;
     public TutorialTarget target2;
-    public TutorialTarget target3;
 
     private void OnEnable()
     {
@@ -18,14 +17,15 @@ public class TutorialGunShoot : TutorialBase {
 
     private void OnDisable()
     {
-        TutorialEvent.Instance.OffNPC();
+        //TutorialEvent.Instance.OffNPC();
         tutorialGunShootObjects.SetActive(false);
     }
 
     protected override bool IsClear()
     {
-        if(target1.IsDie() && target2.IsDie() && target3.IsDie())
+        if(target1.IsDie() && target2.IsDie())
         {
+            FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI06");
             return true;
         }
         return false;
@@ -33,7 +33,12 @@ public class TutorialGunShoot : TutorialBase {
 
     IEnumerator corGunShoot()
     {
-        TutorialEvent.Instance.OnNPC();
+        //TutorialEvent.Instance.OnNPC();
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI04");
+        yield return new WaitForSeconds(1.0f);
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI05");
+
+
         yield return null;
     }
 

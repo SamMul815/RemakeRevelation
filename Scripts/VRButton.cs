@@ -43,7 +43,7 @@ public class VRButton : MonoBehaviour
 
     private void OnButtonClick (PlayerHand hand, float distance)
     {
-        LayerMask uiLayer = 1 << LayerMask.NameToLayer("Default");
+        LayerMask uiLayer = 1 << LayerMask.NameToLayer("UI");
 
         if (!_isButtonPoniter)
         {

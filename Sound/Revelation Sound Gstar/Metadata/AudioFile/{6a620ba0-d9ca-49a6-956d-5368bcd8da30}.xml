@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{6a620ba0-d9ca-49a6-956d-5368bcd8da30}">
+        <property name="assetPath">
+            <value>좌우 앞발 바람(먼지)소리.WAV</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>22.0499992</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>29.326802721088434</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{274e8c19-43a3-40de-8f05-28012b43a31d}</destination>
+        </relationship>
+    </object>
+</objects>

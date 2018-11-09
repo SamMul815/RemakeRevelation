@@ -49,7 +49,8 @@ public class TutorialMove : TutorialBase
 
         //시작 사운드 재생 
         //사운드 재생 대기
-        yield return new WaitForSecondsRealtime(3.0f);
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI01");
+        yield return new WaitForSecondsRealtime(11.5f);
 
         while(true)
         {
@@ -67,6 +68,7 @@ public class TutorialMove : TutorialBase
         TutorialEvent.Instance.RightHand.HighlightOnButton("trackpad");
         isTeleport = false;
 
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI02");
         while (true)
         {
             Player.instance.leftHand.Vibration(0.1f, 4000);

@@ -137,7 +137,7 @@ public class Throwable : MonoBehaviour
             velocity = Player.instance.trackingOriginTransform.TransformVector(hand.controller.velocity);
             velocity = velocity * maxThrowPower;
 
-            Debug.Log(velocity.ToString() + velocity.magnitude.ToString());
+            //Debug.Log(velocity.ToString() + velocity.magnitude.ToString());
             angularVelocity = Player.instance.trackingOriginTransform.TransformVector(hand.controller.angularVelocity) / 2.0f;
             position = hand.transform.position;
         }

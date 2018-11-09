@@ -23,7 +23,6 @@ public class FmodManager : Singleton<FmodManager>
         {
             AudioData.Add(AudioList[i].tag, AudioList[i].path);
         }
-        //PlaySoundOneShot(Vector3.zero, "BGM");
     }
 
     public void PlaySoundOneShot(Vector3 pos, string tag)
@@ -32,3 +31,6 @@ public class FmodManager : Singleton<FmodManager>
     }
 
 }
+
+
+

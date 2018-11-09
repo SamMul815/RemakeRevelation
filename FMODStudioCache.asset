@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114599071244779998}
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   EditorEvents:
   - {fileID: 114756422111114806}
   - {fileID: 114103391995889876}
@@ -32,9 +32,30 @@ MonoBehaviour:
   - {fileID: 114022630922712270}
   - {fileID: 114777645076211382}
   - {fileID: 114355523992473864}
-  MasterBankRef: {fileID: 114591559413560750}
+  - {fileID: 114852977919157836}
+  - {fileID: 114347238221983684}
+  - {fileID: 114405952723975474}
+  - {fileID: 114241685036693290}
+  - {fileID: 114588602972880154}
+  - {fileID: 114710720106392202}
+  - {fileID: 114943812153677422}
+  - {fileID: 114041490197058646}
+  - {fileID: 114388632606708188}
+  - {fileID: 114290164407887540}
+  - {fileID: 114298625379735248}
+  - {fileID: 114331993893185608}
+  - {fileID: 114856824092194120}
+  - {fileID: 114977084710762604}
+  - {fileID: 114574310263759112}
+  - {fileID: 114502514949289086}
+  - {fileID: 114484356914043836}
+  - {fileID: 114906989151251806}
+  - {fileID: 114828393365294786}
+  - {fileID: 114887728064779434}
+  - {fileID: 114996359871600466}
+  MasterBankRef: {fileID: 114039913987836062}
   StringsBankRef: {fileID: 114599071244779998}
-  stringsBankWriteTime: 636761141632907766
+  stringsBankWriteTime: 636773216090112678
   cacheVersion: 2
 --- !u!114 &114022630922712270
 MonoBehaviour:
@@ -50,7 +71,7 @@ MonoBehaviour:
   Path: event:/Player/Reload
   guid: ae8310e76d74194d89463add5e31f308
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -72,7 +93,7 @@ MonoBehaviour:
   Path: event:/Player/Ammo
   guid: 46c976782e6db546bb7e10f22a5910fb
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -94,14 +115,55 @@ MonoBehaviour:
   Path: event:/Dragon/Ground/Turn
   guid: 5291f783550e8a469c83576e56a6e945
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 200
+  Length: 750
+--- !u!114 &114039913987836062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\210-11\Desktop\DragonBossAi_Test0930\Assets\Sound\Revelation Sound
+    Gstar\Build\Desktop\Master Bank.bank
+  lastModified: 636773216089992992
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2683424
+  Exists: 1
+--- !u!114 &114041490197058646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_09
+  guid: 54a0a70bb9fc6340b216eab11de6f479
+  Banks:
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 750
+  Length: 850
 --- !u!114 &114078224766549318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,14 +178,14 @@ MonoBehaviour:
   Path: event:/Dragon/Flying/Hovering
   guid: 97d6d5b6142ec149a893e13f4e88e03f
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114273366451830808}
+  - {fileID: 114601978294019712}
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 2000
   Length: 1893
 --- !u!114 &114103391995889876
 MonoBehaviour:
@@ -139,14 +201,29 @@ MonoBehaviour:
   Path: event:/Dragon/Flying/Meteor
   guid: 13cf14fbf21f094790827ff0a2ad50a8
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 550
-  Length: 1800
+  MaxDistance: 2000
+  Length: 2020
+--- !u!114 &114175488859435500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gun_Dis
+  Min: 0
+  Max: 100
+  Default: 0
 --- !u!114 &114201571264114204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,14 +238,14 @@ MonoBehaviour:
   Path: event:/Dragon/Flying/Meteor_Effect
   guid: 35e7636d06ed88428bbbfd900e2cd055
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 400
-  Length: 3302
+  MaxDistance: 300
+  Length: 3800
 --- !u!114 &114235566457974138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,14 +260,36 @@ MonoBehaviour:
   Path: event:/Dragon/Ground/Painful
   guid: 3617b58cb8fdc74bb0790fe632fef911
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 2750
+--- !u!114 &114241685036693290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_01
+  guid: 3ed9c36fdbc33a4aac215c21b5b62660
+  Banks:
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3062
+  Length: 11050
 --- !u!114 &114273366451830808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +305,72 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114290164407887540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_08
+  guid: 57d597c774a61a4aa71b4a2a4a23c51e
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1980
+--- !u!114 &114298625379735248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Dragon/Ground/Howling_Effect
+  guid: 5fb8ea386d9f174dab54c4435214801c
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 5000
+--- !u!114 &114331993893185608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_04
+  guid: 6126a245ee45ba499e942bde1ef84ce8
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 880
 --- !u!114 &114339280558299028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,14 +385,36 @@ MonoBehaviour:
   Path: event:/Dragon/Ground/Walk
   guid: 636d0e8768cf594692156c80e1822754
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 250
+  MaxDistance: 400
   Length: 627
+--- !u!114 &114347238221983684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_03
+  guid: 1155ada4da392e478ac4e5b8e76392bf
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2650
 --- !u!114 &114355523992473864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,14 +429,14 @@ MonoBehaviour:
   Path: event:/Dragon/Ground/Rush
   guid: f53b439df8ca454285f402759bb476b8
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 450
-  Length: 2012
+  Length: 2962
 --- !u!114 &114356489061648976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +451,7 @@ MonoBehaviour:
   Path: event:/Player/Machinegun
   guid: 4284262da18fad4b97c4c478ff2d4571
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -286,14 +473,14 @@ MonoBehaviour:
   Path: event:/Dragon/Ground/Paw
   guid: a8f208badcd96a408202b7b80769e738
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 400
-  Length: 2950
+  Length: 3600
 --- !u!114 &114375611618510164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +510,7 @@ MonoBehaviour:
   Path: event:/Dragon/Ground/Howling
   guid: 70594249689fa3449f9e05fb392f48f2
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -331,6 +518,94 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 400
   Length: 5200
+--- !u!114 &114388632606708188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_12
+  guid: 562326d8cf8e004d953ffeb55eb1d674
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 870
+--- !u!114 &114405952723975474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_10
+  guid: 238afea1da14b342bd9bb63f472bc0cb
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3350
+--- !u!114 &114484356914043836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_14
+  guid: b4dbb65a2d41464d83a4f6878d958427
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3400
+--- !u!114 &114502514949289086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Dragon/Ground/Breath_Radial_Effect
+  guid: 9e6aa139945ca24988b4339c4597916b
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 250
+  Length: 3250
 --- !u!114 &114560694152545618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,14 +620,58 @@ MonoBehaviour:
   Path: event:/Dragon/Flying/Flying
   guid: 8a54d7bd108aab4fbc90865883129db0
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
-  Length: 1967
+  MaxDistance: 2000
+  Length: 1807
+--- !u!114 &114574310263759112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Dragon/Ground/Dash
+  guid: 955ea41a9868ef46bc3d43a196b33d83
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 1000
+--- !u!114 &114588602972880154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Dragon/Ground/Paw_Effect
+  guid: 3fc9e8466b6b1642bdae0e698d01e060
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 1800
 --- !u!114 &114591559413560750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,13 +702,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: Assets\Sound\Revelation Sound\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636761141632907766
+  Path: Assets\Sound\Revelation Sound Gstar\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636773216090112678
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1412
+    Value: 2236
   Exists: 1
+--- !u!114 &114601978294019712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: HoveringDis
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114684965378183942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,14 +738,36 @@ MonoBehaviour:
   Path: event:/Dragon/Ground/Dying
   guid: 508c956e7d8e7040a443c86537ad27e5
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 3600
+--- !u!114 &114710720106392202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_06
+  guid: 49aa230daaea3540b945dc39e5548579
+  Banks:
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3155
+  Length: 2650
 --- !u!114 &114756422111114806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,15 +782,15 @@ MonoBehaviour:
   Path: event:/Player/Gun
   guid: 10fbdac16d2ad24ba54c012de1f84cae
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114375611618510164}
+  - {fileID: 114175488859435500}
   MinDistance: 1
   MaxDistance: 20
-  Length: 455
+  Length: 610
 --- !u!114 &114777645076211382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,14 +805,36 @@ MonoBehaviour:
   Path: event:/Dragon/Ground/Breath
   guid: c2d673fe7d5bbc4e8e700d1631008ba0
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 400
-  Length: 2450
+  Length: 4100
+--- !u!114 &114828393365294786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_11
+  guid: cee25ed75ed04a41957b033fb849236c
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4700
 --- !u!114 &114838051784200496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +849,7 @@ MonoBehaviour:
   Path: event:/BGM/BGM
   guid: 17ed727b67bd904387317b05b3a01286
   Banks:
-  - {fileID: 114591559413560750}
+  - {fileID: 114039913987836062}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -479,3 +857,157 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 56004
+--- !u!114 &114852977919157836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_07
+  guid: 0813b0aa50fe9a4c9aef45777f4be563
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4200
+--- !u!114 &114856824092194120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_02
+  guid: 68487d3d1602994592a856e1f40594e7
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3100
+--- !u!114 &114887728064779434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_15
+  guid: e373ae28d79db540bd65855f7312d982
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &114906989151251806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_13
+  guid: ca692f627587eb41b56c0f57791f7a6e
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3550
+--- !u!114 &114943812153677422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Dragon/Ground/Rush_Effect
+  guid: 49f32d0f5321374d9f2236d27670d83c
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1800
+--- !u!114 &114977084710762604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AI/Tuto_05
+  guid: 6e0aceafc17aa647b4a372f40b527dfb
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2250
+--- !u!114 &114996359871600466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Dragon/Ground/Dash_Effect
+  guid: f4b4d929534bbd47a55117ab0e3a0cfa
+  Banks:
+  - {fileID: 114039913987836062}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 400
+  Length: 520

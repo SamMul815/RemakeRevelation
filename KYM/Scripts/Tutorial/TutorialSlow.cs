@@ -5,7 +5,7 @@ using UnityEngine;
 public class TutorialSlow : TutorialBase
 {
     public GameObject tutorialSlowObjects;
-    public GameObject tutorialClearObjects;
+    //public GameObject tutorialClearObjects;
 
     bool isGrip = false;
     bool isClear = false;
@@ -13,17 +13,17 @@ public class TutorialSlow : TutorialBase
     {
         tutorialSlowObjects.SetActive(true);
         TutorialEvent.Instance.LeftGun.SetSkillCoolTime(0.0f);
+        StartCoroutine(corSlowTutorial());
     }
 
     private void OnDisable()
     {
         tutorialSlowObjects.SetActive(false);
-        tutorialClearObjects.SetActive(true);
+        //tutorialClearObjects.SetActive(true);
     }
 
     protected override bool IsClear()
     {
-
         return isClear;
     }
 
@@ -38,12 +38,16 @@ public class TutorialSlow : TutorialBase
 
     IEnumerator corSlowTutorial()
     {
-        while(!isGrip)
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI13");
+
+        while (!isGrip)
         {
            yield return new WaitForEndOfFrame();
         }
 
-        new WaitForSecondsRealtime(7.0f);
+        yield return new WaitForSecondsRealtime(7.0f);
         isClear = true;
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI14");
+
     }
 }

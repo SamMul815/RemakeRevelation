@@ -19,7 +19,7 @@ public class TutorialMachineGunMove : TutorialBase
     {
         closeDoor.Close();
         tutorialMachineGunObjects.SetActive(false);
-        TutorialEvent.Instance.OffNPC();
+        //TutorialEvent.Instance.OffNPC();
     }
 
     protected override bool IsClear()

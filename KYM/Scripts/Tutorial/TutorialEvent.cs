@@ -75,30 +75,30 @@ public class TutorialEvent : Singleton<TutorialEvent>
     public float onTime;
 
 
-    public void OnNPC()
-    {
-        StartCoroutine(corOnNPC());
-    }
+    //public void OnNPC()
+    //{
+    //    StartCoroutine(corOnNPC());
+    //}
 
-    public void OffNPC()
-    {
-        for (int i = 0; i < npcMaterials.Length; i++)
-        {
-            npcMaterials[i].SetFloat("_warf", minValue);
-        }
-    }
+    //public void OffNPC()
+    //{
+    //    for (int i = 0; i < npcMaterials.Length; i++)
+    //    {
+    //        npcMaterials[i].SetFloat("_warf", minValue);
+    //    }
+    //}
 
     public void OnReload()
     {
         reloadBox1.SetActive(true);
         reloadBox2.SetActive(true);
     }
+
     public void OffReload()
     {
         reloadBox1.SetActive(false);
         reloadBox2.SetActive(false);
     }
-
 
     IEnumerator corOnNPC()
     {
@@ -112,7 +112,5 @@ public class TutorialEvent : Singleton<TutorialEvent>
             yield return new WaitForEndOfFrame();
         }
     }
-
-
 
 }

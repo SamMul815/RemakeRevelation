@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{43a585d0-3f6e-49f2-8b6f-8c2b9de31b17}">
+        <property name="assetPath">
+            <value>Gun_NailRifle_Shot02.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.82417233560090708</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{274e8c19-43a3-40de-8f05-28012b43a31d}</destination>
+        </relationship>
+    </object>
+</objects>

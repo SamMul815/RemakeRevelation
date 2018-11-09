@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{3b705907-7a4a-4f59-b364-a61bdd42e8b8}">
+        <property name="name">
+            <value>Gun_Dis</value>
+        </property>
+        <relationship name="folder">
+            <destination>{83c1c8c4-acc7-4497-82dc-3cf1d8075319}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{3d1d2987-cb15-4a3c-bee9-b4f8788b4682}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{3d1d2987-cb15-4a3c-bee9-b4f8788b4682}">
+        <property name="maximum">
+            <value>100</value>
+        </property>
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

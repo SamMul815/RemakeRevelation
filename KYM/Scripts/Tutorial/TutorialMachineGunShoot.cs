@@ -7,6 +7,7 @@ public class TutorialMachineGunShoot : TutorialBase
     public GameObject tutorialMachineGunShootObjects;
     public GameObject target;
     public MachinGun machinGun;
+    public TutorialNPC tutorialNPC;
     private bool isMachineGun = false;
 
     public bool isClear = false;
@@ -47,7 +48,10 @@ public class TutorialMachineGunShoot : TutorialBase
         TutorialEvent.Instance.RightHand.HighlightOnButton("lgrip");
         TutorialEvent.Instance.RightHand.HighlightOnButton("rgrip");
         tutorialMachineGunShootObjects.SetActive(true);
-        TutorialEvent.Instance.OnNPC();
+        //TutorialEvent.Instance.OnNPC();
+        tutorialNPC.OnNPC();
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI07");
+
         while (true)
         {
             Player.instance.rightHand.Vibration(0.1f, 4000);
@@ -75,7 +79,9 @@ public class TutorialMachineGunShoot : TutorialBase
             yield return new WaitForEndOfFrame();
         }
 
-        while(true)
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI08");
+
+        while (true)
         {
             if(machinGun.CurrentGauge <=0.0f)
             {
@@ -83,6 +89,9 @@ public class TutorialMachineGunShoot : TutorialBase
             }
             yield return new WaitForEndOfFrame();
         }
+
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI09");
+        yield return new WaitForSecondsRealtime(1.0f);
         target.SetActive(false);
         isClear = true;
 

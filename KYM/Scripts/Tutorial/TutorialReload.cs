@@ -8,6 +8,8 @@ public class TutorialReload : TutorialBase
 
     public GameObject tutorialReloadObjects;
 
+    public TutorialNPC tutorialNPC;
+
     GameObject leftGun;
     GameObject rightGun;
     private const PlayerHand.AttachmentFlags attachmentFlags = 
@@ -16,8 +18,6 @@ public class TutorialReload : TutorialBase
 
     private void OnEnable()
     {
-        //ReloadBox1.SetActive(false);
-        //ReloadBox2.SetActive(false);
         TutorialEvent.Instance.OffReload();
         tutorialReloadObjects.SetActive(true);
         leftGun = Instantiate(tutorialGunPrefab);
@@ -36,7 +36,7 @@ public class TutorialReload : TutorialBase
 
     private void OnDisable()
     {
-        TutorialEvent.Instance.OffNPC();
+        //TutorialEvent.Instance.OffNPC();
         tutorialReloadObjects.SetActive(false);
     }
 
@@ -57,12 +57,14 @@ public class TutorialReload : TutorialBase
 
     IEnumerator corReload()
     {
-        TutorialEvent.Instance.OnNPC();
+        tutorialNPC.OnNPC();
+        //장전박스 ON
+        TutorialEvent.Instance.OnReload();
+        FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI03");
         //NPC 등장 끝
         yield return new WaitForSeconds(2.0f);
 
-        //장전박스 ON
-        TutorialEvent.Instance.OnReload();
+
         //ReloadBox1.SetActive(true);
         //ReloadBox2.SetActive(true);
 
