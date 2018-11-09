@@ -5,12 +5,12 @@
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" } cull off
+		Tags { "RenderType"="Transparent" "Queue"="Transparent"} cull off
 		LOD 200
 
 		CGPROGRAM
 
-		#pragma surface surf Standard fullforwardshadows
+		#pragma surface surf Standard fullforwardshadows alpha:fade
 
 		#pragma target 3.0
 
