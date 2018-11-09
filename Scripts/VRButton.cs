@@ -82,60 +82,6 @@ public class VRButton : MonoBehaviour
                 Physics.Raycast(hand.transform.position, hand.transform.forward, distance, uiLayer);
         }
 
-        //else
-        //{
-        //    if(_isOver)
-        //    {
-        //        _buttonImage.sprite = _buttonSprite;
-        //        _isOver = false;
-        //    }
-        //    if(!_isOver)
-        //    {
-        //        if (_buttonOverSprite)
-        //        {
-        //            _buttonImage.sprite = _buttonOverSprite;
-        //        }
-        //        _isOver = true;
-        //    }
-
-        //    if(hand.GetTriggerButtonDown())
-        //    {
-        //        if(ButtonEvent != null)
-        //        {
-        //            ButtonEvent();
-        //        }
-        //    }
-        //}
-
-
-        //bool isButtonPoniter =
-        //    Physics.Raycast(hand.transform.position, hand.transform.forward, distance, uiLayer);
-        //if (isButtonPoniter)
-        //{
-        //    if (!_isOver)
-        //    {
-        //        if (_buttonOverSprite)
-        //        {
-        //            _buttonImage.sprite = _buttonOverSprite;
-        //        }
-        //        _isOver = true;
-        //    }
-        //    if (hand.GetTriggerButtonDown())
-        //    {
-        //        if (ButtonEvent != null)
-        //        {
-        //            ButtonEvent();
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    if(_isOver)
-        //    {
-        //        _buttonImage.sprite = _buttonSprite;
-        //        _isOver = false;
-        //    }
-        //}
     }
 
     private void OnDrawGizmos ()
