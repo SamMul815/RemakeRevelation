@@ -78,7 +78,7 @@ public class Dragon_RushAttack_Action : ActionTask
                 return false;
             }
             _manager.Stat.DashMovePosition = PlayerPos;
-            FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Rush");
+            FmodManager.Instance.PlaySoundAttatch(DragonTransform.gameObject, "Dash");
             DragonAniManager.SwicthAnimation("Dragon_Rush");
             EffectManager.Instance.PoolParticleEffectOn("Rush", DragonTransform);
 

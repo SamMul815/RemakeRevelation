@@ -208,12 +208,12 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void FlyingSoundOn (EvnData evnData)
     {
-        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Flying");
+        FmodManager.Instance.PlaySoundAttatch(_manager.gameObject, "Flying");
     }
 
     private void HoveringSoundOn (EvnData evnData)
     {
-        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Hovering");
+        FmodManager.Instance.PlaySoundAttatch(_manager.gameObject, "Hovering");
     }
 
     private void DescentFlyingStart(EvnData evnData)
