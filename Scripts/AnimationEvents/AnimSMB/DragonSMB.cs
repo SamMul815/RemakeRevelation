@@ -5,6 +5,8 @@ using DragonController;
 
 public class DragonSMB : BaseSMB{
 
+    float aniTime = 0.0f;
+
     public override void Awake()
     {
         base.Awake();
@@ -14,6 +16,8 @@ public class DragonSMB : BaseSMB{
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
+        aniTime = 0.0f;
+        maxAniTime = 1.0f;
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -46,27 +50,41 @@ public class DragonSMB : BaseSMB{
 
         if (onStateTimeEventListener != null)
         {
-            for (int i = 0; i < onStateTimeEventListener.Count; i++)
-            {
-                float aniTime = Mathf.Round((stateInfo.normalizedTime) * 1000.0f) / 1000f;
 
-                if (aniTime >= StateTimeEvent[i].RunTime)
+            aniTime = Mathf.Round((stateInfo.normalizedTime) * 1000.0f) / 1000f;
+
+            if (eventIndex < onStateTimeEventListener.Count)
+            {
+                if (aniTime >= StateTimeEvent[eventIndex].RunTime + (maxAniTime - 1))
                 {
-                    bool isRun = IsRunning[i];
+                    bool isRun = IsRunning[eventIndex];
 
                     if (!isRun)
                     {
-                        onStateTimeEventListener[i](StateTimeEvent[i]);
-                        isRunning[i] = true;
+                        onStateTimeEventListener[eventIndex](StateTimeEvent[eventIndex]);
+                        isRunning[eventIndex] = true;
+                        eventIndex++;
                     }
                 }
             }
+            else if(IsLoop)
+            {
+                if (aniTime >= maxAniTime)
+                {
+                    maxAniTime += 1.0f;
+                    eventIndex = 0;
+                    InitRunning(isRunning);
+                }
+            }
+
         }
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
+        aniTime = 0.0f;
+        maxAniTime = 1.0f;
     }
 
 }

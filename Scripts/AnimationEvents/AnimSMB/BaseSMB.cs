@@ -9,10 +9,14 @@ public class BaseSMB : StateMachineBehaviour
 
     public string SMBKeyName;
 
+    public bool IsLoop;
+    protected float maxAniTime = 1.0f;
+
+
     public EvnData StateEnterEvnData;
     public EvnData StateExitEvnData;
     public List<EvnData> StateTimeEvent;
-
+    
     protected Action<EvnData> onStateEnterEventListener;
     protected Action<EvnData> onStateExitEventListener;
     protected List<Action<EvnData>> onStateTimeEventListener;
@@ -20,12 +24,13 @@ public class BaseSMB : StateMachineBehaviour
     protected bool beginExit = false;
     protected bool waitingToBegin = false;
 
+    protected int eventIndex = 0;
+
     protected List<bool> isRunning;
     public List<bool> IsRunning { set { isRunning = value; } get { return isRunning; } }
 
     public virtual void Awake()
     {
-
     }
 
     public void InitRunning(List<bool> Running)
@@ -65,11 +70,13 @@ public class BaseSMB : StateMachineBehaviour
             waitingToBegin = true;
         else
             waitingToBegin = false;
+        eventIndex = 0;
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
+        eventIndex = 0;
         InitRunning(isRunning);
     }
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

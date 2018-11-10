@@ -9,6 +9,14 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
         base.Awake();
 
+        AddAnimEnterEventFunc(TrunStart, "RightTrun");
+        AddAnimEnterEventFunc(TrunStart, "LeftTrun");
+
+
+
+        AddAnimTimeEventFunc(FirstWalk, "Walk");
+        AddAnimTimeEventFunc(LastWalk, "Walk");
+
         AddAnimTimeEventFunc(BreathAttackOn, "Breath");
         AddAnimTimeEventFunc(ActionEnd, "Breath");
 
@@ -18,11 +26,11 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
 
         AddAnimTimeEventFunc(RightPawAttackOn, "RightPaw");
-        AddAnimTimeEventFunc(AttackOff, "RightPaw");
+        AddAnimTimeEventFunc(PawAttackOff, "RightPaw");
         AddAnimTimeEventFunc(ActionEnd, "RightPaw");
 
         AddAnimTimeEventFunc(LeftPawAttackOn, "LeftPaw");
-        AddAnimTimeEventFunc(AttackOff, "LeftPaw");
+        AddAnimTimeEventFunc(PawAttackOff, "LeftPaw");
         AddAnimTimeEventFunc(ActionEnd, "LeftPaw");
 
 
@@ -52,6 +60,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(MeteoFlyingStart, "MeteoTakeOff");
 
+        AddAnimTimeEventFunc(MeteoAttackSoundOn, "MeteoAttack");
         AddAnimTimeEventFunc(MeteoAttackOn, "MeteoAttack");
         AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
 
@@ -62,30 +71,32 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         AddAnimTimeEventFunc(ActionEnd, "NearHowling");
 
-        //---------------------Sound Start------------------------
-        ////Howling
-        //AddAnimTimeEventFunc(SoundHowling, "Howling");
+        AddAnimTimeEventFunc(FlyingSoundOn, "Flying");
 
-        ////Breath
-        //AddAnimTimeEventFunc(SoundBreath, "Breath");
+        AddAnimTimeEventFunc(HoveringSoundOn, "Hovering");
+        AddAnimTimeEventFunc(HoveringSoundOn, "MeteoWaiting");
 
-        ////Breath
-        //AddAnimTimeEventFunc(SoundShot_Breath, "Shot_Breath");
-
-        ////Dash
-        //AddAnimTimeEventFunc(SoundDashAttack1, "Dash");
-        //AddAnimTimeEventFunc(SoundDashAttack2, "Dash");
-        //AddAnimTimeEventFunc(SoundDashAttack3, "Dash");
-
-        ////Rush
-        //AddAnimTimeEventFunc(SoundRushAttack, "Rush");
-
-        //---------------------Sound End--------------------------
     }
 
+    private void FirstWalk (EvnData evnData)
+    {
+        //Debug.Log("test");
+        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Walk");
+    }
+
+    private void LastWalk (EvnData evnData)
+    {
+        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Walk");
+    }
+
+    private void TrunStart(EvnData evnData)
+    {
+        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Turn");
+    }
 
     private void TakeOff(EvnData evnData)
     {
+
     }
 
     private void ActionEnd(EvnData evnData)
@@ -105,21 +116,30 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.AttackOff();
     }
 
+    private void PawAttackOff (EvnData evnData)
+    {
+        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Paw_Effect");
+        _manager.AttackOff();
+    }
+
     private void DashFirstRightPaw(EvnData evnData)
     {
         Vector3 Pos = _manager.RightPawTransform.position;
+        FmodManager.Instance.PlaySoundOneShot(Pos, "Dash_Effect");
         EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, _manager.transform.forward);
     }
 
     private void DashLeftAttack(EvnData evnData)
     {
         Vector3 Pos = _manager.LeftPawTransform.position;
+        FmodManager.Instance.PlaySoundOneShot(Pos, "Dash_Effect");
         EffectManager.Instance.PoolParticleEffectOn("LeftDash", Pos, _manager.transform.forward);
     }
 
     private void DashLastRightPaw(EvnData evnData)
     {
         Vector3 Pos = _manager.RightPawTransform.position;
+        FmodManager.Instance.PlaySoundOneShot(Pos, "Dash_Effect");
         EffectManager.Instance.PoolParticleEffectOn("RightDash", Pos, _manager.transform.forward);
         BlackBoard.IsDashAttackOn = false;
         _manager.AttackOff();
@@ -133,6 +153,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void RushAttackOff(EvnData evnData)
     {
+        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Rush_Effect");
         _blackBoard.IsRushAttackOn = false;
         _manager.AttackOff();
     }
@@ -158,19 +179,19 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.AttackOff();
     }
 
-
     private void ShotBreathAttackOn(EvnData evnData)
     {
         Transform DragonMouth = _blackBoard.DragonBulletBreathMouth;
+
+        FmodManager.Instance.PlaySoundOneShot(DragonMouth.position, "Breath_Effect");
         BulletManager.Instance.CreateDragonBaseBulletTest(DragonMouth, 0.15f, 10);
     }
 
     private void HowlingAttackOn(EvnData evnData)
     {
         Vector3 pos =_manager.transform.position;
-
         int Amount = _blackBoard.FanShapeAmount;
-        Vector3 Pos = _manager.LeftPawTransform.position;
+        FmodManager.Instance.PlaySoundOneShot(pos, "Howling_Effect");
         BulletManager.Instance.CreateDragonBaseBullet(pos, Amount);
     }
 
@@ -184,10 +205,21 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
             _manager.transform.position).normalized;
         dir.y = 0.0f;
 
+        FmodManager.Instance.PlaySoundOneShot(DragonMouth.position, "Breath");
         BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
 
     }
-    
+
+    private void FlyingSoundOn (EvnData evnData)
+    {
+        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Flying");
+    }
+
+    private void HoveringSoundOn (EvnData evnData)
+    {
+        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Hovering");
+    }
+
     private void DescentFlyingStart(EvnData evnData)
     {
         MovementManager.Instance.SetMovement(MovementType.AirSpear);
@@ -205,6 +237,11 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _blackBoard.IsGround = false;
         _manager.FlyingOn = true;
 
+    }
+
+    private void MeteoAttackSoundOn(EvnData evnData)
+    {
+        FmodManager.Instance.PlaySoundOneShot(Player.instance.transform.position, "Meteor");
     }
 
     private void MeteoAttackOn(EvnData evnData)
@@ -229,46 +266,5 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _blackBoard.IsTailAttackOn = false;
         _manager.AttackOff();
     }
-    //---------------------Sound Function Start -----------------------------------------------
-
-    //Howling
-    private void SoundHowling(EvnData evenData)
-    {
-        SoundManagerNormal.Instance.PlayAudio("dt1", DragonManager.Instance.transform.position,0.0f,AudioDType._3D);
-    }
-
-    //Breath
-    private void SoundBreath(EvnData evnData)
-    {
-        SoundManagerNormal.Instance.PlayAudio("dt3", DragonManager.Instance.transform.position,1.0f, AudioDType._3D);
-    }
-
-    //Shot_Breath
-    private void SoundShot_Breath(EvnData evnData)
-    {
-        SoundManagerNormal.Instance.PlayAudio("dt4", DragonManager.Instance.transform.position, 1.0f, AudioDType._3D);
-    }
-
-    //Dash
-    private void SoundDashAttack1(EvnData evnData)
-    {
-        SoundManagerNormal.Instance.PlayAudio("da1",DragonManager.Instance.transform.position,0.0f, AudioDType._3D);
-    }
-    private void SoundDashAttack2(EvnData evnData)
-    {
-        SoundManagerNormal.Instance.PlayAudio("da2", DragonManager.Instance.transform.position,0.0f, AudioDType._3D);
-    }
-    private void SoundDashAttack3(EvnData evnData)
-    {
-        SoundManagerNormal.Instance.PlayAudio("da3", DragonManager.Instance.transform.position,0.0f, AudioDType._3D);
-    }
-
-    //Rush
-    private void SoundRushAttack(EvnData evnData)
-    {
-        SoundManagerNormal.Instance.PlayAudio("dt3", DragonManager.Instance.transform.position,1.0f, AudioDType._3D);
-    }
-
-    //---------------------Sound Function End--------------------------------------------------
 
 }

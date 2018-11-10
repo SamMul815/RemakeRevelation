@@ -10,6 +10,8 @@ public class Dragon_RedZoneAttack_Action : ActionTask
     float damege;
     float distance;
 
+    float basePushPower;
+     
     bool isPushing;
 
     public override void Init()
@@ -20,6 +22,8 @@ public class Dragon_RedZoneAttack_Action : ActionTask
         pushPower = 30.0f / distance;
         damege = 10.0f;
         isPushing = false;
+
+        basePushPower = 10.0f;
     }
 
     public override void OnStart()
@@ -31,6 +35,7 @@ public class Dragon_RedZoneAttack_Action : ActionTask
         EffectManager.Instance.PoolParticleEffectOn("NearHowling",
             _manager.transform.position,
             _manager.transform.forward);
+        FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Howling");
         DragonAniManager.SwicthAnimation("Dragon_NearHowling");
 
     }
@@ -43,6 +48,11 @@ public class Dragon_RedZoneAttack_Action : ActionTask
             {
                 float FinalDistance = (DragonTransform.position - PlayerTransform.position).sqrMagnitude;
                 float FinalPushPower = pushPower * (distance - Mathf.Sqrt(FinalDistance));
+
+                if (FinalPushPower <= basePushPower)
+                {
+                    FinalPushPower = basePushPower;
+                }
 
                 dir = (PlayerTransform.position - DragonTransform.position).normalized;
                 dir += new Vector3(0.0f, 0.2f, 0.0f);

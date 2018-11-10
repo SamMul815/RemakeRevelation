@@ -7,142 +7,126 @@ public class VRButton : MonoBehaviour
 {
     [SerializeField]
     protected Sprite _buttonOverSprite;
-    protected Sprite _buttonSprite;
+    protected Sprite _buttonNormalSprite;
 
     protected Image _buttonImage;
 
-    [SerializeField]
-    //protected List PlayerHand _hand;
-    protected List<PlayerHand> _hand = new List<PlayerHand>();
+    protected PlayerHand _leftHend;
+    protected PlayerHand _rightHend;
 
     [SerializeField]
     protected float _rayDistance;
     
     protected bool _isOver;
-    protected bool _isButtonPoniter;
+    
+    protected bool _isButtonClick;
 
     public delegate void ButtonEventFunc();
     public ButtonEventFunc ButtonEvent;
+
+    private LayerMask _uiLayer;
 
     // Use this for initialization
     protected virtual void Start ()
     {
         _buttonImage = GetComponent<Image>();
-        _buttonSprite = _buttonImage.sprite;
+        _buttonNormalSprite = _buttonImage.sprite;
+        _uiLayer = 1 << LayerMask.NameToLayer("UI");
     }
-	
-	// Update is called once per frame
-	protected virtual void Update ()
+
+    protected void Start ()
     {
-        for (int i = 0; i < _hand.Count; i++)
+        if (Application.isPlaying)
         {
-            OnButtonClick(_hand[i], _rayDistance);
+            _leftHend = Player.instance.leftHand;
+            _rightHend = Player.instance.rightHand;
         }
+    }
+
+    // Update is called once per frame
+    protected virtual void Update ()
+    {
+        OnButtonClick(_leftHend, _rayDistance);
+        OnButtonClick(_rightHend, _rayDistance);
     }
 
 
     private void OnButtonClick (PlayerHand hand, float distance)
     {
-        LayerMask uiLayer = 1 << LayerMask.NameToLayer("UI");
 
-        if (!_isButtonPoniter)
+        bool _isButtonPoniter =
+                Physics.Raycast(hand.transform.position, hand.transform.forward, distance, _uiLayer);
+
+        if (_isButtonPoniter)
         {
-            _isButtonPoniter =
-                Physics.Raycast(hand.transform.position, hand.transform.forward, distance, uiLayer);
-            if (_isButtonPoniter)
+            if (!_isOver)
             {
-                if (!_isOver)
+                if (_buttonOverSprite)
                 {
-                    if (_buttonOverSprite)
-                    {
-                        _buttonImage.sprite = _buttonOverSprite;
-                    }
-                    _isOver = true;
+                    _buttonImage.sprite = _buttonOverSprite;
                 }
-                if (hand.GetTriggerButtonDown())
+                _isOver = true;
+            }
+            if (hand.GetTriggerButtonDown())
+            {
+                if (!_isButtonClick)
                 {
                     if (ButtonEvent != null)
                     {
                         ButtonEvent();
                     }
-                }
-            }
-            else
-            {
-                if (_isOver)
-                {
-                    _buttonImage.sprite = _buttonSprite;
-                    _isOver = false;
+                    _isButtonClick = true;
                 }
             }
         }
         else
         {
-            _isButtonPoniter = 
-                Physics.Raycast(hand.transform.position, hand.transform.forward, distance, uiLayer);
-        }
+            if (_isOver)
+            {
+                if (_leftHend == hand)
+                {
+                    PlayerHand otherHand = _rightHend;
+                    _isButtonPoniter = Physics.Raycast(otherHand.transform.position, otherHand.transform.forward, distance, _uiLayer);
+                    if (!_isButtonPoniter)
+                    {
+                        _buttonImage.sprite = _buttonNormalSprite;
+                        _isOver = false;
+                        return;
+                    }
+                    if (otherHand.GetTriggerButtonDown())
+                    {
+                        if (!_isButtonClick)
+                        {
+                            if (ButtonEvent != null)
+                            {
+                                ButtonEvent();
+                            }
+                            _isButtonClick = true;
+                        }
+                    }
+                }
+                else
+                {
 
-        //else
-        //{
-        //    if(_isOver)
-        //    {
-        //        _buttonImage.sprite = _buttonSprite;
-        //        _isOver = false;
-        //    }
-        //    if(!_isOver)
-        //    {
-        //        if (_buttonOverSprite)
-        //        {
-        //            _buttonImage.sprite = _buttonOverSprite;
-        //        }
-        //        _isOver = true;
-        //    }
-
-        //    if(hand.GetTriggerButtonDown())
-        //    {
-        //        if(ButtonEvent != null)
-        //        {
-        //            ButtonEvent();
-        //        }
-        //    }
-        //}
-
-
-        //bool isButtonPoniter =
-        //    Physics.Raycast(hand.transform.position, hand.transform.forward, distance, uiLayer);
-        //if (isButtonPoniter)
-        //{
-        //    if (!_isOver)
-        //    {
-        //        if (_buttonOverSprite)
-        //        {
-        //            _buttonImage.sprite = _buttonOverSprite;
-        //        }
-        //        _isOver = true;
-        //    }
-        //    if (hand.GetTriggerButtonDown())
-        //    {
-        //        if (ButtonEvent != null)
-        //        {
-        //            ButtonEvent();
-        //        }
-        //    }
-        //}
-        //else
-        //{
-        //    if(_isOver)
-        //    {
-        //        _buttonImage.sprite = _buttonSprite;
-        //        _isOver = false;
-        //    }
-        //}
-    }
-
-    private void OnDrawGizmos ()
-    {
-        for (int i = 0; i < _hand.Count; i++)
-        {
-            Gizmos.DrawRay(_hand [i].transform.position, _hand [i].transform.forward * _rayDistance);
+                    PlayerHand otherHand = _leftHend;
+                    _isButtonPoniter = Physics.Raycast(otherHand.transform.position, otherHand.transform.forward, distance, _uiLayer);
+                    if (!_isButtonPoniter)
+                    {
+                        _buttonImage.sprite = _buttonNormalSprite;
+                        _isOver = false;
+                        return;
+                    }
+                    if (otherHand.GetTriggerButtonDown())
+                    {
+                        if (!_isButtonClick)
+                        {
+                            if (ButtonEvent != null)
+                                ButtonEvent();
+                            _isButtonClick = true;
+                        }
+                    }
+                }
+            }
         }
     }
 

@@ -8,6 +8,7 @@ public class Dragon_HowlingAttack_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
+        FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Howling");
         DragonAniManager.SwicthAnimation("Dragon_Howling");
         _clock.CurHowlingCoolingTime = 0.0f;
     }

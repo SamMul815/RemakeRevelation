@@ -267,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1895787810647142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -50}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4266998262101692}
@@ -521,8 +521,7 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: 68db71da3f965874fbf8c6646524d4e9, type: 3}
   - name: aaahhh
     sound: {fileID: 8300000, guid: a93ce8dd966882c4389385f52048895d, type: 3}
-  audioSoundObject: {fileID: 1731873040759286, guid: 86d6c5b82368d4440b829a3c14a4f61d,
-    type: 2}
+  audioSoundObject: {fileID: 0}
 --- !u!114 &114847746839651598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -563,7 +562,7 @@ MonoBehaviour:
     path: event:/Dragon/Ground/Breath_Radial_Effect
   - tag: Dash
     path: event:/Dragon/Ground/Dash
-  - tag: Dying_Effect
+  - tag: Dash_Effect
     path: event:/Dragon/Ground/Dash_Effect
   - tag: Dying
     path: event:/Dragon/Ground/Dying

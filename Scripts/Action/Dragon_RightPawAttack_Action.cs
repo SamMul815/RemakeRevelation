@@ -59,8 +59,8 @@ public class Dragon_RightPawAttack_Action : ActionTask
                 return false;
             }
 
+            FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Paw");
             DragonAniManager.SwicthAnimation("Dragon_RightPaw");
-            Vector3 Pos = DragonTransform.position;
             EffectManager.Instance.PoolParticleEffectOn("RightPaw", DragonTransform.position, DragonTransform.forward);
             _manager.IsTurn = true;
         }
