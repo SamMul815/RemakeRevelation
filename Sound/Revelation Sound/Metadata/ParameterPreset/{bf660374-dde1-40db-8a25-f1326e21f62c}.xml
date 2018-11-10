@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{bf660374-dde1-40db-8a25-f1326e21f62c}">
+        <property name="name">
+            <value>HoveringDis</value>
+        </property>
+        <relationship name="folder">
+            <destination>{83c1c8c4-acc7-4497-82dc-3cf1d8075319}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{53d5846c-54d6-4482-8ae2-f3f293818538}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{53d5846c-54d6-4482-8ae2-f3f293818538}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

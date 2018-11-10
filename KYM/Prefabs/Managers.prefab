@@ -36,8 +36,42 @@ GameObject:
   m_Component:
   - component: {fileID: 4574855354006930}
   - component: {fileID: 114450824410820312}
+  - component: {fileID: 114190391098585296}
   m_Layer: 0
   m_Name: BulletManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1528676113503118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4540561572803718}
+  - component: {fileID: 114526917983058814}
+  m_Layer: 0
+  m_Name: EffectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1685672761588624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4639327338950506}
+  - component: {fileID: 114983462703620280}
+  - component: {fileID: 114493780955149340}
+  m_Layer: 0
+  m_Name: FmodManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1895787810647142
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +208,19 @@ Transform:
   m_Father: {fileID: 4937106812172274}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4540561572803718
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528676113503118}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4937106812172274}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4574855354006930
 Transform:
   m_ObjectHideFlags: 1
@@ -181,11 +228,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447103096129256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -224.9, y: 0, z: -150.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4937106812172274}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4639327338950506
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685672761588624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4937106812172274}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4857654446613244
 Transform:
@@ -207,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1895787810647142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4266998262101692}
@@ -216,9 +276,30 @@ Transform:
   - {fileID: 4170449836561228}
   - {fileID: 4178443242248778}
   - {fileID: 4458651815265940}
+  - {fileID: 4540561572803718}
+  - {fileID: 4639327338950506}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114190391098585296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447103096129256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c628f9ef1ec4feb49b0d5000459756ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  widthSize: 30
+  heightSize: 30
+  width: 14
+  height: 10
+  playerDirFireCount: 30
+  count: 0
+  MeteoPosList: []
+  rndList: []
 --- !u!114 &114247043299693604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,9 +327,6 @@ MonoBehaviour:
   - poolObject: {fileID: 1063717698855360, guid: 1a7d91bc5a197dc42b026db6c17f46f8,
       type: 2}
     initialCount: 1
-  - poolObject: {fileID: 1464670765200634, guid: 1f215c3e2707b234789af95ba8c69ee3,
-      type: 2}
-    initialCount: 1
   - poolObject: {fileID: 1595224445038750, guid: 4d872c7832c0fc74c87d7a6e56167a27,
       type: 2}
     initialCount: 10
@@ -264,21 +342,33 @@ MonoBehaviour:
   - poolObject: {fileID: 1244637099381106, guid: ce41bfa691281094c9fc903eb76cc3c5,
       type: 2}
     initialCount: 20
-  - poolObject: {fileID: 1118533640688316, guid: 45fae325c58556544adcd49a0a1b2086,
+  - poolObject: {fileID: 1798456009025268, guid: 072b0584c62d0534fbb0b6de6f6d502c,
       type: 2}
     initialCount: 1
   - poolObject: {fileID: 1563069165791020, guid: c051a1ebd70579149819eed504ec0b5c,
       type: 2}
-    initialCount: 10
+    initialCount: 50
   - poolObject: {fileID: 1502653574976536, guid: fdbded1f67a6e864dac62e35e41e060f,
       type: 2}
-    initialCount: 10
+    initialCount: 50
   - poolObject: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
       type: 2}
     initialCount: 100
-  - poolObject: {fileID: 1121619590847894, guid: 83261521903a17a438f943f03a20b2ad,
+  - poolObject: {fileID: 1069826527463908, guid: c1e0facab5877974a891a0c8ab35b3c9,
       type: 2}
-    initialCount: 100
+    initialCount: 10
+  - poolObject: {fileID: 1721591259711116, guid: 0e44587b69f31d6498f23914aa0f8eb4,
+      type: 2}
+    initialCount: 30
+  - poolObject: {fileID: 1548099818966510, guid: 9e5fb77f6c7f73a4bbcf30399ba335a4,
+      type: 2}
+    initialCount: 30
+  - poolObject: {fileID: 1511254263570490, guid: a6a8911ada536f34fb8c08bcad425dde,
+      type: 2}
+    initialCount: 2
+  - poolObject: {fileID: 1415221952433890, guid: 2deaf6a6cfe54a3489cb36f6f7bfd1c3,
+      type: 2}
+    initialCount: 2
 --- !u!114 &114450824410820312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,12 +382,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBaseBullet: {fileID: 1077627483473738, guid: 88ebd8a552980c14fb4e704a2f46129f,
     type: 2}
-  playerMachinBullet: {fileID: 0}
+  playerMachinBullet: {fileID: 1253171051044704, guid: eaa74fd2276c38943898e4934b760d07,
+    type: 2}
   dragonBaseBullet: {fileID: 1455987169917528, guid: ef9a0b8948d45a34397e9a4dc7a357e3,
     type: 2}
-  dragonRotateBullet: {fileID: 1159996866615532, guid: fbab84e811b85fd46829eb7d2ab87bcd,
+  dragonHowlingBullet: {fileID: 1721591259711116, guid: 0e44587b69f31d6498f23914aa0f8eb4,
     type: 2}
-  dragonBreathPrefab: {fileID: 1118533640688316, guid: 45fae325c58556544adcd49a0a1b2086,
+  dragonBreathPrefab: {fileID: 1798456009025268, guid: 072b0584c62d0534fbb0b6de6f6d502c,
     type: 2}
   dragonMeteoPrefab: {fileID: 1563069165791020, guid: c051a1ebd70579149819eed504ec0b5c,
     type: 2}
@@ -315,6 +406,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSkill: {fileID: 0}
   rightSkill: {fileID: 0}
+--- !u!114 &114493780955149340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685672761588624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/BGM/BGM
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 0
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &114526917983058814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528676113503118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d078d930ed72449acf47c5762fa540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particlesList:
+  - {fileID: 1441271155620236, guid: 871e658f5f45dea4abd4e3a5e695f4ed, type: 2}
+  - {fileID: 1201230306409686, guid: 6861b06094330934c89a36a9cfa0039a, type: 2}
+  - {fileID: 1492819822406986, guid: 09c01b97ced6b3b48ad4a509053fce21, type: 2}
+  - {fileID: 1872982495496528, guid: 5b388df4b6872f249a84030a494c9338, type: 2}
+  - {fileID: 1046576829924918, guid: 5647d370751c1ce48901e6ad6b404cad, type: 2}
+  - {fileID: 1321024856992718, guid: 4ad9328edd0ef8042830623e4bec7a6a, type: 2}
+  - {fileID: 1972986835753414, guid: a1ce17bf468589c4eb6add8352716a88, type: 2}
 --- !u!114 &114657818410702986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,7 +469,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856770748398870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64753167dfeea0a4d9efc74205efb7fc, type: 3}
   m_Name: 
@@ -389,7 +521,7 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: 68db71da3f965874fbf8c6646524d4e9, type: 3}
   - name: aaahhh
     sound: {fileID: 8300000, guid: a93ce8dd966882c4389385f52048895d, type: 3}
-  audioSoundObject: {fileID: 1641174234834690, guid: 86d6c5b82368d4440b829a3c14a4f61d,
+  audioSoundObject: {fileID: 1731873040759286, guid: 86d6c5b82368d4440b829a3c14a4f61d,
     type: 2}
 --- !u!114 &114847746839651598
 MonoBehaviour:
@@ -403,3 +535,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
+--- !u!114 &114983462703620280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685672761588624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090dad3af8fbe1c4cb33000cedc0b014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioList:
+  - tag: BGM
+    path: event:/BGM/BGM
+  - tag: Flying
+    path: event:/Dragon/Flying/Flying
+  - tag: Hovering
+    path: event:/Dragon/Flying/Hovering
+  - tag: Meteor
+    path: event:/Dragon/Flying/Meteor
+  - tag: Meteor_Effect
+    path: event:/Dragon/Flying/Meteor_Effect
+  - tag: Breath
+    path: event:/Dragon/Ground/Breath
+  - tag: Breath_Effect
+    path: event:/Dragon/Ground/Breath_Radial_Effect
+  - tag: Dash
+    path: event:/Dragon/Ground/Dash
+  - tag: Dying_Effect
+    path: event:/Dragon/Ground/Dash_Effect
+  - tag: Dying
+    path: event:/Dragon/Ground/Dying
+  - tag: Howling
+    path: event:/Dragon/Ground/Howling
+  - tag: Howling_Effect
+    path: event:/Dragon/Ground/Howling_Effect
+  - tag: Painful
+    path: event:/Dragon/Ground/Painful
+  - tag: Paw
+    path: event:/Dragon/Ground/Paw
+  - tag: Paw_Effect
+    path: event:/Dragon/Ground/Paw
+  - tag: Rush
+    path: event:/Dragon/Ground/Rush
+  - tag: Rush_Effect
+    path: event:/Dragon/Ground/Rush
+  - tag: Turn
+    path: event:/Dragon/Ground/Turn
+  - tag: Walk
+    path: event:/Dragon/Ground/Walk
+  - tag: Ammo
+    path: event:/Player/Ammo
+  - tag: Gun
+    path: event:/Player/Gun
+  - tag: MachineGun
+    path: event:/Player/Machinegun
+  - tag: Reload
+    path: event:/Player/Reload

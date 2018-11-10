@@ -42,6 +42,12 @@ public class BulletBase : Bullet
             UIManager.Instance.CreatePopupTextRed(damage.ToString(), hitInfo.point);
             _col.gameObject.GetComponent<WeakPoint>().Hit(damage);
         }
+        else if(_col.CompareTag("TutorialTarget"))
+        {
+            _col.gameObject.GetComponent<TutorialTarget>().Hit(damage);
+            UIManager.Instance.CreatePopupText(damage.ToString(), hitInfo.point);
+        }
+
         DestroyHitBullet();
 
         //for(int i = 0; i<hitInfo.Length; i++)
@@ -71,6 +77,7 @@ public class BulletBase : Bullet
     protected override void Move()
     {
         //this.transform.position += moveDir * Time.fixedUnscaledDeltaTime * moveSpeed;
+        moveDir = transform.forward;
         transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
     }
 

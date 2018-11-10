@@ -45,7 +45,7 @@ public class PlayerHand : MonoBehaviour
     //잡을수 기준점
     public Transform hoverSphereTransform
 ;
-    public float hoverSphereRadius = 0.05f;
+    public float hoverSphereRadius = 0.1f;
     public LayerMask hoverLayerMask = -1;
     public float hoverUpdateInterval = 0.1f;
 
@@ -584,7 +584,7 @@ public class PlayerHand : MonoBehaviour
             controllerObject = GameObject.Instantiate(controllerPrefab);
             controllerObject.SetActive(true);
             controllerObject.name = controllerPrefab.name + "_" + this.name;
-            controllerObject.layer = gameObject.layer;
+            //controllerObject.layer = gameObject.layer;
             controllerObject.tag = gameObject.tag;
             //AttachObject()
             controller.TriggerHapticPulse(800);

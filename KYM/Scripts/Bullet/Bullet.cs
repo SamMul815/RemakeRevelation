@@ -21,14 +21,16 @@ public class Bullet : MonoBehaviour {
     protected float moveSpeed;             //투사체 속도
 
     [SerializeField]
-    protected LayerMask hitLayer;                    //충돌되는 레이어들
+    protected LayerMask hitLayer;          //충돌되는 레이어들
 
     [SerializeField]
     private float maxMoveDistance = 20000.0f;
     private float moveDistance;
+    public float MaxMoveDistance { get { return maxMoveDistance; } }
+    public float MoveDistance { set { moveDistance = value; } }
     //protected Vector3 startPosition;
 
-    protected SphereCollider col;  //컬라이더 정보
+    protected SphereCollider col;   //컬라이더 정보
     protected Vector3 moveDir;             //이동 방향
     protected Vector3 prevPosition;        //이전 위치
     protected RaycastHit hitInfo;        //충돌 정보    
@@ -42,8 +44,6 @@ public class Bullet : MonoBehaviour {
           pool.Init = Init;
         }
 
-        //Debug.Log(gameObject.name + "Awake호출");
-        //GetComponent<PoolObject>().Reset = Reset;
         transform = this.GetComponent<Transform>();
         col = GetComponent<SphereCollider>();
         moveDistance = maxMoveDistance;
@@ -103,21 +103,23 @@ public class Bullet : MonoBehaviour {
         //Physics.SphereCast()
         //hitInfo = Physics.CapsuleCastAll(_p1, _p2, capsuleCol.radius * transform.localScale.y, _dir, _dir.magnitude, hitLayer);
 
-        Ray ray = new Ray(transform.position, _dir);
-        return Physics.SphereCast(ray, _radius, out hitInfo,moveSpeed* Time.fixedDeltaTime, hitLayer);
+        Ray ray = new Ray(prevPosition, _dir);
+        return Physics.SphereCast(ray, _radius, out hitInfo, moveSpeed* Time.fixedDeltaTime, hitLayer);
         //return Physics.CapsuleCast(_p1, _p2, col.radius * transform.localScale.y, _dir, out hitInfo, moveSpeed * Time.fixedDeltaTime, hitLayer);
     }
 
     private void FixedUpdate()
     {
-        prevPosition = transform.position;
-        Move();
-        moveDistance -= moveSpeed * Time.fixedDeltaTime;
         if (CollisionCheck())
             OnCollisionEvent();
 
         if (IsMaxDistance())
             PoolManager.Instance.PushObject(this.gameObject);
+
+        prevPosition = transform.position;
+        Move();
+
+        moveDistance -= moveSpeed * Time.fixedDeltaTime;
     }
 
     protected virtual void DestroyHitBullet()

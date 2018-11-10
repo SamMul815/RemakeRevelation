@@ -51,22 +51,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11d6d02ed9858d4abc3031204fee445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportHandType: 0
   teleportTime: 0.2
   initialVelocity: {x: 0, y: 0, z: 10}
-  acceleration: {x: -0, y: -9.8, z: -0}
+  acceleration: {x: -0, y: -11, z: -0}
   pointcount: 60
   pointSpacing: 0.5
-  graphicThickness: 0.1
+  graphicThickness: 0.025
   graphicMaterial: {fileID: 2100000, guid: deb6d01985f5ede4583c8ea7931d5880, type: 2}
   graphicNoneMaterial: {fileID: 2100000, guid: 9694f8ff2cdedc5458c548a14d1015f5, type: 2}
   teleportLayer:
     serializedVersion: 2
-    m_Bits: 4294963199
+    m_Bits: 4294959560
   parabolHitLayer:
     serializedVersion: 2
-    m_Bits: 4294962687
+    m_Bits: 4294960584
   selectionPadPrefab: {fileID: 1521345225060164, guid: 71036800cfcf93b4994c374b8d1b7afb,
     type: 2}
   invalidPadPrefab: {fileID: 1334052394144692, guid: 6eeddb87fc364b74aa05353240b6244c,
     type: 2}
+  playerHandLeft: {fileID: 0}
+  playerHandRigt: {fileID: 0}

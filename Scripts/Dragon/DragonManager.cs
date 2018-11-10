@@ -14,7 +14,6 @@ public enum DragonAttackTriggers
     Rush
 }
 
-
 namespace DragonController
 {
     [RequireComponent(typeof(MovementManager))]

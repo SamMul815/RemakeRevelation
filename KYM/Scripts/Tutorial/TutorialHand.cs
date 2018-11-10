@@ -40,24 +40,29 @@ public class TutorialHand : MonoBehaviour {
     private void OnAttachedToHand(PlayerHand hand)
     {
         var system = OpenVR.System;
-        uint leftIndex = 0;
-        uint rightIndex = 0;
+        int leftIndex = 0;
+        int rightIndex = 0;
 
         if (system != null)
         {
-            leftIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.LeftHand);
-            rightIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.RightHand);
+            //leftIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.LeftHand);
+            //rightIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.RightHand);
+            leftIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Leftmost);
+            rightIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
+
         }
 
         if (hand.GetHandType() == PlayerHand.HandType.Right)
         {
             //int rightIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.RightHand);
             renderModel.SetDeviceIndex((int)rightIndex);
+            this.transform.localScale = Vector3.one;
             TutorialEvent.Instance.RightHand = this;
         }
         else if (hand.GetHandType() == PlayerHand.HandType.Left)
         {
             renderModel.SetDeviceIndex((int)leftIndex);
+            this.transform.localScale = Vector3.one;
             TutorialEvent.Instance.LeftHand = this;
         }
     }

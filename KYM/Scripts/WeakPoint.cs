@@ -88,11 +88,10 @@ public class WeakPoint : MonoBehaviour {
             dragonManager.Hit(damage);
         }
 
-
-        if(currentHP <= 0.0f)
-        {
-            BreakEvent();
-            dragonManager.OnDestroyPart(damage * 10);
-        }
+        //if(currentHP <= 0.0f)
+        //{
+        //    BreakEvent();
+        //    dragonManager.OnDestroyPart(damage * 10);
+        //}
     }
 }

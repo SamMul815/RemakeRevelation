@@ -35,43 +35,45 @@ public class MachinGun : MonoBehaviour {
 
     public UI_MachineGun machingunUI;
 
-    
+    public GameObject MuzzleFlash;
+
+    public bool canRot = false;
+
+    public float onTime = 0.5f;
+    public Material[] machinegunOnMaterials;
+    public GameObject MachineGunBody;
+    public GameObject MachineGunUIObject;
+    public GameObject MachineGunOnObject;
+
+    private PoolManager poolManager;
+    private BulletManager bulletManager;
+    private PlayerHead playerHead;
+    private FmodManager fmodManager;
+
     IEnumerator startShoot;
     IEnumerator stopShoot;
     IEnumerator endMachingun;
-    // Use this for initialization
+
+
     void Start ()
     {
         currentGauge = maxGauge;
-	}
+        poolManager = PoolManager.Instance;
+        bulletManager = BulletManager.Instance;
+        playerHead = Player.instance.playerHead;
+        fmodManager = FmodManager.Instance;
+    }
 
     private void OnEnable()
     {
         currentGauge = maxGauge;
-        parentObject = Player.instance.rightHand.currentAttachedObject;
-        Player.instance.rightHand.currentAttachedObject.SetActive(false);
-        Player.instance.leftHand.currentAttachedObject.SetActive(false);
-        Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
+        
+        for(int i = 0; i< machinegunOnMaterials.Length; i++)
+        {
+            machinegunOnMaterials[i].SetFloat("_warf", -10.0f);
+        }
+        StartCoroutine(CorMachineGunOn());
     }
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    //if (Player.instance.rightHand.GetGripButtonDown())
-    //    //{
-    //    //    parentObject = Player.instance.rightHand.currentAttachedObject;
-    //    //    Player.instance.rightHand.currentAttachedObject.SetActive(false);
-    //    //    Player.instance.leftHand.currentAttachedObject.SetActive(false);
-    //    //    Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
-    //    //}
-
-    //    //if (Player.instance.leftHand.GetGripButtonDown())
-    //    //{
-    //    //    Player.instance.rightHand.DetachObject(gameObject, false);
-    //    //    Player.instance.rightHand.currentAttachedObject.SetActive(true);
-    //    //    Player.instance.leftHand.currentAttachedObject.SetActive(true);
-    //    //}
-    //}
 
     private void OnAttachedToHand(PlayerHand hand)
     {
@@ -80,12 +82,7 @@ public class MachinGun : MonoBehaviour {
 
     private void HandAttachedUpdate(PlayerHand hand)
     {
-        //Vector3 posDir = hand.transform.position - hand.otherHand.transform.position;
-        //this.transform.position = hand.transform.position + posDir * 0.5f;
         this.transform.position = hand.transform.position;
-        //Vector3 upDir = Quaternion.Euler(-15.0f, 0.0f, 0.0f) * hand.transform.up;
-        //this.transform.rotation =
-        //    Quaternion.LookRotation(this.transform.position - Player.instance.headCollider.transform.position, Vector3.up);
         this.transform.rotation =
             Quaternion.LookRotation(hand.otherHand.transform.position - hand.transform.position, Vector3.up);
 
@@ -97,12 +94,14 @@ public class MachinGun : MonoBehaviour {
             {
                 startShoot = CorShoot(hand);
                 StartCoroutine(startShoot);
+                canRot = true;
             }
         }
         else if (hand.GetTriggerButtonUp() && currentGauge > 0)
         {
             if(startShoot != null)
             {
+                canRot = false;
                 StopCoroutine(startShoot);
                 startShoot = null;
 
@@ -124,25 +123,16 @@ public class MachinGun : MonoBehaviour {
                 endMachingun = CorEndMachinGun();
                 StartCoroutine(endMachingun);
             }
-            //StopCoroutine(startShoot);
-            //startShoot = null;
-            //stopShoot = null;
-            //stopShoot = CorStopShoot();
-            //StartCoroutine(stopShoot);
-            //Player.instance.rightHand.DetachObject(gameObject, false);
-            //Player.instance.rightHand.currentAttachedObject.SetActive(true);
-            //Player.instance.leftHand.currentAttachedObject.SetActive(true);
-            //this.gameObject.SetActive(false);
         }
     }
 
     IEnumerator CorShoot(PlayerHand hand)
     {
         gunBarrelFront.transform.position = baseGunBarrelPos.transform.position;
-        for (float fTime = 0.0f; fTime < startDelay; fTime+= Time.unscaledDeltaTime)
+        for (float fTime = 0.0f; fTime < startDelay; fTime+= Time.fixedUnscaledDeltaTime)
         {
-            gunBarrelFront.transform.position = Vector3.Slerp(baseGunBarrelPos.transform.position, shootGunBarrelPos.transform.position, fTime / startDelay);
-            yield return new WaitForEndOfFrame();
+            gunBarrelFront.transform.position = Vector3.Lerp(baseGunBarrelPos.transform.position, shootGunBarrelPos.transform.position, fTime / startDelay);
+            yield return new WaitForFixedUpdate();
         }
         float currentShootDelay = shootDelay * 3.0f;
         Transform headcol = Player.instance.headCollider.transform;
@@ -150,42 +140,33 @@ public class MachinGun : MonoBehaviour {
         {
             Vector3 sphere = Random.insideUnitSphere * 0.1f;
             Vector3 dir =  Aim.position + sphere - headcol.position;
-            
-            //Ray ray = new Ray(Aim.position, dir);
-            //RaycastHit rayHit;
-            //if (Physics.Raycast(ray,out rayHit, 1000.0f))
-            //{
-            //    dir =  rayHit.point - shootPos.position;
-            //    Debug.Log(rayHit.collider.name +  "rayray");
-            //}
-            //else
-            //{
-            //   // dir = Aim.position - shootPos.position;
-            //}
 
-            BulletManager.Instance.CreatePlayerMachinBullet(shootPos.position, dir.normalized);
+            GameObject muzzleFlash;
+            fmodManager.PlaySoundOneShot(shootPos.position, "MachineGun");
+            poolManager.PopObject(MuzzleFlash, shootPos.position + shootPos.forward*0.1f,shootPos.rotation, out muzzleFlash);
+            bulletManager.CreatePlayerMachinBullet(shootPos.position, dir.normalized);
             currentGauge -= shootGauge;
             hand.Vibration(0.2f, 6000.0f);
             hand.otherHand.Vibration(0.2f, 6000.0f);
-            Player.instance.playerHead.PlayerShake(0.1f, 0.05f);
+            playerHead.PlayerShake(0.1f, 0.05f);
 
             Quaternion rot = gunBarrelBack.transform.localRotation;
-            Quaternion nextRot = rot * Quaternion.Euler(0.0f, 0.0f, 180.0f);
+            Quaternion nextRot = rot * Quaternion.Euler(0.0f, 0.0f, 60.0f);
 
             for(float fTime = 0.0f; fTime <= currentShootDelay; fTime += Time.fixedUnscaledDeltaTime)
             {
                 gunBarrelBack.transform.localRotation = Quaternion.Lerp(rot, nextRot, fTime / currentShootDelay);
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForFixedUpdate();
             }
 
             if(currentShootDelay > shootDelay)
             {
                 currentShootDelay -= shootDelay * 0.5f;
             }
-      
-            
-            //yield return new WaitForSecondsRealtime(0.1f);
-            //yield return new WaitForSecondsRealtime(shootDealy);
+            else
+            {
+                currentShootDelay = shootDelay;
+            }         
         }
     }
 
@@ -202,7 +183,7 @@ public class MachinGun : MonoBehaviour {
         gunBarrelFront.transform.position = shootGunBarrelPos.transform.position;
         for (float fTime = 0.0f; fTime < startDelay; fTime += Time.unscaledDeltaTime)
         {
-            gunBarrelFront.transform.position = Vector3.Slerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
+            gunBarrelFront.transform.position = Vector3.Lerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
 
@@ -243,7 +224,7 @@ public class MachinGun : MonoBehaviour {
         gunBarrelFront.transform.position = shootGunBarrelPos.transform.position;
         for (float fTime = 0.0f; fTime < startDelay; fTime += Time.unscaledDeltaTime)
         {
-            gunBarrelFront.transform.position = Vector3.Slerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
+            gunBarrelFront.transform.position = Vector3.Lerp(shootGunBarrelPos.transform.position, baseGunBarrelPos.transform.position, fTime / startDelay);
             yield return new WaitForEndOfFrame();
         }
 
@@ -258,4 +239,51 @@ public class MachinGun : MonoBehaviour {
         this.gameObject.SetActive(false);
 
     }
+
+    IEnumerator CorMachineGunOn()
+    {
+        
+        MachineGunBody.SetActive(false);
+        MachineGunUIObject.SetActive(false);
+        MachineGunOnObject.SetActive(true);
+
+        this.transform.position =
+            Player.instance.headCollider.transform.position +
+            Player.instance.headCollider.transform.forward * 1.0f;
+        this.transform.rotation = 
+            Quaternion.LookRotation(
+                Player.instance.headCollider.transform.forward, Vector3.up);
+
+        Vector3 savePosition = this.transform.position;
+        Quaternion saveRot = this.transform.rotation;
+
+        parentObject = Player.instance.rightHand.currentAttachedObject;
+        Player.instance.rightHand.currentAttachedObject.SetActive(false);
+        Player.instance.leftHand.currentAttachedObject.SetActive(false);
+
+        for (float _t = 0.0f; _t < onTime; _t += Time.fixedUnscaledDeltaTime)
+        {
+            for (int i = 0; i < machinegunOnMaterials.Length; i++)
+            {
+                machinegunOnMaterials[i].SetFloat("_warf",-10.0f +  10.0f * _t / onTime);
+            }
+            this.transform.position = 
+                Vector3.Lerp(savePosition, parentObject.transform.position, _t / onTime);
+            this.transform.rotation = 
+                Quaternion.Lerp(saveRot, 
+                Quaternion.LookRotation(Player.instance.leftHand.transform.position - Player.instance.rightHand.transform.position, Vector3.up), _t / onTime);
+       
+            yield return new WaitForFixedUpdate();
+        }
+
+        Player.instance.rightHand.AttachObject(gameObject, attachmentFlags);
+        MachineGunOnObject.SetActive(false);
+        MachineGunBody.SetActive(true);
+        MachineGunUIObject.SetActive(true);
+
+
+
+        yield return null;
+    }
+
 }

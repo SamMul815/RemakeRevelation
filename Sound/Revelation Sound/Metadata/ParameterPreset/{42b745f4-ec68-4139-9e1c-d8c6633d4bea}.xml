@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{42b745f4-ec68-4139-9e1c-d8c6633d4bea}">
+        <property name="name">
+            <value>Ammo_Dis</value>
+        </property>
+        <relationship name="folder">
+            <destination>{83c1c8c4-acc7-4497-82dc-3cf1d8075319}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{9ac1e220-82bf-4dfe-9d98-cb121d188221}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{9ac1e220-82bf-4dfe-9d98-cb121d188221}">
+        <property name="maximum">
+            <value>100</value>
+        </property>
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

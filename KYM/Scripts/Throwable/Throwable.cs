@@ -4,40 +4,70 @@ using UnityEngine;
 
 public class Throwable : MonoBehaviour
 {
-    public PlayerHand.AttachmentFlags attachmentFlags = PlayerHand.AttachmentFlags.ParentToHand | PlayerHand.AttachmentFlags.DetachFromOtherHand;
+    private PlayerHand.AttachmentFlags attachmentFlags = PlayerHand.AttachmentFlags.ParentToHand | PlayerHand.AttachmentFlags.DetachFromOtherHand | PlayerHand.AttachmentFlags.SnapOnAttach;
     public string attachmentPoint;
     public float maxAngularVeloctiy = 50.0f;
     public float catchSpeedThreshold = 0.0f;
     public float maxThrowPower = 15.0f;
     public bool restoreOriginalParent = false;
+    public bool IsTutorial = false;
+    public float gravityValue = 0.5f;
 
     private VelocityEstimator velocityEstimator;
     private bool attached = false;
     private Vector3 attachPosition;
     private Quaternion attachRotation;
 
-    //public UnityEvent onPickUp;
-    //public UnityEvent onDetachFromHand;
+    private bool IsThrow = false;
+    private Rigidbody rb;
+
+    public Material OnMaterial;
+    public Material OffMaterial;
+
+    public GameObject explosionParticle;
+    public GameObject throwParticle;
+
+    private GameObject oldObject;
+
 
     private void Awake()
     {
         velocityEstimator = GetComponent<VelocityEstimator>();
+        rb = GetComponent<Rigidbody>();
         GetComponent<Rigidbody>().maxAngularVelocity = maxAngularVeloctiy;
+        throwParticle.SetActive(false);
+        IsThrow = false;
     }
 
     private void OnHandHoverBegin(PlayerHand hand)
     {
         if(!attached)
         {
-            if(hand.GetTriggerButton())
+            if(!IsThrow)
             {
-                Rigidbody rb = GetComponent<Rigidbody>();
-                if(rb.velocity.magnitude >= catchSpeedThreshold)
-                {
-                    hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
-                }
+                this.GetComponent<MeshRenderer>().material = OnMaterial;
             }
         }
+    }
+
+    private void OnHandHoverEnd(PlayerHand hand)
+    {
+        //if (!IsThrow)
+        //{
+            this.GetComponent<MeshRenderer>().material = OffMaterial;
+        //}
+        //copyMaterial.SetFloat("_Rimonoff", 0);
+        //if (!attached)
+        //{
+        //    if (hand.GetTriggerButton())
+        //    {
+        //        Rigidbody rb = GetComponent<Rigidbody>();
+        //        if (rb.velocity.magnitude >= catchSpeedThreshold)
+        //        {
+        //            hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
+        //        }
+        //    }
+        //}
     }
 
     private void HandHoverUpdate(PlayerHand hand)
@@ -45,14 +75,25 @@ public class Throwable : MonoBehaviour
         //Trigger got pressed
         if (hand.GetTriggerButton())
         {
-            hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
+            oldObject = hand.currentAttachedObject;
+            if(oldObject != null)
+                oldObject.SetActive(false);
+            if (IsTutorial)
+            {
+                GameObject tutorialObject = Instantiate(this.gameObject);
+                tutorialObject.GetComponent<Throwable>().IsTutorial = false;
+                hand.AttachObject(tutorialObject, attachmentFlags, attachmentPoint);
+            }
+            else
+            {
+                hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
+            }
         }
     }
 
     private void OnAttachedToHand(PlayerHand hand)
     {
         attached = true;
-        //onPickUp.Invoke();
         hand.HoverLock(null);
 
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -68,11 +109,11 @@ public class Throwable : MonoBehaviour
 
     }
 
-
     private void OnDetachedFromHand(PlayerHand hand)
     {
         attached = false;
-
+        if (oldObject != null)
+            oldObject.SetActive(true);
         //onDetachFromHand.Invoke();
 
         hand.HoverUnlock(null);
@@ -94,24 +135,15 @@ public class Throwable : MonoBehaviour
         else
         {
             velocity = Player.instance.trackingOriginTransform.TransformVector(hand.controller.velocity);
-            velocity = velocity * (velocity.magnitude / 2 + 1.0f);
+            velocity = velocity * maxThrowPower;
 
-
-            //if(velocity.magnitude / 2.0f > maxThrowPower )
-            //{
-            //    velocity = velocity * maxThrowPower;
-            //}
-            //else
-            //{
-            //    velocity = velocity * (velocity.magnitude / 2.0f + 0.5f);
-            //}
-            Debug.Log(velocity.ToString() + velocity.magnitude.ToString());
+            //Debug.Log(velocity.ToString() + velocity.magnitude.ToString());
             angularVelocity = Player.instance.trackingOriginTransform.TransformVector(hand.controller.angularVelocity) / 2.0f;
             position = hand.transform.position;
         }
 
         Vector3 r = transform.TransformPoint(rb.centerOfMass) - position;
-        rb.velocity = velocity + Vector3.Cross(angularVelocity, r);
+        rb.velocity = velocity + Vector3.Cross(angularVelocity * maxThrowPower, r);
         rb.angularVelocity = angularVelocity;
 
         // Make the object travel at the release velocity for the amount
@@ -137,6 +169,8 @@ public class Throwable : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         hand.DetachObject(gameObject, restoreOriginalParent);
+        IsThrow = true;
+        throwParticle.SetActive(true);
     }
 
     //-------------------------------------------------
@@ -146,7 +180,6 @@ public class Throwable : MonoBehaviour
         velocityEstimator.BeginEstimatingVelocity();
     }
 
-
     //-------------------------------------------------
     private void OnHandFocusLost(PlayerHand hand)
     {
@@ -154,4 +187,38 @@ public class Throwable : MonoBehaviour
         velocityEstimator.FinishEstimatingVelocity();
     }
 
+    private void Update()
+    {
+        if(rb.velocity.sqrMagnitude <= 0.1f)
+        {
+            IsThrow = false;
+            throwParticle.SetActive(false);
+        }
+        else
+        {
+            rb.velocity -= Physics.gravity * gravityValue*Time.deltaTime;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (attached) return;
+        if (!IsThrow) return;
+
+        if(collision.gameObject.CompareTag("Dragon"))
+        {
+            //용과 부딪혔을때 적용할 코드들 
+        }
+        else if(collision.gameObject.CompareTag("TutorialTarget"))
+        {
+            collision.gameObject.GetComponent<TutorialTarget>().Hit(500.0f);
+        }
+
+        if(explosionParticle != null)
+        {
+            GameObject explosionObj;
+            PoolManager.Instance.PopObject(explosionParticle,this.transform.position,out explosionObj);
+        }
+        this.gameObject.SetActive(false);
+    }
 }
