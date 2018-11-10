@@ -35,6 +35,7 @@ public class Dragon_RedZoneAttack_Action : ActionTask
         EffectManager.Instance.PoolParticleEffectOn("NearHowling",
             _manager.transform.position,
             _manager.transform.forward);
+        FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Howling");
         DragonAniManager.SwicthAnimation("Dragon_NearHowling");
 
     }

@@ -9,6 +9,7 @@ public class Dragon_DestroyPart_Action : ActionTask
     {
         base.OnStart();
         _manager.AttackOff();
+        FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Painful");
         DragonAniManager.SwicthAnimation("Dragon_DestroyPart");
     }
 

@@ -149,7 +149,6 @@ namespace DragonController
         {
             if (!_dragonBehaviroTree.Root.Run())
             {
-
             }
             else
             {
@@ -157,6 +156,5 @@ namespace DragonController
                 Debug.Log("AI Dead");
             }
         }
-
     }
 }

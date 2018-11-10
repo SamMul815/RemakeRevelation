@@ -66,7 +66,7 @@ public class Dragon_DashAttack_Action : ActionTask
 
                 return false;
             }
-
+            FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Dash");
             DragonAniManager.SwicthAnimation("Dragon_Dash");
             _manager.IsTurn = true;
         }

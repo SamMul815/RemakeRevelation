@@ -14,6 +14,7 @@ public class Dragon_Dead_Action : ActionTask
     public override void OnStart()
     {
         base.OnStart();
+        FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Dying");
         DragonAniManager.SwicthAnimation("Dragon_Dead");
     }
 

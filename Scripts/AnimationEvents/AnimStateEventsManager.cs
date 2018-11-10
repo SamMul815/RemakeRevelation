@@ -9,12 +9,10 @@ public struct EvnData
 {
     [Range(0.0f, 1.0f)]
     public float RunTime;
-    public bool IsLoop;
 
-    public EvnData(float runTime, bool isLoop)
+    public EvnData(float runTime)
     {
         this.RunTime = runTime;
-        this.IsLoop = isLoop;
     }
 }
 
