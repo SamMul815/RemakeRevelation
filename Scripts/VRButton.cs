@@ -130,10 +130,4 @@ public class VRButton : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos ()
-    {
-        Gizmos.DrawRay(_leftHend.transform.position, _leftHend.transform.forward * _rayDistance);
-        Gizmos.DrawRay(_rightHend.transform.position, _rightHend.transform.forward * _rayDistance);
-    }
-
 }
