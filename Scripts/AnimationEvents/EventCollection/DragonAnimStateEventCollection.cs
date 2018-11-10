@@ -182,8 +182,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void ShotBreathAttackOn(EvnData evnData)
     {
         Transform DragonMouth = _blackBoard.DragonBulletBreathMouth;
-
-        FmodManager.Instance.PlaySoundOneShot(DragonMouth.position, "Breath_Effect");
         BulletManager.Instance.CreateDragonBaseBulletTest(DragonMouth, 0.15f, 10);
     }
 
@@ -204,8 +202,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
             (_utility.Player.position -
             _manager.transform.position).normalized;
         dir.y = 0.0f;
-
-        FmodManager.Instance.PlaySoundOneShot(DragonMouth.position, "Breath");
         BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
 
     }

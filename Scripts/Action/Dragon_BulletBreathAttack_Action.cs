@@ -59,8 +59,9 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
 
                 return false;
             }
-            DragonAniManager.SwicthAnimation("Dragon_Bullet_Breath");
             _manager.IsTurn = true;
+            FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Breath");
+            DragonAniManager.SwicthAnimation("Dragon_Bullet_Breath");
         }
         return false;
     }

@@ -67,6 +67,7 @@ public class Dragon_BreathAttack_Action : ActionTask
             }
 
             _manager.IsTurn = true;
+            FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Breath");
             DragonAniManager.SwicthAnimation("Dragon_Breath");
         }
 
