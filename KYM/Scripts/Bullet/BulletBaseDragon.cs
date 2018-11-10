@@ -60,7 +60,6 @@ public class BulletBaseDragon : Bullet
         transform.position += moveDir * Time.fixedDeltaTime * moveSpeed;
         */
 
-
     }
 
     public void ChangeSpeed(float speed)
