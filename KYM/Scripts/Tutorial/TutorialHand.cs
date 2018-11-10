@@ -19,7 +19,7 @@ public class TutorialHand : MonoBehaviour {
 
     public SteamVR_Controller.Device controller;
 
-    private void Start()
+    private void Awake()
     {
         modelRenderer = new Dictionary<string, MeshRenderer>();
         materialNameList = new List<string>();

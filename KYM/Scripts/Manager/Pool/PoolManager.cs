@@ -19,13 +19,14 @@ public class PoolManager : Singleton<PoolManager>
     [SerializeField]
     Dictionary<string, Stack<GameObject>> poolStacks;
 
-    private void Start()
+    IEnumerator Start()
     {
         poolStacks = new Dictionary<string, Stack<GameObject>>();
 
         //미리 생성할 오브젝트들 생성하는 과정
         for(int i = 0; i < poolObjects.Length; i++)
         {
+            yield return null;
             GameObject poolObject = poolObjects[i].poolObject;
             if (poolObject.GetComponent<PoolObject>() != null)
             {
@@ -44,6 +45,7 @@ public class PoolManager : Singleton<PoolManager>
                 Debug.Log(poolObject.name + "PoolObject Init component is null");
             }
         }
+        yield return null;
     }
     /// <summary>
     /// 사용 종료된 오브젝트를 PoolManager에 집어넣을때 사용하는 함수
