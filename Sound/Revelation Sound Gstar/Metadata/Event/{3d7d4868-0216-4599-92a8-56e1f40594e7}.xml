@@ -5,7 +5,7 @@
             <value>Tuto_02</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{de5c6f5a-fbf3-4fc6-861e-c474319eb9df}</destination>
@@ -119,7 +119,14 @@
             <destination>{0f1b5b93-183f-4c86-9612-4ea2e70cb368}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{36488ce6-5911-4d27-b5ef-d1323f4173b8}"/>
+    <object class="MixerBusPanner" id="{36488ce6-5911-4d27-b5ef-d1323f4173b8}">
+        <property name="overridingOutputFormat">
+            <value>1</value>
+        </property>
+        <property name="outputFormatOverridden">
+            <value>true</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{353aa835-6cbc-4418-8e69-f8348ab61e6e}"/>
     <object class="MixerBusEffectChain" id="{47cebbec-fca3-4b80-b6df-793de079a6d9}">
         <relationship name="effects">

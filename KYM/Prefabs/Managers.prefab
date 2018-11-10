@@ -555,17 +555,31 @@ MonoBehaviour:
     path: event:/Dragon/Flying/Hovering
   - tag: Meteor
     path: event:/Dragon/Flying/Meteor
+  - tag: Meteor_Effect
+    path: event:/Dragon/Flying/Meteor_Effect
   - tag: Breath
     path: event:/Dragon/Ground/Breath
+  - tag: Breath_Effect
+    path: event:/Dragon/Ground/Breath_Radial_Effect
+  - tag: Dash
+    path: event:/Dragon/Ground/Dash
+  - tag: Dying_Effect
+    path: event:/Dragon/Ground/Dash_Effect
   - tag: Dying
     path: event:/Dragon/Ground/Dying
   - tag: Howling
     path: event:/Dragon/Ground/Howling
+  - tag: Howling_Effect
+    path: event:/Dragon/Ground/Howling_Effect
   - tag: Painful
     path: event:/Dragon/Ground/Painful
   - tag: Paw
     path: event:/Dragon/Ground/Paw
+  - tag: Paw_Effect
+    path: event:/Dragon/Ground/Paw
   - tag: Rush
+    path: event:/Dragon/Ground/Rush
+  - tag: Rush_Effect
     path: event:/Dragon/Ground/Rush
   - tag: Turn
     path: event:/Dragon/Ground/Turn

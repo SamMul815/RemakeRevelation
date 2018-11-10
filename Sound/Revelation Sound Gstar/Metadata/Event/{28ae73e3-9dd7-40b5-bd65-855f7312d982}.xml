@@ -5,7 +5,7 @@
             <value>Tuto_15</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{de5c6f5a-fbf3-4fc6-861e-c474319eb9df}</destination>
@@ -60,7 +60,7 @@
     <object class="MarkerTrack" id="{565cc693-6a4a-4249-9ab9-9fae8dd0bd28}"/>
     <object class="GroupTrack" id="{c5e2c8fb-e5fc-42d3-8158-624e581f1d54}">
         <relationship name="modules">
-            <destination>{69fc1040-66cf-4ac3-be44-ad8f8629e0e3}</destination>
+            <destination>{691f2214-7876-45d8-9549-16ea01c94551}</destination>
         </relationship>
         <relationship name="mixerGroup">
             <destination>{34150341-c556-4cb3-99a3-b109b0dbdbe9}</destination>
@@ -68,7 +68,7 @@
     </object>
     <object class="Timeline" id="{6a801c2c-90e2-44ae-ae00-5a065867b41f}">
         <relationship name="modules">
-            <destination>{69fc1040-66cf-4ac3-be44-ad8f8629e0e3}</destination>
+            <destination>{691f2214-7876-45d8-9549-16ea01c94551}</destination>
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{38acd65f-a2b6-448f-935f-edd31bc1f569}">
@@ -88,15 +88,12 @@
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{783f2590-c29b-4b80-bbca-9a1fedf19a8f}"/>
-    <object class="SingleSound" id="{69fc1040-66cf-4ac3-be44-ad8f8629e0e3}">
+    <object class="SingleSound" id="{691f2214-7876-45d8-9549-16ea01c94551}">
         <property name="length">
-            <value>6</value>
-        </property>
-        <property name="timelockedOffset">
-            <value>0.099999999999999978</value>
+            <value>5.8775510204081636</value>
         </property>
         <relationship name="audioFile">
-            <destination>{12553358-b6e5-45ba-9635-df6093f624ee}</destination>
+            <destination>{853baf37-49ba-498d-a886-db2a5fcffc05}</destination>
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{34150341-c556-4cb3-99a3-b109b0dbdbe9}">
@@ -119,7 +116,14 @@
             <destination>{ac948e9c-638c-4367-ae6b-9836dd227110}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{23d5592f-bf21-4316-8c53-af5c7354ca07}"/>
+    <object class="MixerBusPanner" id="{23d5592f-bf21-4316-8c53-af5c7354ca07}">
+        <property name="overridingOutputFormat">
+            <value>1</value>
+        </property>
+        <property name="outputFormatOverridden">
+            <value>true</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{d3e734b1-ec18-4d32-8f05-37e4d1ebf10a}"/>
     <object class="MixerBusEffectChain" id="{c0189313-09db-4ffd-b029-6c0f35bff85c}">
         <relationship name="effects">

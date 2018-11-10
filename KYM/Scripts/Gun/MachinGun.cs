@@ -129,10 +129,10 @@ public class MachinGun : MonoBehaviour {
     IEnumerator CorShoot(PlayerHand hand)
     {
         gunBarrelFront.transform.position = baseGunBarrelPos.transform.position;
-        for (float fTime = 0.0f; fTime < startDelay; fTime+= Time.unscaledDeltaTime)
+        for (float fTime = 0.0f; fTime < startDelay; fTime+= Time.fixedUnscaledDeltaTime)
         {
             gunBarrelFront.transform.position = Vector3.Lerp(baseGunBarrelPos.transform.position, shootGunBarrelPos.transform.position, fTime / startDelay);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
         }
         float currentShootDelay = shootDelay * 3.0f;
         Transform headcol = Player.instance.headCollider.transform;

@@ -42,7 +42,7 @@ public class Gun : MonoBehaviour
     public bool IsTutorial = false;
 
     private IEnumerator corTriggerAni;
-
+    private bool canFire;
     private void Awake()
     {
         if(!IsTutorial)
@@ -72,12 +72,20 @@ public class Gun : MonoBehaviour
 
     private void Fire(PlayerHand hand)
     {
-        if(firePos == null || fireCoolTime > 0.0f || currentBullet <= 0)
+        if(firePos == null || fireCoolTime > 0.0f )
         {
             if(firePos == null)
                 Debug.LogWarning("Not FirePos");
             return;
         }
+
+        if(currentBullet <= 0)
+        {
+            FmodManager.Instance.PlaySoundOneShot(transform.position, "Ammo");
+            return;
+        }
+
+        FmodManager.Instance.PlaySoundOneShot(transform.position, "Gun");
         BulletManager.Instance.CreatePlayerBaseBullet(firePos);
         fireCoolTime = fireDelay;
         currentBullet -= 1;
@@ -115,6 +123,7 @@ public class Gun : MonoBehaviour
     private void OnAttachedToHand(PlayerHand hand)
     {
         playerHand = hand;
+        canFire = true;
         if (hand.GetHandType() == PlayerHand.HandType.Right)
         {
             gunType = GunType.Right;
@@ -142,10 +151,17 @@ public class Gun : MonoBehaviour
         {
             currentSkillCoolTime -= Time.unscaledDeltaTime;
         }
-        if (hand.GetTriggerButton())
+        if (hand.GetTriggerButtonDown() && canFire)
         {
             Fire(hand);
+            canFire = false;
         }
+        if(hand.GetTriggerButtonUp())
+        {
+            canFire = true;
+        }
+
+
         if(GetCanSkill && hand.GetGripButtonDown())
         {
             if (gunType == GunType.Left)
