@@ -32,10 +32,7 @@ public class VRButton : MonoBehaviour
         _buttonImage = GetComponent<Image>();
         _buttonNormalSprite = _buttonImage.sprite;
         _uiLayer = 1 << LayerMask.NameToLayer("UI");
-    }
 
-    protected void Start ()
-    {
         if (Application.isPlaying)
         {
             _leftHend = Player.instance.leftHand;

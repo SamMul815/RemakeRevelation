@@ -29,6 +29,10 @@ public class FmodManager : Singleton<FmodManager>
     {
         FMODUnity.RuntimeManager.PlayOneShot(AudioData[tag], pos); 
     }
+    public void PlaySoundAttatch(GameObject pos, string tag)
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(AudioData[tag], pos);
+    }
 
 }
 
