@@ -182,8 +182,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void ShotBreathAttackOn(EvnData evnData)
     {
         Transform DragonMouth = _blackBoard.DragonBulletBreathMouth;
-
-        FmodManager.Instance.PlaySoundOneShot(DragonMouth.position, "Breath_Effect");
         BulletManager.Instance.CreateDragonBaseBulletTest(DragonMouth, 0.15f, 10);
     }
 
@@ -204,20 +202,18 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
             (_utility.Player.position -
             _manager.transform.position).normalized;
         dir.y = 0.0f;
-
-        FmodManager.Instance.PlaySoundOneShot(DragonMouth.position, "Breath");
         BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
 
     }
 
     private void FlyingSoundOn (EvnData evnData)
     {
-        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Flying");
+        FmodManager.Instance.PlaySoundAttatch(_manager.gameObject, "Flying");
     }
 
     private void HoveringSoundOn (EvnData evnData)
     {
-        FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Hovering");
+        FmodManager.Instance.PlaySoundAttatch(_manager.gameObject, "Hovering");
     }
 
     private void DescentFlyingStart(EvnData evnData)
