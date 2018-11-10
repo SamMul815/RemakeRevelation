@@ -11,7 +11,7 @@ public class UI_Player : MonoBehaviour {
     //public float alphaValue;
     //public float hideTime = 2.0f;
     public GameObject bloodEffect;
-
+    public Image blackScreen;
 
     // Use this for initialization
     void Start ()
@@ -27,6 +27,34 @@ public class UI_Player : MonoBehaviour {
 
         bloodEffect.SetActive(false);
         bloodEffect.SetActive(true);
+    }
+
+
+    public void FadeIn(float time)
+    {
+        StartCoroutine(corChangeFade(1.0f, 0.0f, time));
+    }
+    public void FadeOut(float time)
+    {
+        StartCoroutine(corChangeFade(0.0f, 1.0f, time));
+    }
+
+
+    IEnumerator corChangeFade(float startA, float endA, float fadeTime)
+    {
+        yield return null;
+        Color screenColor = Color.black;
+        //screenColor.a = startA;
+
+        for (float t = 0.0f; t < fadeTime; t += Time.unscaledDeltaTime)
+        {
+            screenColor.a = Mathf.Lerp(startA, endA, t / fadeTime);
+            blackScreen.color = screenColor;
+            yield return new WaitForEndOfFrame();
+        }
+
+        screenColor.a = endA;
+        blackScreen.color = screenColor;
     }
 
 }

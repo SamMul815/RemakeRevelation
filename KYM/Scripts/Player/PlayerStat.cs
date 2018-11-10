@@ -12,7 +12,7 @@ public class PlayerStat : MonoBehaviour
         Teleporting
     }
     public PlayerVRState playerVRState = PlayerVRState.Idle;
-    public UI_Player playerUI;
+    //public UI_Player playerUI;
     public float hitTime = 0.5f;
     public float dotTime = 0.1f;
 
@@ -42,7 +42,8 @@ public class PlayerStat : MonoBehaviour
             currentHP = 0;
             isPlayerDie = true;
         }
-        playerUI.Hit();
+        //playerUI.Hit();
+        Player.instance.playerUI.Hit();
         playerHitDelay = hitTime;
     }
 
@@ -57,7 +58,8 @@ public class PlayerStat : MonoBehaviour
             currentHP = 0;
             isPlayerDie = true;
         }
-        playerUI.Hit();
+        Player.instance.playerUI.Hit();
+        //playerUI.Hit();
         playerHitDelay = dotTime;
     }
 

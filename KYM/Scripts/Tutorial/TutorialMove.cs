@@ -22,6 +22,7 @@ public class TutorialMove : TutorialBase
 
     private void OnDisable()
     {
+        if(tutorialMoveObjects != null)
         tutorialMoveObjects.SetActive(false);
     }
 
@@ -32,6 +33,7 @@ public class TutorialMove : TutorialBase
 
     IEnumerator corMove()
     {
+        
         TutorialHand leftHand;
         TutorialHand rightHand;
         //연결 대기
@@ -46,6 +48,8 @@ public class TutorialMove : TutorialBase
             }
             yield return new WaitForEndOfFrame();
         }
+
+        Player.instance.playerUI.FadeIn(2.0f);
 
         //시작 사운드 재생 
         //사운드 재생 대기

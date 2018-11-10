@@ -25,7 +25,7 @@ public class VRButton : MonoBehaviour
     public ButtonEventFunc ButtonEvent;
 
     // Use this for initialization
-    protected virtual void Awake ()
+    protected virtual void Start ()
     {
         _buttonImage = GetComponent<Image>();
         _buttonSprite = _buttonImage.sprite;
