@@ -5,10 +5,9 @@ public class VRGameStartButton : VRButton
 {
 
     // Use this for initialization
-    protected override void Awake ()
+    protected override void Start ()
     {
-        base.Awake();
-        ButtonEvent = GameStartScene;
+        base.Start();
     }
 
     // Update is called once per frame

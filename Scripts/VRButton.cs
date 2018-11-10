@@ -27,15 +27,12 @@ public class VRButton : MonoBehaviour
     private LayerMask _uiLayer;
 
     // Use this for initialization
-    protected virtual void Awake ()
+    protected virtual void Start ()
     {
         _buttonImage = GetComponent<Image>();
         _buttonNormalSprite = _buttonImage.sprite;
         _uiLayer = 1 << LayerMask.NameToLayer("UI");
-    }
 
-    protected void Start ()
-    {
         if (Application.isPlaying)
         {
             _leftHend = Player.instance.leftHand;
