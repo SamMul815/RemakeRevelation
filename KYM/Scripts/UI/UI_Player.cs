@@ -13,10 +13,16 @@ public class UI_Player : MonoBehaviour {
     public GameObject bloodEffect;
     public Image blackScreen;
 
+    public bool isStartFadeIn;
+    public float fadeTime = 2.0f;
     // Use this for initialization
     void Start ()
     {
         player = Player.instance.playerStat;
+        if(isStartFadeIn)
+        {
+            FadeIn(fadeTime);
+        }
     }
 	
 

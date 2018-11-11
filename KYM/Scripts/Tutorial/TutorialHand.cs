@@ -57,13 +57,15 @@ public class TutorialHand : MonoBehaviour {
             //int rightIndex = system.GetTrackedDeviceIndexForControllerRole(ETrackedControllerRole.RightHand);
             renderModel.SetDeviceIndex((int)rightIndex);
             this.transform.localScale = Vector3.one;
-            TutorialEvent.Instance.RightHand = this;
+            if(TutorialEvent.Instance != null)
+             TutorialEvent.Instance.RightHand = this;
         }
         else if (hand.GetHandType() == PlayerHand.HandType.Left)
         {
             renderModel.SetDeviceIndex((int)leftIndex);
             this.transform.localScale = Vector3.one;
-            TutorialEvent.Instance.LeftHand = this;
+            if (TutorialEvent.Instance != null)
+                TutorialEvent.Instance.LeftHand = this;
         }
     }
 
