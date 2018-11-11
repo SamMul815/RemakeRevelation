@@ -19,8 +19,9 @@ namespace DragonController
     [RequireComponent(typeof(MovementManager))]
     [RequireComponent(typeof(DragonStat))]
     [RequireComponent(typeof(Rigidbody))]
-    public class DragonManager : Singleton<DragonManager> {
-
+    public class DragonManager : Singleton<DragonManager>
+    {
+           
         [SerializeField]
         private LayerMask _dragonAvoidLayers;
         public LayerMask DragonAvoidLayers { get { return _dragonAvoidLayers; } }
@@ -40,6 +41,9 @@ namespace DragonController
         [SerializeField]
         private Transform _rightPawTransform;
         public Transform RightPawTransform { get { return _rightPawTransform; } }
+
+        private Transform _player;
+        public Transform Player { get { return _player; } }
 
         private DragonStat _stat;
         public DragonStat Stat { get { return _stat; } }
@@ -96,6 +100,7 @@ namespace DragonController
         {
             if (Application.isPlaying)
             {
+                _player = UtilityManager.Instance.Player;
                 _dragonBehaviroTree.Initialize(_dragonBehaviroTree.Root);
                 _isInit = true;
             } 
@@ -153,7 +158,6 @@ namespace DragonController
             else
             {
                 AttackOff();
-                Debug.Log("AI Dead");
             }
         }
     }
