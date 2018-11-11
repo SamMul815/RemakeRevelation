@@ -24,8 +24,8 @@ public class Dragon_Dead_Action : ActionTask
     {
         if (!isCrateUI)
         {
-            Vector3 pos = DragonTransform.position;
-            UIManager.Instance.CreateGameClear(DragonTransform.position, -DragonTransform.forward, out isCrateUI);
+            Vector3 pos = DragonTransform.position + new Vector3(0.0f, 3.0f, 0.0f);
+            UIManager.Instance.CreateGameClear(pos, -DragonTransform.forward, out isCrateUI);
         }
 
         return false;
