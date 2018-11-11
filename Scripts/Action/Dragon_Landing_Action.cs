@@ -56,12 +56,13 @@ public class Dragon_Landing_Action : ActionTask
                 PlayerTransform.position,
                 _movement.CurSpeed * Time.deltaTime);
 
-            DragonTransform.rotation = Quaternion.Lerp(
-                DragonTransform.rotation,
-                Quaternion.LookRotation(forward, Vector3.up),
-                CurTurnTime / MaxTurnTime);
-
-            CurTurnTime += Time.deltaTime;
+            if (CurTurnTime < MaxTurnTime)
+            {
+                DragonTransform.rotation = Quaternion.RotateTowards(
+                    DragonTransform.rotation,
+                    Quaternion.LookRotation(forward, Vector3.up),
+                    45.0f * Time.deltaTime);
+            }
             return false;
         }
 
@@ -95,16 +96,19 @@ public class Dragon_Landing_Action : ActionTask
             forward.y = 0.0f;
         }
 
-        if (forward == Vector3.zero && !_manager.IsTurn)
-            _manager.IsTurn = true;
 
         DragonTransform.position = Vector3.MoveTowards(
             DragonTransform.position,
             _blackBoard.FiexdPosition,
             _movement.CurSpeed * Time.deltaTime);
 
-        if (!_manager.IsTurn)
+        if (CurTurnTime < MaxTurnTime)
         {
+            float dot = Vector3.Dot(DragonTransform.forward, forward);
+
+            if (dot >= 1.0f)
+                CurTurnTime = MaxTurnTime;
+
             DragonTransform.rotation =
                 Quaternion.Lerp(
                     DragonTransform.rotation,

@@ -29,7 +29,7 @@ public abstract class ActionTask : TreeNode
     {
         base.Init();
         _curTurnTime = 0.0f;
-        _maxTurnTime = 10.0f;
+        _maxTurnTime = 3.0f;
     }
 
     public override void OnStart()
