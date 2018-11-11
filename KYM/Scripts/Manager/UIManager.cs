@@ -69,12 +69,11 @@ public class UIManager : Singleton<UIManager>
         textObject.GetComponent<PopupText>().CreatePopupText(text);
     }
 
-    public void CreateGameClear (Vector3 position, Vector3 dir, out bool isCreate)
+    public void CreateGameClear (Vector3 position, Vector3 dir)
     {
         GameObject clearUi;
         Quaternion rot = Quaternion.LookRotation(dir.normalized);
         PoolManager.Instance.PopObject(GameClearUI, position, rot ,out clearUi);
-        isCreate = true;
     }
 
 }
