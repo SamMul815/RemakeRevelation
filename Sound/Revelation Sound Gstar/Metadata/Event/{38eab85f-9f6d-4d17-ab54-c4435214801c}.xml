@@ -126,7 +126,7 @@
     </object>
     <object class="EventMixerGroup" id="{f0509feb-3cef-43c8-adb3-e8b22b418938}">
         <property name="volume">
-            <value>-8.5</value>
+            <value>-3.5</value>
         </property>
         <property name="name">
             <value>Audio 1</value>
@@ -166,7 +166,7 @@
     </object>
     <object class="EventMixerGroup" id="{84eea135-92d3-4913-8c74-965b7998381c}">
         <property name="volume">
-            <value>-5</value>
+            <value>-4</value>
         </property>
         <property name="name">
             <value>Audio 2</value>
@@ -263,7 +263,7 @@
     <object class="MixerBusFader" id="{8f79939f-2d96-435f-bd78-aa28dae19e00}"/>
     <object class="SpatialiserEffect" id="{7c692818-adca-4c4a-bc92-6bd4da9e3c7b}">
         <property name="maximumDistance">
-            <value>400</value>
+            <value>200</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{0605f4a1-01a7-40aa-9983-69307f72d9c5}">
@@ -279,7 +279,7 @@
     </object>
     <object class="AutomationPoint" id="{5d14dd36-37a1-4af8-b241-f82438db79db}">
         <property name="position">
-            <value>1</value>
+            <value>0.60000000000000009</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -287,7 +287,7 @@
     </object>
     <object class="AutomationPoint" id="{78c69808-218e-40cc-a6bf-5e8d38cde603}">
         <property name="position">
-            <value>2</value>
+            <value>1.3500000000000001</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -337,7 +337,7 @@
     </object>
     <object class="AutomationPoint" id="{bf93e7c3-24c0-4f9a-a0ce-57df5636b762}">
         <property name="position">
-            <value>1.05</value>
+            <value>0.5</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -345,7 +345,7 @@
     </object>
     <object class="AutomationPoint" id="{3c5a5c36-fc6a-4531-b18b-2333e9fc8592}">
         <property name="position">
-            <value>2.6500000000000012</value>
+            <value>1.3500000000000001</value>
         </property>
         <property name="value">
             <value>1</value>

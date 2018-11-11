@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DragonController;
 
 public class Throwable : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class Throwable : MonoBehaviour
 
     public GameObject explosionParticle;
     public GameObject throwParticle;
-
+    public float damage;
     private GameObject oldObject;
 
 
@@ -207,7 +208,8 @@ public class Throwable : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Dragon"))
         {
-            //용과 부딪혔을때 적용할 코드들 
+            UIManager.Instance.CreatePopupTextYellow(damage.ToString(),transform.position);
+            DragonManager.Instance.OnDestroyPart(damage);
         }
         else if(collision.gameObject.CompareTag("TutorialTarget"))
         {

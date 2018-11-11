@@ -39,8 +39,8 @@ public class BulletBase : Bullet
         }
         else if (_col.CompareTag("WeakPoint"))
         {
-            UIManager.Instance.CreatePopupTextRed(damage.ToString(), hitInfo.point);
-            _col.gameObject.GetComponent<WeakPoint>().Hit(damage);
+            UIManager.Instance.CreatePopupTextRed((damage * 2).ToString(), hitInfo.point);
+            _col.gameObject.GetComponent<WeakPoint>().Hit(damage * 2);
         }
         else if(_col.CompareTag("TutorialTarget"))
         {

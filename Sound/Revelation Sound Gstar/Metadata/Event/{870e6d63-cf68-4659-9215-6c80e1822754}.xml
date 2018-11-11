@@ -80,6 +80,9 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{96294e7f-a9e7-40ab-9ad3-467e61537e99}">
+        <property name="volume">
+            <value>-3</value>
+        </property>
         <property name="overridingInputFormat">
             <value>1</value>
         </property>
@@ -135,6 +138,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{e90fa0e7-6523-4e07-a55e-e49e27f01ea0}">
+        <property name="volume">
+            <value>-3</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>

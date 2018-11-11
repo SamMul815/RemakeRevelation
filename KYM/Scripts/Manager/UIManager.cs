@@ -59,7 +59,7 @@ public class UIManager : Singleton<UIManager>
     public void CreatePopupTextYellow(string text, Vector3 position)
     {
         GameObject textObject;
-        PoolManager.Instance.PopObject(popupTextRed, out textObject);
+        PoolManager.Instance.PopObject(popupTextYellow, out textObject);
         textObject.transform.position = position + new Vector3(Random.Range(-1, 1), 0.0f, Random.Range(-1, 1));
         Vector3 dir = textObject.transform.position - Player.instance.hmdTransform.position;
         textObject.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
