@@ -27,8 +27,14 @@ public class Dragon_MeteoAttack_Action : ActionTask
 
             forward = (PlayerPos - DragonPos).normalized;
 
-            if(Vector3.Dot(DragonTransform.forward, forward) < 0.99f)
+            float dot = Vector3.Dot(DragonTransform.forward, forward);
+
+            if (CurTurnTime < MaxTurnTime)
             {
+
+                if (dot >= 1.0f)
+                    CurTurnTime = MaxTurnTime;
+
                 DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
                     Quaternion.LookRotation(forward, Vector3.up),

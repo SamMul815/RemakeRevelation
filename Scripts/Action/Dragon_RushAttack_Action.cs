@@ -50,8 +50,8 @@ public class Dragon_RushAttack_Action : ActionTask
 
 
             dot = Vector3.Dot(DragonTransform.forward, forward);
-            
-            if (dot < 0.99f)
+
+            if (CurTurnTime < MaxTurnTime)
             {
 
                 Vector3 Cross = Vector3.Cross(DragonTransform.forward, forward);
@@ -70,10 +70,15 @@ public class Dragon_RushAttack_Action : ActionTask
                         DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
 
+                if (dot >= 1.0f)
+                    CurTurnTime = MaxTurnTime;
+
                 DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
                     Quaternion.LookRotation(forward, Vector3.up),
                     CurTurnTime / MaxTurnTime);
+
+
                 CurTurnTime += Time.deltaTime;
                 return false;
             }

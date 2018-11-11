@@ -35,7 +35,7 @@ public class Dragon_LeftPawAttack_Action : ActionTask
 
             float dot = Vector3.Dot(DragonTransform.forward, forward);
 
-            if (dot < 0.99f)
+            if (CurTurnTime < MaxTurnTime)
             {
 
                 Vector3 Cross = Vector3.Cross(DragonTransform.forward, forward);
@@ -53,6 +53,10 @@ public class Dragon_LeftPawAttack_Action : ActionTask
                     if (angle >= 15.0f/*&& angle <= 120.0f*/)
                         DragonAniManager.SwicthAnimation("Dragon_RightTrun");
                 }
+
+
+                if (dot >= 1.0f)
+                    CurTurnTime = MaxTurnTime;
 
                 DragonTransform.rotation = Quaternion.Lerp(
                     DragonTransform.rotation,
