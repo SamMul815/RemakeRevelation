@@ -70,19 +70,4 @@ public class UIManager : Singleton<UIManager>
         textObject.GetComponent<PopupText>().CreatePopupText(text);
     }
 
-    public void CreateGameClearUI (Vector3 position, Vector3 dir)
-    {
-        GameObject gameClearUi;
-        Quaternion rot = Quaternion.LookRotation(dir.normalized);
-        PoolManager.Instance.PopObject(GameClearUI, position, rot ,out gameClearUi);
-    }
-
-    public void CreateGameOverUI (Vector3 position, Vector3 dir)
-    {
-        GameObject gameOverUI;
-        Quaternion rot = Quaternion.LookRotation(dir.normalized);
-        PoolManager.Instance.PopObject(GameClearUI, position, rot, out gameOverUI);
-
-    }
-
 }
