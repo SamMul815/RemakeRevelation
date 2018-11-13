@@ -101,9 +101,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4213663045868772}
-  - component: {fileID: 114962327880731790}
+  - component: {fileID: 114365307046272562}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameEndManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447103096129256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -224.9, y: 0, z: -150.4}
+  m_LocalPosition: {x: -202, y: 0, z: -150.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4937106812172274}
@@ -296,7 +296,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1895787810647142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4213663045868772}
@@ -324,8 +324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   widthSize: 30
   heightSize: 30
-  width: 14
-  height: 10
+  width: 13
+  height: 12
   playerDirFireCount: 30
   count: 0
   MeteoPosList: []
@@ -393,18 +393,29 @@ MonoBehaviour:
   - poolObject: {fileID: 1548099818966510, guid: 9e5fb77f6c7f73a4bbcf30399ba335a4,
       type: 2}
     initialCount: 30
-  - poolObject: {fileID: 1511254263570490, guid: a6a8911ada536f34fb8c08bcad425dde,
+  - poolObject: {fileID: 1648685271859752, guid: 3b11eff7fbfe4ef4cb9bdbb49da506a8,
       type: 2}
     initialCount: 2
   - poolObject: {fileID: 1415221952433890, guid: 2deaf6a6cfe54a3489cb36f6f7bfd1c3,
       type: 2}
     initialCount: 2
-  - poolObject: {fileID: 1310219710455764, guid: 509d74538179074498daf12c483a3ed4,
+  - poolObject: {fileID: 1443985654776070, guid: a5618224ef2b58b4f9e5769b90525cb6,
       type: 2}
-    initialCount: 1
-  - poolObject: {fileID: 1755714524537268, guid: ed9a823608d8ea3449fa4e642c4d0a1d,
+    initialCount: 2
+  - poolObject: {fileID: 1327848852217350, guid: 892e4802c8b1a4845b7044556771b706,
       type: 2}
-    initialCount: 1
+    initialCount: 2
+--- !u!114 &114365307046272562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799959517819340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1923f731478ed6f46a9bc04c404060d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114450824410820312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -455,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/BGM/BGM
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   CollisionTag: 
   AllowFadeout: 0
   TriggerOnce: 0
@@ -573,17 +584,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
---- !u!114 &114962327880731790
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1799959517819340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e15701f513c8dc04a983d52bd168c090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114983462703620280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -642,3 +642,5 @@ MonoBehaviour:
     path: event:/Player/Machinegun
   - tag: Reload
     path: event:/Player/Reload
+  - tag: Stone
+    path: event:/Player/Stone

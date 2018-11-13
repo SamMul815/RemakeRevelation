@@ -187,6 +187,7 @@ public class PlayerHand : MonoBehaviour
                 continue;
             }
 
+
             int myIndex = (handType == HandType.Right) ? rightIndex : leftIndex;
             int otherIndex = (handType == HandType.Right) ? leftIndex : rightIndex;
 

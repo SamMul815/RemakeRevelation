@@ -161,5 +161,11 @@ namespace DragonController
                 AttackOff();
             }
         }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(_rayTransfrom.position, -_rayTransfrom.forward * 180.0f);
+        }
     }
 }

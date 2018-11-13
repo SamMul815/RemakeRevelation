@@ -163,12 +163,12 @@ public class BlackBoard : Singleton<BlackBoard>
     {
         layerMask = 1 << LayerMask.NameToLayer("Wall"); //8192 2의 13
 
-
         RaycastHit hit;
 
         Collider [] colls = Physics.OverlapSphere(trans.position, distance, layerMask);
         if (colls.Length <= 0)
         {
+            Debug.Log("넌 여기야");
             return true;
         }
         else
@@ -180,6 +180,8 @@ public class BlackBoard : Singleton<BlackBoard>
 
             if (isForwardWall || isBackWall)
             {
+                Debug.Log(layerMask);
+                Debug.Log("아니 여기야");
                 return false;
             }
             else
@@ -190,6 +192,7 @@ public class BlackBoard : Singleton<BlackBoard>
                 bool isLeftWall = Physics.Raycast(trans.position, -rayRight, out hit, distance, layerMask);
                 if (isRightWall || isLeftWall)
                 {
+                    Debug.Log("아니 여기여기");
                     return false;
                 }
                 else
