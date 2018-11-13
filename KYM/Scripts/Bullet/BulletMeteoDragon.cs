@@ -35,7 +35,9 @@ public class BulletMeteoDragon : Bullet {
             PoolManager.Instance.PopObject(destroyParticle, out particle);
             particle.transform.position = hitInfo.point;
             particle.transform.rotation = Quaternion.Euler(0, 0, 0);
-            FmodManager.Instance.PlaySoundOneShot(this.transform.position, "Meteor_Effect");
+            
+            if(Vector3.Distance(UtilityManager.Instance.Player.transform.position,transform.position) < 250.0f)
+                FmodManager.Instance.PlaySoundOneShot(this.transform.position, "Meteor_Effect");
             //Debug.Log("메테오 폭발");
         }
         else

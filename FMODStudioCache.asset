@@ -53,9 +53,10 @@ MonoBehaviour:
   - {fileID: 114828393365294786}
   - {fileID: 114887728064779434}
   - {fileID: 114996359871600466}
+  - {fileID: 114038247829974386}
   MasterBankRef: {fileID: 114020130220995114}
   StringsBankRef: {fileID: 114599071244779998}
-  stringsBankWriteTime: 636777370150880231
+  stringsBankWriteTime: 636777648086443756
   cacheVersion: 2
 --- !u!114 &114020130220995114
 MonoBehaviour:
@@ -70,11 +71,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\210-11\Desktop\DragonBossAi_Test0930\Assets\Sound\Revelation Sound
     Gstar\Build\Desktop\Master Bank.bank
-  lastModified: 636777370150800868
+  lastModified: 636777648086369342
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2707584
+    Value: 2864000
   Exists: 1
 --- !u!114 &114021520111686240
 MonoBehaviour:
@@ -172,6 +173,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 200
   Length: 750
+--- !u!114 &114032825998155090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gun_Dis
+  Min: 0
+  Max: 100
+  Default: 0
 --- !u!114 &114034452361548518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +203,28 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114038247829974386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Stone
+  guid: 719292ed61c26d41b85de9c9a1d74f35
+  Banks:
+  - {fileID: 114020130220995114}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 200
+  Length: 2300
 --- !u!114 &114039913987836062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +304,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114807214396314606}
+  - {fileID: 114378641132631090}
   MinDistance: 1
   MaxDistance: 2000
   Length: 1893
@@ -579,6 +617,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2707584
   Exists: 0
+--- !u!114 &114302146243666184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gun_Dis
+  Min: 0
+  Max: 100
+  Default: 0
 --- !u!114 &114306970142056278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,6 +876,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 400
   Length: 5200
+--- !u!114 &114378641132631090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: HoveringDis
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114382239536049936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -976,6 +1044,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2707584
   Exists: 1
+--- !u!114 &114470271878793992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: HoveringDis
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114484356914043836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1162,11 +1245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Sound\Revelation Sound Gstar\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636777370150880231
+  lastModified: 636777648086443756
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2236
+    Value: 2272
   Exists: 1
 --- !u!114 &114601591937915036
 MonoBehaviour:
@@ -1351,7 +1434,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114433818772518218}
+  - {fileID: 114302146243666184}
   MinDistance: 1
   MaxDistance: 20
   Length: 610
@@ -1514,6 +1597,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2707584
   Exists: 0
+--- !u!114 &114878875112949446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Gun_Dis
+  Min: 0
+  Max: 100
+  Default: 0
 --- !u!114 &114879738134355530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1632,6 +1730,21 @@ MonoBehaviour:
   Name: Gun_Dis
   Min: 0
   Max: 100
+  Default: 0
+--- !u!114 &114926387837058384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: HoveringDis
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114927382598778802
 MonoBehaviour:

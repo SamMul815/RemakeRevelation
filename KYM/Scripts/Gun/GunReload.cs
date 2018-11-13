@@ -19,7 +19,7 @@ public class GunReload : MonoBehaviour
         {
             //Debug.Log("Gun");
             other.gameObject.GetComponentInParent<Gun>().Reload();
-            FmodManager.Instance.PlaySoundOneShot(transform.position, "Reload");
+            FmodManager.Instance.PlaySoundAttatch(this.gameObject, "Reload");
             //SoundManager.Instance.PlayAudio("Reload", transform.position, AudioPlayType.SOUND3D);
             //FMODSoundManager.Instance.PlayReloadSound(this.transform.position);
             currentTime = coolTime;

@@ -238,11 +238,13 @@ public class Throwable : MonoBehaviour
         {
             UIManager.Instance.CreatePopupTextYellow(damage.ToString(),transform.position);
             DragonManager.Instance.OnDestroyPart(damage);
+            FmodManager.Instance.PlaySoundOneShot(transform.position, "Stone");
         }
         else if(collision.gameObject.CompareTag("TutorialTarget"))
         {
             UIManager.Instance.CreatePopupTextYellow(damage.ToString(), transform.position);
             collision.gameObject.GetComponent<TutorialTarget>().Hit(damage);
+            FmodManager.Instance.PlaySoundOneShot(transform.position, "Stone");
         }
 
         if(explosionParticle != null)
@@ -250,6 +252,8 @@ public class Throwable : MonoBehaviour
             GameObject explosionObj;
             PoolManager.Instance.PopObject(explosionParticle,this.transform.position,out explosionObj);
         }
+        
+        
         this.gameObject.SetActive(false);
     }
 }
