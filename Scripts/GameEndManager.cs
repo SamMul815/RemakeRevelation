@@ -63,7 +63,7 @@ public class GameEndManager : Singleton<GameEndManager>
             playerForward.Normalize();
 
 
-            Vector3 pos = _player.transform.position + (playerForward * 1.4f);
+            Vector3 pos = _player.transform.position + (playerForward * 20.0f);
 
             Vector3 forward = pos - _player.transform.position;
             //forward.y = 0.0f;
