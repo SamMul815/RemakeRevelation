@@ -40,14 +40,22 @@ public class VRButton : MonoBehaviour
         {
             _leftHend = Player.instance.leftHand;
             _rightHend = Player.instance.rightHand;
-            
-            Gun leftGun = _leftHend.currentAttachedObject.GetComponent<Gun>();
-            Gun rightGun = _leftHend.currentAttachedObject.GetComponent<Gun>();
+
+            GameObject leftGun = _leftHend.currentAttachedObject;
+            GameObject rightGun = _leftHend.currentAttachedObject;
 
             if (leftGun && rightGun)
             {
-                _leftTransform = leftGun.transform;
-                _rightTransform = rightGun.transform;
+                if (leftGun.GetComponent<Gun>() && rightGun.GetComponent<Gun>())
+                {
+                    _leftTransform = leftGun.transform;
+                    _rightTransform = rightGun.transform;
+                }
+                else
+                {
+                    _leftTransform = _leftHend.transform;
+                    _rightTransform = _rightHend.transform;
+                }
             }
             else
             {

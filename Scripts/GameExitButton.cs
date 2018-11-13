@@ -16,7 +16,7 @@ public class GameExitButton : VRButton
 
     private void LoadScene ()
     {
-
+        LoadSceneManager.Instance.LoadTitle(0.0f);
     }
 
 }
