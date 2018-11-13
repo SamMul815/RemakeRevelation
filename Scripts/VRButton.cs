@@ -68,18 +68,18 @@ public class VRButton : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update ()
     {
-        OnButtonClick(_leftTransform, _leftHend, _rayDistance);
         OnButtonClick(_rightTransform, _rightHend, _rayDistance);
+        OnButtonClick(_leftTransform, _leftHend, _rayDistance);
     }
 
 
-    private void OnButtonClick (Transform handTrans, PlayerHand hand, float distance)
+    protected void OnButtonClick (Transform handTrans, PlayerHand hand, float distance)
     {
+        RaycastHit hit;
+        bool _isButtonPoniter = 
+                Physics.Raycast(handTrans.position, handTrans.forward, out hit, distance, _uiLayer);
 
-        bool _isButtonPoniter =
-                Physics.Raycast(handTrans.position, handTrans.forward, distance, _uiLayer);
-
-        if (_isButtonPoniter)
+        if (hit.collider == this.GetComponent<Collider>())
         {
             if (!_isOver)
             {
@@ -107,50 +107,75 @@ public class VRButton : MonoBehaviour
             {
                 if (_leftHend == hand)
                 {
-                    _isButtonPoniter = 
-                        Physics.Raycast(_rightTransform.position, _rightTransform.forward, distance, _uiLayer);
+                    _isButtonPoniter =
+                    Physics.Raycast(handTrans.position, handTrans.forward, out hit, distance, _uiLayer);
 
-                    if (!_isButtonPoniter)
+                    if (hit.collider != this.GetComponent<Collider>())
                     {
-                        _buttonImage.sprite = _buttonNormalSprite;
-                        _isOver = false;
-                        return;
-                    }
+                        Physics.Raycast(_rightTransform.position, _rightTransform.forward, out hit, distance, _uiLayer);
 
-                    if (_rightHend.GetTriggerButtonDown())
-                    {
-                        if (!_isButtonClick)
+                        if (hit.collider == this.GetComponent<Collider>())
                         {
-                            if (ButtonEvent != null)
+                            if (_buttonOverSprite)
                             {
-                                ButtonEvent();
+                                _buttonImage.sprite = _buttonOverSprite;
                             }
-                            _isButtonClick = true;
-                        }
-                    }
-                }
-                else
-                {
-                    _isButtonPoniter = 
-                        Physics.Raycast(_leftTransform.position, _leftTransform.forward, distance, _uiLayer);
- 
-                    if (!_isButtonPoniter)
-                    {
-                        _buttonImage.sprite = _buttonNormalSprite;
-                        _isOver = false;
-                        return;
-                    }
 
-                    if (_leftHend.GetTriggerButtonDown())
-                    {
-                        if (!_isButtonClick)
+                            _isOver = true;
+
+                            if (_rightHend.GetTriggerButtonDown())
+                            {
+                                if (!_isButtonClick)
+                                {
+                                    if (ButtonEvent != null)
+                                        ButtonEvent();
+                                    _isButtonClick = true;
+                                }
+                            }
+                        }
+                        else
                         {
-                            if (ButtonEvent != null)
-                                ButtonEvent();
-                            _isButtonClick = true;
+                            _buttonImage.sprite = _buttonNormalSprite;
+                            _isOver = false;
+                        }
+                    }
+                    else
+                    {
+                        if (_leftHend.GetTriggerButtonDown())
+                        {
+                            if (!_isButtonClick)
+                            {
+                                if (ButtonEvent != null)
+                                    ButtonEvent();
+                                _isButtonClick = true;
+                            }
                         }
                     }
                 }
+                //else
+                //{
+                //    _isButtonPoniter =
+                //        Physics.Raycast(handTrans.position, handTrans.forward, out hit, distance, _uiLayer);
+
+                //    if (hit.collider != this.GetComponent<Collider>())
+                //    {
+                //        _buttonImage.sprite = _buttonNormalSprite;
+                //        _isOver = false;
+                //    }
+                //    else
+                //    {
+                //        if (_leftHend.GetTriggerButtonDown())
+                //        {
+                //            if (!_isButtonClick)
+                //            {
+                //                if (ButtonEvent != null)
+                //                    ButtonEvent();
+                //                _isButtonClick = true;
+                //            }
+                //        }
+
+                //    }
+                //}
             }
         }
     }

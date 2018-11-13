@@ -114,8 +114,8 @@ public class GameEndManager : Singleton<GameEndManager>
         Quaternion rot = Quaternion.LookRotation(dir.normalized,Vector3.up);
         PoolManager.Instance.PopObject(_ui.GameOverUI, position, rot, out GameOverUI);
 
-        Image ChildImg = GameOverUI.GetComponentInChildren<Image>();
-        Color ImgColor = ChildImg.color;
+        Image [] ChildImg = GameOverUI.GetComponentsInChildren<Image>();
+        Color ImgColor;
 
         Text [] ChildText = GameOverUI.GetComponentsInChildren<Text>();
         Color TextColor;
@@ -124,30 +124,37 @@ public class GameEndManager : Singleton<GameEndManager>
 
         for (float t = 0; t <= createTime * 2f; t += Time.deltaTime)
         {
-            for (int index = 0; index < ChildText.Length; index++)
+            for (int TextIndex = 0; TextIndex < ChildText.Length; TextIndex++)
             {
-                TextColor = ChildText [index].color;
+                TextColor = ChildText [TextIndex].color;
                 TextColor.a = Mathf.Lerp(0.0f, 1.0f, t / (createTime * 0.5f));
-                ChildText [index].color = TextColor;
+                ChildText [TextIndex].color = TextColor;
             }
             
             if (t >= createTime * 0.5f)
             {
-                ImgColor.a = Mathf.Lerp(0.0f, 1.0f, tt / createTime);
-                ChildImg.color = ImgColor;
+                for (int ImgIndex = 0; ImgIndex < ChildImg.Length; ImgIndex++)
+                {
+                    ImgColor = ChildImg [ImgIndex].color;
+                    ImgColor.a = Mathf.Lerp(0.0f, 1.0f, tt / createTime);
+                    ChildImg[ImgIndex].color = ImgColor;
+                }
                 tt += 0.025f;
             }
-
             yield return CoroutineManager.EndOfFrame;
         }
 
         ImgColor.a = 1.0f;
 
-        if (ChildImg.GetComponent<Collider>())
+        for (int ImgIndex = 0; ImgIndex < ChildImg.Length; ImgIndex++)
         {
-            ChildImg.GetComponent<BoxCollider>().enabled = true;
+            ImgColor = ChildImg [ImgIndex].color;
+            if (ChildImg [ImgIndex].GetComponent<Collider>())
+            {
+                ChildImg [ImgIndex].GetComponent<BoxCollider>().enabled = true;
+            }
+            ChildImg [ImgIndex].color = ImgColor;
         }
-        ChildImg.color = ImgColor;
 
         for (int index = 0; index < ChildText.Length; index++)
         {
