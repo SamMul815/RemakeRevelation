@@ -269,7 +269,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void DeadEnd (EvnData evnData)
     {
-        GameEndManager.Instance.GameOver();
+        GameEndManager.Instance.GameClear();
     }
 
 }
