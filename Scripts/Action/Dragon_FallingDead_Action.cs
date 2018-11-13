@@ -42,7 +42,7 @@ public class Dragon_FallingDead_Action : ActionTask
 
     public override bool Run()
     {
-       if (!isFallingDead)
+        if (!isFallingDead)
         {
             isFallingDead =
                 _blackBoard.LandingRayHit(rayTransform, -rayTransform.up, fallingDistance, _manager.DragonAvoidLayers);
@@ -58,7 +58,7 @@ public class Dragon_FallingDead_Action : ActionTask
                 DragonAniManager.SwicthAnimation("Dragon_Dead");
             }
         }
-
+        
         if (isFallingDead)
         {
             DragonTransform.rotation = Quaternion.identity;

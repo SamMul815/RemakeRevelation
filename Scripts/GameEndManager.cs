@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class GameEndManager : Singleton<GameEndManager>
 {
     private DragonManager _dragon;
-    private Player _player;
+    private GameObject _player;
     private UIManager _ui;
     private UtilityManager _utility;
     private EffectManager _effect;
     private BulletManager _bullet;
 
     public DragonManager Dragon { get { return _dragon; } }
-    public Player Player { get { return _player; } }
+    //public GameObject Player { get { return _player; } }
     public UIManager Ui { get { return _ui; } }
     public UtilityManager Utility { get { return _utility; } }
     public EffectManager Effect { get { return _effect; } }
@@ -27,7 +27,7 @@ public class GameEndManager : Singleton<GameEndManager>
     private void Awake ()
     {
         _dragon = DragonManager.Instance;
-        _player = Player.instance;
+        _player = Player.instance.headCollider.gameObject;
         _ui = UIManager.Instance;
         _utility = UtilityManager.Instance;
         _effect = EffectManager.Instance;
@@ -39,11 +39,14 @@ public class GameEndManager : Singleton<GameEndManager>
     {
         if (_dragon.Stat.HP <= 0.0f)
         {
-            Vector3 pos = _player.transform.position + 
-                (_player.transform.forward * 10.0f) + (Vector3.up * 3.0f);
+            Vector3 playerForward = _player.transform.forward;
+            playerForward.y = 0.0f;
+            playerForward.Normalize();
+            Vector3 pos = _player.transform.position + (playerForward * 10.0f)
+                 + (Vector3.up * 3.0f);
 
             Vector3 forward = pos - _player.transform.position;
-            forward.y = 0.0f;
+            //forward.y = 0.0f;
 
             CreateGameClearCor = CreateGameClearUI(pos, forward, 2.0f);
             CoroutineManager.DoCoroutine(CreateGameClearCor);
@@ -53,14 +56,20 @@ public class GameEndManager : Singleton<GameEndManager>
 
     public void GameOver ()
     {
-        if (_player.playerStat.GetCurrentHP() <= 0.0f)
+        //if (_player.playerStat.GetCurrentHP() <= 0.0f)
         {
-            Vector3 pos = _player.transform.position + (_player.transform.forward * 0.4f);
+            Vector3 playerForward = _player.transform.forward;
+            playerForward.y = 0.0f;
+            playerForward.Normalize();
+
+
+            Vector3 pos = _player.transform.position + (playerForward * 1.4f);
 
             Vector3 forward = pos - _player.transform.position;
-            forward.y = 0.0f;
+            //forward.y = 0.0f;
 
-            _player.playerUI.FadeOut(1.5f);
+            Player.instance.playerUI.FadeOut(1.5f);
+            //_player.playerUI.FadeOut(1.5f);
 
             CreateGameOverCor = CreateGameOverUI(pos, forward, 3.0f);
             CoroutineManager.DoCoroutine(CreateGameOverCor);
@@ -71,7 +80,7 @@ public class GameEndManager : Singleton<GameEndManager>
     private IEnumerator CreateGameClearUI (Vector3 position, Vector3 dir, float createTime)
     {
         GameObject GameClearUi;
-        Quaternion Rot = Quaternion.LookRotation(dir.normalized);
+        Quaternion Rot = Quaternion.LookRotation(dir.normalized,Vector3.up);
         PoolManager.Instance.PopObject(_ui.GameClearUI, position, Rot, out GameClearUi);
         
         Image [] ChildImg = GameClearUi.GetComponentsInChildren<Image>();
@@ -103,7 +112,7 @@ public class GameEndManager : Singleton<GameEndManager>
     private IEnumerator CreateGameOverUI (Vector3 position, Vector3 dir, float createTime)
     {
         GameObject GameOverUI;
-        Quaternion rot = Quaternion.LookRotation(dir.normalized);
+        Quaternion rot = Quaternion.LookRotation(dir.normalized,Vector3.up);
         PoolManager.Instance.PopObject(_ui.GameOverUI, position, rot, out GameOverUI);
 
         Image ChildImg = GameOverUI.GetComponentInChildren<Image>();

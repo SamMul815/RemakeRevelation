@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonOverSprite: {fileID: 21300000, guid: 0f7cce3f5b5dc2f42b83526b541e0ee1, type: 3}
-  _rayDistance: 35
+  _rayDistance: 100
   waitTime: 2
   nextSceneName: TitleScene
 --- !u!114 &114829364950298146

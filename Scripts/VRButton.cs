@@ -42,14 +42,14 @@ public class VRButton : MonoBehaviour
             _rightHend = Player.instance.rightHand;
 
             GameObject leftGun = _leftHend.currentAttachedObject;
-            GameObject rightGun = _leftHend.currentAttachedObject;
+            GameObject rightGun = _rightHend.currentAttachedObject;
 
             if (leftGun && rightGun)
             {
                 if (leftGun.GetComponent<Gun>() && rightGun.GetComponent<Gun>())
                 {
-                    _leftTransform = leftGun.transform;
-                    _rightTransform = rightGun.transform;
+                    _leftTransform = leftGun.GetComponent<Gun>().firePos;
+                    _rightTransform = rightGun.GetComponent<Gun>().firePos;
                 }
                 else
                 {
@@ -62,7 +62,6 @@ public class VRButton : MonoBehaviour
                 _leftTransform = _leftHend.transform;
                 _rightTransform = _rightHend.transform;
             }
-
         }
     }
 
@@ -110,6 +109,7 @@ public class VRButton : MonoBehaviour
                 {
                     _isButtonPoniter = 
                         Physics.Raycast(_rightTransform.position, _rightTransform.forward, distance, _uiLayer);
+
                     if (!_isButtonPoniter)
                     {
                         _buttonImage.sprite = _buttonNormalSprite;
@@ -133,6 +133,7 @@ public class VRButton : MonoBehaviour
                 {
                     _isButtonPoniter = 
                         Physics.Raycast(_leftTransform.position, _leftTransform.forward, distance, _uiLayer);
+ 
                     if (!_isButtonPoniter)
                     {
                         _buttonImage.sprite = _buttonNormalSprite;
