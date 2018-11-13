@@ -64,7 +64,6 @@ public class LoadSceneManager : SingletonDonDestroy<LoadSceneManager> {
     public void LoadScenes(float fadeTime, string[] nextSceneName)
     {
         StartCoroutine(corLoadingScenes(fadeTime, nextSceneName));
-        //StartCoroutine(corLoadingScenesTest(fadeTime, nextSceneName));
     }
 
     IEnumerator corLoadingScene(float fadeTime, string nextSceneName)
@@ -122,45 +121,6 @@ public class LoadSceneManager : SingletonDonDestroy<LoadSceneManager> {
 
         }
         Time.timeScale = 1.0f;
-    }
-
-    IEnumerator corLoadingScenesTest(float fadeTime, string[] nextSceneName)
-    {
-        yield return null;
-        Player.instance.playerUI.FadeOut(fadeTime);
-        yield return new WaitForSecondsRealtime(fadeTime);
-
-
-        AsyncOperation[] aOps = new AsyncOperation[nextSceneName.Length];
-        for (int i = 0; i < nextSceneName.Length; i++)
-        {
-            if(i == 0 )
-                aOps[i] = SceneManager.LoadSceneAsync(nextSceneName[i], LoadSceneMode.Single);
-            else
-                aOps[i] = SceneManager.LoadSceneAsync(nextSceneName[i], LoadSceneMode.Additive);
-            aOps[i].allowSceneActivation = false;
-        }
-
-        while (true)
-        {
-            float progressValue = 0.0f;
-            for (int i = 0; i < aOps.Length; i++)
-            {
-                progressValue += aOps[i].progress;
-            }
-
-            if (progressValue >= 0.899f * aOps.Length)
-            {
-                for (int i = 0; i < aOps.Length; i++)
-                {
-                    aOps[i].allowSceneActivation = true;
-                }
-                break;
-            }
-
-            yield return null;
-        }
-
     }
 
 }

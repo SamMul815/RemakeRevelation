@@ -36,13 +36,14 @@ public class PlayerStat : MonoBehaviour
         if (playerHitDelay > 0) return;
 
         currentHP -= damage;
-        //Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             currentHP = 0;
+            if (!isPlayerDie)
+                GameEndManager.Instance.GameOver();
+
             isPlayerDie = true;
         }
-        //playerUI.Hit();
         Player.instance.playerUI.Hit();
         playerHitDelay = hitTime;
     }
@@ -52,14 +53,14 @@ public class PlayerStat : MonoBehaviour
         if (playerHitDelay > 0) return;
 
         currentHP -= damage;
-        //Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             currentHP = 0;
+            if(!isPlayerDie)
+                GameEndManager.Instance.GameOver();
             isPlayerDie = true;
         }
         Player.instance.playerUI.Hit();
-        //playerUI.Hit();
         playerHitDelay = dotTime;
     }
 
