@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224550474082306894}
   - component: {fileID: 222665465184666182}
   - component: {fileID: 114712759908416820}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224812170751721266}
   - component: {fileID: 222153457110122120}
   - component: {fileID: 114548075463443138}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RightOutline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 224458455792724030}
   - component: {fileID: 222236431715388704}
   - component: {fileID: 114377832188695570}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 223655437738538184}
   - component: {fileID: 114253776653934582}
   - component: {fileID: 114359541696233590}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 224607680374292234}
   - component: {fileID: 222094896127312346}
   - component: {fileID: 114269432192093436}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 223796333582549304}
   - component: {fileID: 114024237425154108}
   - component: {fileID: 114957932387908618}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Aim3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 224761894826233786}
   - component: {fileID: 222110989199101408}
   - component: {fileID: 114215644778868168}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 224100134436750568}
   - component: {fileID: 222834536381226242}
   - component: {fileID: 114216227254977612}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LeftOutline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 224151938270212046}
   - component: {fileID: 222872783972924850}
   - component: {fileID: 114963126492201472}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224244944440390406}
   - component: {fileID: 114303128085653622}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 223878725231889140}
   - component: {fileID: 114127866653358282}
   - component: {fileID: 114518614852771598}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Aim1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 224293579153024988}
   - component: {fileID: 222849392264688958}
   - component: {fileID: 114447741112132246}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CenterOutline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224789130347443106}
   - component: {fileID: 114175965076031486}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Aim (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 223152236279623856}
   - component: {fileID: 114261897689661054}
   - component: {fileID: 114394895037772240}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Aim1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 114896291632119472}
   - component: {fileID: 114767508389115292}
   - component: {fileID: 114108438412829112}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UI_MachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 224419808529057844}
   - component: {fileID: 222651640291477138}
   - component: {fileID: 114617721465994774}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 223014166016587672}
   - component: {fileID: 114710793190561810}
   - component: {fileID: 114694121279216188}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Aim2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 224768267561636388}
   - component: {fileID: 222315915437498648}
   - component: {fileID: 114704787173142736}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 223682978738919734}
   - component: {fileID: 114243874720583100}
   - component: {fileID: 114062513542906504}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Aim2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 223697013637297582}
   - component: {fileID: 114086381125776066}
   - component: {fileID: 114046054177142822}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Aim3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 224250663169096336}
   - component: {fileID: 222360112563257846}
   - component: {fileID: 114373307535152060}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachmentFlags: 8
   maxGauge: 2000
-  shootGauge: 15
+  shootGauge: 20
   timeGauge: 1
   gunBarrelFront: {fileID: 1282495657072104}
   gunBarrelBack: {fileID: 1185974472454136}

@@ -12,8 +12,6 @@ public class Dragon_RedZoneAttack_Action : ActionTask
 
     float basePushPower;
      
-    bool isPushing;
-
     public override void Init()
     {
         base.Init();
@@ -21,9 +19,8 @@ public class Dragon_RedZoneAttack_Action : ActionTask
         damege = _blackBoard.RedZoneDamage;
         pushPower = 30.0f / distance;
         damege = 10.0f;
-        isPushing = false;
 
-        basePushPower = 10.0f;
+        basePushPower = 20.0f;
     }
 
     public override void OnStart()
@@ -31,7 +28,6 @@ public class Dragon_RedZoneAttack_Action : ActionTask
         base.OnStart();
 
         _blackBoard.IsRedZoneIn = true;
-        isPushing = false;
         EffectManager.Instance.PoolParticleEffectOn("NearHowling",
             _manager.transform.position,
             _manager.transform.forward);
@@ -44,7 +40,7 @@ public class Dragon_RedZoneAttack_Action : ActionTask
     {
         if (UtilityManager.DistanceCalc(DragonTransform, PlayerTransform, distance))
         {
-            if (!isPushing)
+            if (_blackBoard.IsRedZoneAttackOn)
             {
                 float FinalDistance = (DragonTransform.position - PlayerTransform.position).sqrMagnitude;
                 float FinalPushPower = pushPower * (distance - Mathf.Sqrt(FinalDistance));
@@ -64,7 +60,7 @@ public class Dragon_RedZoneAttack_Action : ActionTask
                     _playerManager.playerStat.Hit(damege);
 
                 }
-                isPushing = true;
+                _blackBoard.IsRedZoneAttackOn = false;
             }
         }
         return false;

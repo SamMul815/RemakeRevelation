@@ -757,6 +757,7 @@ MonoBehaviour:
   StateExitEvnData:
     RunTime: 0
   StateTimeEvent:
+  - RunTime: 0.379
   - RunTime: 0.999
 --- !u!114 &114809855130866320
 MonoBehaviour:
@@ -1038,7 +1039,6 @@ MonoBehaviour:
   StateExitEvnData:
     RunTime: 0
   StateTimeEvent:
-  - RunTime: 0.001
   - RunTime: 0.999
 --- !u!206 &206030366016192780
 BlendTree:

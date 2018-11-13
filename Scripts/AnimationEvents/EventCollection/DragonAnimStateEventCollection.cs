@@ -68,6 +68,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
 
+        AddAnimTimeEventFunc(NearHowlingOn, "NearHowling");
         AddAnimTimeEventFunc(ActionEnd, "NearHowling");
 
         AddAnimTimeEventFunc(FlyingSoundOn, "Flying");
@@ -79,6 +80,12 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(DeadEnd, "Dead");
         AddAnimTimeEventFunc(FallingDead, "FallingDead");
         AddAnimTimeEventFunc(DeadEnd, "FallingDead");
+
+    }
+
+    private void NearHowlingOn(EvnData evnData)
+    {
+        _blackBoard.IsRedZoneAttackOn = true;
 
     }
 
@@ -196,11 +203,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     {
 
         Transform DragonMouth = _blackBoard.DragonBreathMouth;
-
-        Vector3 dir =
-            (_utility.Player.position -
-            DragonMouth.position).normalized;
-
+        Vector3 dir = DragonMouth.forward;
         dir.y = 0.0f;
 
         BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);

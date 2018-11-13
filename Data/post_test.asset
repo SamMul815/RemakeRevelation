@@ -134,7 +134,7 @@ MonoBehaviour:
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 0.71753967, b: 0.6145434, a: 0.13994169}
+          slope: {r: 1, g: 0.77780515, b: 0.757118, a: 0.13994169}
           power: {r: 0.72584105, g: 1, b: 0.47608292, a: 0}
           offset: {r: 0.8072005, g: 1, b: 0.97962636, a: 0}
         linear:
@@ -182,7 +182,7 @@ MonoBehaviour:
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -204,7 +204,7 @@ MonoBehaviour:
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -226,7 +226,7 @@ MonoBehaviour:
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -271,10 +271,10 @@ MonoBehaviour:
           m_ZeroValue: 0.5
           m_Range: 1
         e_CurrentEditingCurve: 0
-        e_CurveY: 1
-        e_CurveR: 0
-        e_CurveG: 0
-        e_CurveB: 0
+        e_CurveY: 0
+        e_CurveR: 1
+        e_CurveG: 1
+        e_CurveB: 1
   userLut:
     m_Enabled: 0
     m_Settings:
