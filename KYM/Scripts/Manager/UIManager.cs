@@ -12,6 +12,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject popupTextYellow;
 
     public GameObject GameClearUI;
+    public GameObject GameOverUI;
 
     private PlayerStat player;
     private float playerMaxHP;
@@ -67,13 +68,6 @@ public class UIManager : Singleton<UIManager>
         Vector3 dir = textObject.transform.position - Player.instance.hmdTransform.position;
         textObject.transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
         textObject.GetComponent<PopupText>().CreatePopupText(text);
-    }
-
-    public void CreateGameClear (Vector3 position, Vector3 dir)
-    {
-        GameObject clearUi;
-        Quaternion rot = Quaternion.LookRotation(dir.normalized);
-        PoolManager.Instance.PopObject(GameClearUI, position, rot ,out clearUi);
     }
 
 }

@@ -372,6 +372,9 @@ MonoBehaviour:
   - poolObject: {fileID: 1310219710455764, guid: 509d74538179074498daf12c483a3ed4,
       type: 2}
     initialCount: 1
+  - poolObject: {fileID: 1755714524537268, guid: ed9a823608d8ea3449fa4e642c4d0a1d,
+      type: 2}
+    initialCount: 1
 --- !u!114 &114450824410820312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -468,6 +471,7 @@ MonoBehaviour:
     type: 2}
   GameClearUI: {fileID: 1310219710455764, guid: 509d74538179074498daf12c483a3ed4,
     type: 2}
+  GameOverUI: {fileID: 1755714524537268, guid: ed9a823608d8ea3449fa4e642c4d0a1d, type: 2}
 --- !u!114 &114820021001373736
 MonoBehaviour:
   m_ObjectHideFlags: 1

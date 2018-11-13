@@ -96,16 +96,16 @@ public class Dragon_Landing_Action : ActionTask
             forward.y = 0.0f;
         }
 
+        if (forward == Vector3.zero && !_manager.IsTurn)
+            _manager.IsTurn = true;
 
         DragonTransform.position = Vector3.MoveTowards(
             DragonTransform.position,
             _blackBoard.FiexdPosition,
             _movement.CurSpeed * Time.deltaTime);
 
-        if (CurTurnTime < MaxTurnTime)
+        if (!_manager.IsTurn)
         {
-            float dot = Vector3.Dot(DragonTransform.forward, forward);
-
             DragonTransform.rotation =
                 Quaternion.Lerp(
                     DragonTransform.rotation,

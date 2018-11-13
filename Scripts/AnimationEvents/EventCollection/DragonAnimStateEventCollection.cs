@@ -268,9 +268,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void DeadEnd (EvnData evnData)
     {
-        Vector3 pos = _manager.transform.position + new Vector3(0.0f, 10.0f, 0.0f);
-        UIManager.Instance.CreateGameClear(pos, -_manager.transform.forward);
-
+        GameManager.Instance.GameClear();
     }
 
 }
