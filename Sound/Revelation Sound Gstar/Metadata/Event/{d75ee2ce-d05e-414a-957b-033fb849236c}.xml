@@ -5,7 +5,7 @@
             <value>Tuto_11</value>
         </property>
         <property name="outputFormat">
-            <value>1</value>
+            <value>0</value>
         </property>
         <relationship name="folder">
             <destination>{de5c6f5a-fbf3-4fc6-861e-c474319eb9df}</destination>
@@ -74,6 +74,12 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{b4f9142e-2822-41f5-86d0-3611f9090ef0}">
+        <property name="volume">
+            <value>-3</value>
+        </property>
+        <property name="inputFormatOverridden">
+            <value>true</value>
+        </property>
         <relationship name="effectChain">
             <destination>{19ebd431-9eec-43e8-b8fb-249b521e2d1f}</destination>
         </relationship>
@@ -132,13 +138,9 @@
     <object class="MixerBusEffectChain" id="{19ebd431-9eec-43e8-b8fb-249b521e2d1f}">
         <relationship name="effects">
             <destination>{9c75b297-bc42-4aa5-935f-50e8b06340fa}</destination>
-            <destination>{1a77e8d3-959c-488d-bc4e-ec9ba0ff6cee}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{9cf2f4e9-4d85-485f-8b41-f5d084639672}">
-        <property name="overridingOutputFormat">
-            <value>1</value>
-        </property>
         <property name="outputFormatOverridden">
             <value>true</value>
         </property>
@@ -151,6 +153,5 @@
     </object>
     <object class="MixerBusPanner" id="{87e67d6a-f170-488b-86be-0c4b9bcab72c}"/>
     <object class="MixerBusFader" id="{9c75b297-bc42-4aa5-935f-50e8b06340fa}"/>
-    <object class="SpatialiserEffect" id="{1a77e8d3-959c-488d-bc4e-ec9ba0ff6cee}"/>
     <object class="MixerBusFader" id="{533edb23-af9d-4a98-97c0-1aa8b7663ec4}"/>
 </objects>

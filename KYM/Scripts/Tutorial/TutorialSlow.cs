@@ -40,10 +40,27 @@ public class TutorialSlow : TutorialBase
     {
         FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI13");
 
-        while (!isGrip)
+        TutorialEvent.Instance.LeftHand.gameObject.SetActive(true);
+        TutorialEvent.Instance.RightHand.gameObject.SetActive(true);
+
+        TutorialEvent.Instance.LeftHand.HighlightOnButton("lgrip");
+        TutorialEvent.Instance.LeftHand.HighlightOnButton("rgrip");
+
+        while (true)
         {
-           yield return new WaitForEndOfFrame();
+            Player.instance.leftHand.Vibration(0.1f, 4000);
+
+            if (isGrip)
+            {
+                break;
+            }
+            yield return new WaitForSecondsRealtime(0.2f);
         }
+        TutorialEvent.Instance.LeftHand.HighlightOffButton("lgrip");
+        TutorialEvent.Instance.LeftHand.HighlightOffButton("rgrip");
+
+        TutorialEvent.Instance.LeftHand.gameObject.SetActive(false);
+        TutorialEvent.Instance.RightHand.gameObject.SetActive(false);
 
         yield return new WaitForSecondsRealtime(7.0f);
         isClear = true;

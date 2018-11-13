@@ -129,7 +129,7 @@ namespace DragonController
         public void Hit(float damage)
         {
             Stat.HP -= damage;
-            Debug.Log("Dragon Hit : " + damage);
+            //Debug.Log("Dragon Hit : " + damage);
         }
 
         public void AttackOn(DragonAttackTriggers attackTrigger)

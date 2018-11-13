@@ -59,7 +59,7 @@ Animator:
   m_GameObject: {fileID: 1063717698855360}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fd596bcedd42eee4b85ed462df70b0d2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 078b520efa682df489b97e15c5760502, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b2f5aac186a5a0044ba03c4effef2074, type: 3}
+    m_Font: {fileID: 12800000, guid: 3740d2e7653e26b4b93e0cfb46335e77, type: 3}
     m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0

@@ -36,7 +36,7 @@ public class PlayerStat : MonoBehaviour
         if (playerHitDelay > 0) return;
 
         currentHP -= damage;
-        Debug.Log(currentHP);
+        //Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             currentHP = 0;
@@ -52,7 +52,7 @@ public class PlayerStat : MonoBehaviour
         if (playerHitDelay > 0) return;
 
         currentHP -= damage;
-        Debug.Log(currentHP);
+        //Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             currentHP = 0;

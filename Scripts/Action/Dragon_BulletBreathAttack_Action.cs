@@ -58,10 +58,12 @@ public class Dragon_BulletBreathAttack_Action : ActionTask
                     Quaternion.LookRotation(forward, Vector3.up),
                     CurTurnTime / MaxTurnTime);
 
+                //Debug.Log(CurTurnTime / MaxTurnTime);
                 CurTurnTime += Time.deltaTime;
 
                 return false;
             }
+
             _manager.IsTurn = true;
             FmodManager.Instance.PlaySoundOneShot(DragonTransform.position, "Breath");
             DragonAniManager.SwicthAnimation("Dragon_Bullet_Breath");

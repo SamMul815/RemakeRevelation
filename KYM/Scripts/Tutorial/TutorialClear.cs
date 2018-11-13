@@ -21,10 +21,13 @@ public class TutorialClear : TutorialBase
     {
         if(centerTrigger.IsClear())
         {
+            
             FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI15");
+            LoadSceneManager.Instance.LoadMainGame(5.0f);
             return true;
         }
         return false;
     }
+
 
 }

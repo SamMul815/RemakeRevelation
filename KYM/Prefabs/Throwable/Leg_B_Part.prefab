@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 65707985908643072}
   m_Layer: 13
   m_Name: Leg_B_Part
-  m_TagString: Untagged
+  m_TagString: Throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,13 +279,14 @@ MonoBehaviour:
   catchSpeedThreshold: 0
   maxThrowPower: 5
   restoreOriginalParent: 0
-  IsTutorial: 1
+  IsTutorial: 0
   gravityValue: 0.5
   OnMaterial: {fileID: 2100000, guid: 14906661cdd60ca4b9048dbd3c8288e4, type: 2}
   OffMaterial: {fileID: 2100000, guid: 3469065a957589845a93a5b9a5523b3d, type: 2}
-  explosionParticle: {fileID: 1415221952433890, guid: 2deaf6a6cfe54a3489cb36f6f7bfd1c3,
+  explosionParticle: {fileID: 1648685271859752, guid: 3b11eff7fbfe4ef4cb9bdbb49da506a8,
     type: 2}
   throwParticle: {fileID: 1542272355268042}
+  damage: 4000
 --- !u!114 &114886834013711976
 MonoBehaviour:
   m_ObjectHideFlags: 1

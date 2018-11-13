@@ -42,7 +42,6 @@ public class TutorialMachineGunShoot : TutorialBase
     {
         TutorialEvent.Instance.RightGun.SetSkillCoolTime(0.0f);
         
-        TutorialEvent.Instance.LeftHand.gameObject.SetActive(true);
         TutorialEvent.Instance.RightHand.gameObject.SetActive(true);
 
         TutorialEvent.Instance.RightHand.HighlightOnButton("lgrip");
@@ -60,13 +59,12 @@ public class TutorialMachineGunShoot : TutorialBase
             {
                 break;
             }
-            yield return new WaitForSecondsRealtime(0.3f);
+            yield return new WaitForSecondsRealtime(0.2f);
         }
         TutorialEvent.Instance.RightHand.HighlightOffButton("lgrip");
         TutorialEvent.Instance.RightHand.HighlightOffButton("rgrip");
 
-        TutorialEvent.Instance.LeftHand.gameObject.SetActive(false);
-        TutorialEvent.Instance.RightHand.gameObject.SetActive(false);
+
 
         target.SetActive(true);
 
@@ -80,24 +78,28 @@ public class TutorialMachineGunShoot : TutorialBase
         }
 
         FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI08");
+        TutorialEvent.Instance.RightHand.HighlightOnButton("trigger");
 
         while (true)
         {
             if(machinGun.CurrentGauge <=0.0f)
             {
+                TutorialEvent.Instance.RightHand.HighlightOffButton("trigger");
+                TutorialEvent.Instance.RightHand.gameObject.SetActive(false);
                 break;
             }
-            yield return new WaitForEndOfFrame();
+            else
+            {
+                Player.instance.rightHand.Vibration(0.1f, 4000);
+                yield return new WaitForSecondsRealtime(0.2f);
+            }
+            //yield return new WaitForEndOfFrame();
         }
 
         FmodManager.Instance.PlaySoundOneShot(this.transform.position, "AI09");
         yield return new WaitForSecondsRealtime(1.0f);
         target.SetActive(false);
         isClear = true;
-
-
-
-        //TutorialEvent.Instance.OnNPC();
 
         yield return null;
     }

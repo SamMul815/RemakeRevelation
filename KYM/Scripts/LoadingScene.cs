@@ -15,37 +15,34 @@ public class LoadingScene : VRButton {
 
     private void LoadScene()
     {
-        StartCoroutine(corLoading(waitTime, nextSceneName));
+        LoadSceneManager.Instance.LoadScene(waitTime, nextSceneName);
+        //LoadSceneManager.Instance.
+        //StartCoroutine(corLoading(waitTime, nextSceneName));
     }
 
 
-    static IEnumerator corLoading(float waitTime, string nextSceneName)
-    {
-        yield return null;
-        Player.instance.playerUI.FadeOut(2.0f);
-        yield return new WaitForSecondsRealtime(3.0f);
-        //Application.backgroundLoadingPriority = ThreadPriority.Low;
-        //SceneManager.LoadSceneAsync("LoadingScene");
+    //static IEnumerator corLoading(float waitTime, string nextSceneName)
+    //{
+    //    yield return null;
+    //    Player.instance.playerUI.FadeOut(2.0f);
+    //    yield return new WaitForSecondsRealtime(3.0f);
+    //    //Application.backgroundLoadingPriority = ThreadPriority.Low;
+    //    //SceneManager.LoadSceneAsync("LoadingScene");
         
-        AsyncOperation op = SceneManager.LoadSceneAsync(nextSceneName);
+    //    AsyncOperation op = SceneManager.LoadSceneAsync(nextSceneName);
 
+    //    //SceneManager
+    //    op.allowSceneActivation = false;
 
-        //SceneManager
-        op.allowSceneActivation = false;
-
-        while(!op.isDone)
-        {
-            yield return null;
-            if(op.progress >= 0.9f)
-            {
-                Debug.Log("와일문 탈출");
-                op.allowSceneActivation = true;
-                break;
-            }
-        }
-       
-
-    }
-    
-
+    //    while(!op.isDone)
+    //    {
+    //        yield return null;
+    //        if(op.progress >= 0.9f)
+    //        {
+    //            Debug.Log("와일문 탈출");
+    //            op.allowSceneActivation = true;
+    //            break;
+    //        }
+    //    }     
+    //}   
 }

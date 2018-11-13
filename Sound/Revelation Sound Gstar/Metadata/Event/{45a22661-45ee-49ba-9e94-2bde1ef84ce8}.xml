@@ -5,7 +5,7 @@
             <value>Tuto_04</value>
         </property>
         <property name="outputFormat">
-            <value>1</value>
+            <value>0</value>
         </property>
         <relationship name="folder">
             <destination>{de5c6f5a-fbf3-4fc6-861e-c474319eb9df}</destination>
@@ -72,6 +72,12 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{552ced1c-9d93-4715-91cf-60d61282c8a0}">
+        <property name="volume">
+            <value>-3</value>
+        </property>
+        <property name="inputFormatOverridden">
+            <value>true</value>
+        </property>
         <relationship name="effectChain">
             <destination>{31b8eb84-1b09-42b5-970f-762217d01aec}</destination>
         </relationship>
@@ -90,10 +96,10 @@
     <object class="MixerBusPanner" id="{3bb324b8-058f-432c-bf46-fe58ba6f677a}"/>
     <object class="SingleSound" id="{f9c0acdd-f03a-4873-baf8-d31ef49be144}">
         <property name="length">
-            <value>0.88</value>
+            <value>0.89000000000000001</value>
         </property>
         <property name="timelockedOffset">
-            <value>0.25</value>
+            <value>0.23999999999999999</value>
         </property>
         <relationship name="audioFile">
             <destination>{17ed83a0-f060-4dda-a07e-a3502f00ef2b}</destination>
@@ -116,13 +122,9 @@
     <object class="MixerBusEffectChain" id="{31b8eb84-1b09-42b5-970f-762217d01aec}">
         <relationship name="effects">
             <destination>{a25c2aba-76b1-461b-b82f-417775eb4bc0}</destination>
-            <destination>{1c861a65-45a1-49b4-80f0-e9d57410be58}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{9f73fa37-1eae-43fe-b415-5bb79da2090c}">
-        <property name="overridingOutputFormat">
-            <value>1</value>
-        </property>
         <property name="outputFormatOverridden">
             <value>true</value>
         </property>
@@ -135,6 +137,5 @@
     </object>
     <object class="MixerBusPanner" id="{064672da-d0ad-43cc-b1ca-8607926fac26}"/>
     <object class="MixerBusFader" id="{a25c2aba-76b1-461b-b82f-417775eb4bc0}"/>
-    <object class="SpatialiserEffect" id="{1c861a65-45a1-49b4-80f0-e9d57410be58}"/>
     <object class="MixerBusFader" id="{83491609-2117-427c-b65a-68efaa81d40d}"/>
 </objects>

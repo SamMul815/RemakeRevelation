@@ -83,7 +83,7 @@
     </object>
     <object class="EventMixerMaster" id="{711b6f30-86b3-4d7c-aecd-e232d3a50a49}">
         <property name="volume">
-            <value>-3.5</value>
+            <value>-11</value>
         </property>
         <relationship name="effectChain">
             <destination>{df938ef5-bf56-4767-bcb6-b8a7260721ab}</destination>
@@ -122,6 +122,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{b72cc5f7-4779-450d-9d4b-509506d62654}">
+        <property name="volume">
+            <value>-6</value>
+        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -153,6 +156,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{8337a8bf-e566-4864-b34e-225474e58a1c}">
+        <property name="volume">
+            <value>-6</value>
+        </property>
         <property name="name">
             <value>Audio 2</value>
         </property>
@@ -232,7 +238,7 @@
     <object class="MixerBusFader" id="{37eaaca5-11a1-497d-ab73-2fea10c45000}"/>
     <object class="SpatialiserEffect" id="{65141fed-7417-44d8-a88d-a6302147dfd9}">
         <property name="maximumDistance">
-            <value>250</value>
+            <value>80</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{d17c4c05-fded-444c-8061-cc23fec3ce12}">
@@ -256,13 +262,13 @@
     </object>
     <object class="AutomationPoint" id="{76e4aaa1-430c-48be-b19e-80777c58a731}">
         <property name="position">
-            <value>2.2000000000000002</value>
+            <value>1.4500000000000002</value>
         </property>
         <property name="value">
             <value>1</value>
         </property>
         <property name="curveShape">
-            <value>0.124673598</value>
+            <value>-0.0668998286</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{564b1229-a742-4e50-869f-2475424bb32f}">
@@ -314,7 +320,7 @@
     </object>
     <object class="AutomationPoint" id="{21cb7b98-2b51-4823-b0de-c21af735e15a}">
         <property name="position">
-            <value>1.5</value>
+            <value>1.3</value>
         </property>
         <property name="value">
             <value>1</value>
