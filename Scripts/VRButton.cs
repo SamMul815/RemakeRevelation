@@ -14,6 +14,9 @@ public class VRButton : MonoBehaviour
     protected PlayerHand _leftHend;
     protected PlayerHand _rightHend;
 
+    protected Transform _leftTransform;
+    protected Transform _rightTransform;
+
     [SerializeField]
     protected float _rayDistance;
     
@@ -37,22 +40,45 @@ public class VRButton : MonoBehaviour
         {
             _leftHend = Player.instance.leftHand;
             _rightHend = Player.instance.rightHand;
+
+            GameObject leftGun = _leftHend.currentAttachedObject;
+            GameObject rightGun = _leftHend.currentAttachedObject;
+
+            if (leftGun && rightGun)
+            {
+                if (leftGun.GetComponent<Gun>() && rightGun.GetComponent<Gun>())
+                {
+                    _leftTransform = leftGun.transform;
+                    _rightTransform = rightGun.transform;
+                }
+                else
+                {
+                    _leftTransform = _leftHend.transform;
+                    _rightTransform = _rightHend.transform;
+                }
+            }
+            else
+            {
+                _leftTransform = _leftHend.transform;
+                _rightTransform = _rightHend.transform;
+            }
+
         }
     }
 
     // Update is called once per frame
     protected virtual void Update ()
     {
-        OnButtonClick(_leftHend, _rayDistance);
-        OnButtonClick(_rightHend, _rayDistance);
+        OnButtonClick(_leftTransform, _leftHend, _rayDistance);
+        OnButtonClick(_rightTransform, _rightHend, _rayDistance);
     }
 
 
-    private void OnButtonClick (PlayerHand hand, float distance)
+    private void OnButtonClick (Transform handTrans, PlayerHand hand, float distance)
     {
 
         bool _isButtonPoniter =
-                Physics.Raycast(hand.transform.position, hand.transform.forward, distance, _uiLayer);
+                Physics.Raycast(handTrans.position, handTrans.forward, distance, _uiLayer);
 
         if (_isButtonPoniter)
         {
@@ -82,15 +108,16 @@ public class VRButton : MonoBehaviour
             {
                 if (_leftHend == hand)
                 {
-                    PlayerHand otherHand = _rightHend;
-                    _isButtonPoniter = Physics.Raycast(otherHand.transform.position, otherHand.transform.forward, distance, _uiLayer);
+                    _isButtonPoniter = 
+                        Physics.Raycast(_rightTransform.position, _rightTransform.forward, distance, _uiLayer);
                     if (!_isButtonPoniter)
                     {
                         _buttonImage.sprite = _buttonNormalSprite;
                         _isOver = false;
                         return;
                     }
-                    if (otherHand.GetTriggerButtonDown())
+
+                    if (_rightHend.GetTriggerButtonDown())
                     {
                         if (!_isButtonClick)
                         {
@@ -104,16 +131,16 @@ public class VRButton : MonoBehaviour
                 }
                 else
                 {
-
-                    PlayerHand otherHand = _leftHend;
-                    _isButtonPoniter = Physics.Raycast(otherHand.transform.position, otherHand.transform.forward, distance, _uiLayer);
+                    _isButtonPoniter = 
+                        Physics.Raycast(_leftTransform.position, _leftTransform.forward, distance, _uiLayer);
                     if (!_isButtonPoniter)
                     {
                         _buttonImage.sprite = _buttonNormalSprite;
                         _isOver = false;
                         return;
                     }
-                    if (otherHand.GetTriggerButtonDown())
+
+                    if (_leftHend.GetTriggerButtonDown())
                     {
                         if (!_isButtonClick)
                         {
