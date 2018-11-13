@@ -199,8 +199,10 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
         Vector3 dir =
             (_utility.Player.position -
-            _manager.transform.position).normalized;
+            DragonMouth.position).normalized;
+
         dir.y = 0.0f;
+
         BulletManager.Instance.CreateDragonBreath(DragonMouth.position, dir);
 
     }
