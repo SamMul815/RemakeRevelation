@@ -5,7 +5,56 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneManager : SingletonDonDestroy<LoadSceneManager> {
 
-    //public GameObject loadingPlayer; 
+    public string[] TitleScenes = 
+    {
+        "lightmapscene_wall",
+        "temple_lightmap",
+         "TitleScene"
+    };
+    public string[] TutorialScenes =
+    {
+        "Tutorial"
+    };
+    public string[] MainGameScenes =
+        {
+        "lightmapscene_wall",
+        "temple_lightmap",
+        "KYM"
+
+    };
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F10))
+        {
+            LoadTitle(1.0f);
+        }
+
+        if(Input.GetKeyDown(KeyCode.F11))
+        {
+            LoadTutorial(1.0f);
+        }
+        if(Input.GetKeyDown(KeyCode.F12))
+        {
+            LoadMainGame(1.0f);
+        }
+
+    }
+
+    public void LoadTitle(float waitTime)
+    {
+        LoadScenes(waitTime, TitleScenes);
+    }
+
+    public void LoadTutorial(float waitTime)
+    {
+        LoadScenes(waitTime, TutorialScenes);
+    }
+
+    public void LoadMainGame(float waitTime)
+    {
+        LoadScenes(waitTime, MainGameScenes);
+    }
 
     public void LoadScene(float fadeTime, string nextSceneName)
     {
@@ -29,8 +78,10 @@ public class LoadSceneManager : SingletonDonDestroy<LoadSceneManager> {
     IEnumerator corLoadingScenes(float fadeTime, string[] nextSceneName)
     {
         yield return null;
-        Player.instance.playerUI.FadeOut(fadeTime);
+        if(Player.instance != null)
+            Player.instance.playerUI.FadeOut(fadeTime);
         yield return new WaitForSecondsRealtime(fadeTime);
+
         Time.timeScale = 0.0f;
         AsyncOperation op = SceneManager.LoadSceneAsync(nextSceneName[0]); 
         while(!op.isDone)
@@ -61,7 +112,8 @@ public class LoadSceneManager : SingletonDonDestroy<LoadSceneManager> {
                     {
                         aOps[i].allowSceneActivation = true;
                     }
-                    //Player.instance.playerUI.FadeIn(2.0f);
+                    //if(Player.instance != null)
+                    //    Player.instance.playerUI.FadeIn(2.0f);
                     break;
                 }
 

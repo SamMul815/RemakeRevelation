@@ -104,7 +104,9 @@ public class Bullet : MonoBehaviour {
         //hitInfo = Physics.CapsuleCastAll(_p1, _p2, capsuleCol.radius * transform.localScale.y, _dir, _dir.magnitude, hitLayer);
 
         Ray ray = new Ray(prevPosition, _dir);
+         
         return Physics.SphereCast(ray, _radius, out hitInfo, moveSpeed* Time.fixedDeltaTime, hitLayer);
+        
         //return Physics.CapsuleCast(_p1, _p2, col.radius * transform.localScale.y, _dir, out hitInfo, moveSpeed * Time.fixedDeltaTime, hitLayer);
     }
 

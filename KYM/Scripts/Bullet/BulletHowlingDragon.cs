@@ -18,7 +18,7 @@ public class BulletHowlingDragon : BulletBase
         if (isHitPlayer) return;
 
         Collider _col = hitInfo.collider;
-        if (_col.CompareTag("Player"))
+        if (_col.CompareTag("Player") || _col.CompareTag("Gun"))
         {
             Player.instance.playerStat.Hit(damage);
             isHitPlayer = true;

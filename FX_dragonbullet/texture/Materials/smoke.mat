@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: smoke
+  m_Shader: {fileID: 4800000, guid: 353d6b1ee49a2a44a8edc557816b131e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 7b6fcd176a58a1042b5d71e47a032e93, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex02:
+        m_Texture: {fileID: 2800000, guid: 9bded4f531a8bc745b3e468c7e80e4e7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Bar: 0.24
+    - _Bar02: -0.24
+    - _InvFade: 1
+    m_Colors:
+    - _Color: {r: 0.28676468, g: 0.17290224, b: 0.17290224, a: 0.79}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

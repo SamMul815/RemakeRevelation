@@ -40,45 +40,23 @@ public class Throwable : MonoBehaviour
         IsThrow = false;
     }
 
-    private void OnHandHoverBegin(PlayerHand hand)
+    public void OnMaterialChange()
     {
-        if(!attached)
-        {
-            if(!IsThrow)
-            {
-                this.GetComponent<MeshRenderer>().material = OnMaterial;
-            }
-        }
+        this.GetComponent<MeshRenderer>().material = OnMaterial;
     }
-
-    private void OnHandHoverEnd(PlayerHand hand)
+    public void OffMaterialChange()
     {
-        //if (!IsThrow)
-        //{
-            this.GetComponent<MeshRenderer>().material = OffMaterial;
-        //}
-        //copyMaterial.SetFloat("_Rimonoff", 0);
-        //if (!attached)
-        //{
-        //    if (hand.GetTriggerButton())
-        //    {
-        //        Rigidbody rb = GetComponent<Rigidbody>();
-        //        if (rb.velocity.magnitude >= catchSpeedThreshold)
-        //        {
-        //            hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
-        //        }
-        //    }
-        //}
+        this.GetComponent<MeshRenderer>().material = OffMaterial;
     }
-
-    private void HandHoverUpdate(PlayerHand hand)
+    public void Attatching(PlayerHand hand)
     {
-        //Trigger got pressed
-        if (hand.GetTriggerButton())
+        if (hand.GetTriggerButton() && !attached)
         {
             oldObject = hand.currentAttachedObject;
-            if(oldObject != null)
+            if (oldObject != null)
                 oldObject.SetActive(false);
+
+            OffMaterialChange();
             if (IsTutorial)
             {
                 GameObject tutorialObject = Instantiate(this.gameObject);
@@ -92,11 +70,62 @@ public class Throwable : MonoBehaviour
         }
     }
 
+    //private void OnHandHoverBegin(PlayerHand hand)
+    //{
+    //    if (!attached)
+    //    {
+    //        if (!IsThrow)
+    //        {
+    //            this.GetComponent<MeshRenderer>().material = OnMaterial;
+    //        }
+    //    }
+    //}
+
+    //private void OnHandHoverEnd(PlayerHand hand)
+    //{
+    //    //if (!IsThrow)
+    //    //{
+    //    this.GetComponent<MeshRenderer>().material = OffMaterial;
+    //    //}
+    //    //copyMaterial.SetFloat("_Rimonoff", 0);
+    //    //if (!attached)
+    //    //{
+    //    //    if (hand.GetTriggerButton())
+    //    //    {
+    //    //        Rigidbody rb = GetComponent<Rigidbody>();
+    //    //        if (rb.velocity.magnitude >= catchSpeedThreshold)
+    //    //        {
+    //    //            hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
+    //    //        }
+    //    //    }
+    //    //}
+    //}
+
+    //private void HandHoverUpdate(PlayerHand hand)
+    //{
+    //    //Trigger got pressed
+    //    if (hand.GetTriggerButton() && !IsThrow)
+    //    {
+    //        oldObject = hand.currentAttachedObject;
+    //        if (oldObject != null)
+    //            oldObject.SetActive(false);
+    //        if (IsTutorial)
+    //        {
+    //            GameObject tutorialObject = Instantiate(this.gameObject);
+    //            tutorialObject.GetComponent<Throwable>().IsTutorial = false;
+    //            hand.AttachObject(tutorialObject, attachmentFlags, attachmentPoint);
+    //        }
+    //        else
+    //        {
+    //            hand.AttachObject(gameObject, attachmentFlags, attachmentPoint);
+    //        }
+    //    }
+    //}
+
     private void OnAttachedToHand(PlayerHand hand)
     {
         attached = true;
         hand.HoverLock(null);
-
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
         rb.interpolation = RigidbodyInterpolation.None;
@@ -118,7 +147,6 @@ public class Throwable : MonoBehaviour
         //onDetachFromHand.Invoke();
 
         hand.HoverUnlock(null);
-
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
         rb.interpolation = RigidbodyInterpolation.Interpolate;

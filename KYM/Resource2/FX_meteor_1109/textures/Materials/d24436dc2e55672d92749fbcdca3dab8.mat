@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: d24436dc2e55672d92749fbcdca3dab8
+  m_Shader: {fileID: 4800000, guid: 10b3e3be75ad58846a5bb6913a7482f2, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmitTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 8cd6f0c785c16fe449a81d5a1dd86da8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex02:
+        m_Texture: {fileID: 2800000, guid: 3a88bc67af1d5964690d615cbecbbe61, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 3f54832912e8a1243866824406eb36af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Bar: 0.13
+    - _Bar02: 0
+    - _Cut: 0.5
+    - _Cutoff: 0.5
+    - _Hide: 0.29
+    - _InvFade: 1
+    - _Metallic: 0
+    - _Smoothness: 0
+    m_Colors:
+    - _AlphaColor: {r: 1.7352941, g: 0.53589964, b: 0.53589964, a: 1}
+    - _Color: {r: 6.882354, g: 1.8190075, b: 0.96150535, a: 1}
+    - _EColor: {r: 2.316177, g: 0.60699826, b: 0.49389073, a: 1}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
