@@ -77,6 +77,8 @@ public class Player : MonoBehaviour
 
     public UI_Player playerUI;
 
+   
+
     private void Start()
     {
         if(playerStat == null)
