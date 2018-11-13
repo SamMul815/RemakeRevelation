@@ -127,6 +127,9 @@ public class BlackBoard : Singleton<BlackBoard>
     private bool _isAirSpear;
     public bool IsAirSpear { set { _isAirSpear = value; } get { return _isAirSpear; } }
 
+    private bool _isRedZoneAttackOn;
+    public bool IsRedZoneAttackOn { set { _isRedZoneAttackOn = value; } get { return _isRedZoneAttackOn; } }
+
     [SerializeField]
     private float _redZoneDamage;
     public float RedZoneDamage { get { return _redZoneDamage; } }

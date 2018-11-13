@@ -56,24 +56,23 @@ public class GameEndManager : Singleton<GameEndManager>
 
     public void GameOver ()
     {
-        //if (_player.playerStat.GetCurrentHP() <= 0.0f)
-        {
-            Vector3 playerForward = _player.transform.forward;
-            playerForward.y = 0.0f;
-            playerForward.Normalize();
+        Vector3 playerForward = _player.transform.forward;
+        playerForward.y = 0.0f;
+        playerForward.Normalize();
 
+        DragonManager.Instance.enabled = false;
 
-            Vector3 pos = _player.transform.position + (playerForward * 20.0f);
+        Vector3 pos = _player.transform.position + (playerForward * 20.0f)
+                 + (Vector3.up * 1.3f);
 
-            Vector3 forward = pos - _player.transform.position;
-            //forward.y = 0.0f;
+        Vector3 forward = pos - _player.transform.position;
+        //forward.y = 0.0f;
 
-            Player.instance.playerUI.FadeOut(1.5f);
-            //_player.playerUI.FadeOut(1.5f);
+        Player.instance.playerUI.FadeOut(1.5f);
+        //_player.playerUI.FadeOut(1.5f);
 
-            CreateGameOverCor = CreateGameOverUI(pos, forward, 3.0f);
-            CoroutineManager.DoCoroutine(CreateGameOverCor);
-        }
+        CreateGameOverCor = CreateGameOverUI(pos, forward, 3.0f);
+        CoroutineManager.DoCoroutine(CreateGameOverCor);
     }
 
 
@@ -136,7 +135,7 @@ public class GameEndManager : Singleton<GameEndManager>
             {
                 ImgColor.a = Mathf.Lerp(0.0f, 1.0f, tt / createTime);
                 ChildImg.color = ImgColor;
-                tt += Time.deltaTime;
+                tt += 0.025f;
             }
 
             yield return CoroutineManager.EndOfFrame;
