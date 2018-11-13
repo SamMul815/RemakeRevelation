@@ -42,10 +42,11 @@ public class Dragon_FallingDead_Action : ActionTask
 
     public override bool Run()
     {
-        if (!isFallingDead)
+       if (!isFallingDead)
         {
-            isFallingDead = 
+            isFallingDead =
                 _blackBoard.LandingRayHit(rayTransform, -rayTransform.up, fallingDistance, _manager.DragonAvoidLayers);
+
             _movement.CurSpeed = _blackBoard.Acceleration(_movement.CurSpeed, maxSpeed, accSpeed);
             DragonTransform.position += (-DragonTransform.up) * _movement.CurSpeed * Time.deltaTime;
             DragonTransform.rotation = Quaternion.identity;
@@ -56,6 +57,13 @@ public class Dragon_FallingDead_Action : ActionTask
                 EffectManager.Instance.PoolParticleEffectOn("Landing", DragonTransform.position, DragonTransform.forward);
                 DragonAniManager.SwicthAnimation("Dragon_Dead");
             }
+        }
+
+        if (isFallingDead)
+        {
+            DragonTransform.rotation = Quaternion.identity;
+            EffectManager.Instance.PoolParticleEffectOn("Landing", DragonTransform.position, DragonTransform.forward);
+            DragonAniManager.SwicthAnimation("Dragon_Dead");
         }
 
         return false;
