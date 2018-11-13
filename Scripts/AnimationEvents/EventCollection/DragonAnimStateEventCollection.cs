@@ -65,8 +65,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(MeteoAttackEnd, "MeteoAttack");
 
         AddAnimTimeEventFunc(ActionEnd, "DestroyPart");
-
-        AddAnimTimeEventFunc(TakeOff, "TakeOff");
+        
         AddAnimTimeEventFunc(ActionEnd, "TakeOff");
 
         AddAnimTimeEventFunc(ActionEnd, "NearHowling");
@@ -76,10 +75,9 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(HoveringSoundOn, "Hovering");
         AddAnimTimeEventFunc(HoveringSoundOn, "MeteoWaiting");
 
-
-        AddAnimTimeEventFunc(Dead, "Dead");
+        
         AddAnimTimeEventFunc(DeadEnd, "Dead");
-        AddAnimTimeEventFunc(Dead, "FallingDead");
+        AddAnimTimeEventFunc(FallingDead, "FallingDead");
         AddAnimTimeEventFunc(DeadEnd, "FallingDead");
 
     }
@@ -98,11 +96,6 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
     private void TrunStart(EvnData evnData)
     {
         FmodManager.Instance.PlaySoundOneShot(_manager.transform.position, "Turn");
-    }
-
-    private void TakeOff(EvnData evnData)
-    {
-
     }
 
     private void ActionEnd(EvnData evnData)
@@ -269,11 +262,10 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _manager.AttackOff();
     }
 
-    private void Dead (EvnData evnData)
+    private void FallingDead (EvnData evnData)
     {
-
         EffectManager.Instance.PoolParticleEffectOn("Landing", _manager.transform.position, _manager.transform.forward);
-   }
+    }
 
     private void DeadEnd (EvnData evnData)
     {

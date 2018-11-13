@@ -39,6 +39,7 @@ public class GameEndManager : Singleton<GameEndManager>
     {
         if (_dragon.Stat.HP <= 0.0f)
         {
+            DragonManager.Instance.enabled = false;
             Vector3 pos = _player.transform.position + 
                 (_player.transform.forward * 10.0f) + (Vector3.up * 3.0f);
 
@@ -55,8 +56,8 @@ public class GameEndManager : Singleton<GameEndManager>
     {
         if (_player.playerStat.GetCurrentHP() <= 0.0f)
         {
+            DragonManager.Instance.enabled = false;
             Vector3 pos = _player.transform.position + (_player.transform.forward * 0.4f);
-
             Vector3 forward = pos - _player.transform.position;
             forward.y = 0.0f;
 
