@@ -241,7 +241,8 @@ public class Throwable : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("TutorialTarget"))
         {
-            collision.gameObject.GetComponent<TutorialTarget>().Hit(500.0f);
+            UIManager.Instance.CreatePopupTextYellow(damage.ToString(), transform.position);
+            collision.gameObject.GetComponent<TutorialTarget>().Hit(damage);
         }
 
         if(explosionParticle != null)

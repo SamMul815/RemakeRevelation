@@ -96,7 +96,7 @@ public class TutorialNPC : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
 
-        meshRenderer.materials = npcBaseMaterials;
+        //meshRenderer.materials = npcBaseMaterials;
 
     }
 }
