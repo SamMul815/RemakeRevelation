@@ -106,9 +106,6 @@ public class Dragon_Landing_Action : ActionTask
         {
             float dot = Vector3.Dot(DragonTransform.forward, forward);
 
-            if (dot >= 1.0f)
-                CurTurnTime = MaxTurnTime;
-
             DragonTransform.rotation =
                 Quaternion.Lerp(
                     DragonTransform.rotation,
