@@ -54,15 +54,16 @@ public class Dragon_FallingDead_Action : ActionTask
             if (isFallingDead)
             {
                 DragonTransform.rotation = Quaternion.identity;
-                EffectManager.Instance.PoolParticleEffectOn("Landing", DragonTransform.position, DragonTransform.forward);
                 DragonAniManager.SwicthAnimation("Dragon_Dead");
             }
         }
 
-        if (isFallingDead)
+        if (DragonTransform.position.y <= 0.0f)
         {
+            Vector3 position = DragonTransform.position;
+            position.y = 0.0f;
+            DragonTransform.position = position;
             DragonTransform.rotation = Quaternion.identity;
-            EffectManager.Instance.PoolParticleEffectOn("Landing", DragonTransform.position, DragonTransform.forward);
             DragonAniManager.SwicthAnimation("Dragon_Dead");
         }
 
