@@ -16,11 +16,7 @@ public class GameExitButton : VRButton
 
     private void LoadScene ()
     {
-        StartCoroutine(corLoading(waitTime, nextSceneName));
-    }
-    private static IEnumerator corLoading (float waitTime, string nextSceneName)
-    {
-        yield return null;
+
     }
 
 }
