@@ -17,11 +17,6 @@ public class UtilityManager :  Singleton<UtilityManager>
     [SerializeField] private Transform _player;
     public Transform Player { get { return _player; } }
 
-    public Gun leftGun;
-    public Gun rightGun;
-
-
-
 
     public static bool DistanceCalc(Transform This, Transform Target, float Range)
     {

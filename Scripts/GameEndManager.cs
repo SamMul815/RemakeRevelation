@@ -4,7 +4,7 @@ using UnityEngine;
 using DragonController;
 using UnityEngine.UI;
 
-public class GameManager : Singleton<GameManager>
+public class GameEndManager : Singleton<GameEndManager>
 {
     private DragonManager _dragon;
     private Player _player;
@@ -39,8 +39,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (_dragon.Stat.HP <= 0.0f)
         {
-            Vector3 pos = _player.transform.position + 
-                (_player.transform.forward * 10.0f) + (Vector3.up * 3.0f);
+            Vector3 pos = _player.transform.position + (_player.transform.forward * 10.0f);
 
             Vector3 forward = pos - _player.transform.position;
             forward.y = 0.0f;
@@ -139,7 +138,6 @@ public class GameManager : Singleton<GameManager>
         {
             ChildImg.GetComponent<BoxCollider>().enabled = true;
         }
-
         ChildImg.color = ImgColor;
 
         for (int index = 0; index < ChildText.Length; index++)
