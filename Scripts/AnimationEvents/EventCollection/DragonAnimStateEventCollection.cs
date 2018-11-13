@@ -78,6 +78,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
 
         AddAnimTimeEventFunc(DeadEnd, "Dead");
+        AddAnimTimeEventFunc(DeadEnd, "FallingDead");
 
     }
 
