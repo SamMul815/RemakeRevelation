@@ -154,6 +154,7 @@ namespace DragonController
         {
             if (!_dragonBehaviroTree.Root.Run())
             {
+
             }
             else
             {
