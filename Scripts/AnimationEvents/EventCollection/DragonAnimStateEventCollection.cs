@@ -77,7 +77,9 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         AddAnimTimeEventFunc(HoveringSoundOn, "MeteoWaiting");
 
 
+        AddAnimTimeEventFunc(Dead, "Dead");
         AddAnimTimeEventFunc(DeadEnd, "Dead");
+        AddAnimTimeEventFunc(Dead, "FallingDead");
         AddAnimTimeEventFunc(DeadEnd, "FallingDead");
 
     }
@@ -266,6 +268,12 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
         _blackBoard.IsTailAttackOn = false;
         _manager.AttackOff();
     }
+
+    private void Dead (EvnData evnData)
+    {
+
+        EffectManager.Instance.PoolParticleEffectOn("Landing", _manager.transform.position, _manager.transform.forward);
+   }
 
     private void DeadEnd (EvnData evnData)
     {
