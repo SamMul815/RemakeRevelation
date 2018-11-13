@@ -271,6 +271,7 @@ public class DragonAnimStateEventCollection : BaseAnimStateEventsCollection
 
     private void Dead (EvnData evnData)
     {
+
         EffectManager.Instance.PoolParticleEffectOn("Landing", _manager.transform.position, _manager.transform.forward);
    }
 
