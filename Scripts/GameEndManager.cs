@@ -73,7 +73,7 @@ public class GameEndManager : Singleton<GameEndManager>
 
             CreateGameOverCor = CreateGameOverUI(pos, forward, 3.0f);
             CoroutineManager.DoCoroutine(CreateGameOverCor);
-        } 2
+        }
     }
 
 
